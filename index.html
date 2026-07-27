@@ -225,7 +225,7 @@
     }
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: 1fr 1fr 1fr;
       gap: 24px;
     }
     .service-card {
@@ -262,6 +262,48 @@
     }
     .service-card h4 { font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; color: #0a1628; }
     .service-card p { color: #64748b; font-size: 0.9rem; line-height: 1.6; }
+
+    .service-card.business {
+      grid-row: span 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #0a1628, #1a2a4a);
+      border-color: rgba(37,99,235,0.2);
+      padding: 40px 32px;
+    }
+    .service-card.business::before { background: linear-gradient(90deg, #60a5fa, #2563eb); }
+    .service-card.business:hover { border-color: #2563eb; }
+    .service-card.business .icon {
+      width: 80px; height: 80px;
+      background: linear-gradient(135deg, #2563eb, #60a5fa);
+      border-radius: 20px;
+      font-size: 2rem;
+      margin-bottom: 24px;
+      box-shadow: 0 0 30px rgba(37,99,235,0.2);
+    }
+    .service-card.business h4 { color: white; font-size: 1.3rem; }
+    .service-card.business p { color: #94a3b8; }
+    .service-card.business .btn-business {
+      margin-top: 20px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 32px;
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      color: white;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+      border: 1px solid rgba(96,165,250,0.2);
+    }
+    .service-card.business .btn-business:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 30px rgba(37,99,235,0.3);
+    }
 
     /* ===== SOCIAL BUTTONS ===== */
     .social-section {
@@ -894,6 +936,8 @@
       .social-buttons { gap: 24px; }
       .social-btn { padding: 36px 24px; }
       .social-btn .btn-label { font-size: 1.3rem; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .service-card.business { grid-row: span 1; grid-column: span 2; }
     }
     @media (max-width: 768px) {
       .hero { padding: 60px 0 50px; }
@@ -928,6 +972,8 @@
       .section-title p { font-size: 0.9rem; }
       .services-section { padding: 50px 0; }
       .service-card { padding: 28px 20px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .service-card.business { grid-row: span 1; grid-column: span 1; }
       .social-section { padding: 50px 0; }
       .social-buttons { grid-template-columns: 1fr; gap: 20px; }
       .social-btn { padding: 32px 24px; flex-direction: row; text-align: left; }
@@ -1023,6 +1069,12 @@
           <h4>Mantenimiento</h4>
           <p>Limpieza profunda, cambio de pasta térmica al procesador y gráfica, y limpieza general del equipo.</p>
         </div>
+        <div class="service-card business">
+          <div class="icon"><i class="fas fa-building"></i></div>
+          <h4>Contrato Mensual<br>para Empresas</h4>
+          <p>Plan de soporte continuo en software y hardware con cobertura mensual. Atención prioritaria, visitas programadas y asistencia remota ilimitada para tu empresa. Olvídate de los imprevistos tecnológicos.</p>
+          <a href="https://wa.me/56961991725" target="_blank" class="btn-business"><i class="fab fa-whatsapp"></i> Cotizar ahora</a>
+        </div>
         <div class="service-card">
           <div class="icon"><i class="fas fa-shield-alt"></i></div>
           <h4>Soporte Técnico</h4>
@@ -1033,12 +1085,6 @@
           <h4>Reparaciones Físicas Notebook</h4>
           <p>Reparación de bisagra, pantalla, cambio de teclado, tapas y demás componentes físicos de notebook.</p>
         </div>
-      </div>
-      <div style="text-align:center;margin-top:40px;">
-        <a href="https://wa.me/56961991725" target="_blank" class="btn-premium" style="display:inline-flex;">
-          <i class="fas fa-building"></i> Contrato Mensual para Empresas
-        </a>
-        <p style="margin-top:12px;color:#64748b;font-size:0.85rem;">Soporte software y hardware con cobertura mensual para tu empresa.</p>
       </div>
     </div>
   </section>
