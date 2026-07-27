@@ -263,152 +263,100 @@
     .service-card h4 { font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; color: #0a1628; }
     .service-card p { color: #64748b; font-size: 0.9rem; line-height: 1.6; }
 
-    /* ===== SOCIAL CAROUSEL ===== */
+    /* ===== SOCIAL BUTTONS ===== */
     .social-section {
       padding: 80px 0;
       background: #f0f4ff;
     }
-    .carousel-wrapper {
+    .social-buttons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .social-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      padding: 48px 32px;
+      border-radius: 24px;
+      text-decoration: none;
+      text-align: center;
+      transition: all 0.4s;
       position: relative;
       overflow: hidden;
     }
-    .carousel-track {
-      display: flex;
-      transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-      gap: 24px;
+    .social-btn::before {
+      content: '';
+      position: absolute;
+      top: -50%; left: -50%;
+      width: 200%; height: 200%;
+      pointer-events: none;
     }
-    .carousel-slide {
-      min-width: calc(33.333% - 16px);
-      flex-shrink: 0;
+    .social-btn:hover {
+      transform: translateY(-8px);
     }
-    .post-card {
-      background: white;
-      border: 1px solid #e2e8f0;
-      border-radius: 16px;
-      overflow: hidden;
-      transition: all 0.4s;
-    }
-    .post-card:hover {
-      transform: translateY(-4px);
-      border-color: #2563eb;
-      box-shadow: 0 20px 50px rgba(37,99,235,0.1);
-    }
-    .post-card .post-media {
-      width: 100%; height: 220px;
+    .social-btn .icon-wrap {
+      width: 100px; height: 100px;
+      border-radius: 28px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 3rem;
+      color: white;
+      transition: all 0.4s;
       position: relative;
-      overflow: hidden;
     }
-    .post-card .post-media .platform-badge {
-      position: absolute;
-      top: 12px; right: 12px;
-      background: rgba(10,22,40,0.8);
-      backdrop-filter: blur(8px);
-      color: white;
-      width: 36px; height: 36px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1rem;
-      border: 1px solid rgba(255,255,255,0.1);
+    .social-btn:hover .icon-wrap {
+      transform: scale(1.1);
     }
-    .post-card .post-body { padding: 20px; }
-    .post-card .post-body .post-title {
+    .social-btn .btn-label {
+      font-family: 'Orbitron', monospace;
+      font-size: 1.6rem;
       font-weight: 700;
-      margin-bottom: 8px;
-      font-size: 1rem;
-      color: #0a1628;
-    }
-    .post-card .post-body .post-desc {
-      font-size: 0.85rem;
-      color: #64748b;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-    .post-card .post-footer {
-      padding: 12px 20px;
-      border-top: 1px solid #e2e8f0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.8rem;
-      color: #94a3b8;
-    }
-    .post-card .post-footer .engagement i { margin-right: 5px; }
-    .carousel-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 44px; height: 44px;
-      background: white;
-      border: 1px solid #e2e8f0;
-      border-radius: 12px;
-      cursor: pointer;
-      font-size: 1.1rem;
-      color: #0a1628;
-      z-index: 10;
-      transition: all 0.3s;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .carousel-btn:hover { background: #2563eb; color: white; border-color: #2563eb; box-shadow: 0 0 20px rgba(37,99,235,0.2); }
-    .carousel-btn.prev { left: -6px; }
-    .carousel-btn.next { right: -6px; }
-    .carousel-dots {
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-      margin-top: 28px;
-    }
-    .carousel-dots button {
-      width: 10px; height: 10px;
-      border: none;
-      border-radius: 50%;
-      background: #cbd5e1;
-      cursor: pointer;
-      transition: all 0.3s;
-      padding: 0;
-    }
-    .carousel-dots button.active {
-      background: linear-gradient(135deg, #2563eb, #60a5fa);
-      width: 32px;
-      border-radius: 5px;
-    }
-    .platform-header {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      margin-bottom: 28px;
-    }
-    .platform-header .icon {
-      width: 44px; height: 44px;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.3rem;
       color: white;
+      letter-spacing: 1px;
     }
-    .platform-header .icon.ig { background: linear-gradient(135deg, #2563eb, #60a5fa); }
-    .platform-header .icon.fb { background: linear-gradient(135deg, #1d4ed8, #3b82f6); }
-    .platform-header .icon.tt { background: linear-gradient(135deg, #0a1628, #1e293b); }
-    .platform-header h3 { font-family: 'Orbitron', monospace; font-size: 1.3rem; font-weight: 600; color: #0a1628; }
-    .platform-header a {
-      margin-left: auto;
-      color: #2563eb;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.85rem;
-      transition: color 0.3s;
+    .social-btn .btn-sub {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.7);
+      font-weight: 400;
     }
-    .platform-header a:hover { color: #1d4ed8; }
+    .social-btn .btn-arrow {
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      color: white;
+      transition: all 0.4s;
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+    .social-btn:hover .btn-arrow {
+      background: rgba(255,255,255,0.25);
+      transform: translateX(6px);
+    }
+    .social-btn.instagram {
+      background: linear-gradient(135deg, #833ab4, #fd1d1d, #f77737);
+      box-shadow: 0 20px 60px rgba(131,58,180,0.25);
+    }
+    .social-btn.instagram:hover {
+      box-shadow: 0 30px 80px rgba(131,58,180,0.35);
+    }
+    .social-btn.tiktok {
+      background: linear-gradient(135deg, #0a1628, #1e293b);
+      box-shadow: 0 20px 60px rgba(10,22,40,0.25);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .social-btn.tiktok:hover {
+      box-shadow: 0 30px 80px rgba(10,22,40,0.35);
+      border-color: rgba(255,255,255,0.2);
+    }
 
     /* ===== STATS / ABOUT ===== */
     .about-section {
@@ -939,22 +887,20 @@
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 1024px) {
-      .carousel-slide { min-width: calc(50% - 12px); }
       .review-card { min-width: calc(50% - 12px); }
       .about-grid { grid-template-columns: 1fr; gap: 40px; }
       footer .container { grid-template-columns: 1fr 1fr; gap: 32px; }
       .hero h1 { font-size: 2.2rem; }
+      .social-buttons { gap: 24px; }
+      .social-btn { padding: 36px 24px; }
+      .social-btn .btn-label { font-size: 1.3rem; }
     }
     @media (max-width: 768px) {
       .hero { padding: 60px 0 50px; }
       .hero h1 { font-size: 1.6rem; }
       .hero p { font-size: 0.95rem; }
       .hero .btn-premium { padding: 14px 28px; font-size: 0.9rem; }
-      .carousel-slide { min-width: 100%; }
       .review-card { min-width: 100%; }
-      .carousel-btn { width: 36px; height: 36px; font-size: 0.9rem; }
-      .carousel-btn.prev { left: -2px; }
-      .carousel-btn.next { right: -2px; }
       .nav-toggle { display: flex; }
       nav {
         display: none;
@@ -983,6 +929,12 @@
       .services-section { padding: 50px 0; }
       .service-card { padding: 28px 20px; }
       .social-section { padding: 50px 0; }
+      .social-buttons { grid-template-columns: 1fr; gap: 20px; }
+      .social-btn { padding: 32px 24px; flex-direction: row; text-align: left; }
+      .social-btn .icon-wrap { width: 64px; height: 64px; font-size: 2rem; border-radius: 18px; }
+      .social-btn .btn-label { font-size: 1.1rem; }
+      .social-btn .btn-sub { font-size: 0.8rem; }
+      .social-btn .btn-arrow { display: none; }
       .about-section { padding: 50px 0; }
       .about-text h2 { font-size: 1.4rem; }
       .about-image { height: 300px; }
@@ -993,9 +945,6 @@
       .modal h2 { font-size: 1.1rem; }
       .whatsapp-float { width: 52px; height: 52px; font-size: 1.3rem; bottom: 16px; right: 16px; }
       .whatsapp-float .tooltip { display: none; }
-      .platform-header { flex-wrap: wrap; gap: 10px; }
-      .platform-header a { margin-left: 0; }
-      .post-card .post-media { height: 180px; }
     }
     @media (max-width: 480px) {
       .container { padding: 0 16px; }
@@ -1008,6 +957,9 @@
       .service-card .icon { width: 52px; height: 52px; font-size: 1.2rem; }
       .section-title h2 { font-size: 1.15rem; }
       .review-card { padding: 20px; }
+      .social-btn { padding: 24px 20px; }
+      .social-btn .icon-wrap { width: 52px; height: 52px; font-size: 1.5rem; }
+      .social-btn .btn-label { font-size: 1rem; }
       .about-image { height: 250px; }
       .about-image h4 { font-size: 1rem; }
       .about-text .stats > div { padding: 14px 16px; }
@@ -1033,7 +985,7 @@
       <nav id="mainNav">
         <a href="#inicio">Inicio</a>
         <a href="#servicios">Servicios</a>
-        <a href="#contenido">Contenido</a>
+        <a href="#contenido">Redes</a>
         <a href="#nosotros">Nosotros</a>
         <a href="#contacto">Contacto</a>
       </nav>
@@ -1099,46 +1051,29 @@
   <section class="social-section" id="contenido">
     <div class="container">
       <div class="section-title">
-        <h2>Mira Nuestro <span style="color:#2563eb;">Trabajo</span></h2>
-        <p>Síguenos en redes sociales y mira el respaldo de más de 1.350 clientes satisfechos.</p>
+        <h2>Síguenos en <span style="color:#2563eb;">Redes</span></h2>
+        <p>Conoce nuestro trabajo, quiénes somos, los proyectos que hacemos y el día a día del taller.</p>
         <div class="line"></div>
       </div>
 
-      <div class="platform-header">
-        <div class="icon ig"><i class="fab fa-instagram"></i></div>
-        <h3>Instagram</h3>
-        <a href="https://www.instagram.com/hddtecnologiastore/" target="_blank">@hddtecnologiastore <i class="fas fa-external-link-alt"></i></a>
+      <div class="social-buttons">
+        <a href="https://www.instagram.com/hddtecnologiastore/" target="_blank" class="social-btn instagram">
+          <div class="icon-wrap"><i class="fab fa-instagram"></i></div>
+          <div>
+            <div class="btn-label">Instagram</div>
+            <div class="btn-sub">Mira nuestros trabajos y el detrás de escena</div>
+          </div>
+          <div class="btn-arrow"><i class="fas fa-arrow-right"></i></div>
+        </a>
+        <a href="https://www.tiktok.com/@hddtecnologia" target="_blank" class="social-btn tiktok">
+          <div class="icon-wrap"><i class="fab fa-tiktok"></i></div>
+          <div>
+            <div class="btn-label">TikTok</div>
+            <div class="btn-sub">Videos rápidos, tips y contenido técnico</div>
+          </div>
+          <div class="btn-arrow"><i class="fas fa-arrow-right"></i></div>
+        </a>
       </div>
-      <div class="carousel-wrapper" data-carousel="instagram">
-        <button class="carousel-btn prev"><i class="fas fa-chevron-left"></i></button>
-        <div class="carousel-track" id="carousel-instagram"></div>
-        <button class="carousel-btn next"><i class="fas fa-chevron-right"></i></button>
-      </div>
-      <div class="carousel-dots" id="dots-instagram"></div>
-
-      <div class="platform-header" style="margin-top:50px;">
-        <div class="icon fb"><i class="fab fa-facebook-f"></i></div>
-        <h3>Facebook</h3>
-        <a href="https://www.facebook.com/hddtecnologiastore" target="_blank">/HDDTecnologia <i class="fas fa-external-link-alt"></i></a>
-      </div>
-      <div class="carousel-wrapper" data-carousel="facebook">
-        <button class="carousel-btn prev"><i class="fas fa-chevron-left"></i></button>
-        <div class="carousel-track" id="carousel-facebook"></div>
-        <button class="carousel-btn next"><i class="fas fa-chevron-right"></i></button>
-      </div>
-      <div class="carousel-dots" id="dots-facebook"></div>
-
-      <div class="platform-header" style="margin-top:50px;">
-        <div class="icon tt"><i class="fab fa-tiktok"></i></div>
-        <h3>TikTok</h3>
-        <a href="https://www.tiktok.com/@hddtecnologiastore" target="_blank">@hddtecnologiastore <i class="fas fa-external-link-alt"></i></a>
-      </div>
-      <div class="carousel-wrapper" data-carousel="tiktok">
-        <button class="carousel-btn prev"><i class="fas fa-chevron-left"></i></button>
-        <div class="carousel-track" id="carousel-tiktok"></div>
-        <button class="carousel-btn next"><i class="fas fa-chevron-right"></i></button>
-      </div>
-      <div class="carousel-dots" id="dots-tiktok"></div>
 
     </div>
   </section>
@@ -1345,7 +1280,7 @@
         <h4>Navegación</h4>
         <a href="#inicio">Inicio</a>
         <a href="#servicios">Servicios</a>
-        <a href="#contenido">Contenido</a>
+        <a href="#contenido">Redes</a>
         <a href="#nosotros">Nosotros</a>
       </div>
       <div>
@@ -1449,134 +1384,6 @@
   </div>
 
   <script>
-    let instagramPosts = [];
-
-    async function fetchInstagramPosts() {
-      try {
-        const resp = await fetch('/api/instagram');
-        if (!resp.ok) throw new Error('Error ' + resp.status);
-        const data = await resp.json();
-        if (data && data.length > 0) {
-          instagramPosts = data;
-          if (carousels.instagram) {
-            carousels.instagram.destroy();
-            carousels.instagram = initCarousel('instagram', instagramPosts);
-          }
-        }
-      } catch (e) {
-        console.log('Instagram no disponible, usando datos mock', e.message);
-      }
-    }
-
-    const postsData = {
-      facebook: [
-        { title: 'Mantenimiento Premium', desc: 'Alarga la vida de tu PC con mi mantenimiento preventivo especializado.', likes: 543, comments: 67, shares: 34, platform: 'fb', color: '#1d4ed8' },
-        { title: 'Tutorial', desc: 'Cómo identificar si tu disco duro está fallando. Paso a paso.', likes: 876, comments: 45, shares: 23, platform: 'fb', color: '#2563eb' },
-        { title: 'Caso real', desc: 'Recuperación de datos de servidor empresarial en menos de 24 hrs.', likes: 654, comments: 78, shares: 56, platform: 'fb', color: '#1e3a5f' },
-        { title: 'Promo del mes', desc: 'Descuento especial en mantenimiento preventivo para toda la familia.', likes: 1234, comments: 89, shares: 67, platform: 'fb', color: '#3b82f6' },
-        { title: 'Tips', desc: 'El mejor antivirus es la prevención. Te enseño a proteger tu equipo.', likes: 987, comments: 56, shares: 43, platform: 'fb', color: '#0a1628' },
-      ],
-      tiktok: [
-        { title: 'Reparación en 60s', desc: 'Cambio de pasta térmica a laptop gaming. Así se hace.', likes: 4523, comments: 234, platform: 'tt', color: '#0a1628' },
-        { title: 'Tips express', desc: '3 cosas que NUNCA debes hacerle a tu PC. Imperdible.', likes: 6789, comments: 456, platform: 'tt', color: '#1a2a4a' },
-        { title: 'Humor técnico', desc: 'Cuando el cliente dice "es solo un problemita"... y llega con esto.', likes: 12345, comments: 789, platform: 'tt', color: '#0f2744' },
-        { title: 'Educativo', desc: '¿Sabes para qué sirve cada puerto de tu PC? Te lo muestro.', likes: 3456, comments: 198, platform: 'tt', color: '#2563eb' },
-      ]
-    };
-
-    const platformIcons = { ig: 'fa-instagram', fb: 'fa-facebook-f', tt: 'fa-tiktok' };
-
-    function initCarousel(id, data) {
-      const track = document.getElementById(`carousel-${id}`);
-      const dotsContainer = document.getElementById(`dots-${id}`);
-      const wrapper = track.closest('.carousel-wrapper');
-      const prevBtn = wrapper.querySelector('.prev');
-      const nextBtn = wrapper.querySelector('.next');
-      let currentIndex = 0;
-      let slidesPerView = getSlidesPerView();
-
-      function getSlidesPerView() {
-        if (window.innerWidth <= 768) return 1;
-        if (window.innerWidth <= 1024) return 2;
-        return 3;
-      }
-
-      function render() {
-        track.innerHTML = data.map((post, i) => {
-          const hasImg = post.image;
-          const bg = hasImg ? `url(${post.image}) center/cover no-repeat` : `linear-gradient(135deg, ${post.color}, ${post.color}dd)`;
-          const iconHtml = hasImg ? '' : `<i class="fas ${i % 3 === 0 ? 'fa-microchip' : i % 3 === 1 ? 'fa-memory' : 'fa-cpu'}" style="color:rgba(255,255,255,0.15);font-size:3.5rem;"></i>`;
-          const title = post.title || (post.caption ? post.caption.slice(0, 60) : 'Publicación');
-          const desc = post.desc || post.caption || '';
-          const linkUrl = post.url || `https://www.instagram.com/${post.username || 'hddtecnologiastore'}`;
-          return `
-          <div class="carousel-slide">
-            <a href="${linkUrl}" target="_blank" class="post-card" style="display:block;text-decoration:none;">
-              <div class="post-media" style="background:${bg};">
-                ${iconHtml}
-                <div class="platform-badge"><i class="fab ${platformIcons[post.platform]}"></i></div>
-              </div>
-              <div class="post-body">
-                <div class="post-title">${title}</div>
-                ${desc ? `<div class="post-desc">${desc}</div>` : ''}
-              </div>
-              <div class="post-footer">
-                <div class="engagement">
-                  <i class="fas fa-heart" style="color:#dc2626;"></i> ${post.likes >= 1000 ? (post.likes/1000).toFixed(1) + 'k' : post.likes}
-                  <i class="fas fa-comment" style="margin-left:12px;color:#2563eb;"></i> ${post.comments}
-                  ${post.shares ? `<i class="fas fa-share" style="margin-left:12px;color:#60a5fa;"></i> ${post.shares}` : ''}
-                </div>
-                <i class="fab ${platformIcons[post.platform]}" style="color:#cbd5e1;"></i>
-              </div>
-            </a>
-          </div>
-        `}).join('');
-
-        dotsContainer.innerHTML = Array.from({ length: Math.ceil(data.length / slidesPerView) }, (_, i) =>
-          `<button class="${i === 0 ? 'active' : ''}" data-index="${i}"></button>`
-        ).join('');
-
-        dotsContainer.querySelectorAll('button').forEach(btn => {
-          btn.addEventListener('click', () => goTo(parseInt(btn.dataset.index)));
-        });
-      }
-
-      function getMaxIndex() { return Math.ceil(data.length / slidesPerView) - 1; }
-
-      function goTo(index) {
-        currentIndex = Math.max(0, Math.min(index, getMaxIndex()));
-        const offset = -(currentIndex * (100 / slidesPerView) * slidesPerView);
-        track.style.transform = `translateX(${offset}%)`;
-        dotsContainer.querySelectorAll('button').forEach((btn, i) => {
-          btn.classList.toggle('active', i === currentIndex);
-        });
-      }
-
-      function next() { goTo(currentIndex + 1); }
-      function prev() { goTo(currentIndex - 1); }
-
-      prevBtn.addEventListener('click', prev);
-      nextBtn.addEventListener('click', next);
-
-      window.addEventListener('resize', () => {
-        slidesPerView = getSlidesPerView();
-        render();
-        goTo(0);
-      });
-
-      render();
-      goTo(0);
-      function destroy() {
-        prevBtn.removeEventListener('click', prev);
-        nextBtn.removeEventListener('click', next);
-      }
-      return { next, prev, goTo, destroy };
-    }
-
-    const carousels = {};
-    Object.keys(postsData).forEach(key => { carousels[key] = initCarousel(key, postsData[key]); });
-    fetchInstagramPosts();
-
     // ---------- REVIEWS CAROUSEL ----------
     (function initReviews() {
       const track = document.getElementById('reviewsTrack');
