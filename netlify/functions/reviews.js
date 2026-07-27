@@ -1,4 +1,7 @@
 const PLACE_ID = 'ChIJC6Bso6XPYpYRk9egCQTftUE';
+const CACHE_TTL = 24 * 60 * 60 * 1000;
+
+let cache = { data: null, timestamp: 0 };
 
 const mockReviews = [
   { author: 'Carlos Mendoza', rating: 5, text: 'Mi notebook dejó de encender y pensé que era pérdida total. Alejandro lo diagnosticó rápido, cambió la placa madre y quedó como nuevo. Llevo 3 meses sin problemas. 100% recomendado.', date: 'Hace 2 meses', avatarColor: '#2563eb' },
@@ -9,37 +12,65 @@ const mockReviews = [
   { author: 'Gabriela Espinoza', rating: 5, text: 'Mi iMac no daba video. Alejandro diagnosticó el problema exacto, reparó la placa y quedó impecable. Además me dio tips para mantenerlo óptimo. Un verdadero profesional.', date: 'Hace 1 mes', avatarColor: '#0f2744' },
 ];
 
+const colors = ['#2563eb', '#1d4ed8', '#3b82f6', '#60a5fa', '#1a2a4a', '#0f2744'];
+
+function normalizeReviews(data) {
+  if (!data.reviews || !data.reviews.length) return null;
+  return data.reviews.map((r, i) => ({
+    author: r.authorAttribution?.displayName || 'Cliente',
+    rating: r.rating || 5,
+    text: r.text?.text || '',
+    date: r.relativePublishTimeDescription || '',
+    avatarColor: colors[i % colors.length],
+  }));
+}
+
+async function fetchFromGoogle(apiKey) {
+  const resp = await fetch(
+    `https://places.googleapis.com/v1/places/${PLACE_ID}?fields=reviews`,
+    {
+      headers: {
+        'X-Goog-Api-Key': apiKey,
+        'Content-Type': 'application/json',
+      },
+    }
+  );
+  if (!resp.ok) throw new Error(`Google API: ${resp.status}`);
+  return normalizeReviews(await resp.json());
+}
+
 exports.handler = async () => {
   const apiKey = process.env.GOOGLE_API_KEY;
+  const now = Date.now();
 
   if (apiKey) {
+    if (cache.data && (now - cache.timestamp) < CACHE_TTL) {
+      return {
+        statusCode: 200,
+        headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
+        body: JSON.stringify(cache.data),
+      };
+    }
+
     try {
-      const resp = await fetch(`https://places.googleapis.com/v1/places/${PLACE_ID}?fields=reviews`, {
-        headers: {
-          'X-Goog-Api-Key': apiKey,
-          'Content-Type': 'application/json',
-        }
-      });
-      if (resp.ok) {
-        const data = await resp.json();
-        if (data.reviews && data.reviews.length > 0) {
-          const colors = ['#2563eb', '#1d4ed8', '#3b82f6', '#60a5fa', '#1a2a4a', '#0f2744'];
-          const reviews = data.reviews.map((r, i) => ({
-            author: r.authorAttribution?.displayName || 'Cliente',
-            rating: r.rating || 5,
-            text: r.text?.text || '',
-            date: r.relativePublishTimeDescription || '',
-            avatarColor: colors[i % colors.length],
-          }));
-          return {
-            statusCode: 200,
-            headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
-            body: JSON.stringify(reviews),
-          };
-        }
+      const reviews = await fetchFromGoogle(apiKey);
+      if (reviews) {
+        cache = { data: reviews, timestamp: now };
+        return {
+          statusCode: 200,
+          headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
+          body: JSON.stringify(reviews),
+        };
       }
     } catch (e) {
       console.error('Error fetching Google reviews:', e.message);
+      if (cache.data) {
+        return {
+          statusCode: 200,
+          headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
+          body: JSON.stringify(cache.data),
+        };
+      }
     }
   }
 

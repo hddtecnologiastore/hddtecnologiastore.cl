@@ -1533,9 +1533,23 @@
         goTo(0);
       });
 
+      const cached = localStorage.getItem('reviewsCache');
+      if (cached) {
+        try {
+          const parsed = JSON.parse(cached);
+          if (Date.now() - parsed.ts < 6 * 60 * 60 * 1000) {
+            renderCards(parsed.data);
+            updateCarousel();
+            setInterval(() => { goTo(idx + 1); }, 5000);
+            return;
+          }
+        } catch (_) {}
+      }
+
       fetch('/api/reviews')
         .then(r => r.json())
         .then(reviews => {
+          localStorage.setItem('reviewsCache', JSON.stringify({ data: reviews, ts: Date.now() }));
           renderCards(reviews);
           updateCarousel();
           setInterval(() => { goTo(idx + 1); }, 5000);
