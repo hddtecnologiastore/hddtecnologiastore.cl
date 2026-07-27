@@ -989,6 +989,7 @@
       .google-btn { justify-content: center; }
       .modal { padding: 28px 20px; margin: 10px; }
       .modal h2 { font-size: 1.1rem; }
+      .wa-file-qr { grid-template-columns: 1fr !important; }
       .whatsapp-float { width: 52px; height: 52px; font-size: 1.3rem; bottom: 16px; right: 16px; }
       .whatsapp-float .tooltip { display: none; }
     }
@@ -1336,7 +1337,6 @@
         <h4>Contacto</h4>
         <a href="tel:+56961991725"><i class="fas fa-phone"></i> +56 9 6199 1725</a>
         <a href="https://maps.google.com/?q=Av.+Rodrigo+de+Araya+3076,+Ñuñoa,+Santiago" target="_blank"><i class="fas fa-map-marker-alt"></i> Av. Rodrigo de Araya 3076, Ñuñoa</a>
-        <a href="mailto:casanovadiaz56@gmail.com"><i class="fas fa-envelope"></i> casanovadiaz56@gmail.com</a>
         <a href="https://wa.me/56961991725" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp directo</a>
       </div>
       <div class="bottom">
@@ -1370,57 +1370,42 @@
         <form id="whatsappForm">
           <div class="form-group">
             <label for="nombre">Nombre completo</label>
-            <input type="text" id="nombre" placeholder="Ej: Juan Pérez" required>
+            <input type="text" id="nombre" placeholder="Ej: Juan Pérez" required pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+">
           </div>
           <div class="form-group">
-            <label for="input-contacto">Contacto (teléfono o email)</label>
-            <input type="text" id="input-contacto" placeholder="Ej: +56 9 1234 5678" required>
+            <label for="input-contacto">Teléfono de contacto</label>
+            <div style="display:flex;align-items:center;gap:4px;">
+              <span style="color:white;font-weight:600;font-size:0.95rem;background:rgba(37,99,235,0.15);padding:10px 12px;border-radius:12px 0 0 12px;border:1px solid rgba(37,99,235,0.2);border-right:none;">+56 9</span>
+              <input type="tel" id="input-contacto" placeholder="0000 0000" required pattern="[0-9\s]+" maxlength="9" style="border-radius:0 12px 12px 0;">
+            </div>
           </div>
           <div class="form-group">
             <label for="problema">¿En qué puedo ayudarte?</label>
             <textarea id="problema" placeholder="Describe tu consulta o el problema de tu equipo..." required></textarea>
           </div>
-          <div class="form-group">
-            <label>Adjuntar fotos del problema (opcional)</label>
-            <div class="file-upload" id="fileDropZone">
-              <i class="fas fa-cloud-upload-alt"></i>
-              <p>Arrastra tus fotos aquí o <span>haz clic para seleccionar</span></p>
-              <small>JPG, PNG — Máx 5MB cada una</small>
-              <input type="file" id="fileInput" accept="image/*" multiple style="display:none">
+          <div class="wa-file-qr" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+            <div class="form-group" style="margin-bottom:0;">
+              <label>Adjuntar fotos del problema (opcional)</label>
+              <div class="file-upload" id="fileDropZone">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <p>Arrastra tus fotos aquí o <span>haz clic</span></p>
+                <small>JPG, PNG — Máx 5MB</small>
+                <input type="file" id="fileInput" accept="image/*" multiple style="display:none">
+              </div>
+              <div class="file-preview" id="filePreview"></div>
             </div>
-            <div class="file-preview" id="filePreview"></div>
+            <div class="form-group" style="margin-bottom:0;">
+              <label>Escanea desde tu celular</label>
+              <div id="qrContainer" style="background:#0f1729;padding:12px;border-radius:12px;border:2px solid rgba(37,99,235,0.2);text-align:center;">
+                <img id="qrImg" src="" alt="QR WhatsApp" style="width:150px;height:150px;border-radius:8px;display:block;margin:0 auto 6px;">
+                <div style="font-size:0.7rem;color:#64748b;font-family:'Orbitron',monospace;">ABRE EN TU CELULAR</div>
+              </div>
+            </div>
           </div>
-          <button type="button" id="enviaBtn" class="btn-submit">
+          <button type="button" id="enviaBtn" class="btn-submit" style="margin-top:16px;">
             <i class="fab fa-whatsapp"></i> Enviar y recibir atención
           </button>
         </form>
-      </div>
-      <div id="success-view" style="display:none;text-align:center;padding:20px 0;">
-        <div style="font-size:3rem;color:#25d366;margin-bottom:12px;"><i class="fas fa-check-circle"></i></div>
-        <h2>¡Mensaje enviado!</h2>
-        <p style="color:#94a3b8;margin-bottom:8px;">Se abrirá WhatsApp con tu mensaje.</p>
-        <p style="color:#94a3b8;font-size:0.9rem;margin-bottom:20px;">
-          <i class="fas fa-camera"></i> Si tienes fotos del problema, puedes adjuntarlas de dos formas:
-        </p>
-        <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin-bottom:20px;">
-          <div style="background:rgba(37,99,235,0.08);border-radius:12px;padding:16px;flex:1;min-width:140px;border:1px solid rgba(37,99,235,0.15);">
-            <i class="fas fa-laptop" style="font-size:1.5rem;color:#60a5fa;margin-bottom:8px;display:block;"></i>
-            <strong style="font-size:0.85rem;color:white;">Desde el PC</strong>
-            <p style="font-size:0.75rem;color:#94a3b8;margin-top:4px;">Adjúntalas en la conversación de WhatsApp que se acaba de abrir</p>
-          </div>
-          <div style="background:rgba(37,99,235,0.08);border-radius:12px;padding:16px;flex:1;min-width:140px;border:1px solid rgba(37,99,235,0.15);">
-            <i class="fas fa-mobile-alt" style="font-size:1.5rem;color:#60a5fa;margin-bottom:8px;display:block;"></i>
-            <strong style="font-size:0.85rem;color:white;">Desde tu celular</strong>
-            <p style="font-size:0.75rem;color:#94a3b8;margin-top:4px;">Escanea el código QR y envía las fotos directo desde tu teléfono</p>
-          </div>
-        </div>
-        <div id="qrContainer" style="margin-bottom:20px;display:inline-block;background:#0f1729;padding:16px;border-radius:16px;border:2px solid rgba(37,99,235,0.2);">
-          <div style="font-size:0.75rem;color:#64748b;margin-bottom:8px;font-family:'Orbitron',monospace;">ESCANEA CON TU CELULAR</div>
-          <img id="qrImg" src="" alt="QR WhatsApp" style="width:180px;height:180px;border-radius:8px;display:block;margin:0 auto;">
-        </div>
-        <button onclick="resetModal()" class="btn-submit" style="display:inline-flex;width:auto;padding:10px 28px;background:transparent;border:1px solid rgba(37,99,235,0.3);">
-          <i class="fas fa-arrow-left"></i> Volver al formulario
-        </button>
       </div>
     </div>
   </div>
@@ -1588,15 +1573,35 @@
     }
 
     function resetModal() {
-      const fv = document.getElementById('form-view');
-      const sv = document.getElementById('success-view');
-      if (fv) fv.style.display = '';
-      if (sv) sv.style.display = 'none';
       if (form) form.reset();
       selectedFiles = [];
       if (filePreview) filePreview.innerHTML = '';
       document.querySelectorAll('#whatsappForm [required]').forEach(el => { el.style.borderColor = ''; });
+      document.getElementById('qrImg').src = '';
     }
+
+    function actualizarQR() {
+      const nombre = document.getElementById('nombre').value.trim();
+      const contacto = document.getElementById('input-contacto').value.trim();
+      const problema = document.getElementById('problema').value.trim();
+      if (!nombre || !contacto || !problema) { document.getElementById('qrImg').src = ''; return; }
+      const saludo = getSaludoAutomatico();
+      const waUrl = 'https://wa.me/56961991725?text=' + encodeURIComponent(saludo + ', soy ' + nombre + '. Contacto: +56 9 ' + contacto + '. Consulta: ' + problema + '. Gracias!');
+      document.getElementById('qrImg').src = 'https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=' + encodeURIComponent(waUrl);
+    }
+
+    document.getElementById('nombre').addEventListener('input', actualizarQR);
+    document.getElementById('input-contacto').addEventListener('input', actualizarQR);
+    document.getElementById('problema').addEventListener('input', actualizarQR);
+    document.getElementById('qrImg').src = 'https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://wa.me/56961991725';
+
+    // Filter: nombre solo letras, contacto solo numeros con formato
+    document.getElementById('nombre').addEventListener('input', function() {
+      this.value = this.value.replace(/[^A-Za-zÁÉÍÓÚáéíóúÑñ\s]/g, '');
+    });
+    document.getElementById('input-contacto').addEventListener('input', function() {
+      this.value = this.value.replace(/[^0-9\s]/g, '').replace(/\s/g, '').replace(/(\d{4})(\d{1,4})/, '$1 $2').substring(0, 9);
+    });
 
     function enviarWhatsApp() {
       var saludo = getSaludoAutomatico();
@@ -1605,15 +1610,12 @@
       var problema = document.getElementById('problema').value.replace(/^\s+|\s+$/g, '');
       if (!nombre || !contacto || !problema) { alert('Completa todos los campos'); return; }
 
-      var waUrl = 'https://wa.me/56961991725?text=' + encodeURIComponent(saludo + ', soy ' + nombre + '. Contacto: ' + contacto + '. Consulta: ' + problema + '. Gracias!');
-      document.getElementById('form-view').style.display = 'none';
-      document.getElementById('success-view').style.display = '';
-      document.getElementById('qrImg').src = 'https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=' + encodeURIComponent(waUrl);
+      var waUrl = 'https://wa.me/56961991725?text=' + encodeURIComponent(saludo + ', soy ' + nombre + '. Contacto: +56 9 ' + contacto + '. Consulta: ' + problema + '. Gracias!');
       window.open(waUrl, '_blank');
     }
 
     document.getElementById('enviaBtn').onclick = function() { enviarWhatsApp(); };
-    if (form) { form.onsubmit = function() { enviarWhatsApp(); }; }
+    if (form) { form.onsubmit = function(e) { e.preventDefault(); enviarWhatsApp(); }; }
 
     document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
