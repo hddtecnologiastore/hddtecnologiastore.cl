@@ -1449,15 +1449,26 @@
   </div>
 
   <script>
+    let instagramPosts = [];
+
+    async function fetchInstagramPosts() {
+      try {
+        const resp = await fetch('/api/instagram');
+        if (!resp.ok) throw new Error('Error ' + resp.status);
+        const data = await resp.json();
+        if (data && data.length > 0) {
+          instagramPosts = data;
+          if (carousels.instagram) {
+            carousels.instagram.destroy();
+            carousels.instagram = initCarousel('instagram', instagramPosts);
+          }
+        }
+      } catch (e) {
+        console.log('Instagram no disponible, usando datos mock', e.message);
+      }
+    }
+
     const postsData = {
-      instagram: [
-        { title: 'Reparación Premium', desc: 'Cambio de pantalla y teclado en tiempo récord. Resultado impecable.', likes: 1254, comments: 89, platform: 'ig', color: '#1a2a4a' },
-        { title: 'Dato técnico', desc: '¿Tu PC está lenta? 3 señales de que necesita mantenimiento urgente.', likes: 2341, comments: 156, platform: 'ig', color: '#0a1628' },
-        { title: 'Antes y después', desc: 'Limpieza profunda + cambio de pasta térmica. Resultado de nivel.', likes: 987, comments: 45, platform: 'ig', color: '#1e3a5f' },
-        { title: 'Cliente 100% real', desc: '"Me salvaron los datos. Servicio premium de verdad" — Carlos M.', likes: 1876, comments: 123, platform: 'ig', color: '#0f2744' },
-        { title: 'Nuevo servicio', desc: 'Soporte técnico remoto. Te ayudo sin salir de casa, rápido y seguro.', likes: 3421, comments: 234, platform: 'ig', color: '#2563eb' },
-        { title: 'SSD vs HDD', desc: '¿Cuál elegir para tu PC? Te lo explico fácil y claro. Spoiler: SSD siempre.', likes: 1567, comments: 98, platform: 'ig', color: '#1a2a4a' },
-      ],
       facebook: [
         { title: 'Mantenimiento Premium', desc: 'Alarga la vida de tu PC con mi mantenimiento preventivo especializado.', likes: 543, comments: 67, shares: 34, platform: 'fb', color: '#1d4ed8' },
         { title: 'Tutorial', desc: 'Cómo identificar si tu disco duro está fallando. Paso a paso.', likes: 876, comments: 45, shares: 23, platform: 'fb', color: '#2563eb' },
@@ -1491,16 +1502,23 @@
       }
 
       function render() {
-        track.innerHTML = data.map((post, i) => `
+        track.innerHTML = data.map((post, i) => {
+          const hasImg = post.image;
+          const bg = hasImg ? `url(${post.image}) center/cover no-repeat` : `linear-gradient(135deg, ${post.color}, ${post.color}dd)`;
+          const iconHtml = hasImg ? '' : `<i class="fas ${i % 3 === 0 ? 'fa-microchip' : i % 3 === 1 ? 'fa-memory' : 'fa-cpu'}" style="color:rgba(255,255,255,0.15);font-size:3.5rem;"></i>`;
+          const title = post.title || (post.caption ? post.caption.slice(0, 60) : 'Publicación');
+          const desc = post.desc || post.caption || '';
+          const linkUrl = post.url || `https://www.instagram.com/${post.username || 'hddtecnologiastore'}`;
+          return `
           <div class="carousel-slide">
-            <div class="post-card">
-              <div class="post-media" style="background:linear-gradient(135deg, ${post.color}, ${post.color}dd);">
-                <i class="fas ${i % 3 === 0 ? 'fa-microchip' : i % 3 === 1 ? 'fa-memory' : 'fa-cpu'}" style="color:rgba(255,255,255,0.15);font-size:3.5rem;"></i>
+            <a href="${linkUrl}" target="_blank" class="post-card" style="display:block;text-decoration:none;">
+              <div class="post-media" style="background:${bg};">
+                ${iconHtml}
                 <div class="platform-badge"><i class="fab ${platformIcons[post.platform]}"></i></div>
               </div>
               <div class="post-body">
-                <div class="post-title">${post.title}</div>
-                <div class="post-desc">${post.desc}</div>
+                <div class="post-title">${title}</div>
+                ${desc ? `<div class="post-desc">${desc}</div>` : ''}
               </div>
               <div class="post-footer">
                 <div class="engagement">
@@ -1510,9 +1528,9 @@
                 </div>
                 <i class="fab ${platformIcons[post.platform]}" style="color:#cbd5e1;"></i>
               </div>
-            </div>
+            </a>
           </div>
-        `).join('');
+        `}).join('');
 
         dotsContainer.innerHTML = Array.from({ length: Math.ceil(data.length / slidesPerView) }, (_, i) =>
           `<button class="${i === 0 ? 'active' : ''}" data-index="${i}"></button>`
@@ -1548,11 +1566,16 @@
 
       render();
       goTo(0);
-      return { next, prev, goTo };
+      function destroy() {
+        prevBtn.removeEventListener('click', prev);
+        nextBtn.removeEventListener('click', next);
+      }
+      return { next, prev, goTo, destroy };
     }
 
     const carousels = {};
     Object.keys(postsData).forEach(key => { carousels[key] = initCarousel(key, postsData[key]); });
+    fetchInstagramPosts();
 
     // ---------- REVIEWS CAROUSEL ----------
     (function initReviews() {
