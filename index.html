@@ -1577,23 +1577,26 @@
       selectedFiles = [];
       if (filePreview) filePreview.innerHTML = '';
       document.querySelectorAll('#whatsappForm [required]').forEach(el => { el.style.borderColor = ''; });
-      document.getElementById('qrImg').src = '';
+      document.getElementById('qrImg').src = 'https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://wa.me/56961991725';
     }
 
     function actualizarQR() {
       const nombre = document.getElementById('nombre').value.trim();
       const contacto = document.getElementById('input-contacto').value.trim();
       const problema = document.getElementById('problema').value.trim();
-      if (!nombre || !contacto || !problema) { document.getElementById('qrImg').src = ''; return; }
+      const baseUrl = 'https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=';
+      if (!nombre || !contacto || !problema) {
+        document.getElementById('qrImg').src = baseUrl + encodeURIComponent('https://wa.me/56961991725');
+        return;
+      }
       const saludo = getSaludoAutomatico();
       const waUrl = 'https://wa.me/56961991725?text=' + encodeURIComponent(saludo + ', soy ' + nombre + '. Contacto: +56 9 ' + contacto + '. Consulta: ' + problema + '. Gracias!');
-      document.getElementById('qrImg').src = 'https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=' + encodeURIComponent(waUrl);
+      document.getElementById('qrImg').src = baseUrl + encodeURIComponent(waUrl);
     }
 
     document.getElementById('nombre').addEventListener('input', actualizarQR);
     document.getElementById('input-contacto').addEventListener('input', actualizarQR);
     document.getElementById('problema').addEventListener('input', actualizarQR);
-    document.getElementById('qrImg').src = 'https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://wa.me/56961991725';
 
     // Filter: nombre solo letras, contacto solo numeros con formato
     document.getElementById('nombre').addEventListener('input', function() {
