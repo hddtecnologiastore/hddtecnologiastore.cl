@@ -1294,93 +1294,7 @@
       </div>
 
       <div class="reviews-carousel-wrapper">
-        <div class="reviews-track" id="reviewsTrack">
-
-          <div class="review-card">
-            <div class="review-header">
-              <div class="review-avatar" style="background:#2563eb;">C</div>
-              <div>
-                <strong>Carlos Mendoza</strong>
-                <div class="stars">
-                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                </div>
-              </div>
-            </div>
-            <p class="review-text">"Mi notebook dejó de encender y pensé que era pérdida total. Alejandro lo diagnosticó rápido, cambió la placa madre y quedó como nuevo. Llevo 3 meses sin problemas. 100% recomendado."</p>
-            <div class="review-date"><i class="far fa-calendar-alt"></i> Hace 2 meses</div>
-          </div>
-
-          <div class="review-card">
-            <div class="review-header">
-              <div class="review-avatar" style="background:#1d4ed8;">P</div>
-              <div>
-                <strong>Paola Riquelme</strong>
-                <div class="stars">
-                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                </div>
-              </div>
-            </div>
-            <p class="review-text">"Le hice mantenimiento a mi PC gaming. Limpieza profunda, cambio de pasta térmica y optimización. Quedó volando. Se nota que sabe lo que hace. Súper profesional y puntual."</p>
-            <div class="review-date"><i class="far fa-calendar-alt"></i> Hace 1 semana</div>
-          </div>
-
-          <div class="review-card">
-            <div class="review-header">
-              <div class="review-avatar" style="background:#3b82f6;">M</div>
-              <div>
-                <strong>Miguel Ángel Soto</strong>
-                <div class="stars">
-                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                </div>
-              </div>
-            </div>
-            <p class="review-text">"Perdí todos mis archivos por un disco duro dañado. Alejandro recuperó toda la información en menos de 24 horas. Me salvó la vida laboral. Infinitamente agradecido."</p>
-            <div class="review-date"><i class="far fa-calendar-alt"></i> Hace 3 semanas</div>
-          </div>
-
-          <div class="review-card">
-            <div class="review-header">
-              <div class="review-avatar" style="background:#60a5fa;">J</div>
-              <div>
-                <strong>Javiera Muñoz</strong>
-                <div class="stars">
-                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                </div>
-              </div>
-            </div>
-            <p class="review-text">"Excelente servicio técnico. Me instaló un SSD y más RAM a mi notebook y quedó como nueva. Me explicó todo el proceso, respondió todas mis dudas. Muy recomendable."</p>
-            <div class="review-date"><i class="far fa-calendar-alt"></i> Hace 1 mes</div>
-          </div>
-
-          <div class="review-card">
-            <div class="review-header">
-              <div class="review-avatar" style="background:#1a2a4a;">F</div>
-              <div>
-                <strong>Francisco Lara</strong>
-                <div class="stars">
-                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                </div>
-              </div>
-            </div>
-            <p class="review-text">"Contraté a Alejandro para el soporte TI de mi PYME. Responde rápido, los problemas los soluciona al tiro y sus precios son justos. Llevamos 2 años trabajando con él, cero atados."</p>
-            <div class="review-date"><i class="far fa-calendar-alt"></i> Hace 2 semanas</div>
-          </div>
-
-          <div class="review-card">
-            <div class="review-header">
-              <div class="review-avatar" style="background:#0f2744;">G</div>
-              <div>
-                <strong>Gabriela Espinoza</strong>
-                <div class="stars">
-                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                </div>
-              </div>
-            </div>
-            <p class="review-text">"Mi iMac no daba video. Alejandro diagnosticó el problema exacto, reparó la placa y quedó impecable. Además me dio tips para mantenerlo óptimo. Un verdadero profesional."</p>
-            <div class="review-date"><i class="far fa-calendar-alt"></i> Hace 1 mes</div>
-          </div>
-
-        </div>
+        <div class="reviews-track" id="reviewsTrack"></div>
         <div class="reviews-dots" id="reviewsDots"></div>
       </div>
     </div>
@@ -1557,14 +1471,35 @@
     (function initReviews() {
       const track = document.getElementById('reviewsTrack');
       const dots = document.getElementById('reviewsDots');
-      const cards = track.querySelectorAll('.review-card');
       let idx = 0;
-      let perView = getReviewsPerView();
+      let perView = 3;
+      let cards = [];
 
       function getReviewsPerView() {
         if (window.innerWidth <= 768) return 1;
         if (window.innerWidth <= 1024) return 2;
         return 3;
+      }
+
+      function renderCards(reviews) {
+        cards = reviews.map(r => {
+          const initial = r.author.charAt(0).toUpperCase();
+          const stars = Array(5).fill('<i class="fas fa-star"></i>').join('');
+          const card = document.createElement('div');
+          card.className = 'review-card';
+          card.innerHTML = `
+            <div class="review-header">
+              <div class="review-avatar" style="background:${r.avatarColor};">${initial}</div>
+              <div>
+                <strong>${r.author}</strong>
+                <div class="stars">${stars}</div>
+              </div>
+            </div>
+            <p class="review-text">"${r.text}"</p>
+            <div class="review-date"><i class="far fa-calendar-alt"></i> ${r.date}</div>
+          `;
+          return card;
+        });
       }
 
       function renderDots() {
@@ -1578,9 +1513,18 @@
       }
 
       function goTo(n) {
+        if (!cards.length) return;
         idx = Math.max(0, Math.min(n, Math.ceil(cards.length / perView) - 1));
         track.style.transform = `translateX(-${idx * (100 / perView) * perView}%)`;
         dots.querySelectorAll('button').forEach((b, i) => b.classList.toggle('active', i === idx));
+      }
+
+      function updateCarousel() {
+        track.innerHTML = '';
+        cards.forEach(c => track.appendChild(c));
+        perView = getReviewsPerView();
+        renderDots();
+        goTo(0);
       }
 
       window.addEventListener('resize', () => {
@@ -1589,11 +1533,16 @@
         goTo(0);
       });
 
-      renderDots();
-      goTo(0);
-
-      // Auto-slide cada 5s
-      setInterval(() => { goTo(idx + 1); }, 5000);
+      fetch('/api/reviews')
+        .then(r => r.json())
+        .then(reviews => {
+          renderCards(reviews);
+          updateCarousel();
+          setInterval(() => { goTo(idx + 1); }, 5000);
+        })
+        .catch(() => {
+          track.innerHTML = '<p style="color:#64748b;text-align:center;">No se pudieron cargar las reseñas.</p>';
+        });
     })();
 
     // MODAL
