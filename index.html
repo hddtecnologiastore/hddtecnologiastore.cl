@@ -305,6 +305,72 @@
       box-shadow: 0 0 30px rgba(37,99,235,0.3);
     }
 
+    /* ===== NOTEBOOK CARD ===== */
+    .notebook-card {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      background: linear-gradient(135deg, #0f1729, #1a2a4a);
+      border: 1px solid rgba(37,99,235,0.2);
+      border-radius: 20px;
+      padding: 32px 36px;
+      margin-bottom: -1px;
+      transition: all 0.4s;
+      cursor: pointer;
+    }
+    .notebook-card:hover {
+      border-color: #2563eb;
+      box-shadow: 0 20px 60px rgba(37,99,235,0.15);
+      transform: translateY(-3px);
+    }
+    .notebook-icon {
+      width: 72px; height: 72px;
+      background: linear-gradient(135deg, #2563eb, #60a5fa);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: white;
+      flex-shrink: 0;
+      box-shadow: 0 0 30px rgba(37,99,235,0.15);
+    }
+    .notebook-text { flex: 1; }
+    .notebook-text h3 {
+      font-family: 'Orbitron', monospace;
+      font-size: 1.3rem;
+      color: white;
+      margin-bottom: 6px;
+    }
+    .notebook-text p {
+      color: #94a3b8;
+      font-size: 0.9rem;
+      margin: 0;
+    }
+    .notebook-arrow {
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      color: white;
+      flex-shrink: 0;
+      transition: all 0.4s;
+    }
+    .notebook-card:hover .notebook-arrow {
+      background: #2563eb;
+      border-color: #2563eb;
+      transform: translateX(6px);
+    }
+    @media (max-width: 768px) {
+      .notebook-card { flex-direction: column; text-align: center; padding: 28px 24px; }
+      .notebook-arrow { display: none; }
+      .notebook-text h3 { font-size: 1.1rem; }
+    }
+
     /* ===== SOCIAL BUTTONS ===== */
     .social-section {
       padding: 80px 0;
@@ -1087,6 +1153,22 @@
           <p>Reparación de bisagra, pantalla, cambio de teclado, tapas y demás componentes físicos de notebook.</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- NOTEBOOKS RECONDITIONED -->
+  <section style="padding:0;background:#ffffff;">
+    <div class="container" style="padding-bottom:0;">
+      <a href="https://www.google.com/search?kgmid=/g/11j_t83n88&hl=es-CL&q=HDD+Tecnologia+Store&tbm=shop" target="_blank" style="display:block;text-decoration:none;">
+        <div class="notebook-card">
+          <div class="notebook-icon"><i class="fas fa-laptop"></i></div>
+          <div class="notebook-text">
+            <h3>Notebooks Reacondicionados</h3>
+            <p>Equipos revisados, certificados y con garantía. Calidad comprobada a precios justos.</p>
+          </div>
+          <div class="notebook-arrow"><i class="fas fa-arrow-right"></i></div>
+        </div>
+      </a>
     </div>
   </section>
 
