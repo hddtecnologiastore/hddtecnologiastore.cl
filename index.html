@@ -1347,11 +1347,11 @@
   </footer>
 
   <!-- WHATSAPP FLOATING -->
-  <button class="whatsapp-float" id="whatsappFloatBtn" aria-label="Contáctame por WhatsApp">
+  <a href="https://wa.me/56961991725" target="_blank" class="whatsapp-float" aria-label="Contáctame por WhatsApp">
     <div class="pulse"></div>
     <i class="fab fa-whatsapp"></i>
     <span class="tooltip">Escríbeme ahora</span>
-  </button>
+  </a>
 
   <!-- WHATSAPP MODAL -->
   <div class="modal-overlay" id="whatsappModal">
@@ -1524,7 +1524,6 @@
     function openModal(e) { if (e) e.preventDefault(); if (modal) modal.classList.add('open'); document.body.style.overflow = 'hidden'; resetModal(); }
     function closeModal() { if (modal) modal.classList.remove('open'); document.body.style.overflow = ''; resetModal(); }
 
-    if (floatBtn) floatBtn.addEventListener('click', openModal);
     if (heroBtn) heroBtn.addEventListener('click', openModal);
     if (closeBtn) closeBtn.addEventListener('click', closeModal);
     if (modal) modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
