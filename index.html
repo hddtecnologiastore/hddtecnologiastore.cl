@@ -1543,7 +1543,7 @@
       });
 
       function startReviews(reviews) {
-        localStorage.setItem('reviewsCache', JSON.stringify({ data: reviews, ts: Date.now() }));
+        localStorage.setItem('reviewsCache', JSON.stringify({ v: 2, data: reviews, ts: Date.now() }));
         renderCards(reviews);
         updateCarousel();
         setInterval(() => { goTo(idx + 1); }, 5000);
@@ -1553,7 +1553,7 @@
       if (cached) {
         try {
           const parsed = JSON.parse(cached);
-          if (Date.now() - parsed.ts < 6 * 60 * 60 * 1000) {
+          if (parsed.v === 2 && Date.now() - parsed.ts < 6 * 60 * 60 * 1000) {
             startReviews(parsed.data);
             return;
           }
@@ -1567,10 +1567,11 @@
         .then(data => {
           if (data.reviews && data.reviews.length) {
             const colors = ['#2563eb','#1d4ed8','#3b82f6','#60a5fa','#1a2a4a','#0f2744'];
-            const reviews = data.reviews.map((r, i) => ({
+            const sorted = data.reviews.sort((a, b) => new Date(b.publishTime) - new Date(a.publishTime));
+            const reviews = sorted.map((r, i) => ({
               author: r.authorAttribution?.displayName || 'Cliente',
               rating: r.rating || 5,
-              text: r.text?.text || '',
+              text: (r.originalText?.text || r.text?.text || ''),
               date: r.relativePublishTimeDescription || '',
               avatarColor: colors[i % colors.length],
             }));
