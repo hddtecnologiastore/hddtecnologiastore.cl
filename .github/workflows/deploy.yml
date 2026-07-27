@@ -9,4 +9,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Trigger Netlify build hook
-        run: curl -X POST "https://api.netlify.com/build_hooks/6a67d5a13931cc168e967df6"
+        run: curl -X POST "https://api.netlify.com/build_hooks/6a67d5d9b82de21d4d4335db"

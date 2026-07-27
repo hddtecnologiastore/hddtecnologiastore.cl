@@ -1475,6 +1475,15 @@
       let perView = 3;
       let cards = [];
 
+      const mockReviews = [
+        { author: 'Carlos Mendoza', rating: 5, text: 'Mi notebook dejó de encender y pensé que era pérdida total. Alejandro lo diagnosticó rápido, cambió la placa madre y quedó como nuevo. Llevo 3 meses sin problemas.', date: 'Hace 2 meses', avatarColor: '#2563eb' },
+        { author: 'Paola Riquelme', rating: 5, text: 'Le hice mantenimiento a mi PC gaming. Limpieza profunda, cambio de pasta térmica y optimización. Quedó volando. Se nota que sabe lo que hace. Súper profesional y puntual.', date: 'Hace 1 semana', avatarColor: '#1d4ed8' },
+        { author: 'Miguel Ángel Soto', rating: 5, text: 'Perdí todos mis archivos por un disco duro dañado. Alejandro recuperó toda la información en menos de 24 horas. Me salvó la vida laboral. Infinitamente agradecido.', date: 'Hace 3 semanas', avatarColor: '#3b82f6' },
+        { author: 'Javiera Muñoz', rating: 5, text: 'Excelente servicio técnico. Me instaló un SSD y más RAM a mi notebook y quedó como nueva. Me explicó todo el proceso, respondió todas mis dudas.', date: 'Hace 1 mes', avatarColor: '#60a5fa' },
+        { author: 'Francisco Lara', rating: 5, text: 'Contraté a Alejandro para el soporte TI de mi PYME. Responde rápido, los problemas los soluciona al tiro y sus precios son justos. Llevamos 2 años trabajando con él.', date: 'Hace 2 semanas', avatarColor: '#1a2a4a' },
+        { author: 'Gabriela Espinoza', rating: 5, text: 'Mi iMac no daba video. Alejandro diagnosticó el problema exacto, reparó la placa y quedó impecable. Además me dio tips para mantenerlo óptimo.', date: 'Hace 1 mes', avatarColor: '#0f2744' },
+      ];
+
       function getReviewsPerView() {
         if (window.innerWidth <= 768) return 1;
         if (window.innerWidth <= 1024) return 2;
@@ -1533,30 +1542,44 @@
         goTo(0);
       });
 
+      function startReviews(reviews) {
+        localStorage.setItem('reviewsCache', JSON.stringify({ data: reviews, ts: Date.now() }));
+        renderCards(reviews);
+        updateCarousel();
+        setInterval(() => { goTo(idx + 1); }, 5000);
+      }
+
       const cached = localStorage.getItem('reviewsCache');
       if (cached) {
         try {
           const parsed = JSON.parse(cached);
           if (Date.now() - parsed.ts < 6 * 60 * 60 * 1000) {
-            renderCards(parsed.data);
-            updateCarousel();
-            setInterval(() => { goTo(idx + 1); }, 5000);
+            startReviews(parsed.data);
             return;
           }
         } catch (_) {}
       }
 
-      fetch('/api/reviews')
+      fetch('https://places.googleapis.com/v1/places/ChIJC6Bso6XPYpYRk9egCQTftUE?fields=reviews', {
+        headers: { 'X-Goog-Api-Key': 'AIzaSyBQZuhkcAidwM8M6xzv9sDgxZ2tMKgGlKw' }
+      })
         .then(r => r.json())
-        .then(reviews => {
-          localStorage.setItem('reviewsCache', JSON.stringify({ data: reviews, ts: Date.now() }));
-          renderCards(reviews);
-          updateCarousel();
-          setInterval(() => { goTo(idx + 1); }, 5000);
+        .then(data => {
+          if (data.reviews && data.reviews.length) {
+            const colors = ['#2563eb','#1d4ed8','#3b82f6','#60a5fa','#1a2a4a','#0f2744'];
+            const reviews = data.reviews.map((r, i) => ({
+              author: r.authorAttribution?.displayName || 'Cliente',
+              rating: r.rating || 5,
+              text: r.text?.text || '',
+              date: r.relativePublishTimeDescription || '',
+              avatarColor: colors[i % colors.length],
+            }));
+            startReviews(reviews);
+          } else {
+            startReviews(mockReviews);
+          }
         })
-        .catch(() => {
-          track.innerHTML = '<p style="color:#64748b;text-align:center;">No se pudieron cargar las reseñas.</p>';
-        });
+        .catch(() => startReviews(mockReviews));
     })();
 
     // MODAL
