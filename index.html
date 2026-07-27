@@ -1,0 +1,1601 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <noscript><div style="background:red;color:white;padding:10px;text-align:center;font-size:18px;">⚠ JavaScript DESACTIVADO — Actívalo</div></noscript>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HDD Tecnologia Store — Servicio Técnico de Confianza</title>
+  <meta name="description" content="HDD Tecnologia Store - Servicio Técnico de confianza en Ñuñoa, Santiago. 20 años de experiencia. Reparación de PCs, mantenimiento, redes y soporte técnico.">
+  <meta property="og:title" content="HDD Tecnologia Store — Servicio Técnico de Confianza">
+  <meta property="og:description" content="Ing. Alejandro Casanova - 20 años reparando PCs en Santiago. Servicio técnico profesional con garantía real.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hddtecnologiastore.cl">
+  <meta property="og:image" content="https://hddtecnologiastore.cl/og-image.jpg">
+  <meta name="theme-color" content="#0a1628">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f0f4ff;
+      color: #0a1628;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #0a1628; }
+    ::-webkit-scrollbar-thumb { background: #2563eb; border-radius: 4px; }
+
+    /* ===== PREMIUM BADGE ===== */
+    .premium-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      color: white;
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-family: 'Orbitron', monospace;
+      box-shadow: 0 0 20px rgba(37,99,235,0.3);
+    }
+    .premium-badge i { font-size: 0.7rem; }
+    .premium-badge .fa-crown { color: #fbbf24; }
+
+    /* ===== HEADER ===== */
+    header {
+      background: #0a1628;
+      border-bottom: 1px solid rgba(37,99,235,0.2);
+      padding: 16px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-family: 'Orbitron', monospace;
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      letter-spacing: 0.5px;
+    }
+    .logo .icon {
+      width: 38px; height: 38px;
+      background: linear-gradient(135deg, #2563eb, #60a5fa);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.05rem;
+      color: white;
+      box-shadow: 0 0 20px rgba(37,99,235,0.25);
+    }
+    .logo span, .logo small { color: white; font: inherit; }
+    nav { display: flex; align-items: center; gap: 4px; }
+    nav a {
+      color: #94a3b8;
+      text-decoration: none;
+      padding: 10px 18px;
+      border-radius: 10px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      transition: all 0.3s;
+      border: 1px solid transparent;
+    }
+    nav a:hover {
+      color: white;
+      background: rgba(37,99,235,0.12);
+      border-color: rgba(37,99,235,0.25);
+    }
+    nav a:active {
+      background: rgba(37,99,235,0.2);
+      border-color: rgba(37,99,235,0.4);
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      background: #0a1628;
+      color: white;
+      padding: 100px 0 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at 30% 50%, rgba(37,99,235,0.08) 0%, transparent 60%),
+                  radial-gradient(circle at 70% 50%, rgba(96,165,250,0.05) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .hero .container { position: relative; z-index: 1; }
+    .hero .premium-badge { margin-bottom: 24px; }
+    .hero h1 {
+      font-family: 'Orbitron', monospace;
+      font-size: 2.8rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+    .hero h1 span {
+      background: linear-gradient(135deg, #60a5fa, #2563eb, #1d4ed8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero p {
+      font-size: 1.15rem;
+      color: #94a3b8;
+      max-width: 680px;
+      margin: 0 auto 32px;
+      line-height: 1.7;
+    }
+    .hero .btn-premium .fa-whatsapp { color: #25d366; }
+    .hero .btn-premium {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      color: white;
+      padding: 18px 44px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: all 0.3s;
+      border: 1px solid rgba(96,165,250,0.3);
+      box-shadow: 0 0 30px rgba(37,99,235,0.2);
+    }
+    .hero .btn-premium:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 50px rgba(37,99,235,0.4);
+      border-color: #60a5fa;
+    }
+
+    /* ===== SECTION TITLE ===== */
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    .section-title .premium-badge { margin-bottom: 16px; }
+    .section-title h2 {
+      font-family: 'Orbitron', monospace;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: #0a1628;
+    }
+    .section-title p { color: #64748b; max-width: 600px; margin: 0 auto; font-size: 1rem; }
+    .section-title .line {
+      width: 60px; height: 3px;
+      background: linear-gradient(90deg, #2563eb, #60a5fa);
+      margin: 16px auto 0;
+      border-radius: 2px;
+    }
+
+    /* ===== SERVICES ===== */
+    .services-section {
+      padding: 80px 0;
+      background: #ffffff;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    .service-card {
+      background: #f8faff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 36px 28px;
+      text-align: center;
+      transition: all 0.4s;
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 3px;
+      background: linear-gradient(90deg, #2563eb, #60a5fa);
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+    .service-card:hover { transform: translateY(-6px); border-color: #2563eb; box-shadow: 0 20px 60px rgba(37,99,235,0.1); }
+    .service-card:hover::before { opacity: 1; }
+    .service-card .icon {
+      width: 64px; height: 64px;
+      background: linear-gradient(135deg, #2563eb, #60a5fa);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 1.5rem;
+      color: white;
+    }
+    .service-card h4 { font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; color: #0a1628; }
+    .service-card p { color: #64748b; font-size: 0.9rem; line-height: 1.6; }
+
+    /* ===== SOCIAL CAROUSEL ===== */
+    .social-section {
+      padding: 80px 0;
+      background: #f0f4ff;
+    }
+    .carousel-wrapper {
+      position: relative;
+      overflow: hidden;
+    }
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      gap: 24px;
+    }
+    .carousel-slide {
+      min-width: calc(33.333% - 16px);
+      flex-shrink: 0;
+    }
+    .post-card {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      overflow: hidden;
+      transition: all 0.4s;
+    }
+    .post-card:hover {
+      transform: translateY(-4px);
+      border-color: #2563eb;
+      box-shadow: 0 20px 50px rgba(37,99,235,0.1);
+    }
+    .post-card .post-media {
+      width: 100%; height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .post-card .post-media .platform-badge {
+      position: absolute;
+      top: 12px; right: 12px;
+      background: rgba(10,22,40,0.8);
+      backdrop-filter: blur(8px);
+      color: white;
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .post-card .post-body { padding: 20px; }
+    .post-card .post-body .post-title {
+      font-weight: 700;
+      margin-bottom: 8px;
+      font-size: 1rem;
+      color: #0a1628;
+    }
+    .post-card .post-body .post-desc {
+      font-size: 0.85rem;
+      color: #64748b;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .post-card .post-footer {
+      padding: 12px 20px;
+      border-top: 1px solid #e2e8f0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      color: #94a3b8;
+    }
+    .post-card .post-footer .engagement i { margin-right: 5px; }
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px; height: 44px;
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      color: #0a1628;
+      z-index: 10;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .carousel-btn:hover { background: #2563eb; color: white; border-color: #2563eb; box-shadow: 0 0 20px rgba(37,99,235,0.2); }
+    .carousel-btn.prev { left: -6px; }
+    .carousel-btn.next { right: -6px; }
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 28px;
+    }
+    .carousel-dots button {
+      width: 10px; height: 10px;
+      border: none;
+      border-radius: 50%;
+      background: #cbd5e1;
+      cursor: pointer;
+      transition: all 0.3s;
+      padding: 0;
+    }
+    .carousel-dots button.active {
+      background: linear-gradient(135deg, #2563eb, #60a5fa);
+      width: 32px;
+      border-radius: 5px;
+    }
+    .platform-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+    .platform-header .icon {
+      width: 44px; height: 44px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      color: white;
+    }
+    .platform-header .icon.ig { background: linear-gradient(135deg, #2563eb, #60a5fa); }
+    .platform-header .icon.fb { background: linear-gradient(135deg, #1d4ed8, #3b82f6); }
+    .platform-header .icon.tt { background: linear-gradient(135deg, #0a1628, #1e293b); }
+    .platform-header h3 { font-family: 'Orbitron', monospace; font-size: 1.3rem; font-weight: 600; color: #0a1628; }
+    .platform-header a {
+      margin-left: auto;
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.85rem;
+      transition: color 0.3s;
+    }
+    .platform-header a:hover { color: #1d4ed8; }
+
+    /* ===== STATS / ABOUT ===== */
+    .about-section {
+      padding: 80px 0;
+      background: #0a1628;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+    .about-section::before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(37,99,235,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    .about-text .premium-badge { margin-bottom: 20px; }
+    .about-text h2 {
+      font-family: 'Orbitron', monospace;
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+    .about-text .subtitle {
+      font-size: 1rem;
+      color: #60a5fa;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+    .about-text p { color: #94a3b8; margin-bottom: 16px; font-size: 0.95rem; line-height: 1.7; }
+    .about-text .stats {
+      display: flex;
+      gap: 32px;
+      margin-top: 32px;
+    }
+    .about-text .stats > div {
+      text-align: center;
+      padding: 20px 24px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(37,99,235,0.2);
+      border-radius: 12px;
+      flex: 1;
+    }
+    .about-text .stats strong {
+      display: block;
+      font-family: 'Orbitron', monospace;
+      font-size: 2rem;
+      background: linear-gradient(135deg, #60a5fa, #2563eb);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 4px;
+    }
+    .about-text .stats span { font-size: 0.8rem; color: #94a3b8; }
+    .about-text .warranty-note {
+      margin-top: 24px;
+      padding: 16px 20px;
+      background: rgba(37,99,235,0.08);
+      border: 1px solid rgba(37,99,235,0.2);
+      border-radius: 12px;
+      font-size: 0.85rem;
+      color: #94a3b8;
+    }
+    .about-text .warranty-note i { color: #60a5fa; margin-right: 8px; }
+    .about-image {
+      background: linear-gradient(135deg, #0f1729, #1a2a4a);
+      border: 1px solid rgba(37,99,235,0.2);
+      border-radius: 20px;
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+    .about-image::before {
+      content: '';
+      position: absolute;
+      width: 200px; height: 200px;
+      background: radial-gradient(circle, rgba(37,99,235,0.15) 0%, transparent 70%);
+      top: -50px; right: -50px;
+    }
+    .about-image .avatar {
+      width: 100px; height: 100px;
+      background: linear-gradient(135deg, #2563eb, #60a5fa);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      margin-bottom: 16px;
+      border: 3px solid rgba(255,255,255,0.1);
+    }
+    .about-image h4 { font-family: 'Orbitron', monospace; font-size: 1.1rem; }
+    .about-image p { color: #94a3b8; font-size: 0.85rem; }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #0a1628;
+      color: #94a3b8;
+      padding: 60px 0 30px;
+      border-top: 1px solid rgba(37,99,235,0.15);
+    }
+    footer .container {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+    }
+    footer h4 {
+      color: white;
+      font-family: 'Orbitron', monospace;
+      font-size: 0.85rem;
+      margin-bottom: 16px;
+      letter-spacing: 1px;
+    }
+    footer a {
+      display: block;
+      color: #94a3b8;
+      text-decoration: none;
+      margin-bottom: 8px;
+      font-size: 0.9rem;
+      transition: color 0.3s;
+    }
+    footer a:hover { color: #60a5fa; }
+    footer .social-links { display: flex; gap: 10px; margin-top: 16px; }
+    footer .social-links a {
+      width: 38px; height: 38px;
+      border: 1px solid rgba(37,99,235,0.2);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.3s;
+      margin-bottom: 0;
+    }
+    footer .social-links a:hover { border-color: #2563eb; background: #2563eb; color: white; }
+    footer .bottom {
+      grid-column: 1 / -1;
+      border-top: 1px solid rgba(37,99,235,0.1);
+      padding-top: 20px;
+      text-align: center;
+      font-size: 0.8rem;
+      margin-top: 20px;
+    }
+
+    /* ===== WHATSAPP FLOATING ===== */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 60px; height: 60px;
+      background: #25D366;
+      border: none;
+      border-radius: 16px;
+      color: white;
+      font-size: 1.6rem;
+      cursor: pointer;
+      box-shadow: 0 8px 30px rgba(37,211,102,0.4);
+      z-index: 999;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .whatsapp-float .fa-whatsapp { color: white; }
+    .whatsapp-float:hover {
+      transform: scale(1.1) rotate(-5deg);
+      box-shadow: 0 12px 40px rgba(37,211,102,0.5);
+    }
+    .whatsapp-float .tooltip {
+      position: absolute;
+      right: 72px;
+      background: #0a1628;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 10px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      white-space: nowrap;
+      border: 1px solid rgba(37,99,235,0.3);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+    }
+    .whatsapp-float:hover .tooltip { opacity: 1; }
+    .whatsapp-float .pulse {
+      position: absolute;
+      width: 100%; height: 100%;
+      border-radius: 16px;
+      border: 2px solid #25D366;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 1; }
+      100% { transform: scale(1.4); opacity: 0; }
+    }
+
+    /* ===== WHATSAPP MODAL ===== */
+    .modal-overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(10,22,40,0.7);
+      backdrop-filter: blur(12px);
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .modal-overlay.open { display: flex; }
+    .modal {
+      background: #0a1628;
+      border: 1px solid rgba(37,99,235,0.3);
+      border-radius: 24px;
+      padding: 40px;
+      width: 100%;
+      max-width: 480px;
+      animation: modalIn 0.3s ease;
+      position: relative;
+    }
+    @keyframes modalIn {
+      from { transform: scale(0.9) translateY(20px); opacity: 0; }
+      to { transform: scale(1) translateY(0); opacity: 1; }
+    }
+    .modal .close-btn {
+      position: absolute;
+      top: 16px; right: 16px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      width: 36px; height: 36px;
+      border-radius: 10px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      color: #94a3b8;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .modal .close-btn:hover { background: rgba(255,255,255,0.1); color: white; }
+    .modal h2 {
+      font-family: 'Orbitron', monospace;
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+      color: white;
+    }
+    .modal p { color: #94a3b8; font-size: 0.9rem; margin-bottom: 24px; }
+    .modal .whatsapp-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 24px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(37,99,235,0.2);
+    }
+    .modal .whatsapp-header .wa-icon {
+      width: 48px; height: 48px;
+      background: linear-gradient(135deg, #2563eb, #60a5fa);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.4rem;
+    }
+    .modal .whatsapp-header div h4 { color: white; font-size: 1rem; }
+    .modal .whatsapp-header div small { color: #64748b; font-size: 0.8rem; }
+    .form-group { margin-bottom: 16px; }
+    .form-group label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: #cbd5e1;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid rgba(37,99,235,0.2);
+      border-radius: 12px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      transition: all 0.3s;
+      outline: none;
+      background: rgba(255,255,255,0.03);
+      color: white;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: #2563eb;
+      background: rgba(37,99,235,0.05);
+      box-shadow: 0 0 20px rgba(37,99,235,0.1);
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: #475569; }
+    .form-group select option { background: #0a1628; color: white; }
+    .form-group textarea { resize: vertical; min-height: 80px; }
+    .modal .btn-submit {
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: all 0.3s;
+      font-family: 'Inter', sans-serif;
+      border: 1px solid rgba(96,165,250,0.2);
+    }
+    .modal .btn-submit .fa-whatsapp { color: #25d366; }
+    .modal .btn-submit:hover { background: linear-gradient(135deg, #1d4ed8, #2563eb); box-shadow: 0 0 30px rgba(37,99,235,0.3); }
+
+    /* ===== FILE UPLOAD ===== */
+    .file-upload {
+      border: 2px dashed rgba(37,99,235,0.3);
+      border-radius: 12px;
+      padding: 28px 20px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s;
+      background: rgba(37,99,235,0.03);
+    }
+    .file-upload:hover,
+    .file-upload.dragover {
+      border-color: #60a5fa;
+      background: rgba(37,99,235,0.08);
+    }
+    .file-upload i {
+      font-size: 2rem;
+      color: #60a5fa;
+      margin-bottom: 8px;
+    }
+    .file-upload p { font-size: 0.85rem; color: #94a3b8; margin: 0; }
+    .file-upload p span { color: #60a5fa; text-decoration: underline; }
+    .file-upload small { font-size: 0.7rem; color: #64748b; display: block; margin-top: 6px; }
+    .file-preview {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .file-preview .thumb {
+      width: 60px;
+      height: 60px;
+      border-radius: 8px;
+      object-fit: cover;
+      border: 2px solid rgba(37,99,235,0.2);
+    }
+    .file-preview .file-count {
+      font-size: 0.75rem;
+      color: #94a3b8;
+      padding: 8px 12px;
+      background: rgba(37,99,235,0.08);
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* ===== GOOGLE REVIEWS ===== */
+    .reviews-section {
+      padding: 80px 0;
+      background: #ffffff;
+    }
+    .google-card {
+      background: #f8faff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 24px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 40px;
+      transition: border-color 0.3s;
+    }
+    .google-card:hover { border-color: #2563eb; }
+    .google-card-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex: 1;
+    }
+    .google-logo {
+      width: 52px; height: 52px;
+      background: linear-gradient(135deg, #4285F4, #34A853, #FBBC05, #EA4335);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      color: white;
+      flex-shrink: 0;
+    }
+    .google-card-header h4 {
+      font-family: 'Orbitron', monospace;
+      font-size: 1rem;
+      color: #0a1628;
+    }
+    .google-card-header .stars {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      margin-top: 2px;
+      font-size: 0.85rem;
+    }
+    .google-card-header .stars i { color: #f59e0b; }
+    .google-card-header .stars span {
+      color: #64748b;
+      font-weight: 600;
+      margin-left: 6px;
+    }
+    .google-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      background: #0a1628;
+      color: white;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: all 0.3s;
+      flex-shrink: 0;
+    }
+    .google-btn:hover { background: #2563eb; }
+    .reviews-carousel-wrapper {
+      position: relative;
+      overflow: hidden;
+    }
+    .reviews-track {
+      display: flex;
+      gap: 24px;
+      transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .review-card {
+      min-width: calc(33.333% - 16px);
+      background: #f8faff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 28px;
+      transition: all 0.3s;
+    }
+    .review-card:hover {
+      border-color: #2563eb;
+      box-shadow: 0 10px 30px rgba(37,99,235,0.08);
+    }
+    .review-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .review-avatar {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1rem;
+      color: white;
+      flex-shrink: 0;
+    }
+    .review-header strong { font-size: 0.9rem; color: #0a1628; display: block; }
+    .review-header .stars { display: flex; gap: 2px; font-size: 0.75rem; margin-top: 2px; }
+    .review-header .stars i { color: #f59e0b; }
+    .review-text {
+      font-size: 0.9rem;
+      color: #475569;
+      line-height: 1.7;
+      font-style: italic;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .review-date {
+      margin-top: 14px;
+      font-size: 0.8rem;
+      color: #94a3b8;
+    }
+    .review-date i { margin-right: 5px; }
+    .reviews-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 28px;
+    }
+    .reviews-dots button {
+      width: 10px; height: 10px;
+      border: none;
+      border-radius: 50%;
+      background: #cbd5e1;
+      cursor: pointer;
+      transition: all 0.3s;
+      padding: 0;
+    }
+    .reviews-dots button.active {
+      background: linear-gradient(135deg, #2563eb, #60a5fa);
+      width: 32px;
+      border-radius: 5px;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 968px) {
+      .about-grid { grid-template-columns: 1fr; gap: 30px; }
+      footer .container { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 1.8rem; }
+      .carousel-slide { min-width: calc(100% - 0px); }
+      .review-card { min-width: calc(100% - 0px); }
+      nav a { margin-left: 0; font-size: 0.75rem; padding: 6px 10px; }
+      header .container { flex-direction: column; gap: 12px; }
+      footer .container { grid-template-columns: 1fr; }
+      .about-text .stats { flex-direction: column; gap: 12px; }
+      .about-text .stats > div { flex: none; }
+      .section-title h2 { font-size: 1.5rem; }
+      .google-card { flex-direction: column; gap: 16px; align-items: stretch; }
+      .google-btn { justify-content: center; }
+    }
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .carousel-slide { min-width: calc(50% - 12px); }
+      .review-card { min-width: calc(50% - 12px); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <div class="logo">
+        <div class="icon"><i class="fas fa-microchip"></i></div>
+          HDD TECNOLOGIA STORE
+      </div>
+      <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#contenido">Contenido</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="container">
+      <div class="premium-badge"><i class="fas fa-crown"></i> Servicio Premium</div>
+      <h1>Servicio Técnico<br><span>de Confianza</span></h1>
+      <p>Ing. Alejandro Casanova — 20 años de experiencia en reparación, mantenimiento y soluciones TI para hogares y empresas en Ñuñoa y todo Santiago.</p>
+      <a href="https://wa.me/56961991725" class="btn-premium" id="heroWhatsappBtn">
+        <i class="fab fa-whatsapp"></i> Solicitar Atención
+      </a>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services-section" id="servicios">
+    <div class="container">
+      <div class="section-title">
+        <h2>Soluciones <span style="color:#2563eb;">Tecnológicas</span></h2>
+        <p>Cada servicio está respaldado por 20 años de experiencia y un compromiso real con la calidad.</p>
+        <div class="line"></div>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="icon"><i class="fas fa-laptop"></i></div>
+          <h4>Reparación de PCs</h4>
+          <p>Diagnóstico y reparación de escritorio y laptops de todas las marcas con garantía real.</p>
+        </div>
+        <div class="service-card">
+          <div class="icon"><i class="fas fa-sync-alt"></i></div>
+          <h4>Mantenimiento</h4>
+          <p>Limpieza profunda, cambio de pasta térmica y optimización completa del rendimiento.</p>
+        </div>
+        <div class="service-card">
+          <div class="icon"><i class="fas fa-network-wired"></i></div>
+          <h4>Redes & Cableado</h4>
+          <p>Instalación y configuración de redes, wifi mesh, cableado estructurado y servidores.</p>
+        </div>
+        <div class="service-card">
+          <div class="icon"><i class="fas fa-shield-alt"></i></div>
+          <h4>Soporte Técnico</h4>
+          <p>Atención remota y presencial con respuesta rápida y solución efectiva garantizada.</p>
+        </div>
+        <div class="service-card">
+          <div class="icon"><i class="fas fa-hdd"></i></div>
+          <h4>Actualizaciones</h4>
+          <p>Upgrade de componentes: SSD, RAM, discos duros y tarjetas gráficas para gaming y trabajo.</p>
+        </div>
+        <div class="service-card">
+          <div class="icon"><i class="fas fa-database"></i></div>
+          <h4>Recuperación de Datos</h4>
+          <p>Recuperación de información de discos duros dañados, formateados o con fallas lógicas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL CONTENT -->
+  <section class="social-section" id="contenido">
+    <div class="container">
+      <div class="section-title">
+        <h2>Mira Nuestro <span style="color:#2563eb;">Trabajo</span></h2>
+        <p>Síguenos en redes sociales y mira el respaldo de más de 1.350 clientes satisfechos.</p>
+        <div class="line"></div>
+      </div>
+
+      <div class="platform-header">
+        <div class="icon ig"><i class="fab fa-instagram"></i></div>
+        <h3>Instagram</h3>
+        <a href="https://www.instagram.com/hddtecnologiastore/" target="_blank">@hddtecnologiastore <i class="fas fa-external-link-alt"></i></a>
+      </div>
+      <div class="carousel-wrapper" data-carousel="instagram">
+        <button class="carousel-btn prev"><i class="fas fa-chevron-left"></i></button>
+        <div class="carousel-track" id="carousel-instagram"></div>
+        <button class="carousel-btn next"><i class="fas fa-chevron-right"></i></button>
+      </div>
+      <div class="carousel-dots" id="dots-instagram"></div>
+
+      <div class="platform-header" style="margin-top:50px;">
+        <div class="icon fb"><i class="fab fa-facebook-f"></i></div>
+        <h3>Facebook</h3>
+        <a href="https://www.facebook.com/hddtecnologiastore" target="_blank">/HDDTecnologia <i class="fas fa-external-link-alt"></i></a>
+      </div>
+      <div class="carousel-wrapper" data-carousel="facebook">
+        <button class="carousel-btn prev"><i class="fas fa-chevron-left"></i></button>
+        <div class="carousel-track" id="carousel-facebook"></div>
+        <button class="carousel-btn next"><i class="fas fa-chevron-right"></i></button>
+      </div>
+      <div class="carousel-dots" id="dots-facebook"></div>
+
+      <div class="platform-header" style="margin-top:50px;">
+        <div class="icon tt"><i class="fab fa-tiktok"></i></div>
+        <h3>TikTok</h3>
+        <a href="https://www.tiktok.com/@hddtecnologiastore" target="_blank">@hddtecnologiastore <i class="fas fa-external-link-alt"></i></a>
+      </div>
+      <div class="carousel-wrapper" data-carousel="tiktok">
+        <button class="carousel-btn prev"><i class="fas fa-chevron-left"></i></button>
+        <div class="carousel-track" id="carousel-tiktok"></div>
+        <button class="carousel-btn next"><i class="fas fa-chevron-right"></i></button>
+      </div>
+      <div class="carousel-dots" id="dots-tiktok"></div>
+
+    </div>
+  </section>
+
+  <!-- ABOUT / STATS -->
+  <section class="about-section" id="nosotros">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text">
+          <h2>Ing. Alejandro Casanova</h2>
+          <div class="subtitle">Dueño & Técnico Principal — 20 Años de Experiencia</div>
+          <p>Soy Ingeniero en Sistemas con dos décadas dedicadas a la reparación, mantenimiento y soporte técnico. Fundé HDD Tecnologia Store para ofrecer un servicio honesto, con garantía real y atención personalizada.</p>
+          <p>He atendido personalmente a más de <strong>1.350 clientes</strong> en todo Santiago. La calidad de mi trabajo habla por sí sola: de todos esos casos, solo <strong>5 han requerido garantía</strong> — y las 5 fueron resueltas en <strong>menos de 48 horas</strong>.</p>
+          <p>Atención, servicio y solución. Eso es lo que ofrezco. Nada menos.</p>
+          <div class="stats">
+            <div>
+              <strong>1.350+</strong>
+              <span>Clientes atendidos</span>
+            </div>
+            <div>
+              <strong>20</strong>
+              <span>Años de experiencia</span>
+            </div>
+            <div>
+              <strong>99%</strong>
+              <span>Satisfacción</span>
+            </div>
+          </div>
+          <div class="warranty-note">
+            <i class="fas fa-shield-alt"></i> De 1.350+ casos atendidos, solo 5 garantías. Las 5 resueltas en menos de 48 horas.
+          </div>
+        </div>
+        <div class="about-image">
+          <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:16px;">
+            <div style="width:60px;height:60px;background:linear-gradient(135deg,#2563eb,#60a5fa);border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;color:white;"><i class="fas fa-microchip"></i></div>
+            <div style="text-align:left;">
+              <div style="font-family:'Orbitron',monospace;color:white;font-size:1.3rem;font-weight:700;">HDD <span style="color:#60a5fa;">Tecnologia</span></div>
+              <div style="font-size:0.7rem;color:#64748b;letter-spacing:4px;font-weight:300;">STORE</div>
+            </div>
+          </div>
+          <h4>Alejandro Casanova</h4>
+          <p>Ing. en Sistemas · Técnico Principal</p>
+          <div style="margin-top:20px;display:flex;gap:12px;">
+            <div style="text-align:center;">
+              <div style="color:#60a5fa;font-family:'Orbitron',monospace;font-size:1.2rem;">20</div>
+              <div style="font-size:0.7rem;color:#64748b;">AÑOS</div>
+            </div>
+            <div style="width:1px;background:rgba(37,99,235,0.2);"></div>
+            <div style="text-align:center;">
+              <div style="color:#60a5fa;font-family:'Orbitron',monospace;font-size:1.2rem;">1.350+</div>
+              <div style="font-size:0.7rem;color:#64748b;">CLIENTES</div>
+            </div>
+            <div style="width:1px;background:rgba(37,99,235,0.2);"></div>
+            <div style="text-align:center;">
+              <div style="color:#60a5fa;font-family:'Orbitron',monospace;font-size:1.2rem;">99%</div>
+              <div style="font-size:0.7rem;color:#64748b;">ÉXITO</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GOOGLE REVIEWS -->
+  <section class="reviews-section" id="reseñas">
+    <div class="container">
+      <div class="section-title">
+        <h2>Lo Que Dicen <span style="color:#2563eb;">Mis Clientes</span></h2>
+        <p>Opiniones reales de personas que ya confiaron en mi servicio.</p>
+        <div class="line"></div>
+      </div>
+
+      <div class="google-card">
+        <div class="google-card-header">
+          <div class="google-logo">
+            <i class="fab fa-google"></i>
+          </div>
+          <div>
+            <h4>HDD Tecnologia Store</h4>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span>5.0</span>
+            </div>
+          </div>
+          <a href="https://share.google/je4doKWyo9yICpVQ1" target="_blank" class="google-btn" id="googleReviewBtn">
+            <i class="fab fa-google"></i> Ver en Google
+          </a>
+        </div>
+      </div>
+
+      <div class="reviews-carousel-wrapper">
+        <div class="reviews-track" id="reviewsTrack">
+
+          <div class="review-card">
+            <div class="review-header">
+              <div class="review-avatar" style="background:#2563eb;">C</div>
+              <div>
+                <strong>Carlos Mendoza</strong>
+                <div class="stars">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+            <p class="review-text">"Mi notebook dejó de encender y pensé que era pérdida total. Alejandro lo diagnosticó rápido, cambió la placa madre y quedó como nuevo. Llevo 3 meses sin problemas. 100% recomendado."</p>
+            <div class="review-date"><i class="far fa-calendar-alt"></i> Hace 2 meses</div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-header">
+              <div class="review-avatar" style="background:#1d4ed8;">P</div>
+              <div>
+                <strong>Paola Riquelme</strong>
+                <div class="stars">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+            <p class="review-text">"Le hice mantenimiento a mi PC gaming. Limpieza profunda, cambio de pasta térmica y optimización. Quedó volando. Se nota que sabe lo que hace. Súper profesional y puntual."</p>
+            <div class="review-date"><i class="far fa-calendar-alt"></i> Hace 1 semana</div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-header">
+              <div class="review-avatar" style="background:#3b82f6;">M</div>
+              <div>
+                <strong>Miguel Ángel Soto</strong>
+                <div class="stars">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+            <p class="review-text">"Perdí todos mis archivos por un disco duro dañado. Alejandro recuperó toda la información en menos de 24 horas. Me salvó la vida laboral. Infinitamente agradecido."</p>
+            <div class="review-date"><i class="far fa-calendar-alt"></i> Hace 3 semanas</div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-header">
+              <div class="review-avatar" style="background:#60a5fa;">J</div>
+              <div>
+                <strong>Javiera Muñoz</strong>
+                <div class="stars">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+            <p class="review-text">"Excelente servicio técnico. Me instaló un SSD y más RAM a mi notebook y quedó como nueva. Me explicó todo el proceso, respondió todas mis dudas. Muy recomendable."</p>
+            <div class="review-date"><i class="far fa-calendar-alt"></i> Hace 1 mes</div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-header">
+              <div class="review-avatar" style="background:#1a2a4a;">F</div>
+              <div>
+                <strong>Francisco Lara</strong>
+                <div class="stars">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+            <p class="review-text">"Contraté a Alejandro para el soporte TI de mi PYME. Responde rápido, los problemas los soluciona al tiro y sus precios son justos. Llevamos 2 años trabajando con él, cero atados."</p>
+            <div class="review-date"><i class="far fa-calendar-alt"></i> Hace 2 semanas</div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-header">
+              <div class="review-avatar" style="background:#0f2744;">G</div>
+              <div>
+                <strong>Gabriela Espinoza</strong>
+                <div class="stars">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+            <p class="review-text">"Mi iMac no daba video. Alejandro diagnosticó el problema exacto, reparó la placa y quedó impecable. Además me dio tips para mantenerlo óptimo. Un verdadero profesional."</p>
+            <div class="review-date"><i class="far fa-calendar-alt"></i> Hace 1 mes</div>
+          </div>
+
+        </div>
+        <div class="reviews-dots" id="reviewsDots"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="contacto">
+    <div class="container">
+      <div>
+        <div class="logo" style="font-size:1.1rem; margin-bottom:16px;">
+          <div class="icon" style="width:32px;height:32px;font-size:0.85rem;display:inline-flex;margin-right:8px;vertical-align:middle;"><i class="fas fa-microchip"></i></div>
+        HDD TECNOLOGIA STORE
+        </div>
+        <p style="font-size:0.9rem;line-height:1.7;">Servicio técnico con garantía real y atención personalizada. Ing. Alejandro Casanova — 20 años de experiencia.</p>
+        <div class="social-links">
+          <a href="https://www.instagram.com/hddtecnologiastore/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/hddtecnologiastore" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.tiktok.com/@hddtecnologiastore" target="_blank"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4>Navegación</h4>
+        <a href="#inicio">Inicio</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#contenido">Contenido</a>
+        <a href="#nosotros">Nosotros</a>
+      </div>
+      <div>
+        <h4>Servicios</h4>
+        <a href="#">Reparación de PCs</a>
+        <a href="#">Mantenimiento</a>
+        <a href="#">Redes</a>
+        <a href="#">Soporte Técnico</a>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <a href="tel:+56961991725"><i class="fas fa-phone"></i> +56 9 6199 1725</a>
+        <a href="https://maps.google.com/?q=Av.+Rodrigo+de+Araya+3076,+Ñuñoa,+Santiago" target="_blank"><i class="fas fa-map-marker-alt"></i> Av. Rodrigo de Araya 3076, Ñuñoa</a>
+        <a href="mailto:casanovadiaz56@gmail.com"><i class="fas fa-envelope"></i> casanovadiaz56@gmail.com</a>
+        <a href="https://wa.me/56961991725" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp directo</a>
+      </div>
+      <div class="bottom">
+
+        &copy; 2026 HDD Tecnologia Store — Ing. Alejandro Casanova. Todos los derechos reservados.
+      </div>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP FLOATING -->
+  <button class="whatsapp-float" id="whatsappFloatBtn" aria-label="Contáctame por WhatsApp">
+    <div class="pulse"></div>
+    <i class="fab fa-whatsapp"></i>
+    <span class="tooltip">Escríbeme ahora</span>
+  </button>
+
+  <!-- WHATSAPP MODAL -->
+  <div class="modal-overlay" id="whatsappModal">
+    <div class="modal">
+      <button class="close-btn" id="closeModalBtn">&times;</button>
+      <div class="whatsapp-header">
+        <div class="wa-icon"><i class="fab fa-whatsapp"></i></div>
+        <div>
+          <h4>WhatsApp</h4>
+          <small>Ing. Alejandro Casanova te atiende personalmente</small>
+        </div>
+      </div>
+      <div id="form-view">
+        <h2>Solicita tu servicio</h2>
+        <p>Completa el formulario y te responderé directamente por WhatsApp.</p>
+        <form id="whatsappForm">
+          <div class="form-group">
+            <label for="nombre">Nombre completo</label>
+            <input type="text" id="nombre" placeholder="Ej: Juan Pérez" required>
+          </div>
+          <div class="form-group">
+            <label for="input-contacto">Contacto (teléfono o email)</label>
+            <input type="text" id="input-contacto" placeholder="Ej: +56 9 1234 5678" required>
+          </div>
+          <div class="form-group">
+            <label for="problema">¿En qué puedo ayudarte?</label>
+            <textarea id="problema" placeholder="Describe tu consulta o el problema de tu equipo..." required></textarea>
+          </div>
+          <div class="form-group">
+            <label>Adjuntar fotos del problema (opcional)</label>
+            <div class="file-upload" id="fileDropZone">
+              <i class="fas fa-cloud-upload-alt"></i>
+              <p>Arrastra tus fotos aquí o <span>haz clic para seleccionar</span></p>
+              <small>JPG, PNG — Máx 5MB cada una</small>
+              <input type="file" id="fileInput" accept="image/*" multiple style="display:none">
+            </div>
+            <div class="file-preview" id="filePreview"></div>
+          </div>
+          <button type="button" id="enviaBtn" class="btn-submit">
+            <i class="fab fa-whatsapp"></i> Enviar y recibir atención
+          </button>
+        </form>
+      </div>
+      <div id="success-view" style="display:none;text-align:center;padding:20px 0;">
+        <div style="font-size:3rem;color:#25d366;margin-bottom:12px;"><i class="fas fa-check-circle"></i></div>
+        <h2>¡Mensaje enviado!</h2>
+        <p style="color:#94a3b8;margin-bottom:8px;">Se abrirá WhatsApp con tu mensaje.</p>
+        <p style="color:#94a3b8;font-size:0.9rem;margin-bottom:20px;">
+          <i class="fas fa-camera"></i> Si tienes fotos del problema, puedes adjuntarlas de dos formas:
+        </p>
+        <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin-bottom:20px;">
+          <div style="background:rgba(37,99,235,0.08);border-radius:12px;padding:16px;flex:1;min-width:140px;border:1px solid rgba(37,99,235,0.15);">
+            <i class="fas fa-laptop" style="font-size:1.5rem;color:#60a5fa;margin-bottom:8px;display:block;"></i>
+            <strong style="font-size:0.85rem;color:white;">Desde el PC</strong>
+            <p style="font-size:0.75rem;color:#94a3b8;margin-top:4px;">Adjúntalas en la conversación de WhatsApp que se acaba de abrir</p>
+          </div>
+          <div style="background:rgba(37,99,235,0.08);border-radius:12px;padding:16px;flex:1;min-width:140px;border:1px solid rgba(37,99,235,0.15);">
+            <i class="fas fa-mobile-alt" style="font-size:1.5rem;color:#60a5fa;margin-bottom:8px;display:block;"></i>
+            <strong style="font-size:0.85rem;color:white;">Desde tu celular</strong>
+            <p style="font-size:0.75rem;color:#94a3b8;margin-top:4px;">Escanea el código QR y envía las fotos directo desde tu teléfono</p>
+          </div>
+        </div>
+        <div id="qrContainer" style="margin-bottom:20px;display:inline-block;background:#0f1729;padding:16px;border-radius:16px;border:2px solid rgba(37,99,235,0.2);">
+          <div style="font-size:0.75rem;color:#64748b;margin-bottom:8px;font-family:'Orbitron',monospace;">ESCANEA CON TU CELULAR</div>
+          <img id="qrImg" src="" alt="QR WhatsApp" style="width:180px;height:180px;border-radius:8px;display:block;margin:0 auto;">
+        </div>
+        <button onclick="resetModal()" class="btn-submit" style="display:inline-flex;width:auto;padding:10px 28px;background:transparent;border:1px solid rgba(37,99,235,0.3);">
+          <i class="fas fa-arrow-left"></i> Volver al formulario
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const postsData = {
+      instagram: [
+        { title: 'Reparación Premium', desc: 'Cambio de pantalla y teclado en tiempo récord. Resultado impecable.', likes: 1254, comments: 89, platform: 'ig', color: '#1a2a4a' },
+        { title: 'Dato técnico', desc: '¿Tu PC está lenta? 3 señales de que necesita mantenimiento urgente.', likes: 2341, comments: 156, platform: 'ig', color: '#0a1628' },
+        { title: 'Antes y después', desc: 'Limpieza profunda + cambio de pasta térmica. Resultado de nivel.', likes: 987, comments: 45, platform: 'ig', color: '#1e3a5f' },
+        { title: 'Cliente 100% real', desc: '"Me salvaron los datos. Servicio premium de verdad" — Carlos M.', likes: 1876, comments: 123, platform: 'ig', color: '#0f2744' },
+        { title: 'Nuevo servicio', desc: 'Soporte técnico remoto. Te ayudo sin salir de casa, rápido y seguro.', likes: 3421, comments: 234, platform: 'ig', color: '#2563eb' },
+        { title: 'SSD vs HDD', desc: '¿Cuál elegir para tu PC? Te lo explico fácil y claro. Spoiler: SSD siempre.', likes: 1567, comments: 98, platform: 'ig', color: '#1a2a4a' },
+      ],
+      facebook: [
+        { title: 'Mantenimiento Premium', desc: 'Alarga la vida de tu PC con mi mantenimiento preventivo especializado.', likes: 543, comments: 67, shares: 34, platform: 'fb', color: '#1d4ed8' },
+        { title: 'Tutorial', desc: 'Cómo identificar si tu disco duro está fallando. Paso a paso.', likes: 876, comments: 45, shares: 23, platform: 'fb', color: '#2563eb' },
+        { title: 'Caso real', desc: 'Recuperación de datos de servidor empresarial en menos de 24 hrs.', likes: 654, comments: 78, shares: 56, platform: 'fb', color: '#1e3a5f' },
+        { title: 'Promo del mes', desc: 'Descuento especial en mantenimiento preventivo para toda la familia.', likes: 1234, comments: 89, shares: 67, platform: 'fb', color: '#3b82f6' },
+        { title: 'Tips', desc: 'El mejor antivirus es la prevención. Te enseño a proteger tu equipo.', likes: 987, comments: 56, shares: 43, platform: 'fb', color: '#0a1628' },
+      ],
+      tiktok: [
+        { title: 'Reparación en 60s', desc: 'Cambio de pasta térmica a laptop gaming. Así se hace.', likes: 4523, comments: 234, platform: 'tt', color: '#0a1628' },
+        { title: 'Tips express', desc: '3 cosas que NUNCA debes hacerle a tu PC. Imperdible.', likes: 6789, comments: 456, platform: 'tt', color: '#1a2a4a' },
+        { title: 'Humor técnico', desc: 'Cuando el cliente dice "es solo un problemita"... y llega con esto.', likes: 12345, comments: 789, platform: 'tt', color: '#0f2744' },
+        { title: 'Educativo', desc: '¿Sabes para qué sirve cada puerto de tu PC? Te lo muestro.', likes: 3456, comments: 198, platform: 'tt', color: '#2563eb' },
+      ]
+    };
+
+    const platformIcons = { ig: 'fa-instagram', fb: 'fa-facebook-f', tt: 'fa-tiktok' };
+
+    function initCarousel(id, data) {
+      const track = document.getElementById(`carousel-${id}`);
+      const dotsContainer = document.getElementById(`dots-${id}`);
+      const wrapper = track.closest('.carousel-wrapper');
+      const prevBtn = wrapper.querySelector('.prev');
+      const nextBtn = wrapper.querySelector('.next');
+      let currentIndex = 0;
+      let slidesPerView = getSlidesPerView();
+
+      function getSlidesPerView() {
+        if (window.innerWidth <= 768) return 1;
+        if (window.innerWidth <= 1024) return 2;
+        return 3;
+      }
+
+      function render() {
+        track.innerHTML = data.map((post, i) => `
+          <div class="carousel-slide">
+            <div class="post-card">
+              <div class="post-media" style="background:linear-gradient(135deg, ${post.color}, ${post.color}dd);">
+                <i class="fas ${i % 3 === 0 ? 'fa-microchip' : i % 3 === 1 ? 'fa-memory' : 'fa-cpu'}" style="color:rgba(255,255,255,0.15);font-size:3.5rem;"></i>
+                <div class="platform-badge"><i class="fab ${platformIcons[post.platform]}"></i></div>
+              </div>
+              <div class="post-body">
+                <div class="post-title">${post.title}</div>
+                <div class="post-desc">${post.desc}</div>
+              </div>
+              <div class="post-footer">
+                <div class="engagement">
+                  <i class="fas fa-heart" style="color:#dc2626;"></i> ${post.likes >= 1000 ? (post.likes/1000).toFixed(1) + 'k' : post.likes}
+                  <i class="fas fa-comment" style="margin-left:12px;color:#2563eb;"></i> ${post.comments}
+                  ${post.shares ? `<i class="fas fa-share" style="margin-left:12px;color:#60a5fa;"></i> ${post.shares}` : ''}
+                </div>
+                <i class="fab ${platformIcons[post.platform]}" style="color:#cbd5e1;"></i>
+              </div>
+            </div>
+          </div>
+        `).join('');
+
+        dotsContainer.innerHTML = Array.from({ length: Math.ceil(data.length / slidesPerView) }, (_, i) =>
+          `<button class="${i === 0 ? 'active' : ''}" data-index="${i}"></button>`
+        ).join('');
+
+        dotsContainer.querySelectorAll('button').forEach(btn => {
+          btn.addEventListener('click', () => goTo(parseInt(btn.dataset.index)));
+        });
+      }
+
+      function getMaxIndex() { return Math.ceil(data.length / slidesPerView) - 1; }
+
+      function goTo(index) {
+        currentIndex = Math.max(0, Math.min(index, getMaxIndex()));
+        const offset = -(currentIndex * (100 / slidesPerView) * slidesPerView);
+        track.style.transform = `translateX(${offset}%)`;
+        dotsContainer.querySelectorAll('button').forEach((btn, i) => {
+          btn.classList.toggle('active', i === currentIndex);
+        });
+      }
+
+      function next() { goTo(currentIndex + 1); }
+      function prev() { goTo(currentIndex - 1); }
+
+      prevBtn.addEventListener('click', prev);
+      nextBtn.addEventListener('click', next);
+
+      window.addEventListener('resize', () => {
+        slidesPerView = getSlidesPerView();
+        render();
+        goTo(0);
+      });
+
+      render();
+      goTo(0);
+      return { next, prev, goTo };
+    }
+
+    const carousels = {};
+    Object.keys(postsData).forEach(key => { carousels[key] = initCarousel(key, postsData[key]); });
+
+    // ---------- REVIEWS CAROUSEL ----------
+    (function initReviews() {
+      const track = document.getElementById('reviewsTrack');
+      const dots = document.getElementById('reviewsDots');
+      const cards = track.querySelectorAll('.review-card');
+      let idx = 0;
+      let perView = getReviewsPerView();
+
+      function getReviewsPerView() {
+        if (window.innerWidth <= 768) return 1;
+        if (window.innerWidth <= 1024) return 2;
+        return 3;
+      }
+
+      function renderDots() {
+        const total = Math.ceil(cards.length / perView);
+        dots.innerHTML = Array.from({ length: total }, (_, i) =>
+          `<button class="${i === 0 ? 'active' : ''}" data-idx="${i}"></button>`
+        ).join('');
+        dots.querySelectorAll('button').forEach(btn => {
+          btn.addEventListener('click', () => goTo(parseInt(btn.dataset.idx)));
+        });
+      }
+
+      function goTo(n) {
+        idx = Math.max(0, Math.min(n, Math.ceil(cards.length / perView) - 1));
+        track.style.transform = `translateX(-${idx * (100 / perView) * perView}%)`;
+        dots.querySelectorAll('button').forEach((b, i) => b.classList.toggle('active', i === idx));
+      }
+
+      window.addEventListener('resize', () => {
+        perView = getReviewsPerView();
+        renderDots();
+        goTo(0);
+      });
+
+      renderDots();
+      goTo(0);
+
+      // Auto-slide cada 5s
+      setInterval(() => { goTo(idx + 1); }, 5000);
+    })();
+
+    // MODAL
+    const modal = document.getElementById('whatsappModal');
+    const floatBtn = document.getElementById('whatsappFloatBtn');
+    const heroBtn = document.getElementById('heroWhatsappBtn');
+    const closeBtn = document.getElementById('closeModalBtn');
+    const form = document.getElementById('whatsappForm');
+
+    function openModal(e) { if (e) e.preventDefault(); if (modal) modal.classList.add('open'); document.body.style.overflow = 'hidden'; resetModal(); }
+    function closeModal() { if (modal) modal.classList.remove('open'); document.body.style.overflow = ''; resetModal(); }
+
+    if (floatBtn) floatBtn.addEventListener('click', openModal);
+    if (heroBtn) heroBtn.addEventListener('click', openModal);
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    if (modal) modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+
+    function getSaludoAutomatico() {
+      const h = new Date().getHours();
+      if (h >= 6 && h < 13) return 'Buenos días';
+      if (h >= 13 && h < 20) return 'Buenas tardes';
+      return 'Buenas noches';
+    }
+
+    // FILE UPLOAD
+    const dropZone = document.getElementById('fileDropZone');
+    const fileInput = document.getElementById('fileInput');
+    const filePreview = document.getElementById('filePreview');
+    let selectedFiles = [];
+
+    if (dropZone && fileInput) {
+      dropZone.addEventListener('click', () => fileInput.click());
+      dropZone.addEventListener('dragover', (e) => { e.preventDefault(); dropZone.classList.add('dragover'); });
+      dropZone.addEventListener('dragleave', () => { dropZone.classList.remove('dragover'); });
+      dropZone.addEventListener('drop', (e) => { e.preventDefault(); dropZone.classList.remove('dragover'); handleFiles(e.dataTransfer.files); });
+      fileInput.addEventListener('change', () => { handleFiles(fileInput.files); });
+    }
+
+    function handleFiles(files) {
+      for (const f of files) {
+        if (f.size > 5 * 1024 * 1024) continue;
+        if (!f.type.startsWith('image/')) continue;
+        selectedFiles.push(f);
+      }
+      renderFilePreview();
+    }
+
+    function renderFilePreview() {
+      if (selectedFiles.length === 0) { filePreview.innerHTML = ''; return; }
+      let html = '<div class="file-count"><i class="fas fa-image"></i> ' + selectedFiles.length + ' foto(s) seleccionada(s)</div>';
+      const toShow = selectedFiles.slice(0, 5);
+      toShow.forEach(f => {
+        const url = URL.createObjectURL(f);
+        html += `<img class="thumb" src="${url}" alt="foto">`;
+      });
+      if (selectedFiles.length > 5) html += `<span style="color:#64748b;font-size:0.75rem;align-self:center;">+${selectedFiles.length - 5} más</span>`;
+      filePreview.innerHTML = html;
+    }
+
+    function resetModal() {
+      const fv = document.getElementById('form-view');
+      const sv = document.getElementById('success-view');
+      if (fv) fv.style.display = '';
+      if (sv) sv.style.display = 'none';
+      if (form) form.reset();
+      selectedFiles = [];
+      if (filePreview) filePreview.innerHTML = '';
+      document.querySelectorAll('#whatsappForm [required]').forEach(el => { el.style.borderColor = ''; });
+    }
+
+    function enviarWhatsApp() {
+      var saludo = getSaludoAutomatico();
+      var nombre = document.getElementById('nombre').value.replace(/^\s+|\s+$/g, '');
+      var contacto = document.getElementById('input-contacto').value.replace(/^\s+|\s+$/g, '');
+      var problema = document.getElementById('problema').value.replace(/^\s+|\s+$/g, '');
+      if (!nombre || !contacto || !problema) { alert('Completa todos los campos'); return; }
+
+      var waUrl = 'https://wa.me/56961991725?text=' + encodeURIComponent(saludo + ', soy ' + nombre + '. Contacto: ' + contacto + '. Consulta: ' + problema + '. Gracias!');
+      document.getElementById('form-view').style.display = 'none';
+      document.getElementById('success-view').style.display = '';
+      document.getElementById('qrImg').src = 'https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=' + encodeURIComponent(waUrl);
+      window.open(waUrl, '_blank');
+    }
+
+    document.getElementById('enviaBtn').onclick = function() { enviarWhatsApp(); };
+    if (form) { form.onsubmit = function() { enviarWhatsApp(); }; }
+
+    document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  </script>
+</body>
+</html>
