@@ -1560,8 +1560,8 @@
         } catch (_) {}
       }
 
-      fetch('https://places.googleapis.com/v1/places/ChIJC6Bso6XPYpYRk9egCQTftUE?fields=reviews', {
-        headers: { 'X-Goog-Api-Key': 'AIzaSyBQZuhkcAidwM8M6xzv9sDgxZ2tMKgGlKw' }
+      fetch('https://places.googleapis.com/v1/places/ChIJC6Bso6XPYpYRk9egCQTftUE', {
+        headers: { 'X-Goog-Api-Key': 'AIzaSyBQZuhkcAidwM8M6xzv9sDgxZ2tMKgGlKw', 'X-Goog-FieldMask': 'reviews' }
       })
         .then(r => r.json())
         .then(data => {
