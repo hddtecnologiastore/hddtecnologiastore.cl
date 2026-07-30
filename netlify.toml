@@ -1,5 +1,5 @@
 [build]
-  command = "echo build-ok"
+  command = "true"
   publish = "/"
   functions = "netlify/functions"
 
