@@ -1,12 +1,11 @@
-name: Deploy a Netlify
+name: Deploy a Netlify (legacy — auto-deploy via GitHub connection active)
 
 on:
-  push:
-    branches: [master]
+  workflow_dispatch:
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Trigger Netlify build hook
-        run: curl -X POST "https://api.netlify.com/build_hooks/6a67d5d9b82de21d4d4335db"
+      - name: Notify
+        run: echo "Auto-deploy desde GitHub ya activo. Este workflow ya no se ejecuta en push."

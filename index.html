@@ -16,6 +16,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MJXVGZKX');</script>
+  <!-- End Google Tag Manager -->
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -154,6 +157,50 @@
       opacity: 0.04;
       pointer-events: none;
     }
+    .hero-circuit {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.18;
+    }
+    .hero-circuit svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    /* ===== CIRCUIT PATTERN ===== */
+    .circuit-bg {
+      position: relative;
+    }
+    .circuit-bg::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      pointer-events: none;
+      z-index: 0;
+      background-repeat: repeat;
+      background-size: 240px 240px;
+    }
+    .circuit-bg-light::before {
+      background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22240%22%20viewBox%3D%220%200%20240%20240%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%232563eb%22%20stroke-width%3D%221.3%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M0%2040%20L50%2040%20L70%2060%20L70%20100%22%2F%3E%3Ccircle%20cx%3D%2270%22%20cy%3D%22100%22%20r%3D%222.5%22%20fill%3D%22%232563eb%22%2F%3E%3Cpath%20d%3D%22M0%20200%20L40%20200%20L60%20180%20L60%20140%22%2F%3E%3Ccircle%20cx%3D%2260%22%20cy%3D%22140%22%20r%3D%222%22%20fill%3D%22%232563eb%22%2F%3E%3Cpath%20d%3D%22M240%2050%20L200%2050%20L180%2070%20L180%20110%22%2F%3E%3Ccircle%20cx%3D%22180%22%20cy%3D%22110%22%20r%3D%222.5%22%20fill%3D%22%232563eb%22%2F%3E%3Cpath%20d%3D%22M240%20190%20L210%20190%20L190%20170%20L190%20130%22%2F%3E%3Ccircle%20cx%3D%22190%22%20cy%3D%22130%22%20r%3D%222%22%20fill%3D%22%232563eb%22%2F%3E%3Cpath%20d%3D%22M100%200%20L100%2025%20L120%2045%20L160%2045%20L180%2025%20L200%2025%22%2F%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%2225%22%20r%3D%222%22%20fill%3D%22%232563eb%22%2F%3E%3Cpath%20d%3D%22M120%20240%20L120%20215%20L140%20195%20L180%20195%22%2F%3E%3Ccircle%20cx%3D%22180%22%20cy%3D%22195%22%20r%3D%222%22%20fill%3D%22%232563eb%22%2F%3E%3Cpath%20d%3D%22M80%20120%20L110%20120%20L130%20140%20L170%20140%22%2F%3E%3Ccircle%20cx%3D%22170%22%20cy%3D%22140%22%20r%3D%222%22%20fill%3D%22%232563eb%22%2F%3E%3Cpath%20d%3D%22M170%20100%20L140%20100%20L120%2080%20L80%2080%22%2F%3E%3Ccircle%20cx%3D%2280%22%20cy%3D%2280%22%20r%3D%222%22%20fill%3D%22%232563eb%22%2F%3E%3Cpath%20d%3D%22M0%20240%20L40%20240%20L60%20220%20L100%20220%22%2F%3E%3Ccircle%20cx%3D%22100%22%20cy%3D%22220%22%20r%3D%222%22%20fill%3D%22%232563eb%22%2F%3E%3Cpath%20d%3D%22M200%20240%20L200%20220%20L220%20200%20L240%20200%22%2F%3E%3Ccircle%20cx%3D%22240%22%20cy%3D%22200%22%20r%3D%222%22%20fill%3D%22%232563eb%22%2F%3E%3Cpath%20d%3D%22M0%200%20L30%200%20L50%2020%20L90%2020%22%2F%3E%3Ccircle%20cx%3D%2290%22%20cy%3D%2220%22%20r%3D%222%22%20fill%3D%22%232563eb%22%2F%3E%3Cpath%20d%3D%22M140%2090%20L110%2090%20L90%2070%20L90%2030%22%2F%3E%3Ccircle%20cx%3D%2290%22%20cy%3D%2230%22%20r%3D%222%22%20fill%3D%22%232563eb%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+      opacity: 0.07;
+    }
+    .circuit-bg-dark::before {
+      background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22240%22%20viewBox%3D%220%200%20240%20240%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%23e0e0e8%22%20stroke-width%3D%221.3%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M0%2040%20L50%2040%20L70%2060%20L70%20100%22%2F%3E%3Ccircle%20cx%3D%2270%22%20cy%3D%22100%22%20r%3D%222.5%22%20fill%3D%22%23e0e0e8%22%2F%3E%3Cpath%20d%3D%22M0%20200%20L40%20200%20L60%20180%20L60%20140%22%2F%3E%3Ccircle%20cx%3D%2260%22%20cy%3D%22140%22%20r%3D%222%22%20fill%3D%22%23e0e0e8%22%2F%3E%3Cpath%20d%3D%22M240%2050%20L200%2050%20L180%2070%20L180%20110%22%2F%3E%3Ccircle%20cx%3D%22180%22%20cy%3D%22110%22%20r%3D%222.5%22%20fill%3D%22%23e0e0e8%22%2F%3E%3Cpath%20d%3D%22M240%20190%20L210%20190%20L190%20170%20L190%20130%22%2F%3E%3Ccircle%20cx%3D%22190%22%20cy%3D%22130%22%20r%3D%222%22%20fill%3D%22%23e0e0e8%22%2F%3E%3Cpath%20d%3D%22M100%200%20L100%2025%20L120%2045%20L160%2045%20L180%2025%20L200%2025%22%2F%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%2225%22%20r%3D%222%22%20fill%3D%22%23e0e0e8%22%2F%3E%3Cpath%20d%3D%22M120%20240%20L120%20215%20L140%20195%20L180%20195%22%2F%3E%3Ccircle%20cx%3D%22180%22%20cy%3D%22195%22%20r%3D%222%22%20fill%3D%22%23e0e0e8%22%2F%3E%3Cpath%20d%3D%22M80%20120%20L110%20120%20L130%20140%20L170%20140%22%2F%3E%3Ccircle%20cx%3D%22170%22%20cy%3D%22140%22%20r%3D%222%22%20fill%3D%22%23e0e0e8%22%2F%3E%3Cpath%20d%3D%22M170%20100%20L140%20100%20L120%2080%20L80%2080%22%2F%3E%3Ccircle%20cx%3D%2280%22%20cy%3D%2280%22%20r%3D%222%22%20fill%3D%22%23e0e0e8%22%2F%3E%3Cpath%20d%3D%22M0%20240%20L40%20240%20L60%20220%20L100%20220%22%2F%3E%3Ccircle%20cx%3D%22100%22%20cy%3D%22220%22%20r%3D%222%22%20fill%3D%22%23e0e0e8%22%2F%3E%3Cpath%20d%3D%22M200%20240%20L200%20220%20L220%20200%20L240%20200%22%2F%3E%3Ccircle%20cx%3D%22240%22%20cy%3D%22200%22%20r%3D%222%22%20fill%3D%22%23e0e0e8%22%2F%3E%3Cpath%20d%3D%22M0%200%20L30%200%20L50%2020%20L90%2020%22%2F%3E%3Ccircle%20cx%3D%2290%22%20cy%3D%2220%22%20r%3D%222%22%20fill%3D%22%23e0e0e8%22%2F%3E%3Cpath%20d%3D%22M140%2090%20L110%2090%20L90%2070%20L90%2030%22%2F%3E%3Ccircle%20cx%3D%2290%22%20cy%3D%2230%22%20r%3D%222%22%20fill%3D%22%23e0e0e8%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+      opacity: 0.12;
+    }
+    .section-circuit {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      pointer-events: none;
+      z-index: 0;
+      background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22240%22%20viewBox%3D%220%200%20240%20240%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%23e0e0e8%22%20stroke-width%3D%221.3%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M0%2040%20L50%2040%20L70%2060%20L70%20100%22%2F%3E%3Ccircle%20cx%3D%2270%22%20cy%3D%22100%22%20r%3D%222.5%22%20fill%3D%22%23e0e0e8%22%2F%3E%3Cpath%20d%3D%22M0%20200%20L40%20200%20L60%20180%20L60%20140%22%2F%3E%3Ccircle%20cx%3D%2260%22%20cy%3D%22140%22%20r%3D%222%22%20fill%3D%22%23e0e0e8%22%2F%3E%3Cpath%20d%3D%22M240%2050%20L200%2050%20L180%2070%20L180%20110%22%2F%3E%3Ccircle%20cx%3D%22180%22%20cy%3D%22110%22%20r%3D%222.5%22%20fill%3D%22%23e0e0e8%22%2F%3E%3Cpath%20d%3D%22M240%20190%20L210%20190%20L190%20170%20L190%20130%22%2F%3E%3Ccircle%20cx%3D%22190%22%20cy%3D%22130%22%20r%3D%222%22%20fill%3D%22%23e0e0e8%22%2F%3E%3Cpath%20d%3D%22M100%200%20L100%2025%20L120%2045%20L160%2045%20L180%2025%20L200%2025%22%2F%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%2225%22%20r%3D%222%22%20fill%3D%22%23e0e0e8%22%2F%3E%3Cpath%20d%3D%22M120%20240%20L120%20215%20L140%20195%20L180%20195%22%2F%3E%3Ccircle%20cx%3D%22180%22%20cy%3D%22195%22%20r%3D%222%22%20fill%3D%22%23e0e0e8%22%2F%3E%3Cpath%20d%3D%22M80%20120%20L110%20120%20L130%20140%20L170%20140%22%2F%3E%3Ccircle%20cx%3D%22170%22%20cy%3D%22140%22%20r%3D%222%22%20fill%3D%22%23e0e0e8%22%2F%3E%3Cpath%20d%3D%22M170%20100%20L140%20100%20L120%2080%20L80%2080%22%2F%3E%3Ccircle%20cx%3D%2280%22%20cy%3D%2280%22%20r%3D%222%22%20fill%3D%22%23e0e0e8%22%2F%3E%3Cpath%20d%3D%22M0%20240%20L40%20240%20L60%20220%20L100%20220%22%2F%3E%3Ccircle%20cx%3D%22100%22%20cy%3D%22220%22%20r%3D%222%22%20fill%3D%22%23e0e0e8%22%2F%3E%3Cpath%20d%3D%22M200%20240%20L200%20220%20L220%20200%20L240%20200%22%2F%3E%3Ccircle%20cx%3D%22240%22%20cy%3D%22200%22%20r%3D%222%22%20fill%3D%22%23e0e0e8%22%2F%3E%3Cpath%20d%3D%22M0%200%20L30%200%20L50%2020%20L90%2020%22%2F%3E%3Ccircle%20cx%3D%2290%22%20cy%3D%2220%22%20r%3D%222%22%20fill%3D%22%23e0e0e8%22%2F%3E%3Cpath%20d%3D%22M140%2090%20L110%2090%20L90%2070%20L90%2030%22%2F%3E%3Ccircle%20cx%3D%2290%22%20cy%3D%2230%22%20r%3D%222%22%20fill%3D%22%23e0e0e8%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+      background-repeat: repeat;
+      background-size: 240px 240px;
+      opacity: 0.12;
+    }
+
     .hero .container { position: relative; z-index: 1; }
     .hero .premium-badge { margin-bottom: 24px; }
     .hero h1 {
@@ -174,6 +221,8 @@
       max-width: 680px;
       margin: 0 auto 32px;
       line-height: 1.7;
+      text-align: justify;
+      text-align-last: center;
     }
     .hero .btn-premium .fa-whatsapp { color: #25d366; }
     .hero .btn-premium {
@@ -247,8 +296,7 @@
       opacity: 0;
       transition: opacity 0.4s;
     }
-    .service-card:hover { transform: translateY(-6px); border-color: #2563eb; box-shadow: 0 20px 60px rgba(37,99,235,0.1); }
-    .service-card:hover::before { opacity: 1; }
+
     .service-card .icon {
       width: 64px; height: 64px;
       background: linear-gradient(135deg, #2563eb, #60a5fa);
@@ -274,7 +322,6 @@
       padding: 40px 32px;
     }
     .service-card.business::before { background: linear-gradient(90deg, #60a5fa, #2563eb); }
-    .service-card.business:hover { border-color: #2563eb; }
     .service-card.business .icon {
       width: 80px; height: 80px;
       background: linear-gradient(135deg, #2563eb, #60a5fa);
@@ -315,13 +362,6 @@
       border-radius: 20px;
       padding: 32px 36px;
       margin-bottom: -1px;
-      transition: all 0.4s;
-      cursor: pointer;
-    }
-    .notebook-card:hover {
-      border-color: #2563eb;
-      box-shadow: 0 20px 60px rgba(37,99,235,0.15);
-      transform: translateY(-3px);
     }
     .notebook-icon {
       width: 72px; height: 72px;
@@ -360,14 +400,9 @@
       flex-shrink: 0;
       transition: all 0.4s;
     }
-    .notebook-card:hover .notebook-arrow {
-      background: #2563eb;
-      border-color: #2563eb;
-      transform: translateX(6px);
-    }
+
     @media (max-width: 768px) {
-      .notebook-card { flex-direction: column; text-align: center; padding: 28px 24px; }
-      .notebook-arrow { display: none; }
+      .notebook-card { padding: 32px 20px !important; }
       .notebook-text h3 { font-size: 1.1rem; }
     }
 
@@ -510,7 +545,7 @@
       font-weight: 500;
       margin-bottom: 20px;
     }
-    .about-text p { color: #94a3b8; margin-bottom: 16px; font-size: 0.95rem; line-height: 1.7; }
+    .about-text p { color: #94a3b8; margin-bottom: 16px; font-size: 0.95rem; line-height: 1.7; text-align: justify; }
     .about-text .stats {
       display: flex;
       gap: 32px;
@@ -534,6 +569,16 @@
       margin-bottom: 4px;
     }
     .about-text .stats span { font-size: 0.8rem; color: #94a3b8; }
+    .about-image-stars {
+      text-align: center;
+      margin-top: 20px;
+      letter-spacing: 6px;
+    }
+    .about-image-stars i {
+      font-size: 1.1rem;
+      color: #fbbf24;
+      text-shadow: 0 0 10px rgba(251,191,36,0.3);
+    }
     .about-text .warranty-note {
       margin-top: 24px;
       padding: 16px 20px;
@@ -857,28 +902,30 @@
       background: #f8faff;
       border: 1px solid #e2e8f0;
       border-radius: 16px;
-      padding: 24px 28px;
+      padding: 28px;
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: space-between;
+      text-align: center;
+      gap: 16px;
       margin-bottom: 40px;
       transition: border-color 0.3s;
     }
     .google-card:hover { border-color: #2563eb; }
     .google-card-header {
       display: flex;
+      flex-direction: column;
       align-items: center;
-      gap: 16px;
-      flex: 1;
+      gap: 12px;
     }
     .google-logo {
-      width: 52px; height: 52px;
+      width: 56px; height: 56px;
       background: linear-gradient(135deg, #4285F4, #34A853, #FBBC05, #EA4335);
-      border-radius: 14px;
+      border-radius: 16px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.4rem;
+      font-size: 1.5rem;
       color: white;
       flex-shrink: 0;
     }
@@ -890,6 +937,7 @@
     .google-card-header .stars {
       display: flex;
       align-items: center;
+      justify-content: center;
       gap: 3px;
       margin-top: 2px;
       font-size: 0.85rem;
@@ -912,7 +960,6 @@
       font-size: 0.85rem;
       font-weight: 600;
       transition: all 0.3s;
-      flex-shrink: 0;
     }
     .google-btn:hover { background: #2563eb; }
     .reviews-carousel-wrapper {
@@ -1051,8 +1098,7 @@
       .about-text h2 { font-size: 1.4rem; }
       .about-image { height: 300px; }
       .reviews-section { padding: 50px 0; }
-      .google-card { flex-direction: column; gap: 16px; align-items: stretch; padding: 20px; }
-      .google-btn { justify-content: center; }
+      .google-card { padding: 20px; gap: 12px; }
       .modal { padding: 28px 20px; margin: 10px; }
       .modal h2 { font-size: 1.1rem; }
       .wa-file-qr { grid-template-columns: 1fr !important; }
@@ -1086,6 +1132,9 @@
   </style>
 </head>
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MJXVGZKX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
   <!-- HEADER -->
   <header>
@@ -1107,18 +1156,52 @@
 
   <!-- HERO -->
   <section class="hero" id="inicio">
+    <div class="hero-circuit">
+      <svg viewBox="0 0 1200 700" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#2563eb" stroke-width="1.6">
+        <path d="M0 520 L60 520 L100 480 L100 420" stroke-opacity="0.6"/>
+        <circle cx="100" cy="420" r="3.5" fill="#2563eb" fill-opacity="0.6"/>
+        <path d="M200 700 L200 620 L240 580 L300 580 L340 540" stroke-opacity="0.5"/>
+        <circle cx="340" cy="540" r="3" fill="#2563eb" fill-opacity="0.5"/>
+        <path d="M300 0 L300 60 L350 110 L350 180 L420 250" stroke-opacity="0.5"/>
+        <circle cx="420" cy="250" r="3.5" fill="#2563eb" fill-opacity="0.5"/>
+        <path d="M750 700 L750 620 L700 570 L700 480" stroke-opacity="0.5"/>
+        <circle cx="700" cy="480" r="3" fill="#2563eb" fill-opacity="0.5"/>
+        <path d="M900 0 L900 70 L950 120 L1020 120" stroke-opacity="0.45"/>
+        <circle cx="1020" cy="120" r="3.5" fill="#2563eb" fill-opacity="0.45"/>
+        <path d="M1100 700 L1100 620 L1050 570 L1050 480 L1080 450" stroke-opacity="0.55"/>
+        <circle cx="1080" cy="450" r="3" fill="#2563eb" fill-opacity="0.55"/>
+        <path d="M480 0 L480 40 L520 80 L580 80 L640 140 L640 200" stroke-opacity="0.45"/>
+        <circle cx="640" cy="200" r="3" fill="#2563eb" fill-opacity="0.45"/>
+        <path d="M0 100 L50 100 L90 140 L90 200 L140 260 L220 260" stroke-opacity="0.4"/>
+        <circle cx="220" cy="260" r="3.5" fill="#2563eb" fill-opacity="0.4"/>
+        <path d="M1150 0 L1150 50 L1100 100 L1100 160 L1040 220" stroke-opacity="0.5"/>
+        <circle cx="1040" cy="220" r="3" fill="#2563eb" fill-opacity="0.5"/>
+        <path d="M50 700 L50 640 L90 600 L150 600" stroke-opacity="0.4"/>
+        <circle cx="150" cy="600" r="3" fill="#2563eb" fill-opacity="0.4"/>
+        <path d="M400 700 L400 660 L440 620 L500 620" stroke-opacity="0.35"/>
+        <circle cx="500" cy="620" r="3" fill="#2563eb" fill-opacity="0.35"/>
+        <path d="M950 700 L950 650 L990 610 L1060 610" stroke-opacity="0.4"/>
+        <circle cx="1060" cy="610" r="3" fill="#2563eb" fill-opacity="0.4"/>
+        <path d="M0 280 L60 280 L100 320 L160 320 L200 360" stroke-opacity="0.3"/>
+        <circle cx="200" cy="360" r="3" fill="#2563eb" fill-opacity="0.3"/>
+        <path d="M1200 40 L1150 40 L1110 80 L1110 140" stroke-opacity="0.35"/>
+        <circle cx="1110" cy="140" r="3" fill="#2563eb" fill-opacity="0.35"/>
+        <path d="M1200 600 L1160 600 L1120 560 L1120 500" stroke-opacity="0.4"/>
+        <circle cx="1120" cy="500" r="3" fill="#2563eb" fill-opacity="0.4"/>
+      </svg>
+    </div>
     <div class="container">
       <div class="premium-badge"><i class="fas fa-crown"></i> Servicio Premium</div>
-      <h1>Servicio Técnico<br><span>de Confianza</span></h1>
-      <p>Ing. Alejandro Casanova — 20 años de experiencia en reparación, mantenimiento y soluciones TI para hogares y empresas en Ñuñoa y todo Santiago.</p>
+      <h1>Servicio Técnico<br><span>en Computación</span></h1>
+      <p>Nos especializamos en el diagnóstico, reparación y mantenimiento de notebooks y computadores, ofreciendo atención personalizada, garantía y un servicio pensado para entregar confianza desde el primer momento.</p>
       <a href="https://wa.me/56961991725" class="btn-premium" id="heroWhatsappBtn">
-        <i class="fab fa-whatsapp"></i> Solicitar Atención
+        <i class="fab fa-whatsapp"></i> Agenda tu diagnóstico
       </a>
     </div>
   </section>
 
   <!-- SERVICES -->
-  <section class="services-section" id="servicios">
+  <section class="services-section circuit-bg circuit-bg-light" id="servicios">
     <div class="container">
       <div class="section-title">
         <h2>Tu Socio Tecnológico <span style="color:#2563eb;">de Confianza</span></h2>
@@ -1157,23 +1240,21 @@
   </section>
 
   <!-- NOTEBOOKS RECONDITIONED -->
-  <section style="padding:0;background:#ffffff;">
+  <section class="circuit-bg circuit-bg-light" style="padding:0;background:#ffffff;">
     <div class="container" style="padding-bottom:0;">
-      <a href="https://www.google.com/search?kgmid=/g/11j_t83n88&hl=es-CL&q=HDD+Tecnologia+Store&tbm=shop" target="_blank" style="display:block;text-decoration:none;">
-        <div class="notebook-card">
-          <div class="notebook-icon"><i class="fas fa-laptop"></i></div>
-          <div class="notebook-text">
-            <h3>Notebooks Reacondicionados</h3>
-            <p>Equipos revisados, certificados y con garantía. Calidad comprobada a precios justos.</p>
-          </div>
-          <div class="notebook-arrow"><i class="fas fa-arrow-right"></i></div>
+      <div class="notebook-card" style="text-align:center;flex-direction:column;padding:44px 36px;cursor:default;">
+        <div class="notebook-icon" style="margin:0 auto 16px;"><i class="fas fa-laptop"></i></div>
+        <div class="notebook-text">
+          <h3>Notebooks Reacondicionados</h3>
+          <p style="max-width:520px;margin:0 auto 20px;">Equipos revisados, certificados y con garantía. Calidad comprobada a precios justos. Pregunta por los modelos disponibles y precios directamente por WhatsApp.</p>
         </div>
-      </a>
+        <a href="https://wa.me/56961991725?text=Hola%2C%20quiero%20consultar%20por%20los%20notebooks%20reacondicionados%20disponibles" target="_blank" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#2563eb,#1d4ed8);color:white;padding:14px 32px;border-radius:50px;font-weight:600;font-size:1rem;text-decoration:none;box-shadow:0 8px 30px rgba(37,99,235,0.3);transition:all 0.3s;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 12px 40px rgba(37,99,235,0.4)';" onmouseout="this.style.transform='';this.style.boxShadow='0 8px 30px rgba(37,99,235,0.3)';"><i class="fab fa-whatsapp"></i> Consultar disponibilidad</a>
+      </div>
     </div>
   </section>
 
   <!-- SOCIAL CONTENT -->
-  <section class="social-section" id="contenido">
+  <section class="social-section circuit-bg circuit-bg-light" id="contenido">
     <div class="container">
       <div class="section-title">
         <h2>Síguenos en <span style="color:#2563eb;">Redes</span></h2>
@@ -1205,6 +1286,7 @@
 
   <!-- ABOUT / STATS -->
   <section class="about-section" id="nosotros">
+    <div class="section-circuit"></div>
     <div class="container">
       <div class="about-grid">
         <div class="about-text">
@@ -1257,13 +1339,20 @@
               <div style="font-size:0.7rem;color:#64748b;">ÉXITO</div>
             </div>
           </div>
+          <div class="about-image-stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- GOOGLE REVIEWS -->
-  <section class="reviews-section" id="reseñas">
+  <section class="reviews-section circuit-bg circuit-bg-light" id="reseñas">
     <div class="container">
       <div class="section-title">
         <h2>Lo Que Dicen <span style="color:#2563eb;">Mis Clientes</span></h2>
@@ -1287,7 +1376,7 @@
               <span>5.0</span>
             </div>
           </div>
-          <a href="https://share.google/je4doKWyo9yICpVQ1" target="_blank" class="google-btn" id="googleReviewBtn">
+          <a href="https://www.google.com/maps/place/?q=place_id:ChIJC6Bso6XPYpYRk9egCQTftUE" target="_blank" class="google-btn" id="googleReviewBtn">
             <i class="fab fa-google"></i> Ver en Google
           </a>
         </div>
@@ -1301,7 +1390,7 @@
   </section>
 
   <!-- FOOTER -->
-  <footer id="contacto">
+  <footer class="circuit-bg circuit-bg-dark" id="contacto">
     <div class="container">
       <div>
         <div class="logo" style="font-size:1.1rem; margin-bottom:16px;">
