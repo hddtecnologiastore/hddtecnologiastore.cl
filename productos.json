@@ -1,0 +1,56 @@
+[
+  {
+    "img": "",
+    "nombre": "Lenovo ThinkPad T480",
+    "especificaciones": ["Intel Core i5 8va Gen", "16GB RAM", "512GB SSD", "Pantalla 14\" FHD", "Teclado retroiluminado"],
+    "descripcion": "Equipo empresarial de alto rendimiento, ideal para trabajo y estudio. Revisado y certificado.",
+    "precioTransferencia": "$219.990",
+    "precioTarjeta": "$249.990",
+    "wa": "Hola,%20quiero%20consultar%20por%20el%20Lenovo%20ThinkPad%20T480"
+  },
+  {
+    "img": "",
+    "nombre": "Dell Latitude 5490",
+    "especificaciones": ["Intel Core i5 8va Gen", "16GB RAM", "256GB SSD", "Pantalla 14\" FHD", "Cámara HD"],
+    "descripcion": "Notebook corporativo Dell con excelente construcción y rendimiento garantizado.",
+    "precioTransferencia": "$199.990",
+    "precioTarjeta": "$229.990",
+    "wa": "Hola,%20quiero%20consultar%20por%20el%20Dell%20Latitude%205490"
+  },
+  {
+    "img": "",
+    "nombre": "HP ProBook 450 G7",
+    "especificaciones": ["Intel Core i5 10ma Gen", "8GB RAM", "256GB SSD", "Pantalla 15.6\" FHD", "USB-C"],
+    "descripcion": "Potente notebook HP con procesador de última generación. Perfecto para multitarea.",
+    "precioTransferencia": "$269.990",
+    "precioTarjeta": "$299.990",
+    "wa": "Hola,%20quiero%20consultar%20por%20el%20HP%20ProBook%20450%20G7"
+  },
+  {
+    "img": "",
+    "nombre": "Apple MacBook Air 2017",
+    "especificaciones": ["Intel Core i5", "8GB RAM", "128GB SSD", "Pantalla 13.3\"", "Batería original"],
+    "descripcion": "MacBook Air ligera y confiable. Ideal para tareas diarias y movilidad.",
+    "precioTransferencia": "$289.990",
+    "precioTarjeta": "$329.990",
+    "wa": "Hola,%20quiero%20consultar%20por%20el%20MacBook%20Air%202017"
+  },
+  {
+    "img": "",
+    "nombre": "Lenovo ThinkPad X270",
+    "especificaciones": ["Intel Core i5 7ma Gen", "8GB RAM", "256GB SSD", "Pantalla 12.5\"", "Ultraportátil"],
+    "descripcion": "Ultrabook compacto y resistente, fácil de transportar. Batería de larga duración.",
+    "precioTransferencia": "$179.990",
+    "precioTarjeta": "$209.990",
+    "wa": "Hola,%20quiero%20consultar%20por%20el%20Lenovo%20ThinkPad%20X270"
+  },
+  {
+    "img": "",
+    "nombre": "Dell Latitude 7400",
+    "especificaciones": ["Intel Core i7 8va Gen", "16GB RAM", "512GB SSD", "Pantalla 14\" FHD", "Touch + Lápiz"],
+    "descripcion": "Gama alta corporativo con pantalla táctil, rendimiento superior y acabado premium.",
+    "precioTransferencia": "$349.990",
+    "precioTarjeta": "$389.990",
+    "wa": "Hola,%20quiero%20consultar%20por%20el%20Dell%20Latitude%207400"
+  }
+]

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo — Notebooks Reacondicionados | HDD Tecnologia Store</title>
+  <meta name="description" content="Explora nuestro catálogo de notebooks reacondicionados con garantía. Equipos revisados y certificados al mejor precio.">
+  <meta property="og:title" content="Catálogo — Notebooks Reacondicionados | HDD Tecnologia Store">
+  <meta property="og:description" content="Equipos reacondicionados con garantía. Calidad comprobada a precios justos.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hddtecnologiastore.cl/equipos">
+  <meta property="og:image" content="https://hddtecnologiastore.cl/og-image.jpg">
+  <meta name="theme-color" content="#0a1628">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0a1628;
+      color: #e2e8f0;
+      line-height: 1.6;
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    .header-bar {
+      background: rgba(255,255,255,0.03);
+      border-bottom: 1px solid rgba(37,99,235,0.15);
+      padding: 16px 0;
+    }
+    .header-bar .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .header-bar .logo {
+      font-family: 'Orbitron', monospace;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: white;
+      text-decoration: none;
+    }
+    .header-bar .logo span { color: #60a5fa; }
+    .header-bar .back-link {
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.3s;
+    }
+    .header-bar .back-link:hover { color: #60a5fa; }
+
+    .page-title {
+      text-align: center;
+      padding: 60px 0 40px;
+    }
+    .page-title h1 {
+      font-family: 'Orbitron', monospace;
+      font-size: 2rem;
+      font-weight: 800;
+      color: white;
+    }
+    .page-title h1 span { color: #60a5fa; }
+    .page-title p {
+      color: #94a3b8;
+      margin-top: 12px;
+      font-size: 1rem;
+    }
+
+    .catalog-grid {
+      display: grid;
+      gap: 32px;
+      padding-bottom: 80px;
+    }
+    .product-card {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 28px;
+      background: linear-gradient(135deg, #0f1729, #1a2a4a);
+      border: 1px solid rgba(37,99,235,0.15);
+      border-radius: 20px;
+      padding: 24px;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    .product-card:hover {
+      border-color: rgba(37,99,235,0.4);
+      box-shadow: 0 0 40px rgba(37,99,235,0.08);
+    }
+
+    .product-image {
+      width: 100%;
+      aspect-ratio: 4/3;
+      border-radius: 14px;
+      overflow: hidden;
+      background: rgba(255,255,255,0.03);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(37,99,235,0.1);
+    }
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .product-image .placeholder-icon {
+      font-size: 3rem;
+      color: rgba(37,99,235,0.3);
+    }
+    .product-info {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .product-info h3 {
+      font-family: 'Orbitron', monospace;
+      font-size: 1.15rem;
+      color: white;
+    }
+    .product-specs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .product-specs .tag {
+      background: rgba(37,99,235,0.1);
+      border: 1px solid rgba(37,99,235,0.15);
+      border-radius: 8px;
+      padding: 5px 12px;
+      font-size: 0.78rem;
+      color: #94a3b8;
+    }
+    .product-specs .tag i { color: #60a5fa; margin-right: 5px; font-size: 0.7rem; }
+    .product-desc {
+      color: #94a3b8;
+      font-size: 0.88rem;
+      line-height: 1.6;
+    }
+    .pricing {
+      display: flex;
+      gap: 20px;
+      margin-top: auto;
+      padding-top: 14px;
+      border-top: 1px solid rgba(37,99,235,0.1);
+    }
+    .price-box {
+      flex: 1;
+      padding: 12px 16px;
+      border-radius: 12px;
+      text-align: center;
+    }
+    .price-box.transfer {
+      background: rgba(37,99,235,0.08);
+      border: 1px solid rgba(37,99,235,0.15);
+    }
+    .price-box.card {
+      background: rgba(251,191,36,0.08);
+      border: 1px solid rgba(251,191,36,0.2);
+    }
+    .price-box .label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .price-box.transfer .label { color: #60a5fa; }
+    .price-box.card .label { color: #fbbf24; }
+    .price-box .amount {
+      font-family: 'Orbitron', monospace;
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+    .price-box.transfer .amount { color: #60a5fa; }
+    .price-box.card .amount { color: #fbbf24; }
+    .price-box .iva {
+      font-size: 0.7rem;
+      color: #64748b;
+      margin-top: 2px;
+    }
+    .product-actions {
+      margin-top: 4px;
+    }
+    .product-actions .btn-wa {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 24px;
+      background: #25d366;
+      color: white;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.85rem;
+      transition: all 0.3s;
+    }
+    .product-actions .btn-wa:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(37,211,102,0.3);
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 56px; height: 56px;
+      background: #25d366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.5rem;
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+      z-index: 100;
+      transition: all 0.3s;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 30px rgba(37,211,102,0.5);
+    }
+    .whatsapp-float .tooltip {
+      position: absolute;
+      right: 66px;
+      background: #0f1729;
+      color: white;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 0.78rem;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+      border: 1px solid rgba(37,99,235,0.2);
+    }
+    .whatsapp-float:hover .tooltip { opacity: 1; }
+
+    .footer-note {
+      text-align: center;
+      padding: 30px 0 60px;
+      border-top: 1px solid rgba(37,99,235,0.1);
+      color: #64748b;
+      font-size: 0.85rem;
+    }
+    .footer-note a {
+      color: #60a5fa;
+      text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+      .product-card {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      .product-image { aspect-ratio: 16/9; }
+      .pricing { flex-direction: column; gap: 10px; }
+      .page-title h1 { font-size: 1.4rem; }
+      .page-title { padding: 40px 0 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header-bar">
+    <div class="container">
+      <a href="/" class="logo">HDD <span>Tecnologia</span></a>
+      <a href="/" class="back-link"><i class="fas fa-arrow-left"></i> Volver al inicio</a>
+    </div>
+  </div>
+
+  <div class="page-title">
+    <div class="container">
+      <h1>Catálogo de Notebooks <span>Reacondicionados</span></h1>
+      <p>Equipos revisados, certificados y con garantía. Todos los precios incluyen IVA.</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="catalog-grid" id="catalogGrid">
+      <!-- Products will be rendered by JS -->
+    </div>
+  </div>
+
+  <div class="footer-note">
+    <div class="container">
+      ¿No encuentras lo que buscas? <a href="https://wa.me/56961991725" target="_blank">Consulta disponibilidad por WhatsApp</a> — tenemos más modelos disponibles.
+    </div>
+  </div>
+
+  <a href="https://wa.me/56961991725" target="_blank" class="whatsapp-float">
+    <i class="fab fa-whatsapp"></i>
+    <span class="tooltip">Escríbeme ahora</span>
+  </a>
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MJXVGZKX');</script>
+  <!-- End Google Tag Manager -->
+
+  <script>
+    const grid = document.getElementById('catalogGrid');
+
+    fetch('/productos.json')
+      .then(r => r.json())
+      .then(products => {
+        products.forEach(p => {
+          const card = document.createElement('div');
+          card.className = 'product-card';
+
+          const specsHtml = p.especificaciones.map(s => `<span class="tag"><i class="fas fa-check-circle"></i>${s}</span>`).join('');
+
+          card.innerHTML = `
+            <div class="product-image">
+              ${p.img
+                ? `<img src="${p.img}" alt="${p.nombre}" loading="lazy">`
+                : `<div class="placeholder-icon"><i class="fas fa-laptop"></i></div>`
+              }
+            </div>
+            <div class="product-info">
+              <h3>${p.nombre}</h3>
+              <div class="product-specs">${specsHtml}</div>
+              <p class="product-desc">${p.descripcion}</p>
+              <div class="pricing">
+                <div class="price-box transfer">
+                  <div class="label">Transferencia</div>
+                  <div class="amount">${p.precioTransferencia}</div>
+                  <div class="iva">+ IVA</div>
+                </div>
+                <div class="price-box card">
+                  <div class="label">Débito / Crédito</div>
+                  <div class="amount">${p.precioTarjeta}</div>
+                  <div class="iva">+ IVA</div>
+                </div>
+              </div>
+              <div class="product-actions">
+                <a href="https://wa.me/56961991725?text=${p.wa}" target="_blank" class="btn-wa">
+                  <i class="fab fa-whatsapp"></i> Consultar disponibilidad
+                </a>
+              </div>
+            </div>
+          `;
+          grid.appendChild(card);
+        });
+      })
+      .catch(() => {
+        grid.innerHTML = '<div style="text-align:center;padding:40px;color:#64748b;">No pudimos cargar el catálogo. Intenta de nuevo más tarde.</div>';
+      });
+  </script>
+
+</body>
+</html>
