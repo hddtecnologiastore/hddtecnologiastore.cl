@@ -4,4 +4,3 @@
 netlify-config.json
 node_modules/
 .netlify/
-package-lock.json
