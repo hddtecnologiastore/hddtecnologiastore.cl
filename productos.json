@@ -2,19 +2,23 @@
   {
     "img": "",
     "nombre": "Marca:HP Model: 15-ef108la",
-    "especificaciones": ["Ryzen 5 4500U 2.38GHz", "8GB RAM", "256GB SSD", "Pantalla 15.6\" FHD", "Teclado retroiluminado: No"],
+    "especificaciones": ["AMD Ryzen 5", "8GB DDR4", "256GB SSD", "15.6\"", "FHD (1920x1080)", "Integrada", "Cámara HD"],
     "descripcion": "Equipo empresarial de alto rendimiento, ideal para trabajo y estudio. Revisado y certificado.",
     "precioTransferencia": "$350.000 + IVA",
     "precioTarjeta": "$365.000 + IVA",
-    "wa": "Hola,%20quiero%20consultar%20por%20el%20Notebook%Disponible%"
+    "wa": "Hola%2C%20quiero%20consultar%20por%20el%20Notebook%20Disponible",
+    "estado": 4,
+    "nota": "La batería no tiene garantía. El resto del equipo sí."
   },
   {
     "img": "",
     "nombre": "Dell Latitude 5490",
-    "especificaciones": ["Intel Core i5 8va Gen", "16GB RAM", "256GB SSD", "Pantalla 14\" FHD", "Cámara HD"],
+    "especificaciones": ["Intel Core i5", "16GB DDR4", "256GB SSD", "14\"", "FHD (1920x1080)", "Integrada", "Cámara HD"],
     "descripcion": "Notebook corporativo Dell con excelente construcción y rendimiento garantizado.",
     "precioTransferencia": "$199.990",
     "precioTarjeta": "$229.990",
-    "wa": "Hola,%20quiero%20consultar%20por%20el%20Dell%20Latitude%205490"
-  },
+    "wa": "Hola%2C%20quiero%20consultar%20por%20el%20Dell%20Latitude%205490",
+    "estado": 5,
+    "nota": "La batería no tiene garantía. El resto del equipo sí."
+  }
 ]
