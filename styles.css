@@ -53,7 +53,7 @@ h1{font-family:var(--d);font-size:clamp(30px,4.6vw,54px);line-height:1.08;margin
 .kpi b{font-family:var(--d);font-size:20px;color:#fff;display:block}.kpi span{font-size:11px;color:var(--mut)}
 .hero-vis{position:relative;min-height:420px}
 .glass{background:var(--card);border:1px solid rgba(255,255,255,.09);backdrop-filter:blur(12px);border-radius:var(--r)}
-.card-main{padding:0;overflow:hidden;box-shadow:0 24px 70px rgba(37,99,235,.22);transform-style:preserve-3d}
+.card-main{padding:0;overflow:hidden;box-shadow:0 24px 70px rgba(37,99,235,.22)}
 .card-top{display:flex;align-items:center;gap:7px;padding:12px 16px;border-bottom:1px solid var(--line)}
 .led{width:10px;height:10px;border-radius:50%;background:#f87171}.led.y{background:var(--gold)}.led.g{background:var(--ok)}
 .card-tag{margin-left:auto;font-family:var(--d);font-size:10px;letter-spacing:1.5px;color:var(--acc)}
