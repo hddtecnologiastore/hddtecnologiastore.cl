@@ -28,8 +28,8 @@ a{color:inherit}
 .pill{background:var(--acc2);color:#fff;border-radius:99px;font-size:10px;padding:1px 7px;margin-left:4px}
 .hd-act{display:flex;gap:10px;align-items:center}
 .lang-switch{display:flex;align-items:center;gap:4px;background:rgba(255,255,255,.06);border:1px solid var(--line);border-radius:99px;padding:4px 8px;font-size:11px;backdrop-filter:blur(8px)}
-.lang-label{color:var(--acc);font-weight:800;font-size:10px;letter-spacing:.9px;margin-right:4px;display:flex;align-items:center;gap:4px}
-.lang-label::before{content:"🌐";font-size:12px}
+.lang-label{color:var(--acc);font-weight:800;font-size:13px;letter-spacing:.9px;margin-right:4px;display:flex;align-items:center;gap:4px}
+.lang-label::before{content:"🌐";font-size:14px}
 .lang-btn{display:inline-flex;align-items:center;gap:6px;background:transparent;border:1px solid transparent;color:var(--mut);font-weight:700;font-size:11px;padding:5px 10px;border-radius:99px;cursor:pointer;transition:.2s;line-height:1}
 .lang-btn .flag{font-size:16px;line-height:1;display:inline-flex;align-items:center;justify-content:center;width:22px;height:16px;border-radius:3px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.35);background:rgba(0,0,0,.15)}
 .lang-btn .flag img{width:22px;height:16px;object-fit:cover;display:block;border-radius:3px}
