@@ -6,6 +6,115 @@ var $$=function(s,c){return Array.prototype.slice.call((c||document).querySelect
 function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
 function toast(m){var t=$("#toast");if(!t)return;t.textContent=m;t.classList.add("show");clearTimeout(t._h);t._h=setTimeout(function(){t.classList.remove("show")},2600)}
 var reduced=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+/* i18n ES/EN - default es */
+var I18N={
+es:{
+"nav.home":"Inicio","nav.services":"Servicios","nav.process":"Proceso","nav.reviews":"Reseñas","nav.contact":"Contacto",
+"hero.badge":"SERVICIO PREMIUM \u00b7 GARANT\u00cdA REAL \u00b7 20 A\u00d1OS",
+"hero.title":"Servicio t\u00e9cnico<br><span class=\"grad\">en computaci\u00f3n,</span><br>con <span id=\"typing\" class=\"typing\">garant\u00eda real</span>",
+"hero.lead":"Servicio T\u00e9cnico Especializado en Laptops y Equipos de C\u00f3mputo<br>Diagn\u00f3stico preciso, mantenimiento preventivo y reparaci\u00f3n con garant\u00eda por escrito. Respaldado por m\u00e1s de 1.350 clientes satisfechos en Santiago y un \u00edndice de efectividad superior al 99%.",
+"hero.cta1":"Agendar diagn\u00f3stico","hero.cta2":"Ver servicios",
+"hero.trust1":"\u2605 5.0 Google","hero.trust2":"\uD83D\uDEE1 Garant\u00eda real","hero.trust3":"\u26A1 Diagn\u00f3stico honesto",
+"hero.kpi1":"Clientes","hero.kpi2":"A\u00f1os","hero.kpi3":"Satisfacci\u00f3n",
+"hero.cardTag":"\u25CF CONFIANZA VERIFICADA \u00b7 EN VIVO","hero.today":"hoy \u00b7 \u00d1u\u00f1oa",
+"hero.available":"Disponible hoy en \u00d1u\u00f1oa","hero.cardResp":"Respuesta <10 min",
+"hero.cardDesc":"Atenci\u00f3n directa con el Ing. Alejandro \u2014 sin intermediarios. Coordinas por WhatsApp y recibes diagn\u00f3stico honesto antes de reparar.",
+"hero.google":"Ver ficha Google 5.0 \u2192",
+"hero.foot1k":"RESPUESTA","hero.foot1v":"\u25CF <10 min","hero.foot2k":"DIAGN\u00d3STICO","hero.foot2v":"Honesto","hero.foot3k":"GARANT\u00cdA","hero.foot3v":"Real",
+"hero.pill1":"\u2714 Diagn\u00f3stico honesto","hero.pill2":"\u2714 Todas las marcas","hero.pill3":"\u2714 Atenci\u00f3n personalizada",
+"hero.marquee":"TODAS LAS MARCAS \u00b7 DIAGN\u00d3STICO HONESTO \u00b7 GARANT\u00cdA REAL \u00b7 \u00d1U\u00d1OA \u00b7 SANTIAGO \u00b7\u00a0",
+"services.kick":"SERVICIOS","services.title":"Tu socio tecnol\u00f3gico <span class=\"grad\">de confianza</span>","services.sub":"Soluciones completas con diagn\u00f3stico honesto y garant\u00eda real.",
+"services.s1h":"Reparaci\u00f3n de PCs","services.s1p":"Diagn\u00f3stico y reparaci\u00f3n de escritorio y laptops de todas las marcas con garant\u00eda real.","services.s1a":"Solicitar \u2192",
+"services.s2h":"Mantenimiento","services.s2p":"Limpieza profunda, cambio de pasta t\u00e9rmica al procesador y gr\u00e1fica, y limpieza general del equipo.","services.s2a":"Solicitar \u2192",
+"services.s3h":"Contrato Mensual para Empresas","services.s3p":"Plan de soporte continuo en software y hardware con cobertura mensual. Atenci\u00f3n prioritaria y asistencia remota.","services.s3a":"Cotizar plan \u2192",
+"services.s4h":"Soporte T\u00e9cnico","services.s4p":"Atenci\u00f3n remota y presencial con instalaci\u00f3n de software, respuesta r\u00e1pida y soluci\u00f3n efectiva garantizada.","services.s4a":"Solicitar \u2192",
+"services.s5h":"Reparaciones F\u00edsicas","services.s5p":"Reparaci\u00f3n de bisagra, pantalla, cambio de teclado, tapas y dem\u00e1s componentes f\u00edsicos de notebook.","services.s5a":"Solicitar \u2192",
+"process.title":"C\u00f3mo solicitar <span class=\"grad\">el servicio</span>","process.sub":"Completa el formulario y te contactamos por WhatsApp.",
+"process.s1h":"Cu\u00e9ntame","process.s1p":"Nombre, tel\u00e9fono y descripci\u00f3n del problema en el formulario.",
+"process.s2h":"Se abre WhatsApp","process.s2p":"Tu mensaje llega directo al Ing. Alejandro Casanova.",
+"process.s3h":"Diagn\u00f3stico","process.s3p":"Revisi\u00f3n y presupuesto claro antes de reparar.",
+"process.s4h":"Garant\u00eda real","process.s4p":"Atenci\u00f3n personalizada y garant\u00eda.",
+"social.kick":"CONTENIDO REAL","social.title":"El taller, <span class=\"grad\">d\u00eda a d\u00eda</span>","social.sub":"S\u00edguenos en Instagram y TikTok para ver trabajos y tips t\u00e9cnicos.",
+"social.igDesc":"Trabajos y detr\u00e1s de escena","social.tkDesc":"Tips r\u00e1pidos y urgencias",
+"about.kick":"NOSOTROS","about.name":"Ing. Alejandro <span class=\"grad\">Casanova</span>","about.role":"Due\u00f1o & T\u00e9cnico Principal \u2014 20 A\u00f1os de Experiencia","about.desc":"Ingeniero en Sistemas con dos d\u00e9cadas en reparaci\u00f3n, mantenimiento y soporte. Fund\u00f3 HDD Tecnolog\u00eda Store en 2019 en Chile, para un servicio honesto, con garant\u00eda real y atenci\u00f3n personalizada. M\u00e1s de <b>1.350 clientes</b> en Santiago.","about.quote":"\u201cAtenci\u00f3n, servicio y soluci\u00f3n. Eso es lo que ofrezco. Nada menos.\u201d","about.cta1":"Hablar con Alejandro","about.cta2":"Ver rese\u00f1as Google",
+"about.badge1":"\u25CF Disponible hoy","about.badge2":"Taller \u00b7 \u00d1u\u00f1oa","about.cardRole":"Due\u00f1o y T\u00e9cnico Principal","about.s1":"a\u00f1os","about.s2":"clientes","about.s3":"\u00e9xito",
+"reviews.kick":"PRUEBA SOCIAL","reviews.title":"Lo que dicen <span class=\"grad\">mis clientes</span>","reviews.sub":"Google 5.0 verificado. <a target=\"_blank\" rel=\"noopener\" href=\"https://www.google.com/maps/place/?q=place_id:ChIJC6Bso6XPYpYRk9egCQTftUE\">Ver todas en Google \u2192</a>","reviews.gbtn":"Ver en Google",
+"contact.kick":"CONTACTO","contact.title":"Hablemos de <span class=\"grad\">tu equipo</span>","contact.sub":"Coordinamos directamente por WhatsApp con Alejandro.",
+"contact.c1p":"Servicio t\u00e9cnico con garant\u00eda real y atenci\u00f3n personalizada.","contact.wa":"WhatsApp directo",
+"contact.c2h":"Servicios","contact.s1":"Reparaci\u00f3n de PCs","contact.s2":"Mantenimiento","contact.s3":"Contrato empresas","contact.s4":"Soporte T\u00e9cnico",
+"contact.c3h":"Ubicaci\u00f3n","contact.c3p":"Atenci\u00f3n coordinada por WhatsApp con Alejandro","contact.how":"Te indico c\u00f3mo llegar \u2192",
+"float.tip":"Escr\u00edbeme ahora",
+"modal.svcTitle":"Solicita tu servicio","modal.svcSub":"Te abro WhatsApp con tu mensaje listo. Sin cuentas, sin espera.",
+"modal.svcName":"Nombre","modal.svcPhone":"Tel\u00e9fono","modal.svcService":"Servicio","modal.svcOpt1":"Diagn\u00f3stico general","modal.svcOpt2":"Reparaci\u00f3n de PCs","modal.svcOpt3":"Mantenimiento","modal.svcOpt4":"Soporte T\u00e9cnico","modal.svcOpt5":"Reparaci\u00f3n f\u00edsica","modal.svcOpt6":"Notebook reacondicionado",
+"modal.svcMsg":"Describe el problema","modal.svcLegal":"Al enviar aceptas <a href=\"privacidad.html\">privacidad</a> y <a href=\"terminos.html\">t\u00e9rminos</a>.","modal.svcBtn":"Enviar por WhatsApp \u2192",
+"modal.bizTitle":"Contrato mensual empresas","modal.bizSub":"Cotizaci\u00f3n con RUT validado (m\u00f3dulo 11). Te llega lista a WhatsApp.",
+"modal.bizName":"Empresa","modal.bizCom":"Comuna","modal.bizPer":"Per\u00edodo","modal.bizPer1":"3 meses","modal.bizPer2":"6 meses","modal.bizPer3":"1 a\u00f1o","modal.bizMsg":"Qu\u00e9 necesitan","modal.bizLegal":"Al cotizar aceptas <a href=\"privacidad.html\">privacidad</a> y <a href=\"terminos.html\">t\u00e9rminos</a>.","modal.bizBtn":"Cotizar por WhatsApp \u2192"
+},
+en:{
+"nav.home":"Home","nav.services":"Services","nav.process":"Process","nav.reviews":"Reviews","nav.contact":"Contact",
+"hero.badge":"PREMIUM SERVICE \u00b7 REAL WARRANTY \u00b7 20 YEARS",
+"hero.title":"Technical service<br><span class=\"grad\">for computers,</span><br>with <span id=\"typing\" class=\"typing\">real warranty</span>",
+"hero.lead":"Specialized Technical Service for Laptops and Computers<br>Accurate diagnostics, preventive maintenance and repair with written warranty. Trusted by over 1,350 satisfied clients in Santiago with over 99% success rate.",
+"hero.cta1":"Book diagnosis","hero.cta2":"View services",
+"hero.trust1":"\u2605 5.0 Google","hero.trust2":"\uD83D\uDEE1 Real warranty","hero.trust3":"\u26A1 Honest diagnosis",
+"hero.kpi1":"Clients","hero.kpi2":"Years","hero.kpi3":"Satisfaction",
+"hero.cardTag":"\u25CF VERIFIED TRUST \u00b7 LIVE","hero.today":"today \u00b7 \u00d1u\u00f1oa",
+"hero.available":"Available today in \u00d1u\u00f1oa","hero.cardResp":"Reply <10 min",
+"hero.cardDesc":"Direct service with Eng. Alejandro \u2014 no middlemen. Coordinate via WhatsApp and get an honest diagnosis before any repair.",
+"hero.google":"View Google profile 5.0 \u2192",
+"hero.foot1k":"RESPONSE","hero.foot1v":"\u25CF <10 min","hero.foot2k":"DIAGNOSIS","hero.foot2v":"Honest","hero.foot3k":"WARRANTY","hero.foot3v":"Real",
+"hero.pill1":"\u2714 Honest diagnosis","hero.pill2":"\u2714 All brands","hero.pill3":"\u2714 Personalized service",
+"hero.marquee":"ALL BRANDS \u00b7 HONEST DIAGNOSIS \u00b7 REAL WARRANTY \u00b7 \u00d1U\u00d1OA \u00b7 SANTIAGO \u00b7\u00a0",
+"services.kick":"SERVICES","services.title":"Your trusted <span class=\"grad\">tech partner</span>","services.sub":"Complete solutions with honest diagnosis and real warranty.",
+"services.s1h":"PC Repair","services.s1p":"Diagnosis and repair for desktops and laptops of all brands with real warranty.","services.s1a":"Request \u2192",
+"services.s2h":"Maintenance","services.s2p":"Deep cleaning, thermal paste replacement for CPU/GPU and full system cleaning.","services.s2a":"Request \u2192",
+"services.s3h":"Monthly Business Plan","services.s3p":"Ongoing software and hardware support with monthly coverage. Priority care and remote assistance.","services.s3a":"Get quote \u2192",
+"services.s4h":"Technical Support","services.s4p":"Remote and on-site support with software installation, fast response and guaranteed effective solution.","services.s4a":"Request \u2192",
+"services.s5h":"Physical Repairs","services.s5p":"Hinge, screen, keyboard, covers and other physical notebook components repair.","services.s5a":"Request \u2192",
+"process.title":"How to request <span class=\"grad\">the service</span>","process.sub":"Fill the form and we contact you via WhatsApp.",
+"process.s1h":"Tell me","process.s1p":"Name, phone and problem description in the form.",
+"process.s2h":"WhatsApp opens","process.s2p":"Your message goes directly to Eng. Alejandro Casanova.",
+"process.s3h":"Diagnosis","process.s3p":"Review and clear quote before repair.",
+"process.s4h":"Real warranty","process.s4p":"Personalized care and warranty.",
+"social.kick":"REAL CONTENT","social.title":"The workshop, <span class=\"grad\">day by day</span>","social.sub":"Follow us on Instagram and TikTok for jobs and tech tips.",
+"social.igDesc":"Jobs and behind the scenes","social.tkDesc":"Quick tips and emergencies",
+"about.kick":"ABOUT US","about.name":"Eng. Alejandro <span class=\"grad\">Casanova</span>","about.role":"Owner & Lead Technician \u2014 20 Years Experience","about.desc":"Systems Engineer with two decades in repair, maintenance and support. Founded HDD Tecnolog\u00eda Store in 2019 in Chile, for honest service with real warranty and personalized attention. Over <b>1,350 clients</b> in Santiago.","about.quote":"\u201cCare, service and solution. That\u2019s what I offer. Nothing less.\u201d","about.cta1":"Talk to Alejandro","about.cta2":"View Google reviews",
+"about.badge1":"\u25CF Available today","about.badge2":"Workshop \u00b7 \u00d1u\u00f1oa","about.cardRole":"Owner & Lead Technician","about.s1":"years","about.s2":"clients","about.s3":"success",
+"reviews.kick":"SOCIAL PROOF","reviews.title":"What <span class=\"grad\">my clients</span> say","reviews.sub":"Google 5.0 verified. <a target=\"_blank\" rel=\"noopener\" href=\"https://www.google.com/maps/place/?q=place_id:ChIJC6Bso6XPYpYRk9egCQTftUE\">View all on Google \u2192</a>","reviews.gbtn":"View on Google",
+"contact.kick":"CONTACT","contact.title":"Let\u2019s talk about <span class=\"grad\">your device</span>","contact.sub":"We coordinate directly via WhatsApp with Alejandro.",
+"contact.c1p":"Technical service with real warranty and personalized attention.","contact.wa":"Direct WhatsApp",
+"contact.c2h":"Services","contact.s1":"PC Repair","contact.s2":"Maintenance","contact.s3":"Business plan","contact.s4":"Technical Support",
+"contact.c3h":"Location","contact.c3p":"Care coordinated via WhatsApp with Alejandro","contact.how":"Get directions \u2192",
+"float.tip":"Message me now",
+"modal.svcTitle":"Request your service","modal.svcSub":"I open WhatsApp with your ready message. No accounts, no waiting.",
+"modal.svcName":"Name","modal.svcPhone":"Phone","modal.svcService":"Service","modal.svcOpt1":"General diagnosis","modal.svcOpt2":"PC Repair","modal.svcOpt3":"Maintenance","modal.svcOpt4":"Technical Support","modal.svcOpt5":"Physical repair","modal.svcOpt6":"Refurbished notebook",
+"modal.svcMsg":"Describe the issue","modal.svcLegal":"By sending you accept <a href=\"privacidad.html\">privacy</a> and <a href=\"terminos.html\">terms</a>.","modal.svcBtn":"Send via WhatsApp \u2192",
+"modal.bizTitle":"Monthly business contract","modal.bizSub":"Quote with validated RUT (mod 11). Sent ready to WhatsApp.",
+"modal.bizName":"Company","modal.bizCom":"District","modal.bizPer":"Period","modal.bizPer1":"3 months","modal.bizPer2":"6 months","modal.bizPer3":"1 year","modal.bizMsg":"What do you need","modal.bizLegal":"By quoting you accept <a href=\"privacidad.html\">privacy</a> and <a href=\"terminos.html\">terms</a>.","modal.bizBtn":"Quote via WhatsApp \u2192"
+}
+};
+var curLang="es";try{curLang=localStorage.getItem("hdd_lang")||"es"}catch(e){}
+function applyLang(l){
+ curLang=l;try{localStorage.setItem("hdd_lang",l)}catch(e){}
+ document.documentElement.lang=l;
+ $$("[data-i18n]").forEach(function(el){
+  var k=el.getAttribute("data-i18n");var v=I18N[l]&&I18N[l][k];if(v==null)return;
+  if(k==="hero.title"||k==="services.title"||k==="process.title"||k==="social.title"||k==="about.name"||k==="reviews.title"||k==="contact.title"||k==="hero.marquee"||k==="about.desc"||k.indexOf("Legal")>=0){
+   el.innerHTML=v;
+  } else {
+   var hasHTML=/<[a-z]/i.test(v);if(hasHTML)el.innerHTML=v;else el.textContent=v;
+  }
+ });
+ var mq=$("#mq");if(mq&&I18N[l]["hero.marquee"]){mq.textContent=I18N[l]["hero.marquee"]+I18N[l]["hero.marquee"]}
+ $$(".lang-btn").forEach(function(b){var a=b.getAttribute("data-lang")===l;b.classList.toggle("active",a);b.setAttribute("aria-pressed",a?"true":"false")});
+ window.HDD_LANG=l;
+ try{window.dispatchEvent(new CustomEvent("hdd:lang",{detail:l}))}catch(e){}
+ var typingWords=l==="en"?["real warranty","honest diagnosis","personalized service"]:["garant\u00eda real","diagn\u00f3stico honesto","atenci\u00f3n personalizada"];
+ var typEl=$("#typing");if(typEl)typEl.setAttribute("data-words",typingWords.join("|"));
+ document.title=l==="en"?"HDD Technology Store \u2014 Trusted Technical Service | \u00d1u\u00f1oa, Santiago":"HDD Tecnolog\u00eda Store \u2014 Servicio T\u00e9cnico de Confianza | \u00d1u\u00f1oa, Santiago";
+}
+document.addEventListener("DOMContentLoaded",function(){applyLang(curLang);$$(".lang-btn").forEach(function(b){b.addEventListener("click",function(){applyLang(b.getAttribute("data-lang"))})})});
+window.HDD_I18N=I18N;window.HDD_applyLang=applyLang;
 /* Preloader (solo home) */
 var pre=$("#preloader"),pf=$("#preFill"),pt=$("#preTxt"),p=0;
 if(pre&&!reduced){var iv=setInterval(function(){p=Math.min(100,p+Math.random()*22);if(pf)pf.style.width=p+"%";if(pt)pt.textContent="Iniciando sistema… "+Math.floor(p)+"%";if(p>=100){clearInterval(iv);pre.classList.add("done");setTimeout(function(){pre.remove()},500)}},140)}
@@ -28,8 +137,8 @@ if(cur&&window.matchMedia("(pointer:fine)").matches){window.addEventListener("mo
 else if(cur){cur.style.display="none"}
 /* Canvas red tecnológica */
 (function(){var c=$("#net");if(!c||reduced)return;var x=c.getContext("2d"),pts=[],W,H;function rs(){W=c.width=innerWidth;H=c.height=innerHeight}rs();window.addEventListener("resize",rs);for(var i=0;i<70;i++)pts.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,vx:(Math.random()-.5)*.4,vy:(Math.random()-.5)*.4});(function loop(){x.clearRect(0,0,W,H);pts.forEach(function(a){a.x+=a.vx;a.y+=a.vy;if(a.x<0||a.x>W)a.vx*=-1;if(a.y<0||a.y>H)a.vy*=-1;x.fillStyle="rgba(56,189,248,.7)";x.beginPath();x.arc(a.x,a.y,1.4,0,7);x.fill()});for(var i=0;i<pts.length;i++)for(var j=i+1;j<pts.length;j++){var a=pts[i],b=pts[j],dx=a.x-b.x,dy=a.y-b.y,d=dx*dx+dy*dy;if(d<13000){x.strokeStyle="rgba(56,189,248,"+(0.16*(1-d/13000))+")";x.beginPath();x.moveTo(a.x,a.y);x.lineTo(b.x,b.y);x.stroke()}}requestAnimationFrame(loop)})()})();
-/* Typing hero */
-(function(){var el=$("#typing");if(!el)return;var w=["garantía real","diagnóstico honesto","atención personalizada"],i=0,j=0,del=false;function t(){var s=w[i];if(!del){j++;el.textContent=s.slice(0,j);if(j===s.length){del=true;setTimeout(t,1300);return}}else{j--;el.textContent=s.slice(0,j);if(j===0){del=false;i=(i+1)%w.length}}setTimeout(t,del?45:110)}if(!reduced)t();else el.textContent=w[0]})();
+/* Typing hero - lang aware */
+(function(){var el=$("#typing");if(!el)return;function getW(){var L="es";try{L=localStorage.getItem("hdd_lang")||"es"}catch(e){}return L==="en"?["real warranty","honest diagnosis","personalized service"]:["garant\u00eda real","diagn\u00f3stico honesto","atenci\u00f3n personalizada"];}var w=getW(),i=0,j=0,del=false;function t(){var s=w[i];if(!del){j++;el.textContent=s.slice(0,j);if(j===s.length){del=true;setTimeout(t,1300);return}}else{j--;el.textContent=s.slice(0,j);if(j===0){del=false;i=(i+1)%w.length;w=getW()}}setTimeout(t,del?45:110)}if(!reduced)t();else el.textContent=w[0];window.addEventListener("hdd:lang",function(e){w=e.detail==="en"?["real warranty","honest diagnosis","personalized service"]:["garant\u00eda real","diagn\u00f3stico honesto","atenci\u00f3n personalizada"]})})();
 /* Terminal fake */
 (function(){var box=$("#termLines");if(!box)return;var lines=["> diagnóstico y reparación… OK","> limpieza + pasta térmica CPU/GPU","> todas las marcas","> batería: informar estado real","> coordinación por WhatsApp"];var k=0;function n(){if(k>=lines.length)return;var d=document.createElement("div");d.className="ln";d.textContent=lines[k++];box.appendChild(d);setTimeout(n,reduced?0:650)}n()})();
 /* Tilt */

@@ -30,13 +30,19 @@
       <span class="brand-tx">HDD <b>TECNOLOGÍA</b><small>STORE · ÑUÑOA</small></span>
     </a>
     <nav class="nav" id="nav" aria-label="Principal">
-      <a href="#inicio" class="active">Inicio</a>
-      <a href="#servicios">Servicios</a>
-      <a href="#proceso">Proceso</a>
-      <a href="#resenas">Reseñas</a>
-      <a href="#contacto">Contacto</a>
+      <a href="#inicio" class="active" data-i18n="nav.home">Inicio</a>
+      <a href="#servicios" data-i18n="nav.services">Servicios</a>
+      <a href="#proceso" data-i18n="nav.process">Proceso</a>
+      <a href="#resenas" data-i18n="nav.reviews">Reseñas</a>
+      <a href="#contacto" data-i18n="nav.contact">Contacto</a>
     </nav>
     <div class="hd-act">
+      <div class="lang-switch" aria-label="Selector de idioma">
+        <span class="lang-label">Idioma:</span>
+        <button data-lang="es" class="lang-btn active" aria-pressed="true" aria-label="Español">🇪🇸 Español</button>
+        <span class="lang-sep">/</span>
+        <button data-lang="en" class="lang-btn" aria-pressed="false" aria-label="English">🇺🇸 English</button>
+      </div>
       <a class="wa-mini" href="https://wa.me/56961991725?text=Hola%20Alejandro%2C%20vengo%20de%20la%20web%20nueva%20y%20quiero%20un%20diagn%C3%B3stico" target="_blank" rel="noopener">WhatsApp</a>
       <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false"><i></i><i></i><i></i></button>
     </div>
@@ -48,62 +54,62 @@
 <section class="hero">
   <div class="wrap hero-grid">
     <div data-reveal>
-      <div class="badge"><span class="dot"></span> SERVICIO PREMIUM · GARANTÍA REAL · 20 AÑOS</div>
-      <h1>Servicio técnico<br><span class="grad">en computación,</span><br>con <span id="typing" class="typing">garantía real</span></h1>
-      <p class="lead">Servicio Técnico Especializado en Laptops y Equipos de Cómputo<br>Diagnóstico preciso, mantenimiento preventivo y reparación con garantía por escrito. Respaldado por más de 1.350 clientes satisfechos en Santiago y un índice de efectividad superior al 99%.</p>
+      <div class="badge" data-i18n="hero.badge"><span class="dot"></span> SERVICIO PREMIUM · GARANTÍA REAL · 20 AÑOS</div>
+      <h1 data-i18n="hero.title">Servicio técnico<br><span class="grad">en computación,</span><br>con <span id="typing" class="typing">garantía real</span></h1>
+      <p class="lead" data-i18n="hero.lead">Servicio Técnico Especializado en Laptops y Equipos de Cómputo<br>Diagnóstico preciso, mantenimiento preventivo y reparación con garantía por escrito. Respaldado por más de 1.350 clientes satisfechos en Santiago y un índice de efectividad superior al 99%.</p>
       <div class="cta-row">
-        <button class="btn primary magnetic" data-open="serviceModal">Agendar diagnóstico</button>
-        <a class="btn ghost magnetic" href="#servicios">Ver servicios</a>
+        <button class="btn primary magnetic" data-open="serviceModal" data-i18n="hero.cta1">Agendar diagnóstico</button>
+        <a class="btn ghost magnetic" href="#servicios" data-i18n="hero.cta2">Ver servicios</a>
       </div>
       <div class="trust">
-        <span>★ 5.0 Google</span><span>🛡 Garantía real</span><span>⚡ Diagnóstico honesto</span>
+        <span data-i18n="hero.trust1">★ 5.0 Google</span><span data-i18n="hero.trust2">🛡 Garantía real</span><span data-i18n="hero.trust3">⚡ Diagnóstico honesto</span>
       </div>
       <div class="kpis">
-        <div class="kpi"><b data-count="1350" data-suffix="+">0</b><span>Clientes</span></div>
-        <div class="kpi"><b data-count="20">0</b><span>Años</span></div>
-        <div class="kpi"><b data-count="99" data-suffix="%">0</b><span>Satisfacción</span></div>
+        <div class="kpi"><b data-count="1350" data-suffix="+">0</b><span data-i18n="hero.kpi1">Clientes</span></div>
+        <div class="kpi"><b data-count="20">0</b><span data-i18n="hero.kpi2">Años</span></div>
+        <div class="kpi"><b data-count="99" data-suffix="%">0</b><span data-i18n="hero.kpi3">Satisfacción</span></div>
       </div>
     </div>
     <div class="hero-vis" data-reveal style="display:flex;flex-direction:column;align-items:center;justify-content:center">
       <div class="glass card-main tilt" id="tiltCard" style="max-width:400px;width:100%;margin:0 auto">
-        <div class="card-top"><span class="led g" style="background:#25d366;box-shadow:0 0 8px #25d366"></span><span class="card-tag" style="color:#25d366">● CONFIANZA VERIFICADA · EN VIVO</span><span style="margin-left:auto;font-size:10px;color:var(--mut)">hoy · Ñuñoa</span></div>
+        <div class="card-top"><span class="led g" style="background:#25d366;box-shadow:0 0 8px #25d366"></span><span class="card-tag" style="color:#25d366" data-i18n="hero.cardTag">● CONFIANZA VERIFICADA · EN VIVO</span><span style="margin-left:auto;font-size:10px;color:var(--mut)" data-i18n="hero.today">hoy · Ñuñoa</span></div>
         <div style="padding:16px;display:flex;flex-direction:column;gap:12px">
           <div style="background:rgba(56,189,248,.06);border:1px solid var(--line);border-radius:12px;padding:14px">
-            <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span style="width:8px;height:8px;border-radius:50%;background:#25d366;box-shadow:0 0 8px #25d366;display:inline-block"></span><b style="font-size:12px">Disponible hoy en Ñuñoa</b><span style="margin-left:auto;font-size:11px;color:var(--mut)">Respuesta &lt;10 min</span></div>
-            <p style="font-size:13px;color:var(--mut);line-height:1.5">Atención directa con el Ing. Alejandro — sin intermediarios. Coordinas por WhatsApp y recibes diagnóstico honesto antes de reparar.</p>
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span style="width:8px;height:8px;border-radius:50%;background:#25d366;box-shadow:0 0 8px #25d366;display:inline-block"></span><b style="font-size:12px" data-i18n="hero.available">Disponible hoy en Ñuñoa</b><span style="margin-left:auto;font-size:11px;color:var(--mut)" data-i18n="hero.cardResp">Respuesta &lt;10 min</span></div>
+            <p style="font-size:13px;color:var(--mut);line-height:1.5" data-i18n="hero.cardDesc">Atención directa con el Ing. Alejandro — sin intermediarios. Coordinas por WhatsApp y recibes diagnóstico honesto antes de reparar.</p>
           </div>
           <div style="padding:0;overflow:hidden;position:relative;border-radius:12px;border:1px solid var(--line);min-height:80px">
             <div id="heroRevTrack" style="display:flex;transition:transform .45s cubic-bezier(.2,.7,.25,1)"></div>
             <div id="heroRevDots" style="position:absolute;bottom:6px;left:50%;transform:translateX(-50%);display:flex;gap:4px"></div>
           </div>
-          <a href="https://www.google.com/maps/place/?q=place_id:ChIJC6Bso6XPYpYRk9egCQTftUE" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:6px;background:#ffffff;color:#0a1628;font-weight:800;font-size:12px;padding:10px;border-radius:10px;text-decoration:none">Ver ficha Google 5.0 →</a>
+          <a href="https://www.google.com/maps/place/?q=place_id:ChIJC6Bso6XPYpYRk9egCQTftUE" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:6px;background:#ffffff;color:#0a1628;font-weight:800;font-size:12px;padding:10px;border-radius:10px;text-decoration:none" data-i18n="hero.google">Ver ficha Google 5.0 →</a>
         </div>
         <div class="card-foot">
-          <div><small>RESPUESTA</small><b class="ok">● &lt;10 min</b></div>
-          <div><small>DIAGNÓSTICO</small><b>Honesto</b></div>
-          <div><small>GARANTÍA</small><b>Real</b></div>
+          <div><small data-i18n="hero.foot1k">RESPUESTA</small><b class="ok" data-i18n="hero.foot1v">● &lt;10 min</b></div>
+          <div><small data-i18n="hero.foot2k">DIAGNÓSTICO</small><b data-i18n="hero.foot2v">Honesto</b></div>
+          <div><small data-i18n="hero.foot3k">GARANTÍA</small><b data-i18n="hero.foot3v">Real</b></div>
         </div>
       </div>
       <div style="display:flex;gap:8px;justify-content:center;margin-top:14px;flex-wrap:wrap;max-width:400px;width:100%;margin-left:auto;margin-right:auto">
-        <span class="glass" style="padding:8px 14px;border-radius:99px;font-size:12px;font-weight:700">✔ Diagnóstico honesto</span>
-        <span class="glass" style="padding:8px 14px;border-radius:99px;font-size:12px;font-weight:700">✔ Todas las marcas</span>
-        <span class="glass" style="padding:8px 14px;border-radius:99px;font-size:12px;font-weight:700">✔ Atención personalizada</span>
+        <span class="glass" style="padding:8px 14px;border-radius:99px;font-size:12px;font-weight:700" data-i18n="hero.pill1">✔ Diagnóstico honesto</span>
+        <span class="glass" style="padding:8px 14px;border-radius:99px;font-size:12px;font-weight:700" data-i18n="hero.pill2">✔ Todas las marcas</span>
+        <span class="glass" style="padding:8px 14px;border-radius:99px;font-size:12px;font-weight:700" data-i18n="hero.pill3">✔ Atención personalizada</span>
       </div>
     </div>
   </div>
-  <div class="marquee" aria-hidden="true"><div class="mq-in" id="mq">TODAS LAS MARCAS · DIAGNÓSTICO HONESTO · GARANTÍA REAL · ÑUÑOA · SANTIAGO ·&nbsp;</div></div>
+  <div class="marquee" aria-hidden="true"><div class="mq-in" id="mq" data-i18n="hero.marquee">TODAS LAS MARCAS · DIAGNÓSTICO HONESTO · GARANTÍA REAL · ÑUÑOA · SANTIAGO ·&nbsp;</div></div>
 </section>
 
 <!-- SERVICIOS -->
 <section class="sec" id="servicios">
   <div class="wrap">
-    <div class="sec-hd" data-reveal><p class="kick">SERVICIOS</p><h2>Tu socio tecnológico <span class="grad">de confianza</span></h2><p class="sub">Soluciones completas con diagnóstico honesto y garantía real.</p></div>
+    <div class="sec-hd" data-reveal><p class="kick" data-i18n="services.kick">SERVICIOS</p><h2 data-i18n="services.title">Tu socio tecnológico <span class="grad">de confianza</span></h2><p class="sub" data-i18n="services.sub">Soluciones completas con diagnóstico honesto y garantía real.</p></div>
     <div class="grid6">
-      <article class="svc glass hover-glow" data-reveal><div class="ic" style="width:44px;height:44px;border-radius:12px;background:rgba(56,189,248,.12);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--acc)"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8"/><path d="M12 16v4"/></svg></div><h3>Reparación de PCs</h3><p>Diagnóstico y reparación de escritorio y laptops de todas las marcas con garantía real.</p><span class="svc-link" data-open="serviceModal" data-svc="Reparación de PCs">Solicitar →</span></article>
-      <article class="svc glass hover-glow" data-reveal><div class="ic" style="width:44px;height:44px;border-radius:12px;background:rgba(56,189,248,.12);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--acc)"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20h8"/><path d="M4 4l8 8"/><path d="M14 4l6 6-8 8-6-6z"/></svg></div><h3>Mantenimiento</h3><p>Limpieza profunda, cambio de pasta térmica al procesador y gráfica, y limpieza general del equipo.</p><span class="svc-link" data-open="serviceModal" data-svc="Mantenimiento">Solicitar →</span></article>
-      <article class="svc glass hover-glow biz" data-reveal><div class="ic" style="width:44px;height:44px;border-radius:12px;background:rgba(37,99,235,.18);border:1px solid rgba(37,99,235,.3);display:flex;align-items:center;justify-content:center;color:#93c5fd"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a4 4 0 0 1 8 0v2"/><path d="M12 11v4"/></svg></div><h3>Contrato Mensual para Empresas</h3><p>Plan de soporte continuo en software y hardware con cobertura mensual. Atención prioritaria y asistencia remota.</p><span class="svc-link" data-open="bizModal">Cotizar plan →</span></article>
-      <article class="svc glass hover-glow" data-reveal><div class="ic" style="width:44px;height:44px;border-radius:12px;background:rgba(56,189,248,.12);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--acc)"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3>Soporte Técnico</h3><p>Atención remota y presencial con instalación de software, respuesta rápida y solución efectiva garantizada.</p><span class="svc-link" data-open="serviceModal" data-svc="Soporte Técnico">Solicitar →</span></article>
-      <article class="svc glass hover-glow" data-reveal><div class="ic" style="width:44px;height:44px;border-radius:12px;background:rgba(56,189,248,.12);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--acc)"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.3-3.3a1 1 0 0 0 0-1.4l-1.6-1.6a1 1 0 0 0-1.4 0z"/><path d="M12 13a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/><path d="M2 12l2 2 3-3"/></svg></div><h3>Reparaciones Físicas</h3><p>Reparación de bisagra, pantalla, cambio de teclado, tapas y demás componentes físicos de notebook.</p><span class="svc-link" data-open="serviceModal" data-svc="Reparación física">Solicitar →</span></article>
+      <article class="svc glass hover-glow" data-reveal><div class="ic" style="width:44px;height:44px;border-radius:12px;background:rgba(56,189,248,.12);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--acc)"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8"/><path d="M12 16v4"/></svg></div><h3 data-i18n="services.s1h">Reparación de PCs</h3><p data-i18n="services.s1p">Diagnóstico y reparación de escritorio y laptops de todas las marcas con garantía real.</p><span class="svc-link" data-open="serviceModal" data-svc="Reparación de PCs" data-i18n="services.s1a">Solicitar →</span></article>
+      <article class="svc glass hover-glow" data-reveal><div class="ic" style="width:44px;height:44px;border-radius:12px;background:rgba(56,189,248,.12);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--acc)"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20h8"/><path d="M4 4l8 8"/><path d="M14 4l6 6-8 8-6-6z"/></svg></div><h3 data-i18n="services.s2h">Mantenimiento</h3><p data-i18n="services.s2p">Limpieza profunda, cambio de pasta térmica al procesador y gráfica, y limpieza general del equipo.</p><span class="svc-link" data-open="serviceModal" data-svc="Mantenimiento" data-i18n="services.s2a">Solicitar →</span></article>
+      <article class="svc glass hover-glow biz" data-reveal><div class="ic" style="width:44px;height:44px;border-radius:12px;background:rgba(37,99,235,.18);border:1px solid rgba(37,99,235,.3);display:flex;align-items:center;justify-content:center;color:#93c5fd"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a4 4 0 0 1 8 0v2"/><path d="M12 11v4"/></svg></div><h3 data-i18n="services.s3h">Contrato Mensual para Empresas</h3><p data-i18n="services.s3p">Plan de soporte continuo en software y hardware con cobertura mensual. Atención prioritaria y asistencia remota.</p><span class="svc-link" data-open="bizModal" data-i18n="services.s3a">Cotizar plan →</span></article>
+      <article class="svc glass hover-glow" data-reveal><div class="ic" style="width:44px;height:44px;border-radius:12px;background:rgba(56,189,248,.12);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--acc)"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3 data-i18n="services.s4h">Soporte Técnico</h3><p data-i18n="services.s4p">Atención remota y presencial con instalación de software, respuesta rápida y solución efectiva garantizada.</p><span class="svc-link" data-open="serviceModal" data-svc="Soporte Técnico" data-i18n="services.s4a">Solicitar →</span></article>
+      <article class="svc glass hover-glow" data-reveal><div class="ic" style="width:44px;height:44px;border-radius:12px;background:rgba(56,189,248,.12);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--acc)"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.3-3.3a1 1 0 0 0 0-1.4l-1.6-1.6a1 1 0 0 0-1.4 0z"/><path d="M12 13a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/><path d="M2 12l2 2 3-3"/></svg></div><h3 data-i18n="services.s5h">Reparaciones Físicas</h3><p data-i18n="services.s5p">Reparación de bisagra, pantalla, cambio de teclado, tapas y demás componentes físicos de notebook.</p><span class="svc-link" data-open="serviceModal" data-svc="Reparación física" data-i18n="services.s5a">Solicitar →</span></article>
     </div>
   </div>
 </section>
@@ -111,12 +117,12 @@
 <!-- PROCESO -->
 <section class="sec alt" id="proceso">
   <div class="wrap">
-    <div class="sec-hd" data-reveal><h2>Cómo solicitar <span class="grad">el servicio</span></h2><p class="sub">Completa el formulario y te contactamos por WhatsApp.</p></div>
+    <div class="sec-hd" data-reveal><h2 data-i18n="process.title">Cómo solicitar <span class="grad">el servicio</span></h2><p class="sub" data-i18n="process.sub">Completa el formulario y te contactamos por WhatsApp.</p></div>
     <ol class="steps">
-      <li data-reveal><b>01</b><h3>Cuéntame</h3><p>Nombre, teléfono y descripción del problema en el formulario.</p></li>
-      <li data-reveal><b>02</b><h3>Se abre WhatsApp</h3><p>Tu mensaje llega directo al Ing. Alejandro Casanova.</p></li>
-      <li data-reveal><b>03</b><h3>Diagnóstico</h3><p>Revisión y presupuesto claro antes de reparar.</p></li>
-      <li data-reveal><b>04</b><h3>Garantía real</h3><p>Atención personalizada y garantía.</p></li>
+      <li data-reveal><b>01</b><h3 data-i18n="process.s1h">Cuéntame</h3><p data-i18n="process.s1p">Nombre, teléfono y descripción del problema en el formulario.</p></li>
+      <li data-reveal><b>02</b><h3 data-i18n="process.s2h">Se abre WhatsApp</h3><p data-i18n="process.s2p">Tu mensaje llega directo al Ing. Alejandro Casanova.</p></li>
+      <li data-reveal><b>03</b><h3 data-i18n="process.s3h">Diagnóstico</h3><p data-i18n="process.s3p">Revisión y presupuesto claro antes de reparar.</p></li>
+      <li data-reveal><b>04</b><h3 data-i18n="process.s4h">Garantía real</h3><p data-i18n="process.s4p">Atención personalizada y garantía.</p></li>
     </ol>
   </div>
 </section>
@@ -124,10 +130,10 @@
 <!-- REDES -->
 <section class="sec alt" id="redes">
   <div class="wrap">
-    <div class="sec-hd" data-reveal><p class="kick">CONTENIDO REAL</p><h2>El taller, <span class="grad">día a día</span></h2><p class="sub">Síguenos en Instagram y TikTok para ver trabajos y tips técnicos.</p></div>
+    <div class="sec-hd" data-reveal><p class="kick" data-i18n="social.kick">CONTENIDO REAL</p><h2 data-i18n="social.title">El taller, <span class="grad">día a día</span></h2><p class="sub" data-i18n="social.sub">Síguenos en Instagram y TikTok para ver trabajos y tips técnicos.</p></div>
     <div class="social-grid">
-      <a class="soc ig hover-glow" data-reveal target="_blank" rel="noopener" href="https://www.instagram.com/hddtecnologiastore/"><span class="soc-ic" style="background:rgba(255,255,255,.18)"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="white" stroke-width="1.7"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.8" cy="6.2" r="1.1" fill="white" stroke="none"/></svg></span><span><b>Instagram</b><small>Trabajos y detrás de escena</small></span><span class="go">→</span></a>
-      <a class="soc tk hover-glow" data-reveal target="_blank" rel="noopener" href="https://www.tiktok.com/@hddtecnologia"><span class="soc-ic" style="background:rgba(255,255,255,.18)"><svg viewBox="0 0 24 24" width="22" height="22" fill="white"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.78 0 2.89 2.89 0 0 1 5.78 0V8.33a6.27 6.27 0 0 0-.79-.05A6.34 6.34 0 0 0 3.15 14.6a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.75a8.16 8.16 0 0 0 4.76 1.52V6.84a4.83 4.83 0 0 1-1-.15z"/></svg></span><span><b>TikTok</b><small>Tips rápidos y urgencias</small></span><span class="go">→</span></a>
+      <a class="soc ig hover-glow" data-reveal target="_blank" rel="noopener" href="https://www.instagram.com/hddtecnologiastore/"><span class="soc-ic" style="background:rgba(255,255,255,.18)"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="white" stroke-width="1.7"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.8" cy="6.2" r="1.1" fill="white" stroke="none"/></svg></span><span><b>Instagram</b><small data-i18n="social.igDesc">Trabajos y detrás de escena</small></span><span class="go">→</span></a>
+      <a class="soc tk hover-glow" data-reveal target="_blank" rel="noopener" href="https://www.tiktok.com/@hddtecnologia"><span class="soc-ic" style="background:rgba(255,255,255,.18)"><svg viewBox="0 0 24 24" width="22" height="22" fill="white"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.78 0 2.89 2.89 0 0 1 5.78 0V8.33a6.27 6.27 0 0 0-.79-.05A6.34 6.34 0 0 0 3.15 14.6a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.75a8.16 8.16 0 0 0 4.76 1.52V6.84a4.83 4.83 0 0 1-1-.15z"/></svg></span><span><b>TikTok</b><small data-i18n="social.tkDesc">Tips rápidos y urgencias</small></span><span class="go">→</span></a>
     </div>
   </div>
 </section>
@@ -135,19 +141,19 @@
 <!-- NOSOTROS -->
 <section class="sec" id="nosotros">
   <div class="wrap split" style="align-items:stretch">
-         <div class="glass" data-reveal style="padding:32px;display:flex;flex-direction:column;justify-content:center;min-height:560px;text-align:center"><p class="kick" style="font-size:15px;letter-spacing:4px">NOSOTROS</p><h2 style="font-size:clamp(28px,3.6vw,40px);text-align:center">Ing. Alejandro <span class="grad">Casanova</span></h2><p class="role" style="font-size:16px;margin:8px 0 14px;text-align:center">Dueño & Técnico Principal — 20 Años de Experiencia</p><p class="sub" style="text-align:center;font-size:17px;line-height:1.75;margin:0">Ingeniero en Sistemas con dos décadas en reparación, mantenimiento y soporte. Fundó HDD Tecnología Store en 2019 en Chile, para un servicio honesto, con garantía real y atención personalizada. Más de <b>1.350 clientes</b> en Santiago.</p><div class="quote glass" style="margin:16px 0;padding:18px;font-size:15px;text-align:center">“Atención, servicio y solución. Eso es lo que ofrezco. Nada menos.”</div><div class="cta-row" style="margin-top:8px;justify-content:center"><button class="btn primary magnetic" data-open="serviceModal">Hablar con Alejandro</button><a class="btn ghost magnetic" target="_blank" rel="noopener" href="https://www.google.com/maps/place/?q=place_id:ChIJC6Bso6XPYpYRk9egCQTftUE">Ver reseñas Google</a></div></div>
+         <div class="glass" data-reveal style="padding:32px;display:flex;flex-direction:column;justify-content:center;min-height:560px;text-align:center"><p class="kick" style="font-size:15px;letter-spacing:4px" data-i18n="about.kick">NOSOTROS</p><h2 style="font-size:clamp(28px,3.6vw,40px);text-align:center" data-i18n="about.name">Ing. Alejandro <span class="grad">Casanova</span></h2><p class="role" style="font-size:16px;margin:8px 0 14px;text-align:center" data-i18n="about.role">Dueño & Técnico Principal — 20 Años de Experiencia</p><p class="sub" style="text-align:center;font-size:17px;line-height:1.75;margin:0" data-i18n="about.desc">Ingeniero en Sistemas con dos décadas en reparación, mantenimiento y soporte. Fundó HDD Tecnología Store en 2019 en Chile, para un servicio honesto, con garantía real y atención personalizada. Más de <b>1.350 clientes</b> en Santiago.</p><div class="quote glass" style="margin:16px 0;padding:18px;font-size:15px;text-align:center" data-i18n="about.quote">“Atención, servicio y solución. Eso es lo que ofrezco. Nada menos.”</div><div class="cta-row" style="margin-top:8px;justify-content:center"><button class="btn primary magnetic" data-open="serviceModal" data-i18n="about.cta1">Hablar con Alejandro</button><a class="btn ghost magnetic" target="_blank" rel="noopener" href="https://www.google.com/maps/place/?q=place_id:ChIJC6Bso6XPYpYRk9egCQTftUE" data-i18n="about.cta2">Ver reseñas Google</a></div></div>
     <div class="glass profile" data-reveal style="overflow:hidden;padding:0;min-height:560px;display:flex;flex-direction:column">
       <div style="position:relative;height:min(520px,60vw);overflow:hidden;background:#0a1628">
         <img src="alejandro.jpg" alt="Ing. Alejandro Casanova — Dueño y Técnico HDD Tecnología Store" style="width:100%;height:100%;object-fit:cover;object-position:center 28%;display:block;filter:saturate(1.05) contrast(1.05)">
         <div style="position:absolute;inset:0;background:linear-gradient(to bottom, transparent 45%, rgba(5,11,24,.15) 65%, rgba(5,11,24,.85) 100%)"></div>
         <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(5,11,24,.92));padding:50px 16px 14px;display:flex;align-items:flex-end;gap:10px">
-          <span style="background:#25d366;color:#04120a;font-weight:800;font-size:11px;padding:6px 10px;border-radius:99px;box-shadow:0 2px 8px rgba(0,0,0,.3)">● Disponible hoy</span>
-          <span style="margin-left:auto;color:white;font-size:11px;font-weight:600;text-shadow:0 1px 4px rgba(0,0,0,.6)">Taller · Ñuñoa</span>
+          <span style="background:#25d366;color:#04120a;font-weight:800;font-size:11px;padding:6px 10px;border-radius:99px;box-shadow:0 2px 8px rgba(0,0,0,.3)" data-i18n="about.badge1">● Disponible hoy</span>
+          <span style="margin-left:auto;color:white;font-size:11px;font-weight:600;text-shadow:0 1px 4px rgba(0,0,0,.6)" data-i18n="about.badge2">Taller · Ñuñoa</span>
         </div>
       </div>
       <div style="padding:18px 22px;text-align:center">
-        <p style="color:var(--acc);font-weight:700;font-size:14px;margin:0">Dueño y Técnico Principal</p>
-        <div class="p-stats" style="margin:12px 0"><div><b>20</b><span>años</span></div><div><b>1.350+</b><span>clientes</span></div><div><b>99%</b><span>éxito</span></div></div><div class="stars" style="font-size:18px">★★★★★</div>
+        <p style="color:var(--acc);font-weight:700;font-size:14px;margin:0" data-i18n="about.cardRole">Dueño y Técnico Principal</p>
+        <div class="p-stats" style="margin:12px 0"><div><b>20</b><span data-i18n="about.s1">años</span></div><div><b>1.350+</b><span data-i18n="about.s2">clientes</span></div><div><b>99%</b><span data-i18n="about.s3">éxito</span></div></div><div class="stars" style="font-size:18px">★★★★★</div>
       </div>
     </div>
   </div>
@@ -156,8 +162,8 @@
 <!-- RESENAS -->
 <section class="sec alt" id="resenas">
   <div class="wrap">
-    <div class="sec-hd" data-reveal><p class="kick">PRUEBA SOCIAL</p><h2>Lo que dicen <span class="grad">mis clientes</span></h2><p class="sub">Google 5.0 verificado. <a target="_blank" rel="noopener" href="https://www.google.com/maps/place/?q=place_id:ChIJC6Bso6XPYpYRk9egCQTftUE">Ver todas en Google →</a></p></div>
-    <div class="g-card glass" data-reveal><span class="g-logo">G</span><span><b>HDD Tecnología Store</b><small>★★★★★ 5.0 en Google</small></span><a class="btn ghost" target="_blank" rel="noopener" href="https://www.google.com/maps/place/?q=place_id:ChIJC6Bso6XPYpYRk9egCQTftUE">Ver en Google</a></div>
+    <div class="sec-hd" data-reveal><p class="kick" data-i18n="reviews.kick">PRUEBA SOCIAL</p><h2 data-i18n="reviews.title">Lo que dicen <span class="grad">mis clientes</span></h2><p class="sub" data-i18n="reviews.sub">Google 5.0 verificado. <a target="_blank" rel="noopener" href="https://www.google.com/maps/place/?q=place_id:ChIJC6Bso6XPYpYRk9egCQTftUE">Ver todas en Google →</a></p></div>
+    <div class="g-card glass" data-reveal><span class="g-logo">G</span><span><b>HDD Tecnología Store</b><small>★★★★★ 5.0 en Google</small></span><a class="btn ghost" target="_blank" rel="noopener" href="https://www.google.com/maps/place/?q=place_id:ChIJC6Bso6XPYpYRk9egCQTftUE" data-i18n="reviews.gbtn">Ver en Google</a></div>
     <div class="car" id="revBox" data-reveal><div class="car-view"><div class="car-track" id="revTrack"></div></div><div class="car-nav"><button id="revPrev" aria-label="Anterior">←</button><div id="revDots" class="dots"></div><span id="revCount" class="count-pill">1 / 3</span><button id="revNext" aria-label="Siguiente">→</button></div>
     <noscript><div class="rev"><div class="rev-stars">★★★★★</div><p>“Muy conforme con el servicio. Rápido, eficiente y con una atención de primera. Sin duda volveré a confiar en HDD Tecnología Store.”</p><footer><b>Byron Sudmann</b></footer></div></noscript></div>
   </div>
@@ -166,48 +172,48 @@
 <!-- CONTACTO -->
 <footer class="sec foot" id="contacto">
   <div class="wrap">
-    <div class="sec-hd" data-reveal><p class="kick">CONTACTO</p><h2>Hablemos de <span class="grad">tu equipo</span></h2><p class="sub">Coordinamos directamente por WhatsApp con Alejandro.</p></div>
+    <div class="sec-hd" data-reveal><p class="kick" data-i18n="contact.kick">CONTACTO</p><h2 data-i18n="contact.title">Hablemos de <span class="grad">tu equipo</span></h2><p class="sub" data-i18n="contact.sub">Coordinamos directamente por WhatsApp con Alejandro.</p></div>
     <div class="foot-grid">
-      <div class="glass f-card" data-reveal><h3>HDD Tecnología Store</h3><p>Servicio técnico con garantía real y atención personalizada.</p><p>☎ <a href="tel:+56961991725">+56 9 6199 1725</a></p><p>◉ <a target="_blank" rel="noopener" href="https://maps.google.com/?q=Av.+Rodrigo+de+Araya+3076,+%C3%91u%C3%B1oa,+Santiago">Av. Rodrigo de Araya 3076, Ñuñoa</a></p><p>✆ <a target="_blank" rel="noopener" href="https://wa.me/56961991725">WhatsApp directo</a></p></div>
-      <div class="glass f-card" data-reveal><h3>Servicios</h3><span class="f-link" data-open="serviceModal" data-svc="Reparación de PCs">Reparación de PCs</span><span class="f-link" data-open="serviceModal" data-svc="Mantenimiento">Mantenimiento</span><span class="f-link" data-open="bizModal">Contrato empresas</span><span class="f-link" data-open="serviceModal" data-svc="Soporte Técnico">Soporte Técnico</span></div>
-      <div class="glass f-card" data-reveal><h3>Ubicación</h3><p>Av. Rodrigo de Araya 3076, Ñuñoa, Santiago</p><p>Atención coordinada por WhatsApp con Alejandro</p><a class="btn primary" target="_blank" rel="noopener" href="https://www.google.com/maps/place/?q=place_id:ChIJC6Bso6XPYpYRk9egCQTftUE" style="margin-top:12px;display:inline-flex;justify-content:center">Te indico cómo llegar →</a></div>
+      <div class="glass f-card" data-reveal><h3>HDD Tecnología Store</h3><p data-i18n="contact.c1p">Servicio técnico con garantía real y atención personalizada.</p><p>☎ <a href="tel:+56961991725">+56 9 6199 1725</a></p><p>◉ <a target="_blank" rel="noopener" href="https://maps.google.com/?q=Av.+Rodrigo+de+Araya+3076,+%C3%91u%C3%B1oa,+Santiago">Av. Rodrigo de Araya 3076, Ñuñoa</a></p><p>✆ <a target="_blank" rel="noopener" href="https://wa.me/56961991725" data-i18n="contact.wa">WhatsApp directo</a></p></div>
+      <div class="glass f-card" data-reveal><h3 data-i18n="contact.c2h">Servicios</h3><span class="f-link" data-open="serviceModal" data-svc="Reparación de PCs" data-i18n="contact.s1">Reparación de PCs</span><span class="f-link" data-open="serviceModal" data-svc="Mantenimiento" data-i18n="contact.s2">Mantenimiento</span><span class="f-link" data-open="bizModal" data-i18n="contact.s3">Contrato empresas</span><span class="f-link" data-open="serviceModal" data-svc="Soporte Técnico" data-i18n="contact.s4">Soporte Técnico</span></div>
+      <div class="glass f-card" data-reveal><h3 data-i18n="contact.c3h">Ubicación</h3><p>Av. Rodrigo de Araya 3076, Ñuñoa, Santiago</p><p data-i18n="contact.c3p">Atención coordinada por WhatsApp con Alejandro</p><a class="btn primary" target="_blank" rel="noopener" href="https://www.google.com/maps/place/?q=place_id:ChIJC6Bso6XPYpYRk9egCQTftUE" style="margin-top:12px;display:inline-flex;justify-content:center" data-i18n="contact.how">Te indico cómo llegar →</a></div>
     </div>
     <p class="copy">© 2026 HDD Tecnología Store — Ing. Alejandro Casanova · <a href="privacidad.html">Privacidad</a> · <a href="terminos.html">Términos</a></p>
   </div>
 </footer>
 </main>
 
-<a class="wa-float" target="_blank" rel="noopener" href="https://wa.me/56961991725?text=Hola%20Alejandro%2C%20vengo%20de%20la%20web%20y%20necesito%20ayuda%20con%20mi%20equipo" aria-label="WhatsApp directo"><span class="pulse"></span>✆<span class="tip">Escríbeme ahora</span></a>
+<a class="wa-float" target="_blank" rel="noopener" href="https://wa.me/56961991725?text=Hola%20Alejandro%2C%20vengo%20de%20la%20web%20y%20necesito%20ayuda%20con%20mi%20equipo" aria-label="WhatsApp directo"><span class="pulse"></span>✆<span class="tip" data-i18n="float.tip">Escríbeme ahora</span></a>
 <button id="top" aria-label="Volver arriba">↑</button>
 <div id="toast" role="status" aria-live="polite"></div>
 
 <!-- MODAL SERVICIO -->
 <div class="ov" id="serviceModal" aria-hidden="true"><div class="modal glass" role="dialog" aria-modal="true" aria-label="Solicitar servicio">
   <button class="x" data-close aria-label="Cerrar">×</button>
-  <h3>Solicita tu servicio</h3><p class="m-sub">Te abro WhatsApp con tu mensaje listo. Sin cuentas, sin espera.</p>
+  <h3 data-i18n="modal.svcTitle">Solicita tu servicio</h3><p class="m-sub" data-i18n="modal.svcSub">Te abro WhatsApp con tu mensaje listo. Sin cuentas, sin espera.</p>
   <form id="svcForm" novalidate>
-    <label>Nombre<input id="svcName" maxlength="60" placeholder="Ej: Juan Pérez" autocomplete="name"></label>
-    <label>Teléfono<input id="svcPhone" inputmode="numeric" maxlength="9" placeholder="9 dígitos (ej: 912345678)" autocomplete="tel"></label>
-    <label>Servicio<select id="svcType"><option>Diagnóstico general</option><option>Reparación de PCs</option><option>Mantenimiento</option><option>Soporte Técnico</option><option>Reparación física</option><option>Notebook reacondicionado</option></select></label>
-    <label>Describe el problema<textarea id="svcMsg" maxlength="300" placeholder="Ej: mi notebook no enciende, solo parpadea el led…"></textarea></label>
-    <p style="font-size:11px;color:var(--mut);margin:8px 0 10px">Al enviar aceptas <a href="privacidad.html">privacidad</a> y <a href="terminos.html">términos</a>.</p>
+    <label><span data-i18n="modal.svcName">Nombre</span><input id="svcName" maxlength="60" placeholder="Ej: Juan Pérez" autocomplete="name"></label>
+    <label><span data-i18n="modal.svcPhone">Teléfono</span><input id="svcPhone" inputmode="numeric" maxlength="9" placeholder="9 dígitos (ej: 912345678)" autocomplete="tel"></label>
+    <label><span data-i18n="modal.svcService">Servicio</span><select id="svcType"><option data-i18n="modal.svcOpt1">Diagnóstico general</option><option data-i18n="modal.svcOpt2">Reparación de PCs</option><option data-i18n="modal.svcOpt3">Mantenimiento</option><option data-i18n="modal.svcOpt4">Soporte Técnico</option><option data-i18n="modal.svcOpt5">Reparación física</option><option data-i18n="modal.svcOpt6">Notebook reacondicionado</option></select></label>
+    <label><span data-i18n="modal.svcMsg">Describe el problema</span><textarea id="svcMsg" maxlength="300" placeholder="Ej: mi notebook no enciende, solo parpadea el led…"></textarea></label>
+    <p style="font-size:11px;color:var(--mut);margin:8px 0 10px" data-i18n="modal.svcLegal">Al enviar aceptas <a href="privacidad.html">privacidad</a> y <a href="terminos.html">términos</a>.</p>
     <p class="err" id="svcErr" hidden></p>
-    <button class="btn primary" type="submit" style="width:100%">Enviar por WhatsApp →</button>
+    <button class="btn primary" type="submit" style="width:100%" data-i18n="modal.svcBtn">Enviar por WhatsApp →</button>
   </form>
 </div></div>
 
 <!-- MODAL EMPRESAS -->
 <div class="ov" id="bizModal" aria-hidden="true"><div class="modal glass" role="dialog" aria-modal="true" aria-label="Cotizar empresas">
   <button class="x" data-close aria-label="Cerrar">×</button>
-  <h3>Contrato mensual empresas</h3><p class="m-sub">Cotización con RUT validado (módulo 11). Te llega lista a WhatsApp.</p>
+  <h3 data-i18n="modal.bizTitle">Contrato mensual empresas</h3><p class="m-sub" data-i18n="modal.bizSub">Cotización con RUT validado (módulo 11). Te llega lista a WhatsApp.</p>
   <form id="bizForm" novalidate>
-    <label>Empresa<input id="bizName" maxlength="80" placeholder="MiEmpresa SpA"></label>
+    <label><span data-i18n="modal.bizName">Empresa</span><input id="bizName" maxlength="80" placeholder="MiEmpresa SpA"></label>
     <label>RUT<input id="bizRut" maxlength="12" placeholder="12.345.678-9"></label>
-    <div class="row2"><label>Comuna<input id="bizCom" maxlength="40" placeholder="Ñuñoa"></label><label>Período<select id="bizPer"><option>3 meses</option><option>6 meses</option><option>1 año</option></select></label></div>
-    <label>Qué necesitan<textarea id="bizMsg" maxlength="300" placeholder="Ej: 8 equipos + impresora, soporte y visitas…"></textarea></label>
-    <p style="font-size:11px;color:var(--mut);margin:8px 0 10px">Al cotizar aceptas <a href="privacidad.html">privacidad</a> y <a href="terminos.html">términos</a>.</p>
+    <div class="row2"><label><span data-i18n="modal.bizCom">Comuna</span><input id="bizCom" maxlength="40" placeholder="Ñuñoa"></label><label><span data-i18n="modal.bizPer">Período</span><select id="bizPer"><option data-i18n="modal.bizPer1">3 meses</option><option data-i18n="modal.bizPer2">6 meses</option><option data-i18n="modal.bizPer3">1 año</option></select></label></div>
+    <label><span data-i18n="modal.bizMsg">Qué necesitan</span><textarea id="bizMsg" maxlength="300" placeholder="Ej: 8 equipos + impresora, soporte y visitas…"></textarea></label>
+    <p style="font-size:11px;color:var(--mut);margin:8px 0 10px" data-i18n="modal.bizLegal">Al cotizar aceptas <a href="privacidad.html">privacidad</a> y <a href="terminos.html">términos</a>.</p>
     <p class="err" id="bizErr" hidden></p>
-    <button class="btn primary" type="submit" style="width:100%">Cotizar por WhatsApp →</button>
+    <button class="btn primary" type="submit" style="width:100%" data-i18n="modal.bizBtn">Cotizar por WhatsApp →</button>
   </form>
 </div></div>
 
