@@ -27,12 +27,15 @@ a{color:inherit}
 .nav a:hover,.nav a.active{color:#fff;background:rgba(56,189,248,.1);border-color:var(--line)}
 .pill{background:var(--acc2);color:#fff;border-radius:99px;font-size:10px;padding:1px 7px;margin-left:4px}
 .hd-act{display:flex;gap:10px;align-items:center}
-.lang-switch{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:99px;padding:4px 6px;font-size:11px}
-.lang-label{color:var(--mut);font-weight:700;font-size:10px;letter-spacing:.8px;margin-right:2px}
-.lang-btn{background:transparent;border:1px solid transparent;color:var(--mut);font-weight:700;font-size:11px;padding:5px 8px;border-radius:99px;cursor:pointer;transition:.2s}
-.lang-btn.active{background:rgba(56,189,248,.15);border-color:var(--line);color:#fff}
-.lang-btn:hover{color:#fff;background:rgba(56,189,248,.08)}
-.lang-sep{color:var(--dim);font-size:10px}
+.lang-switch{display:flex;align-items:center;gap:4px;background:rgba(255,255,255,.06);border:1px solid var(--line);border-radius:99px;padding:4px 8px;font-size:11px;backdrop-filter:blur(8px)}
+.lang-label{color:var(--acc);font-weight:800;font-size:10px;letter-spacing:.9px;margin-right:4px;display:flex;align-items:center;gap:4px}
+.lang-label::before{content:"🌐";font-size:12px}
+.lang-btn{display:inline-flex;align-items:center;gap:6px;background:transparent;border:1px solid transparent;color:var(--mut);font-weight:700;font-size:11px;padding:5px 10px;border-radius:99px;cursor:pointer;transition:.2s;line-height:1}
+.lang-btn .flag{font-size:16px;line-height:1;display:inline-flex;align-items:center;justify-content:center;width:22px;height:16px;border-radius:3px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.35);background:rgba(0,0,0,.15)}
+.lang-btn .flag img{width:22px;height:16px;object-fit:cover;display:block;border-radius:3px}
+.lang-btn.active{background:rgba(56,189,248,.18);border-color:rgba(56,189,248,.35);color:#fff;box-shadow:0 2px 10px rgba(56,189,248,.18)}
+.lang-btn:hover{color:#fff;background:rgba(56,189,248,.10);border-color:var(--line)}
+.lang-sep{color:var(--dim);font-size:10px;margin:0 1px}
 .wa-mini{background:var(--ok);color:#04120a;font-weight:800;font-size:12px;padding:10px 16px;border-radius:11px;text-decoration:none}
 .burger{display:none;background:none;border:1px solid var(--line);border-radius:10px;width:42px;height:42px;cursor:pointer;flex-direction:column;gap:5px;align-items:center;justify-content:center}
 .burger i{display:block;width:18px;height:2px;background:#fff;border-radius:2px}
