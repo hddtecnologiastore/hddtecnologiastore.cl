@@ -270,10 +270,6 @@ if(bkf){
     window.open(url,"_blank");
     toast("Abriendo WhatsApp con tu agendamiento…");
     closeM($("#bookingModal"));bkf.reset();loadTimes();
-    setTimeout(function(){
-      var cmsg="Hola "+n+", tu agendamiento ha sido recibido:%0A%0A*Fecha:* "+dt+"%0A*Hora:* "+tm+"%0A*Servicio:* "+sv+"%0A%0ATe contactaremos pronto para confirmar. ¡Gracias!";
-      window.open("https://wa.me/569"+ph+"?text="+cmsg,"_blank");
-    },1500);
   });
 }
 /* RUT + empresas */
