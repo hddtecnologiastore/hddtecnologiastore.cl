@@ -212,12 +212,12 @@
       <label><span data-i18n="booking.name">Nombre</span><input id="bkName" maxlength="60" placeholder="Ej: Juan" autocomplete="given-name"></label>
       <label><span data-i18n="booking.last">Apellido</span><input id="bkLast" maxlength="60" placeholder="Ej: Pérez" autocomplete="family-name"></label>
     </div>
-    <label><span data-i18n="booking.phone">Teléfono</span><input id="bkPhone" inputmode="numeric" maxlength="9" placeholder="9 dígitos (ej: 912345678)" autocomplete="tel"></label>
+    <label><span data-i18n="booking.phone">Teléfono</span><div class="phone-wrap"><span class="phone-prefix">+56 9</span><input id="bkPhone" inputmode="numeric" maxlength="8" placeholder="1234 1234" autocomplete="tel"></div></label>
     <div class="row2">
       <label><span data-i18n="booking.date">Fecha</span><input id="bkDate" type="date"></label>
-      <label><span data-i18n="booking.time">Hora</span><input id="bkTime" type="time"></label>
+      <label><span data-i18n="booking.time">Hora</span><select id="bkTime"></select></label>
     </div>
-    <label><span data-i18n="booking.service">Servicio</span><select id="bkService"><option data-i18n="booking.svc1">Revisión — $10.000</option><option data-i18n="booking.svc2">Diagnóstico — $15.000</option><option data-i18n="booking.svc3">Mantenimiento — $25.000</option></select></label>
+    <label><span data-i18n="booking.service">Servicio</span><select id="bkService"><option data-i18n="booking.svc1">Revisión — $10.000</option></select></label>
     <p style="font-size:11px;color:var(--mut);margin:8px 0 10px" data-i18n="booking.legal">Al agendar aceptas <a href="privacidad.html">privacidad</a> y <a href="terminos.html">términos</a>.</p>
     <p class="err" id="bkErr" hidden></p>
     <button class="btn primary" type="submit" style="width:100%" data-i18n="booking.btn">Agendar por WhatsApp →</button>

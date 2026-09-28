@@ -218,25 +218,64 @@ var url="https://wa.me/"+window.HDD_WA+"?text="+encodeURIComponent(sa+", soy "+n
 window.open(url,"_blank");toast("Abriendo WhatsApp con tu solicitud…");closeM($("#serviceModal"));sf.reset()});
 /* Agendamiento → WhatsApp negocio + confirmación cliente */
 var bkf=$("#bookingForm");
-if(bkf)bkf.addEventListener("submit",function(e){e.preventDefault();
-var err=$("#bkErr");err.hidden=true;
-var n=$("#bkName").value.trim(),l=$("#bkLast").value.trim(),ph=$("#bkPhone").value.replace(/\D/g,""),dt=$("#bkDate").value,tm=$("#bkTime").value,sv=$("#bkService").value;
-if(!/^[A-Za-zÁÉÍÓÚáéíóúÑñ ]{2,60}$/.test(n)){err.textContent="Nombre inválido (solo letras, 2-60).";err.hidden=false;return}
-if(!/^[A-Za-zÁÉÍÓÚáéíóúÑñ ]{2,60}$/.test(l)){err.textContent="Apellido inválido (solo letras, 2-60).";err.hidden=false;return}
-if(!/^9\d{8}$/.test(ph)){err.textContent="Teléfono inválido: debe ser 9 + 8 dígitos (ej: 961991725).";err.hidden=false;return}
-if(!dt){err.textContent="Selecciona una fecha.";err.hidden=false;return}
-if(!tm){err.textContent="Selecciona una hora.";err.hidden=false;return}
-var h=new Date().getHours(),sa=h>=6&&h<13?"Buenos días":h>=13&&h<20?"Buenas tardes":"Buenas noches";
-var msg="*NUEVO AGENDAMIENTO*%0A%0A*Nombre:* "+n+" "+l+"%0A*Teléfono:* +56 "+ph+"%0A*Fecha:* "+dt+"%0A*Hora:* "+tm+"%0A*Servicio:* "+sv+"%0A%0A_Enviado desde la web_";
-var url="https://wa.me/"+window.HDD_WA+"?text="+msg;
-window.open(url,"_blank");
-toast("Abriendo WhatsApp con tu agendamiento…");
-closeM($("#bookingModal"));bkf.reset();
-setTimeout(function(){
-var cmsg="Hola "+n+", tu agendamiento ha sido recibido:%0A%0A*Fecha:* "+dt+"%0A*Hora:* "+tm+"%0A*Servicio:* "+sv+"%0A%0ATe contactaremos pronto para confirmar. ¡Gracias!";
-window.open("https://wa.me/56"+ph+"?text="+cmsg,"_blank");
-},1500);
-});
+var bkDate=$("#bkDate"),bkTime=$("#bkTime"),bkPhone=$("#bkPhone");
+function pad(n){return n<10?"0"+n:""+n}
+function loadTimes(){
+  if(!bkTime)return;
+  var d=bkDate?bkDate.value:"";
+  var day=d?new Date(d+"T00:00:00").getDay():1;
+  var times=[];
+  if(day>=1&&day<=5){for(var h=11;h<=19;h++){times.push(pad(h)+":00");if(h<19)times.push(pad(h)+":30")}times.push("19:30")}
+  else if(day===6){for(var h=11;h<=15;h++){times.push(pad(h)+":00");if(h<15)times.push(pad(h)+":30")}times.push("16:00")}
+  else{times.push("—")}
+  bkTime.innerHTML=times.map(function(t){return "<option>"+t+"</option>"}).join("");
+}
+function setMinDate(){
+  if(!bkDate)return;
+  var t=new Date();t.setDate(t.getDate()+1);
+  bkDate.min=t.getFullYear()+"-"+pad(t.getMonth()+1)+"-"+pad(t.getDate());
+}
+function blockSundays(){
+  if(!bkDate)return;
+  bkDate.addEventListener("change",function(){
+    var d=bkDate.value;if(!d)return;
+    var day=new Date(d+"T00:00:00").getDay();
+    if(day===0){bkDate.value="";var err=$("#bkErr");if(err){err.textContent="No se atiende domingos. Elige otro día.";err.hidden=false}return}
+    loadTimes();
+  });
+}
+function formatPhone(){
+  if(!bkPhone)return;
+  bkPhone.addEventListener("input",function(){
+    var v=bkPhone.value.replace(/\D/g,"").slice(0,8);
+    if(v.length>4)v=v.slice(0,4)+" "+v.slice(4);
+    bkPhone.value=v;
+  });
+}
+if(bkf){
+  setMinDate();loadTimes();blockSundays();formatPhone();
+  bkf.addEventListener("submit",function(e){e.preventDefault();
+    var err=$("#bkErr");err.hidden=true;
+    var n=$("#bkName").value.trim(),l=$("#bkLast").value.trim(),ph=$("#bkPhone").value.replace(/\D/g,""),dt=$("#bkDate").value,tm=$("#bkTime").value,sv=$("#bkService").value;
+    if(!/^[A-Za-zÁÉÍÓÚáéíóúÑñ ]{2,60}$/.test(n)){err.textContent="Nombre inválido (solo letras, 2-60).";err.hidden=false;return}
+    if(!/^[A-Za-zÁÉÍÓÚáéíóúÑñ ]{2,60}$/.test(l)){err.textContent="Apellido inválido (solo letras, 2-60).";err.hidden=false;return}
+    if(!/^\d{8}$/.test(ph)){err.textContent="Teléfono inválido: ingresa 8 dígitos (ej: 1234 5678).";err.hidden=false;return}
+    if(!dt){err.textContent="Selecciona una fecha.";err.hidden=false;return}
+    var day=new Date(dt+"T00:00:00").getDay();
+    if(day===0){err.textContent="No se atiende domingos. Elige otro día.";err.hidden=false;return}
+    if(!tm||tm==="—"){err.textContent="Selecciona una hora.";err.hidden=false;return}
+    var h=new Date().getHours(),sa=h>=6&&h<13?"Buenos días":h>=13&&h<20?"Buenas tardes":"Buenas noches";
+    var msg="*NUEVO AGENDAMIENTO*%0A%0A*Nombre:* "+n+" "+l+"%0A*Teléfono:* +56 9 "+ph+"%0A*Fecha:* "+dt+"%0A*Hora:* "+tm+"%0A*Servicio:* "+sv+"%0A%0A_Enviado desde la web_";
+    var url="https://wa.me/"+window.HDD_WA+"?text="+msg;
+    window.open(url,"_blank");
+    toast("Abriendo WhatsApp con tu agendamiento…");
+    closeM($("#bookingModal"));bkf.reset();loadTimes();
+    setTimeout(function(){
+      var cmsg="Hola "+n+", tu agendamiento ha sido recibido:%0A%0A*Fecha:* "+dt+"%0A*Hora:* "+tm+"%0A*Servicio:* "+sv+"%0A%0ATe contactaremos pronto para confirmar. ¡Gracias!";
+      window.open("https://wa.me/569"+ph+"?text="+cmsg,"_blank");
+    },1500);
+  });
+}
 /* RUT + empresas */
 function vRut(r){r=r.replace(/\./g,"").replace(/-/g,"").trim().toUpperCase();if(!/^[0-9]+[0-9K]$/.test(r))return false;var c=r.slice(0,-1),d=r.slice(-1),s=0,m=2;for(var i=c.length-1;i>=0;i--){s+=parseInt(c[i],10)*m;m=m<7?m+1:2}var e=11-(s%11);var ch=e===11?"0":e===10?"K":String(e);return ch===d}
 function fRut(r){r=r.replace(/[^0-9kK]/g,"").toUpperCase();if(r.length<=1)return r;var c=r.slice(0,-1),d=r.slice(-1),o="";for(var i=c.length-1,j=0;i>=0;i--,j++){if(j>0&&j%3===0)o="."+o;o=c[i]+o}return o+"-"+d}
