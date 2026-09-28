@@ -58,7 +58,7 @@
       <h1 data-i18n="hero.title">Servicio técnico<br><span class="grad">en computación,</span><br>con <span id="typing" class="typing">garantía real</span></h1>
       <p class="lead" data-i18n="hero.lead">Servicio Técnico Especializado en Laptops y Equipos de Cómputo<br>Diagnóstico preciso, mantenimiento preventivo y reparación con garantía por escrito. Respaldado por más de 1.350 clientes satisfechos en Santiago y un índice de efectividad superior al 99%.</p>
       <div class="cta-row">
-        <button class="btn primary magnetic" data-open="serviceModal" data-i18n="hero.cta1">Agendar diagnóstico</button>
+        <button class="btn primary magnetic" data-open="bookingModal" data-i18n="hero.cta1">Agendar diagnóstico</button>
         <a class="btn ghost magnetic" href="#servicios" data-i18n="hero.cta2">Ver servicios</a>
       </div>
       <div class="trust">
@@ -199,6 +199,28 @@
     <p style="font-size:11px;color:var(--mut);margin:8px 0 10px" data-i18n="modal.svcLegal">Al enviar aceptas <a href="privacidad.html">privacidad</a> y <a href="terminos.html">términos</a>.</p>
     <p class="err" id="svcErr" hidden></p>
     <button class="btn primary" type="submit" style="width:100%" data-i18n="modal.svcBtn">Enviar por WhatsApp →</button>
+  </form>
+</div></div>
+
+<!-- MODAL AGENDAMIENTO -->
+<div class="ov" id="bookingModal" aria-hidden="true"><div class="modal glass" role="dialog" aria-modal="true" aria-label="Agendar revisión">
+  <button class="x" data-close aria-label="Cerrar">×</button>
+  <h3 data-i18n="booking.title">Agendar revisión</h3>
+  <p class="m-sub" data-i18n="booking.sub">Selecciona fecha y hora. Te confirmamos por WhatsApp.</p>
+  <form id="bookingForm" novalidate>
+    <div class="row2">
+      <label><span data-i18n="booking.name">Nombre</span><input id="bkName" maxlength="60" placeholder="Ej: Juan" autocomplete="given-name"></label>
+      <label><span data-i18n="booking.last">Apellido</span><input id="bkLast" maxlength="60" placeholder="Ej: Pérez" autocomplete="family-name"></label>
+    </div>
+    <label><span data-i18n="booking.phone">Teléfono</span><input id="bkPhone" inputmode="numeric" maxlength="9" placeholder="9 dígitos (ej: 912345678)" autocomplete="tel"></label>
+    <div class="row2">
+      <label><span data-i18n="booking.date">Fecha</span><input id="bkDate" type="date"></label>
+      <label><span data-i18n="booking.time">Hora</span><input id="bkTime" type="time"></label>
+    </div>
+    <label><span data-i18n="booking.service">Servicio</span><select id="bkService"><option data-i18n="booking.svc1">Revisión — $10.000</option><option data-i18n="booking.svc2">Diagnóstico — $15.000</option><option data-i18n="booking.svc3">Mantenimiento — $25.000</option></select></label>
+    <p style="font-size:11px;color:var(--mut);margin:8px 0 10px" data-i18n="booking.legal">Al agendar aceptas <a href="privacidad.html">privacidad</a> y <a href="terminos.html">términos</a>.</p>
+    <p class="err" id="bkErr" hidden></p>
+    <button class="btn primary" type="submit" style="width:100%" data-i18n="booking.btn">Agendar por WhatsApp →</button>
   </form>
 </div></div>
 

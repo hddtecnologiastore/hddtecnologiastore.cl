@@ -194,6 +194,7 @@ h1{font-family:var(--d);font-size:clamp(30px,4.6vw,54px);line-height:1.08;margin
 .modal input,.modal select,.modal textarea{width:100%;margin-top:6px;background:rgba(0,0,0,.32);border:1px solid var(--line);color:#fff;border-radius:11px;padding:12px;font-size:14px;outline:none}
 .modal input:focus,.modal textarea:focus,.modal select:focus{border-color:var(--acc)}
 .modal textarea{min-height:84px;resize:vertical}
+.modal input[type="date"],.modal input[type="time"]{color-scheme:dark}
 .row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .err{background:rgba(248,113,113,.1);border:1px dashed rgba(248,113,113,.5);color:#fca5a5;font-size:12px;border-radius:9px;padding:9px 12px;margin-bottom:12px}
 .x{position:absolute;top:12px;right:12px;width:34px;height:34px;border-radius:10px;border:1px solid var(--line);background:rgba(255,255,255,.05);color:#fff;cursor:pointer;font-size:17px}

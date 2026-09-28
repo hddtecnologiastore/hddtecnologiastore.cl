@@ -48,7 +48,18 @@ es:{
 "modal.svcName":"Nombre","modal.svcPhone":"Tel\u00e9fono","modal.svcService":"Servicio","modal.svcOpt1":"Diagn\u00f3stico general","modal.svcOpt2":"Reparaci\u00f3n de PCs","modal.svcOpt3":"Mantenimiento","modal.svcOpt4":"Soporte T\u00e9cnico","modal.svcOpt5":"Reparaci\u00f3n f\u00edsica","modal.svcOpt6":"Notebook reacondicionado",
 "modal.svcMsg":"Describe el problema","modal.svcLegal":"Al enviar aceptas <a href=\"privacidad.html\">privacidad</a> y <a href=\"terminos.html\">t\u00e9rminos</a>.","modal.svcBtn":"Enviar por WhatsApp \u2192",
 "modal.bizTitle":"Contrato mensual empresas","modal.bizSub":"Cotizaci\u00f3n con RUT validado (m\u00f3dulo 11). Te llega lista a WhatsApp.",
-"modal.bizName":"Empresa","modal.bizCom":"Comuna","modal.bizPer":"Per\u00edodo","modal.bizPer1":"3 meses","modal.bizPer2":"6 meses","modal.bizPer3":"1 a\u00f1o","modal.bizMsg":"Qu\u00e9 necesitan","modal.bizLegal":"Al cotizar aceptas <a href=\"privacidad.html\">privacidad</a> y <a href=\"terminos.html\">t\u00e9rminos</a>.","modal.bizBtn":"Cotizar por WhatsApp \u2192"
+"modal.bizName":"Empresa","modal.bizCom":"Comuna","modal.bizPer":"Per\u00edodo","modal.bizPer1":"3 meses","modal.bizPer2":"6 meses","modal.bizPer3":"1 a\u00f1o","modal.bizMsg":"Qu\u00e9 necesitan","modal.bizLegal":"Al cotizar aceptas <a href=\"privacidad.html\">privacidad</a> y <a href=\"terminos.html\">t\u00e9rminos</a>.","modal.bizBtn":"Cotizar por WhatsApp \u2192",
+"booking.title":"Agendar revisi\u00f3n","booking.sub":"Selecciona fecha y hora. Te confirmamos por WhatsApp.",
+"booking.name":"Nombre","booking.last":"Apellido",
+"booking.phone":"Tel\u00e9fono",
+"booking.date":"Fecha",
+"booking.time":"Hora",
+"booking.service":"Servicio",
+"booking.svc1":"Revisi\u00f3n \u2014 $10.000",
+"booking.svc2":"Diagn\u00f3stico \u2014 $15.000",
+"booking.svc3":"Mantenimiento \u2014 $25.000",
+"booking.legal":"Al agendar aceptas <a href=\"privacidad.html\">privacidad</a> y <a href=\"terminos.html\">t\u00e9rminos</a>.",
+"booking.btn":"Agendar por WhatsApp \u2192"
 },
 en:{
 "nav.home":"Home","nav.services":"Services","nav.process":"Process","nav.reviews":"Reviews","nav.contact":"Contact",
@@ -90,7 +101,18 @@ en:{
 "modal.svcName":"Name","modal.svcPhone":"Phone","modal.svcService":"Service","modal.svcOpt1":"General diagnosis","modal.svcOpt2":"PC Repair","modal.svcOpt3":"Maintenance","modal.svcOpt4":"Technical Support","modal.svcOpt5":"Physical repair","modal.svcOpt6":"Refurbished notebook",
 "modal.svcMsg":"Describe the issue","modal.svcLegal":"By sending you accept <a href=\"privacidad.html\">privacy</a> and <a href=\"terminos.html\">terms</a>.","modal.svcBtn":"Send via WhatsApp \u2192",
 "modal.bizTitle":"Monthly business contract","modal.bizSub":"Quote with validated RUT (mod 11). Sent ready to WhatsApp.",
-"modal.bizName":"Company","modal.bizCom":"District","modal.bizPer":"Period","modal.bizPer1":"3 months","modal.bizPer2":"6 months","modal.bizPer3":"1 year","modal.bizMsg":"What do you need","modal.bizLegal":"By quoting you accept <a href=\"privacidad.html\">privacy</a> and <a href=\"terminos.html\">terms</a>.","modal.bizBtn":"Quote via WhatsApp \u2192"
+"modal.bizName":"Company","modal.bizCom":"District","modal.bizPer":"Period","modal.bizPer1":"3 months","modal.bizPer2":"6 months","modal.bizPer3":"1 year","modal.bizMsg":"What do you need","modal.bizLegal":"By quoting you accept <a href=\"privacidad.html\">privacy</a> and <a href=\"terminos.html\">terms</a>.","modal.bizBtn":"Quote via WhatsApp \u2192",
+"booking.title":"Book inspection","booking.sub":"Pick a date and time. We confirm via WhatsApp.",
+"booking.name":"First name","booking.last":"Last name",
+"booking.phone":"Phone",
+"booking.date":"Date",
+"booking.time":"Time",
+"booking.service":"Service",
+"booking.svc1":"Inspection — $10.000",
+"booking.svc2":"Diagnosis — $15.000",
+"booking.svc3":"Maintenance — $25.000",
+"booking.legal":"By booking you accept <a href=\"privacidad.html\">privacy</a> and <a href=\"terminos.html\">terms</a>.",
+"booking.btn":"Book via WhatsApp \u2192"
 }
 };
 var curLang="es";try{curLang=localStorage.getItem("hdd_lang")||"es"}catch(e){}
@@ -194,6 +216,27 @@ if(ms.length<4||ms.length>300||/[<>]/.test(ms)){err.textContent="Describe el pro
 var h=new Date().getHours(),sa=h>=6&&h<13?"Buenos días":h>=13&&h<20?"Buenas tardes":"Buenas noches";
 var url="https://wa.me/"+window.HDD_WA+"?text="+encodeURIComponent(sa+", soy "+n+". Contacto: +56 "+ph+". Servicio: "+ty+". Detalle: "+ms);
 window.open(url,"_blank");toast("Abriendo WhatsApp con tu solicitud…");closeM($("#serviceModal"));sf.reset()});
+/* Agendamiento → WhatsApp negocio + confirmación cliente */
+var bkf=$("#bookingForm");
+if(bkf)bkf.addEventListener("submit",function(e){e.preventDefault();
+var err=$("#bkErr");err.hidden=true;
+var n=$("#bkName").value.trim(),l=$("#bkLast").value.trim(),ph=$("#bkPhone").value.replace(/\D/g,""),dt=$("#bkDate").value,tm=$("#bkTime").value,sv=$("#bkService").value;
+if(!/^[A-Za-zÁÉÍÓÚáéíóúÑñ ]{2,60}$/.test(n)){err.textContent="Nombre inválido (solo letras, 2-60).";err.hidden=false;return}
+if(!/^[A-Za-zÁÉÍÓÚáéíóúÑñ ]{2,60}$/.test(l)){err.textContent="Apellido inválido (solo letras, 2-60).";err.hidden=false;return}
+if(!/^9\d{8}$/.test(ph)){err.textContent="Teléfono inválido: debe ser 9 + 8 dígitos (ej: 961991725).";err.hidden=false;return}
+if(!dt){err.textContent="Selecciona una fecha.";err.hidden=false;return}
+if(!tm){err.textContent="Selecciona una hora.";err.hidden=false;return}
+var h=new Date().getHours(),sa=h>=6&&h<13?"Buenos días":h>=13&&h<20?"Buenas tardes":"Buenas noches";
+var msg="*NUEVO AGENDAMIENTO*%0A%0A*Nombre:* "+n+" "+l+"%0A*Teléfono:* +56 "+ph+"%0A*Fecha:* "+dt+"%0A*Hora:* "+tm+"%0A*Servicio:* "+sv+"%0A%0A_Enviado desde la web_";
+var url="https://wa.me/"+window.HDD_WA+"?text="+msg;
+window.open(url,"_blank");
+toast("Abriendo WhatsApp con tu agendamiento…");
+closeM($("#bookingModal"));bkf.reset();
+setTimeout(function(){
+var cmsg="Hola "+n+", tu agendamiento ha sido recibido:%0A%0A*Fecha:* "+dt+"%0A*Hora:* "+tm+"%0A*Servicio:* "+sv+"%0A%0ATe contactaremos pronto para confirmar. ¡Gracias!";
+window.open("https://wa.me/56"+ph+"?text="+cmsg,"_blank");
+},1500);
+});
 /* RUT + empresas */
 function vRut(r){r=r.replace(/\./g,"").replace(/-/g,"").trim().toUpperCase();if(!/^[0-9]+[0-9K]$/.test(r))return false;var c=r.slice(0,-1),d=r.slice(-1),s=0,m=2;for(var i=c.length-1;i>=0;i--){s+=parseInt(c[i],10)*m;m=m<7?m+1:2}var e=11-(s%11);var ch=e===11?"0":e===10?"K":String(e);return ch===d}
 function fRut(r){r=r.replace(/[^0-9kK]/g,"").toUpperCase();if(r.length<=1)return r;var c=r.slice(0,-1),d=r.slice(-1),o="";for(var i=c.length-1,j=0;i>=0;i--,j++){if(j>0&&j%3===0)o="."+o;o=c[i]+o}return o+"-"+d}
