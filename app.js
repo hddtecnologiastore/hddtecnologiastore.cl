@@ -203,12 +203,8 @@ function render(){var L=list();ct.textContent=L.length+" equipo(s) · precios cl
 (function(){
   var pf=document.getElementById("promoFloat");
   if(!pf)return;
-  var KEY="hdd_promo_dismissed";
-  var dismissed=false;
-  try{dismissed=localStorage.getItem(KEY)==="1"}catch(e){}
-  if(dismissed)return;
-  setTimeout(function(){pf.classList.add("show")},2500);
-  function hide(){pf.classList.remove("show");pf.classList.add("hide");try{localStorage.setItem(KEY,"1")}catch(e){}}
+  setTimeout(function(){pf.classList.add("show")},1500);
+  function hide(){pf.classList.remove("show");pf.classList.add("hide")}
   var closeBtn=document.getElementById("promoClose");
   var noBtn=document.getElementById("promoNo");
   if(closeBtn)closeBtn.addEventListener("click",hide);

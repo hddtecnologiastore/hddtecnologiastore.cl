@@ -180,7 +180,7 @@ h1{font-family:var(--d);font-size:clamp(30px,4.6vw,54px);line-height:1.08;margin
 @keyframes pl{to{transform:scale(1.35);opacity:0}}
 .wa-float .tip{position:absolute;right:68px;background:#0b1526;border:1px solid var(--line);color:#fff;font-size:12px;padding:8px 12px;border-radius:9px;white-space:nowrap;opacity:0;pointer-events:none;transition:.2s}
 .wa-float:hover .tip{opacity:1}
-.promo-float{position:fixed;bottom:100px;right:20px;z-index:160;width:300px;background:linear-gradient(160deg,#0a1628 0%,#050b18 100%);border:1px solid rgba(56,189,248,.35);border-radius:20px;padding:24px 20px 18px;box-shadow:0 20px 60px rgba(0,0,0,.5),0 0 40px rgba(56,189,248,.08);opacity:0;transform:translateY(20px) scale(.95);pointer-events:none;transition:opacity .5s cubic-bezier(.2,.7,.25,1),transform .5s cubic-bezier(.2,.7,.25,1)}
+.promo-float{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%) scale(.95);z-index:160;width:360px;background:linear-gradient(160deg,#0a1628 0%,#050b18 100%);border:1px solid rgba(56,189,248,.35);border-radius:22px;padding:28px 24px 20px;box-shadow:0 20px 60px rgba(0,0,0,.5),0 0 40px rgba(56,189,248,.08);opacity:0;pointer-events:none;transition:opacity .5s cubic-bezier(.2,.7,.25,1),transform .5s cubic-bezier(.2,.7,.25,1)}
 .promo-float.show{opacity:1;transform:translateY(0) scale(1);pointer-events:auto}
 .promo-float.hide{opacity:0;transform:translateY(10px) scale(.95);pointer-events:none}
 .promo-close{position:absolute;top:10px;right:12px;background:none;border:none;color:var(--mut);font-size:20px;cursor:pointer;line-height:1;padding:4px;transition:color .2s}
