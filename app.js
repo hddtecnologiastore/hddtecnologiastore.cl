@@ -199,6 +199,17 @@ function list(){var query=(q.value||"").trim();if(query&&!validQ(query)){q.style
 function stars(n){var s="";for(var i=1;i<=5;i++)s+=i<=n?"★":"☆";return s}
 function render(){var L=list();ct.textContent=L.length+" equipo(s) · precios claros, garantía incluida";grid.innerHTML=L.map(function(pr){var specs=[pr.cpu,pr.ram,pr.disk,pr.screen].concat(pr.extra||[]).map(function(s){return "<span>"+esc(s)+"</span>"}).join("");return '<article class="p-card hover-glow"><div class="p-top"><span class="p-brand">'+esc(pr.brand)+' · '+esc(pr.tag)+'</span><span class="p-stars">'+stars(pr.stars)+'</span></div><h3>'+esc(pr.name)+'</h3><div class="specs">'+specs+'</div><p class="p-desc">'+esc(pr.desc)+'</p><div class="p-note">⛨ '+esc(pr.note)+'</div><div class="prices"><div class="price tr"><small>TRANSFERENCIA</small><b>'+esc(pr.pTrans)+'</b></div><div class="price cd"><small>DÉBITO / CRÉDITO</small><b>'+esc(pr.pCard)+'</b></div></div><a class="p-wa" target="_blank" rel="noopener" href="https://wa.me/'+window.HDD_WA+'?text='+pr.wa+'">Consultar por WhatsApp →</a></article>'}).join("");emp.hidden=L.length!==0;if(L.length>=2){cmp.hidden=false;var srt=L.slice().sort(function(a,b){return a.price-b.price});cmpl.innerHTML=srt.map(function(pr,i){return '<div class="cmp-row '+(i===0?"best":"")+'"><span>'+esc(pr.name)+'</span><b>'+esc(pr.pTrans)+(i===0?" ★ mejor":"")+'</b></div>'}).join("")}else cmp.hidden=true}
 [q,fb,fr,fs].forEach(function(el){el.addEventListener("input",render);el.addEventListener("change",render)});render()})();
+/* Google Ads conversion: track WhatsApp clicks as GA4 events */
+document.addEventListener("click",function(e){
+  var a=e.target.closest('a[href*="wa.me"]');
+  if(!a)return;
+  var label="whatsapp_click";
+  if(a.classList.contains("wa-float"))label="whatsapp_float";
+  else if(a.classList.contains("wa-mini"))label="whatsapp_header";
+  else if(a.closest("#contacto"))label="whatsapp_footer";
+  else if(a.closest(".svc"))label="whatsapp_service";
+  if(window.gtag){gtag("event","conversion",{send_to:"G-911W1R6JG0",value:1,currency:"CLP",transaction_id:Date.now()});gtag("event",label,{send_to:"G-911W1R6JG0"})}
+});
 /* Modales */
 function openM(id){var m=document.getElementById(id);if(m){m.classList.add("open");m.setAttribute("aria-hidden","false");document.body.style.overflow="hidden"}}
 function closeM(m){m.classList.remove("open");m.setAttribute("aria-hidden","true");document.body.style.overflow=""}
