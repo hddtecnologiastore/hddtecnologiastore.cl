@@ -10,7 +10,7 @@ var reduced=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduc
 var I18N={
 es:{
 "nav.home":"Inicio","nav.services":"Servicios","nav.process":"Proceso","nav.reviews":"Reseñas","nav.contact":"Contacto",
-"hero.badge":"SERVICIO PREMIUM \u00b7 GARANT\u00cdA REAL \u00b7 20 A\u00d1OS",
+"hero.badge":"SERVICIO PREMIUM \u00b7 GARANT\u00cdA REAL \u00b7 20 A\u00d1OS DE EXPERIENCIA",
 "hero.title":"Servicio t\u00e9cnico<br><span class=\"grad\">en computaci\u00f3n,</span><br>con <span id=\"typing\" class=\"typing\">garant\u00eda real</span>",
 "hero.lead":"Servicio T\u00e9cnico Especializado en Laptops y Equipos de C\u00f3mputo<br>Diagn\u00f3stico preciso, mantenimiento preventivo y reparaci\u00f3n con garant\u00eda por escrito. Respaldado por m\u00e1s de 1.350 clientes satisfechos en Santiago y un \u00edndice de efectividad superior al 99%.",
 "hero.cta1":"Agendar diagn\u00f3stico","hero.cta2":"Ver servicios",
@@ -63,7 +63,7 @@ es:{
 },
 en:{
 "nav.home":"Home","nav.services":"Services","nav.process":"Process","nav.reviews":"Reviews","nav.contact":"Contact",
-"hero.badge":"PREMIUM SERVICE \u00b7 REAL WARRANTY \u00b7 20 YEARS",
+"hero.badge":"PREMIUM SERVICE \u00b7 REAL WARRANTY \u00b7 20 YEARS EXPERIENCE",
 "hero.title":"Technical service<br><span class=\"grad\">for computers,</span><br>with <span id=\"typing\" class=\"typing\">real warranty</span>",
 "hero.lead":"Specialized Technical Service for Laptops and Computers<br>Accurate diagnostics, preventive maintenance and repair with written warranty. Trusted by over 1,350 satisfied clients in Santiago with over 99% success rate.",
 "hero.cta1":"Book diagnosis","hero.cta2":"View services",
