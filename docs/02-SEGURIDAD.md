@@ -14,7 +14,7 @@ En `netlify.toml`:
 [[headers]]
   for = "/*"
   [headers.values]
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://flagcdn.com https://www.googletagmanager.com https://www.google-analytics.com; connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://www.googleadservices.com https://pagead2.googlesyndication.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://flagcdn.com https://www.googletagmanager.com https://www.google-analytics.com; connect-src 'self' https://wa.me https://www.googletagmanager.com https://www.google-analytics.com https://analytics.google.com https://www.google.com https://stats.g.doubleclick.net https://www.googleadservices.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
 ```
 
 ### Puntos críticos
@@ -23,10 +23,21 @@ En `netlify.toml`:
 |---|---|
 | `style-src ... 'unsafe-inline'` | **Obligatoria** si hay `style="..."` en el HTML (plantillas con estilos inline). Sin ella, Chrome bloquea TODOS los estilos inline: la web se ve destruida en producción pero perfecta en local. |
 | `script-src` + dominios de GA | Si agregas Google Analytics y no lo añades, GA no carga en producción (sin error visible). |
-| `connect-src` + dominios de GA | Lo mismo para las peticiones de recolección de datos. |
+| `connect-src` + **TODOS** los dominios de GA4 | **GA4 envía los hits a CUATRO dominios, no a uno**: `www.google-analytics.com`, `analytics.google.com`, `stats.g.doubleclick.net` y `www.google.com`. Si falta alguno, Chrome bloquea esos hits y **GA4 no recibe NINGÚN dato en producción** (en local no hay CSP, por eso siempre funciona en local). |
 | `img-src ... https://flagcdn.com` | Si se usan banderas de idioma u otras imágenes externas. |
 
 **Regla de oro:** cada vez que agregues un `<script>`, `<img>` o fetch de un dominio nuevo, añadir ese dominio a la CSP. Síntoma de fallo: mensajes en consola `Refused to ...`.
+
+### Cómo diagnosticar violaciones de CSP sin adivinar
+
+Chrome headless captura los bloqueos reales de producción (no hay que pedirle capturas al cliente):
+
+```powershell
+& "C:\Program Files\Google\Chrome\Application\chrome.exe" --headless=new --disable-gpu --enable-logging=stderr --v=0 --virtual-time-budget=12000 --user-data-dir="$env:TEMP\opencode\cspdiag" https://TU-SITIO/ 2> "$env:TEMP\opencode\csp.log"
+Select-String -Path "$env:TEMP\opencode\csp.log" -Pattern 'Content Security Policy|Refused'
+```
+
+Cada línea `Refused to connect ... violates ... "connect-src ..."` indica el dominio exacto que falta agregar.
 
 ## 2. Bloqueo de archivos sensibles
 

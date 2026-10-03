@@ -49,7 +49,7 @@ carpeta-del-sitio/
 [[headers]]
   for = "/*"
   [headers.values]
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://flagcdn.com https://www.googletagmanager.com https://www.google-analytics.com; connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://www.googleadservices.com https://pagead2.googlesyndication.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://flagcdn.com https://www.googletagmanager.com https://www.google-analytics.com; connect-src 'self' https://wa.me https://www.googletagmanager.com https://www.google-analytics.com https://analytics.google.com https://www.google.com https://stats.g.doubleclick.net https://www.googleadservices.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
 
 # Bloqueo de archivos sensibles → ver docs/02-SEGURIDAD.md
 [[redirects]]
@@ -124,7 +124,9 @@ En `<head>` de **todas** las páginas:
 2. Obtener ID de medición (`G-XXXXXXXXXX`)
 3. Agregar el script
 4. **Agregar los dominios a la CSP** (script-src + connect-src) — si no, GA no carga en producción
+   - `connect-src` necesita los **4 dominios de recolección de GA4**: `www.google-analytics.com`, `analytics.google.com`, `stats.g.doubleclick.net`, `www.google.com`
 5. Verificar: GA → Tiempo real → abrir la web → debe aparecer tu visita
+6. **Si no aparece**: diagnosticar con Chrome headless (ver `docs/02-SEGURIDAD.md` → "Cómo diagnosticar violaciones de CSP") — en local NUNCA falla porque no hay CSP
 
 ### Eventos de conversión para webs de servicios
 
