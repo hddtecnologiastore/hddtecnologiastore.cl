@@ -106,6 +106,7 @@ Se inserta en el `<head>` de la home. Google lo usa para mostrar información en
 
 - Cambiar `@type` según rubro: `ComputerStore`, `Electrician`, `Restaurant`, `MedicalClinic`, etc. (schema.org)
 - `aggregateRating` **solo si hay reseñas reales** y debe coincidir EXACTAMENTE con tu perfil de Google Business (rating y número de opiniones reales, no clientes atendidos) — Google penaliza los datos estructurados engañosos
+- **Trabajos/órdenes emitidas ≠ reseñas**: el número de trabajos (ej: 1.435 órdenes) va en el **texto visible** (KPIs, descripción, JSON-LD `description`), NUNCA en `reviewCount`. Mostrar ambas cifras da credibilidad: "122 reseñas de 1.435 trabajos realizados"
 - Validar en https://search.google.com/test/rich-results
 
 ## 6. Open Graph + Twitter Card (compartir en redes)
