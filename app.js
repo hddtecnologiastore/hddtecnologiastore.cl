@@ -215,6 +215,7 @@ function render(){var L=list();ct.textContent=L.length+" equipo(s) · precios cl
   if(noBtn)noBtn.addEventListener("click",hide);
 })();
 /* Google Ads conversion: track WhatsApp clicks as GA4 events */
+window.ADS_CONV_ID=""; /* se rellena con el ID real de Ads: AW-XXXXXXXXX/etiqueta */
 document.addEventListener("click",function(e){
   var a=e.target.closest('a[href*="wa.me"]');
   if(!a)return;
@@ -223,7 +224,10 @@ document.addEventListener("click",function(e){
   else if(a.classList.contains("wa-mini"))label="whatsapp_header";
   else if(a.closest("#contacto"))label="whatsapp_footer";
   else if(a.closest(".svc"))label="whatsapp_service";
-  if(window.gtag){gtag("event","conversion",{send_to:"G-911W1R6JG0",value:1,currency:"CLP",transaction_id:Date.now()});gtag("event",label,{send_to:"G-911W1R6JG0"})}
+  if(window.gtag){
+    gtag("event",label,{event_category:"contact",event_label:label});
+    if(window.ADS_CONV_ID){gtag("event","conversion",{send_to:window.ADS_CONV_ID,value:1,currency:"CLP"})}
+  }
 });
 /* Modales */
 function openM(id){var m=document.getElementById(id);if(m){m.classList.add("open");m.setAttribute("aria-hidden","false");document.body.style.overflow="hidden"}}

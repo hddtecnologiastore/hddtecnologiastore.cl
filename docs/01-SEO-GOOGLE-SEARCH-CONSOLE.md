@@ -170,6 +170,10 @@ Si no, GA queda silenciosamente bloqueado en producción (en local funciona y pa
 
 ### Eventos de conversión (ejemplo WhatsApp)
 
+**¡IMPORTANTE!** `send_to` de una conversión de Google Ads es **`AW-XXXXXXXXX/etiqueta`** (formato Ads), **NUNCA** el ID de GA4 (`G-...`). Con un `G-...` el evento se envía a GA4 pero Ads **no lo registra como conversión** (gasto sin ROI medible).
+
+Cómo obtener el ID correcto: Google Ads → Herramientas y configuración → Conversiones → crear acción de conversión (evento: clic en WhatsApp) → "Configuración de la etiqueta" → copiar el valor `send_to`.
+
 ```js
 document.addEventListener("click", function(e){
   var a = e.target.closest("a[href*='wa.me']");
@@ -177,10 +181,14 @@ document.addEventListener("click", function(e){
   var label = a.classList.contains("wa-float") ? "whatsapp_float"
             : a.classList.contains("promo-yes") ? "whatsapp_promo"
             : "whatsapp_main";
-  gtag("event","conversion",{"send_to":"<<GA-ID>>/<<CONVERSION-ID>>"});
+  // Evento para GA4 (medición libre)
   gtag("event","whatsapp_click",{event_category:"contact",event_label:label});
+  // Conversión de Ads (solo si hay ID AW- real configurado)
+  if(window.ADS_CONV_ID){gtag("event","conversion",{send_to:window.ADS_CONV_ID,value:1,currency:"CLP"})}
 }, true);
 ```
+
+**Alternativa sin tocar código:** en GA4 marcar `whatsapp_click` como "evento clave" y en Google Ads → Conversiones → "Importar eventos de Google Analytics 4".
 
 ## 9. Google Business Profile (negocios locales)
 

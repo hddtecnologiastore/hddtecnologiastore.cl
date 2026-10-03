@@ -137,13 +137,14 @@ document.addEventListener("click", function(e){
             : a.classList.contains("promo-yes") ? "whatsapp_promo"
             : a.classList.contains("promo-btn") ? "whatsapp_promo"
             : "whatsapp_main";
-  gtag("event","conversion",{send_to:"<<GA-ID>>/<<CONV-ID>>"});
+  if(window.ADS_CONV_ID){gtag("event","conversion",{send_to:window.ADS_CONV_ID,value:1,currency:"CLP"})}
   gtag("event","whatsapp_click",{event_category:"contact",event_label:label});
 }, true);
 ```
 
 - En GA4: **Configurar → Eventos** para ver `whatsapp_click`
 - Crear **conversiones** marcando el evento (o usar `conversion` con `send_to` si hay Google Ads)
+- ⚠️ `send_to` de conversión Ads = `AW-XXXXXXXXX/etiqueta` (formato Ads). Con `G-...` de GA4, **Ads no registra la conversión** y el gasto en pauta queda sin ROI medible
 - `label` permite distinguir botón flotante, hero, promo, etc.
 
 ## 6. Dominio propio
