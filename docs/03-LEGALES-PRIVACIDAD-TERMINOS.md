@@ -150,15 +150,23 @@ En el footer de **todas** las páginas:
 
 ## 7. Imprimir el aviso de cookies según herramientas
 
-Si el sitio usa **solo** GA4 con medición anónima y sin publicidad → basta el aviso informativo (patrón de arriba).
+Si el sitio usa **solo** GA4 con medición anónima y sin publicidad → basta el aviso informativo (patrón de arriba). **Microsoft Clarity** (mapas de calor) entra en esta misma categoría: informativo, pero hay que declararlo.
 
 Si en el futuro se agregan **cookies publicitarias, píxeles de Facebook Ads o remarketing** → avisar además con botón de "Aceptar / Rechazar" real y no cargar el píxel antes del aceptar (modo consent mode de Google).
+
+### Declaración de Clarity (cuando esté instalado)
+
+Tres puntos en `privacidad.html`:
+1. **§1 datos automáticos**: añadir "y Microsoft Clarity (mapas de calor y grabaciones de sesión anónimas para mejorar la usabilidad)"
+2. **§5 transferencias**: añadir `<li><b>Microsoft (Clarity)</b> — análisis de uso del sitio.</li>`
+3. **§9 cookies**: añadir `CLID`, `MUID`, `_clck` + enlace a privacy.microsoft.com
+4. Aviso de cookies (HTML + i18n): mencionar Clarity junto a GA
 
 ## 8. Checklist legal antes de entregar
 
 - [ ] `privacidad.html` completa y VERDADERA (coincide con las herramientas reales)
 - [ ] `terminos.html` con identificación + garantía + jurisdicción
-- [ ] Sección de cookies actualizada (si hay GA, mencionar GA)
+- [ ] Sección de cookies actualizada (si hay GA, mencionar GA; si hay Clarity, mencionar Clarity)
 - [ ] Barra de cookies visible en navegador (probar en pestaña anónima + localStorage limpio)
 - [ ] Enlaces legales en todos los formularios
 - [ ] Footer con ambos enlaces en todas las páginas

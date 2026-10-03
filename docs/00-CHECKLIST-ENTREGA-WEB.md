@@ -68,9 +68,11 @@ Plantilla maestra basada en el sitio **hddtecnologiastore.cl**. Aplicar a cada n
 
 ## 7. Analítica y conversión
 
-- [ ] GA4 instalado
-- [ ] Eventos: clics WhatsApp (botón flotante, hero, contacto, promo) → `gtag('event','conversion',...)` o evento personalizado
-- [ ] Meta de conversión en Google Ads si se pauta
+- [ ] GA4 instalado (CSP con los 4 dominios de recolección — ver lección 3)
+- [ ] Eventos: clics WhatsApp (botón flotante, hero, contacto, promo) → evento personalizado `whatsapp_click` con `event_label`
+- [ ] Conversión en Google Ads: importar evento clave de GA4 (sin código) si Ads↔GA4 vinculados
+- [ ] Microsoft Clarity (mapas de calor, gratis): script + CSP `clarity.ms` + privacidad + aviso de cookies
+- [ ] Meta Pixel: SOLO si se pauta en Meta (nunca "por si acaso")
 - [ ] Formularios → WhatsApp (sin backend que perder)
 
 ## 8. Idiomas (si aplica)

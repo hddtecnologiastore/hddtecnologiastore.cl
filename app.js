@@ -60,7 +60,7 @@ es:{
 "booking.svc3":"Mantenimiento \u2014 $25.000",
 "booking.legal":"Al agendar aceptas <a href=\"privacidad.html\">privacidad</a> y <a href=\"terminos.html\">t\u00e9rminos</a>.",
 "booking.btn":"Agendar por WhatsApp \u2192",
-"cookie.text":"Usamos cookies propias y de Google Analytics para mejorar tu experiencia y medir el tr\u00e1fico. Al continuar, aceptas su uso. <a href=\"privacidad.html\">M\u00e1s informaci\u00f3n</a>.",
+"cookie.text":"Usamos cookies propias, Google Analytics y Microsoft Clarity para mejorar tu experiencia y medir el tr\u00e1fico. Al continuar, aceptas su uso. <a href=\"privacidad.html\">M\u00e1s informaci\u00f3n</a>.",
 "cookie.ok":"Entendido"
 },
 en:{
@@ -115,7 +115,7 @@ en:{
 "booking.svc3":"Maintenance — $25.000",
 "booking.legal":"By booking you accept <a href=\"privacidad.html\">privacy</a> and <a href=\"terminos.html\">terms</a>.",
 "booking.btn":"Book via WhatsApp \u2192",
-"cookie.text":"We use our own and Google Analytics cookies to improve your experience and measure traffic. By continuing, you accept their use. <a href=\"privacidad.html\">Learn more</a>.",
+"cookie.text":"We use our own, Google Analytics and Microsoft Clarity cookies to improve your experience and measure traffic. By continuing, you accept their use. <a href=\"privacidad.html\">Learn more</a>.",
 "cookie.ok":"Got it"
 }
 };

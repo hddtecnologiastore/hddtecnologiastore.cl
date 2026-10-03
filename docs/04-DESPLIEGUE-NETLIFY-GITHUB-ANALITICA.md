@@ -49,7 +49,7 @@ carpeta-del-sitio/
 [[headers]]
   for = "/*"
   [headers.values]
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://www.googleadservices.com https://pagead2.googlesyndication.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://flagcdn.com https://www.googletagmanager.com https://www.google-analytics.com; connect-src 'self' https://wa.me https://www.googletagmanager.com https://www.google-analytics.com https://analytics.google.com https://www.google.com https://stats.g.doubleclick.net https://www.googleadservices.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://www.googleadservices.com https://pagead2.googlesyndication.com https://clarity.ms https://*.clarity.ms; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://flagcdn.com https://www.googletagmanager.com https://www.google-analytics.com; connect-src 'self' https://wa.me https://www.googletagmanager.com https://www.google-analytics.com https://analytics.google.com https://www.google.com https://stats.g.doubleclick.net https://www.googleadservices.com https://clarity.ms https://*.clarity.ms; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
 
 # Bloqueo de archivos sensibles → ver docs/02-SEGURIDAD.md
 [[redirects]]
@@ -161,9 +161,40 @@ Si Ads y GA4 están **vinculados** (Admin de Ads → vincular propiedad GA4):
 
 #### Camino alternativo: etiqueta manual (`send_to`)
 
-Solo si NO hay vinculación Ads↔GA4: crear conversión "Sitio web" manual en Ads y usar el ID que entrega, format **`AW-XXXXXXXXX/etiqueta`** (formato Ads). Con `G-...` de GA4, **Ads no registra la conversión** y el gasto en pauta queda sin ROI medible.
+Solo si NO hay vinculación Ads↔GA4: crear conversión "Sitio web" manual en Ads y usar el ID que entrega, formato **`AW-XXXXXXXXX/etiqueta`** (formato Ads). Con `G-...` de GA4, **Ads no registra la conversión** y el gasto en pauta queda sin ROI medible.
 
-## 6. Dominio propio
+## 6. Microsoft Clarity — mapas de calor (gratis)
+
+Herramienta de CRO: heatmaps, grabaciones de sesión, scroll tracking. No es publicitaria, pero SÍ debe declararse en privacidad.
+
+### Instalación
+
+1. https://clarity.microsoft.com → cuenta Microsoft → **+ Add project** → URL del sitio → sector
+2. Copiar **ID de proyecto** (panel → Información general → "Id. de proyecto", formato corto tipo `ys3iggtq4i`)
+3. Pegar en el `<head>` de **TODAS** las páginas:
+
+```html
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "<<CLARITY-ID>>");
+</script>
+```
+
+4. **CSP** (`netlify.toml`): agregar `https://clarity.ms https://*.clarity.ms` a **`script-src` Y `connect-src`** (si falta → bloqueado en producción; en local funciona igual que GA4 porque no hay CSP)
+5. **privacidad.html**: declarar en 3 lugares:
+   - §1 datos automáticos → mencionar Clarity (mapas de calor / sesiones anónimas)
+   - §5 transferencias → proveedor Microsoft
+   - §9 cookies → cookies `CLID`, `MUID`, `_clck` + enlace privacy.microsoft.com
+6. **Aviso de cookies** (HTML + i18n ES/EN en `app.js`): mencionar Clarity junto a GA
+7. Verificar: Chrome headless → 0 violaciones CSP; net-log → hits `clarity.ms/tag`
+
+### Cuándo NO usar Meta Pixel
+
+Meta Pixel solo si se pauta en Meta: sin pauta = tracking sin uso que contradice la propia política de privacidad (hoy dice "no usamos píxeles de remarketing... ni en redes sociales"). Si el día se pauta: instalar pixel + reescribir esa sección de privacidad.
+
+## 7. Dominio propio
 
 1. Comprar dominio (ej: Namecheap, GoDaddy, Google Domains)
 2. Netlify → Domain management → Add custom domain
@@ -172,7 +203,7 @@ Solo si NO hay vinculación Ads↔GA4: crear conversión "Sitio web" manual en A
    - O registros: `A @ 75.2.60.5` + `CNAME www <<sitio>>.netlify.app`
 4. HTTPS automático (Let's Encrypt), forzar redirect http→https
 
-## 7. Verificación post-deploy
+## 8. Verificación post-deploy
 
 ```powershell
 # Estado de páginas clave
@@ -192,7 +223,7 @@ Checklist:
 - [ ] WhatsApp/promo/botones responden
 - [ ] `git status` limpio (todo commiteado)
 
-## 8. Orden recomendado de cada entrega
+## 9. Orden recomendado de cada entrega
 
 1. Terminar cambios en local → probar
 2. `netlify deploy --prod`
