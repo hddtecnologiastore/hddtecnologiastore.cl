@@ -101,6 +101,7 @@ Plantilla maestra basada en el sitio **hddtecnologiastore.cl**. Aplicar a cada n
 ## Lecciones aprendidas (errores reales de este proyecto)
 
 1. **CSP bloquea estilos inline**: `style-src 'self'` sin `'unsafe-inline'` rompe TODOS los `style=""` — en local sin CSP se ve bien y en producción roto. Siempre incluir `'unsafe-inline'`.
+2. **CSP bloquea scripts inline (gtag)**: `script-src 'self'` sin `'unsafe-inline'` bloquea el `<script>` inline de Google Analytics — **Analytics no recibe NINGÚN dato** (ni page_view), sin error visible en la página. Síntoma: GA4 dice "No se ha recibido ningún dato" con el tag aparentemente instalado. Incluir `'unsafe-inline'` o usar hash/nonce.
 2. **`maxlength` cuenta el espacio**: input con placeholder `1234 1234` y `maxlength="8"` cortaba antes. Quitar `maxlength` y limitar con JS.
 3. **CSS/JS huérfanos**: existía `#cookieBar` en CSS y JS pero **no en el HTML** → la barra nunca se mostraba. Siempre verificar los 3.
 4. **Política de privacidad desactualizada**: decía "no usamos cookies" con GA instalado. Revisar legales tras cada cambio de herramientas.
