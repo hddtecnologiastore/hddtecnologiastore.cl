@@ -13,21 +13,22 @@ Toda web que recoja datos (aunque sea solo por WhatsApp/GA) necesita `privacidad
 ### Secciones mínimas
 
 1. **Última actualización + identificación** (nombre, dirección, teléfono)
-2. **Qué datos tratamos**
-   - Formularios: nombre, teléfono, mensaje, empresa/RUT si aplica
-   - Google Analytics: navegación anónima
+2. **Qué datos hay**
+   - Enviados por el usuario: nombre, teléfono, mensaje, empresa/RUT si aplica
+   - **Automáticos (navegación)**: IP anonimizada, navegador, páginas visitadas — si hay Analytics, declararlo (si solo dices "los que tú envías", la política miente)
    - No pedir datos sensibles (RUT con solo dígitos + dígito verificador está bien; evitar datos de salud/pagos salvo estricto necesario)
-3. **Para qué los usamos** (responder solicitud, coordinar servicio, emitir presupuesto, garantía)
-4. **Base legal / consentimiento** (envío del formulario, contacto voluntario por WhatsApp; revocable en cualquier momento)
-5. **Con quién los compartimos** — ser honesto:
-   - Google (Analytics) → anonimizado
-   - WhatsApp/Meta → el mensaje viaja por esa plataforma
+3. **Para qué los usamos** (responder solicitud, coordinar servicio, emitir presupuesto, garantía, estadísticas agregadas)
+4. **Base legal / consentimiento** — citar **Ley 19.628 y Ley 21.719** (Chile); revocable en cualquier momento
+5. **Con quién los compartimos + transferencias internacionales** — ser honesto:
+   - Google (Analytics/Ads) y Meta (WhatsApp) → datos procesados **fuera de Chile (EE.UU.)** bajo sus mecanismos de protección
    - **No** marketing a terceros sin consentimiento
-6. **Derechos ARCO** (Acceso, Rectificación, Cancelación, Oposición) + cómo ejercerlos (WhatsApp, dirección, plazo de respuesta: 10 días hábiles)
-7. **Seguridad** — HTTPS, CSP, sanitización, sin claves en frontend
-8. **Cookies** — ¡listar las REALES!
-9. **Menores** — servicio para mayores de 18
-10. **Contacto** — teléfono, WhatsApp, email
+6. **Google Ads / pauta** — si la web dispara eventos de conversión, existen cookies `_gcl_*` (≤90 días). Declarar: medición de conversión, **sin remarketing** (si no se usa), con enlace a Ajustes de anuncios de Google
+7. **Derechos ARCO** (Acceso, Rectificación, Cancelación, Oposición) + cómo ejercerlos (WhatsApp, dirección, plazo de respuesta: 10 días hábiles)
+8. **Seguridad** — HTTPS, CSP, sanitización, sin claves en frontend
+9. **Cookies** — ¡listar las REALES con sus nombres (`_ga`, `_gcl_*`, etc.)!
+10. **Cambios a la política** — la versión vigente es la publicada con su fecha
+11. **Menores** — servicio para mayores de 18
+12. **Contacto** — teléfono, WhatsApp, email
 
 ### ⚠️ Errores reales a evitar
 
@@ -56,12 +57,23 @@ que afecte el uso del sitio.</p>
 1. **Identificación** — negocio, responsable, dirección, teléfono + aclaración clave:
    > "Servicio técnico independiente, no representante oficial de marcas. 'Todas las marcas' se refiere a capacidad técnica, no a vínculo comercial."
    (Evita problemas legales al decir "atendemos todas las marcas")
-2. **Servicios y garantía** — qué cubre, plazos, qué la anula (daño líquido, manipulación de terceros)
-3. **Presupuestos y pagos** — validez, formas de pago
-4. **Limitación de responsabilidad** — daños en datos (responsabilidad del cliente hacer respaldos), retrasos por repuestos
-5. **Propiedad intelectual** — marca y contenido propios
-6. **Ley aplicable y jurisdicción** — tribunales de <<ciudad>>, Chile
-7. **Contacto**
+2. **Diagnóstico y presupuestos** — costo del diagnóstico, plazo de entrega (ej: 24-48h hábiles), validez del presupuesto (ej: 15 días), **no se repara sin autorización expresa**
+3. **Reparación y plazos** — plazo estimado, dependencia de repuestos, aviso previo si se demora
+4. **Garantía** — plazo concreto (ej: 90 días corridos), qué la anula (líquidos, golpes, manipulación de terceros, software del cliente), excepciones (baterías reacondicionadas)
+5. **Garantía de fábrica** — advertir que reparar en tercero **puede anular la garantía del fabricante/importador**
+6. **Datos, respaldos y software** — **el cliente es responsable de respaldar sus datos**; el técnico no responde por pérdida inherente salvo negligencia probada
+7. **Pagos** — pesos chilenos, IVA, pago al retirar, anticipo de repuestos autorizado
+8. **Custodia y plazos de retiro** ⚠️ *(crítico en talleres)*:
+   - Notificación por WhatsApp al estar listo
+   - Ej: 30 días corridos gratis para retirar
+   - Días 31-60: cargo de almacenamiento (ej: $2.000/día, informado antes de cobrar)
+   - Día 90 sin retiro ni comunicación: abandono, dispone del equipo previa notificación
+   - El cliente puede autorizar donación/baja por escrito
+9. **Uso del sitio** — sin inyección de código ni vulnerar validaciones
+10. **Propiedad intelectual** — marcas de terceros, contenido propio
+11. **Limitación de responsabilidad** — sitio sin garantía de disponibilidad; responsabilidad limitada al valor del servicio
+12. **Ley aplicable** — Chile + tribunales de <<ciudad>>
+13. **Fecha de última actualización** bajo el título
 
 ## 3. Barra de cookies (aviso visible)
 
