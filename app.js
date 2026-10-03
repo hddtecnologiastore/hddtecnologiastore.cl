@@ -133,7 +133,7 @@ function applyLang(l){
  try{window.dispatchEvent(new CustomEvent("hdd:lang",{detail:l}))}catch(e){}
  var typingWords=l==="en"?["real warranty","honest diagnosis","personalized service"]:["garant\u00eda real","diagn\u00f3stico honesto","atenci\u00f3n personalizada"];
  var typEl=$("#typing");if(typEl)typEl.setAttribute("data-words",typingWords.join("|"));
- document.title=l==="en"?"HDD Technology Store \u2014 Trusted Technical Service | \u00d1u\u00f1oa, Santiago":"HDD Tecnolog\u00eda Store \u2014 Servicio T\u00e9cnico de Confianza | \u00d1u\u00f1oa, Santiago";
+ document.title=l==="en"?"Computer Repair Service in Santiago | Notebooks & PCs \u2014 HDD Technology":"Servicio T\u00e9cnico Computacional en Santiago | Reparaci\u00f3n Notebooks y PCs \u2014 HDD Tecnolog\u00eda";
 }
 function initLang(){applyLang(curLang);$$(".lang-btn").forEach(function(b){b.addEventListener("click",function(){applyLang(b.getAttribute("data-lang"))})})}
 if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",initLang)}else{initLang()}
