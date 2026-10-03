@@ -98,14 +98,14 @@ Se inserta en el `<head>` de la home. Google lo usa para mostrar información en
     { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "11:00", "closes": "19:30" },
     { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "11:00", "closes": "16:00" }
   ],
-  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1350" },
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "122" },
   "sameAs": ["https://www.instagram.com/...", "https://www.tiktok.com/@..."]
 }
 </script>
 ```
 
 - Cambiar `@type` según rubro: `ComputerStore`, `Electrician`, `Restaurant`, `MedicalClinic`, etc. (schema.org)
-- `aggregateRating` **solo si hay reseñas reales**
+- `aggregateRating` **solo si hay reseñas reales** y debe coincidir EXACTAMENTE con tu perfil de Google Business (rating y número de opiniones reales, no clientes atendidos) — Google penaliza los datos estructurados engañosos
 - Validar en https://search.google.com/test/rich-results
 
 ## 6. Open Graph + Twitter Card (compartir en redes)
