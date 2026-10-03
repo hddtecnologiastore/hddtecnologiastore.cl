@@ -136,12 +136,6 @@
   force = true
 
 [[redirects]]
-  from = "/catalogo.html"
-  to = "/404.html"
-  status = 404
-  force = true
-
-[[redirects]]
   from = "/*.map"
   to = "/404.html"
   status = 404
