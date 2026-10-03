@@ -145,9 +145,23 @@ document.addEventListener("click", function(e){
 ```
 
 - En GA4: **Configurar → Eventos** para ver `whatsapp_click`
-- Crear **conversiones** marcando el evento (o usar `conversion` con `send_to` si hay Google Ads)
-- ⚠️ `send_to` de conversión Ads = `AW-XXXXXXXXX/etiqueta` (formato Ads). Con `G-...` de GA4, **Ads no registra la conversión** y el gasto en pauta queda sin ROI medible
 - `label` permite distinguir botón flotante, hero, promo, etc.
+
+#### Conversión en Google Ads — camino recomendado: importar de GA4 (sin código)
+
+Si Ads y GA4 están **vinculados** (Admin de Ads → vincular propiedad GA4):
+
+1. GA4 → **Configurar → Eventos** → hacer **1 clic real** en un botón WhatsApp antes (para que el evento exista) → activar **"Marcar como evento clave"** en `whatsapp_click`
+2. Google Ads → **Herramientas → Medición → Conversiones → + Crear conversión → Importar → Google Analytics (GA4)** → elegir `whatsapp_click` → categoría **Contacto** → Guardar
+3. **No tocar** `ADS_CONV_ID` (queda vacío) — Ads cuenta el evento importado, cero etiquetas en el sitio
+
+⚠️ **Trampas al crear eventos en GA4:**
+- **NO usar "Crear sin código"** con trigger `page_view` + "URL contains" para un clic: crearía un evento falso que se dispara en cada carga de página, no en el clic. El evento ya viene del sitio (`app.js`), solo hay que marcarlo como evento clave.
+- Si el evento no aparece en la lista: hacer 1 clic real en la web + esperar 2-5 min.
+
+#### Camino alternativo: etiqueta manual (`send_to`)
+
+Solo si NO hay vinculación Ads↔GA4: crear conversión "Sitio web" manual en Ads y usar el ID que entrega, format **`AW-XXXXXXXXX/etiqueta`** (formato Ads). Con `G-...` de GA4, **Ads no registra la conversión** y el gasto en pauta queda sin ROI medible.
 
 ## 6. Dominio propio
 
