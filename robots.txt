@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /catalogo.html
+Disallow: /src/
+
+Sitemap: https://hddtecnologiastore.cl/sitemap.xml
