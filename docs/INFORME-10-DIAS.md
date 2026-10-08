@@ -37,6 +37,7 @@ Checklist de estado del sitio + presencia de lo instalado:
 Plantilla para que el cliente complete (o pegue capturas). **Pedir estas 4 capturas:**
 
 ### 1. GA4 (analytics.google.com) — propiedad 547876179
+> ✅ **Conexión directa configurada (08-10-2026)** — el agente puede consultar GA4 sin capturas, con OAuth (token en `C:\Users\PC\.config\hdd-secrets\ga4-token.json`).
 | Métrica | Valor (03-10 al 13-10) | Esperado |
 |---|---|---|
 | Usuarios totales | | > 0 (¡antes era 0!) |
@@ -58,6 +59,7 @@ Plantilla para que el cliente complete (o pegue capturas). **Pedir estas 4 captu
 | Estado sitemap | | Éxito (no "No se ha podido obtener") |
 
 ### 3. Google Ads — cuenta 675-412-6264
+> ⏳ **Sin API directa** (cuenta principal no disponible). Pedir al cliente exportar el CSV semanal de la campaña y enviarlo al agente para el análisis.
 | Métrica | Valor | Esperado |
 |---|---|---|
 | Conversiones `whatsapp_click` registradas | | primera conversión importada |
@@ -101,6 +103,8 @@ Preguntas que el informe debe responder:
 | 5 | Nuevo title SEO + og/twitter + document.title i18n | `ddbbcef` |
 | 6 | Indexación solicitada en Search Console (cola prioritaria) | interfaz |
 | 7 | Netlify: créditos de cuenta agotados → repuestos por el cliente | infra |
+| 8 | Conexión directa GA4 (prop. 547876179) vía OAuth en Cloud secundaria | `.config/hdd-secrets` |
+| 9 | Ads queda en CSV semanal (sin API por bloqueo de cuenta principal) | — |
 
 ## Pendientes / futuro
 
