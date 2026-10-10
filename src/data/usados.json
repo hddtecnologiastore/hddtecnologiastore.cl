@@ -1,1 +1,50 @@
-[]
+[
+  {
+    "resumen": "Notebook corporativo Lenovo ThinkPad X280 ultraliviano y resistente. Excelente rendimiento diario para trabajo o estudio con procesador Intel Core i5 y disco sólido rápido.",
+    "condicion_detalle": "Equipo ultraliviano de gama empresarial en excelentes condiciones físicas. Carcasa robusta y teclado impecable. Ideal para oficina, estudiantes, punto de venta o movilidad profesional. Funcionamiento rápido gracias a su almacenamiento SSD NVMe.",
+    "estado": "Excelente",
+    "modelo": "X280",
+    "software_recomendado": [
+      {
+        "nombre": "Microsoft Office / LibreOffice",
+        "categoria": "Oficina",
+        "por_que": "Indispensable para tareas de oficina, redacción de documentos, planillas de cálculo y estudio inmediato."
+      }
+    ],
+    "precio_mercado": 350000,
+    "slug": "Thinkpad-X280-i5-7ma",
+    "fotos": [
+      {
+        "url": "https://res.cloudinary.com/qhcbzphb/image/upload/v1791663686/thinkpad_i5.jpg"
+      }
+    ],
+    "fecha_ingreso": "2026-10-10",
+    "disponible": true,
+    "whatsapp_msg": "Hola, me interesa el Lenovo ThinkPad X280 (i5 / 8GB RAM / 256GB SSD) publicado en la tienda. ¿Está disponible para retiro o despacho?",
+    "etiqueta": "Seminuevo",
+    "precio_nosotros": 250000,
+    "titulo": "Thinkpad X280 12.5\" - Negro",
+    "id": "nb-2024-001",
+    "marca": "Lemovo",
+    "especificaciones": {
+      "puertos": [
+        "1x USB-C",
+        "1x USB-C Thunderbolt 3",
+        "2x USB 3.1 Gen 1",
+        "1x HDMI",
+        "Combo audio 3.5mm",
+        "Lector MicroSD"
+      ],
+      "bateria_salud": "80%",
+      "procesador": "i5-7200U 2.50Ghz",
+      "gpu": "Intel HD Graphics 620 Integrada",
+      "so_actual": "Windows 10",
+      "peso": "1.13 kg",
+      "almacenamiento": "256 Gb M.2 NVMe",
+      "pantalla": "12.5\" HD",
+      "bateria_ciclos": 829,
+      "ram": "8Gb RAM DDR4"
+    },
+    "año": 2019
+  }
+]
