@@ -6,7 +6,7 @@ media_library:
   name: cloudinary
   config:
     cloud_name: qhcbzphb
-    api_key: hdd_catalogo
+    api_key: "898237561158163"
 
 site_url: https://hddtecnologiastore.cl
 display_url: https://hddtecnologiastore.cl
