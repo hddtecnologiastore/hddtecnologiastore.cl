@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Notebooks Reacondicionados | HDD Tecnología Store</title>
+  <meta name="description" content="Notebooks reacondicionados con garantía, probados y verificados. Entrega en Ñuñoa, pago en local.">
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="/src/components/CarruselUsados.js" defer></script>
+</head>
+<body>
+  <header><!-- tu header actual --></header>
+
+  <main>
+    <carrusel-usados></carrusel-usados>
+
+    <section id="catalogo-usados" class="catalogo-grid" aria-label="Catálogo completo">
+      <!-- Se llena por JS -->
+    </section>
+
+    <!-- Ficha individual (se muestra si URL tiene /usados/[slug]) -->
+    <article id="ficha-usado" class="ficha-usado" hidden></article>
+  </main>
+
+  <footer><!-- tu footer --></footer>
+
+  <script>
+    // Router simple: si URL contiene /usados/[slug] → muestra ficha, sino grid
+    const path = location.pathname;
+    const match = path.match(/\/usados\/([^/]+)\/?$/);
+    if (match) {
+      import('/src/components/FichaUsado.js').then(m => m.mostrarFicha(match[1]));
+    } else {
+      import('/src/components/CatalogoUsados.js').then(m => m.cargarCatalogo());
+    }
+  </script>
+</body>
+</html>

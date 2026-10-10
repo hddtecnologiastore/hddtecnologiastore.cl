@@ -1,0 +1,67 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_library:
+  name: cloudinary
+  config:
+    cloud_name: casanovadiaz56-lab
+    api_key: hdd_catalogo
+
+site_url: https://hddtecnologiastore.cl
+display_url: https://hddtecnologiastore.cl
+
+publish_mode: editorial_workflow
+
+collections:
+  - name: "usados"
+    label: "Notebooks Reacondicionados"
+    folder: "src/data/usados"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    identifier_field: titulo
+    extension: json
+    format: json
+    fields:
+      - {label: "ID único", name: "id", widget: "string", pattern: ['^nb-\\d{4}-\\d{3}$', 'Formato: nb-2024-001']}
+      - {label: "Título publicable", name: "titulo", widget: "string"}
+      - {label: "Slug (URL amigable)", name: "slug", widget: "string", hint: "auto: macbook-pro-13-m1-2020"}
+      - {label: "Estado físico", name: "estado", widget: "select", options: ["Nuevo", "Como nuevo", "Excelente", "Bueno", "Regular"], default: "Excelente"}
+      - {label: "Etiqueta comercial", name: "etiqueta", widget: "select", options: ["Reconstruido", "Remanufacturado", "Seminuevo"], default: "Reconstruido"}
+      - {label: "Precio mercado (referencia)", name: "precio_mercado", widget: "number", min: 0, value_type: "int"}
+      - {label: "Precio nuestro", name: "precio_nosotros", widget: "number", min: 0, value_type: "int"}
+      - {label: "Marca", name: "marca", widget: "string"}
+      - {label: "Modelo", name: "modelo", widget: "string"}
+      - {label: "Año", name: "año", widget: "number", min: 2010, max: 2030}
+      - label: "Especificaciones técnicas"
+        name: especificaciones
+        widget: object
+        fields:
+          - {label: "Procesador", name: "procesador", widget: "string"}
+          - {label: "RAM", name: "ram", widget: "string"}
+          - {label: "Almacenamiento", name: "almacenamiento", widget: "string"}
+          - {label: "Pantalla", name: "pantalla", widget: "string"}
+          - {label: "GPU", name: "gpu", widget: "string", required: false}
+          - {label: "Ciclos de batería", name: "bateria_ciclos", widget: "number", min: 0, required: false}
+          - {label: "Salud batería %", name: "bateria_salud", widget: "string", required: false}
+          - {label: "SO actual", name: "so_actual", widget: "string", required: false}
+          - {label: "Puertos", name: "puertos", widget: "list", required: false}
+          - {label: "Peso", name: "peso", widget: "string", required: false}
+      - {label: "Condición detallada (texto libre)", name: "condicion_detalle", widget: "text"}
+      - label: "Galería (3-5 fotos, orden = prioridad)"
+        name: fotos
+        widget: list
+        fields:
+          - {label: "Imagen", name: "url", widget: "image", media_library: {config: {multiple: true}}}
+      - {label: "Resumen comercial (1-2 líneas)", name: "resumen", widget: "text"}
+      - label: "Software recomendado (opcional)"
+        name: software_recomendado
+        widget: list
+        required: false
+        fields:
+          - {label: "Nombre", name: "nombre", widget: "string"}
+          - {label: "Categoría", name: "categoria", widget: "select", options: ["Desarrollo", "Diseño", "Video", "Oficina", "Sistema", "Seguridad", "Otro"]}
+          - {label: "Por qué", name: "por_que", widget: "string"}
+      - {label: "Disponible", name: "disponible", widget: "boolean", default: true}
+      - {label: "Fecha de ingreso", name: "fecha_ingreso", widget: "datetime", format: "YYYY-MM-DD", default: ""}
+      - {label: "Mensaje WhatsApp pre-armado", name: "whatsapp_msg", widget: "text", hint: "Se usa en botón 'Consultar por WhatsApp'"}

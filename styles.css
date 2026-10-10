@@ -225,3 +225,50 @@ h1{font-family:var(--d);font-size:clamp(30px,4.6vw,54px);line-height:1.08;margin
 @media(max-width:960px){.hero-grid,.split{grid-template-columns:1fr;gap:20px}.grid6{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr}.cat-grid{grid-template-columns:1fr}.foot-grid{grid-template-columns:1fr}.nav{display:none;position:absolute;top:100%;left:0;right:0;background:#071022;border-bottom:1px solid var(--line);flex-direction:column;padding:10px 18px 16px}.nav.open{display:flex}.burger{display:flex}.social-grid{grid-template-columns:1fr}.kpis{grid-template-columns:1fr 1fr}.rev{padding:22px}.split{gap:20px}.hd-in{padding:10px 14px}.lang-label{display:none}.lang-switch{padding:3px 4px}}
 @media(max-width:560px){.grid6{grid-template-columns:1fr}.steps{grid-template-columns:1fr}.card-foot{grid-template-columns:1fr 1fr}.hero{padding:50px 0 20px;min-height:auto}.hero h1{font-size:clamp(24px,6vw,32px)!important}.lead{font-size:14px!important}.cta-row{flex-direction:column;align-items:stretch}.cta-row .btn{text-align:center}.split .glass:first-child{min-height:auto!important;padding:20px!important}.split .profile{min-height:auto!important}.kpis{grid-template-columns:1fr 1fr 1fr;gap:6px}.kpi{padding:8px}.kpi b{font-size:16px}.sec{padding:50px 0}.wrap{padding:0 16px}.hero-vis{min-height:auto}.lang-switch{font-size:10px;gap:3px}.lang-btn{padding:4px 6px;font-size:10px}.wa-mini{padding:8px 12px;font-size:11px}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+
+/* ===== CATÁLOGO USADOS ===== */
+.carrusel-usados { padding: 2rem 1rem; }
+.carrusel-track { display: flex; gap: 1rem; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 1rem; }
+.usado-card { flex: 0 0 280px; scroll-snap-align: start; background: var(--card); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,.08); }
+.usado-card img { width: 100%; height: 180px; object-fit: cover; }
+.card-body { padding: 1rem; }
+.etiqueta { display: inline-block; background: #e8f5e9; color: #2e7d32; font-size: .75rem; font-weight: 600; padding: .2rem .5rem; border-radius: 999px; }
+.precios { display: flex; gap: .5rem; align-items: baseline; margin: .5rem 0; }
+.precio-mercado { text-decoration: line-through; color: #999; font-size: .9rem; }
+.ahorro { background: #e8f5e9; color: #2e7d32; font-size: .75rem; padding: .1rem .4rem; border-radius: 999px; }
+.btn-wa, .btn-ver { display: inline-block; margin-top: .5rem; padding: .5rem 1rem; border-radius: 8px; font-weight: 600; text-decoration: none; }
+.btn-wa { background: #25d366; color: #fff; }
+.btn-ver { background: #f5f5f5; color: #333; }
+
+.ficha-usado { max-width: 1100px; margin: 0 auto; padding: 2rem 1rem; }
+.ficha-top { display: grid; grid-template-columns: 1fr 380px; gap: 2rem; margin-bottom: 2rem; }
+.galeria img { width: 100%; border-radius: 12px; }
+.thumbs { display: flex; gap: .5rem; margin-top: .5rem; overflow-x: auto; }
+.thumbs img { width: 80px; height: 60px; object-fit: cover; border-radius: 8px; cursor: pointer; opacity: .6; }
+.thumbs img:hover, .thumbs img.active { opacity: 1; }
+.resumen-cta { display: flex; flex-direction: column; justify-content: space-between; }
+.badge { display: inline-block; padding: .2rem .6rem; border-radius: 999px; font-size: .75rem; font-weight: 600; margin-right: .5rem; }
+.badge.etiqueta { background: #e8f5e9; color: #2e7d32; }
+.badge.estado { background: #e3f2fd; color: #1565c0; }
+.precios { display: flex; gap: .5rem; align-items: baseline; flex-wrap: wrap; margin: 1rem 0; }
+.precio-nuestro { font-size: 2rem; color: #1a1a1a; }
+.precio-mercado { text-decoration: line-through; color: #999; font-size: 1.2rem; }
+.ahorro { background: #fff3e0; color: #e65100; padding: .2rem .6rem; border-radius: 999px; font-weight: 700; }
+.confianza { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1rem 0; font-size: .9rem; color: #444; }
+.confianza span { background: #f5f5f5; padding: .3rem .6rem; border-radius: 8px; }
+.btn-wa-grande { display: inline-block; background: #25d366; color: #fff; padding: 1rem 2rem; border-radius: 12px; font-size: 1.1rem; font-weight: 700; text-decoration: none; margin: 1rem 0; }
+.btn-wa-grande:hover { background: #1ebe5d; }
+.disclaimer { font-size: .85rem; color: #666; }
+.ficha-bottom { display: grid; grid-template-columns: 1fr 320px; gap: 2rem; }
+.specs dl { display: grid; grid-template-columns: 160px 1fr; gap: .5rem 1rem; margin-bottom: 1.5rem; }
+.specs dt { font-weight: 600; color: #444; }
+.specs dd { margin: 0; color: #333; }
+.condicion { background: #fafafa; padding: 1rem; border-radius: 8px; white-space: pre-wrap; }
+.software-rec li, .confianza-extra li { margin: .5rem 0; }
+.btn-reseñas { display: inline-block; margin-top: 1rem; padding: .6rem 1.2rem; background: #4285f4; color: #fff; border-radius: 8px; text-decoration: none; }
+
+@media (max-width: 768px) {
+  .ficha-top, .ficha-bottom { grid-template-columns: 1fr; }
+  .carrusel-track { flex-direction: column; }
+  .usado-card { flex: 0 0 100%; }
+}
