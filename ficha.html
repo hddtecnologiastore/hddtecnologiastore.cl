@@ -25,16 +25,19 @@
 .ficha-wrap{max-width:1100px;margin:0 auto;padding:90px 1.2rem 3rem}
 .ficha-back{display:inline-flex;align-items:center;gap:.35rem;color:var(--mut);font-size:.8rem;text-decoration:none;margin-bottom:1rem;transition:color .2s}
 .ficha-back:hover{color:var(--acc)}
-.ficha-top{display:grid;grid-template-columns:420px 1fr;gap:2rem;align-items:start;margin-bottom:1.5rem}
+
+.ficha-top{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:start;margin-bottom:1.2rem}
 .galeria-main{width:100%;border-radius:14px;overflow:hidden;background:var(--card);border:1px solid var(--line);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center}
 .galeria-main img{width:100%;height:100%;object-fit:contain}
 .galeria-thumbs{display:flex;gap:.4rem;margin-top:.5rem}
 .galeria-thumbs img{width:56px;height:42px;object-fit:cover;border-radius:6px;cursor:pointer;opacity:.45;border:2px solid transparent;transition:all .15s}
 .galeria-thumbs img.active,.galeria-thumbs img:hover{opacity:1;border-color:var(--acc)}
-.fi{display:flex;flex-direction:column;gap:.45rem}
-.fi-etiqueta{display:inline-block;align-self:flex-start;background:rgba(56,189,248,.12);color:#38bdf8;font-size:.65rem;font-weight:700;padding:.25rem .65rem;border-radius:999px;letter-spacing:1.5px}
+
+.fi{display:flex;flex-direction:column;gap:.4rem}
+.fi-etiqueta{display:inline-block;align-self:flex-start;background:rgba(56,189,248,.15);color:#38bdf8;font-size:.65rem;font-weight:700;padding:.25rem .7rem;border-radius:999px;letter-spacing:1.5px}
 .fi-titulo{font-size:1.5rem;font-weight:800;color:#fff;line-height:1.15;margin:0}
 .fi-estado{font-size:.8rem;color:var(--mut)}
+.fi-estado b{color:#e2e8f0}
 .fi-precios{display:flex;align-items:baseline;gap:.6rem;flex-wrap:wrap;margin:.3rem 0}
 .precio-ref-f{font-size:1rem;color:#f87171;text-decoration:line-through;font-weight:500}
 .precio-final{font-size:2rem;color:#4ade80;font-weight:800}
@@ -43,30 +46,43 @@
 .btn-wa-f:hover{background:#1ebe5d}
 .btn-back-f{display:flex;align-items:center;justify-content:center;gap:.4rem;background:transparent;color:#fff;padding:.7rem 1.2rem;border-radius:12px;font-weight:600;font-size:.85rem;text-decoration:none;border:1px solid var(--line);transition:border-color .2s}
 .btn-back-f:hover{border-color:var(--acc)}
-.fila-specs{display:grid;grid-template-columns:repeat(5,1fr);gap:.6rem;margin-bottom:1.5rem}
-.sp{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:.7rem .8rem;display:flex;flex-direction:column;gap:.15rem}
-.sp small{font-size:.65rem;color:var(--mut);text-transform:uppercase;letter-spacing:.8px}
-.sp b{font-size:.85rem;color:#e2e8f0;font-weight:600}
-.fila-texto{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.5rem}
-.txt-box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:1rem 1.2rem}
-.txt-box h3{font-size:.75rem;font-weight:700;color:var(--acc);letter-spacing:1.5px;text-transform:uppercase;margin:0 0 .5rem}
-.txt-box p{font-size:.85rem;color:#94a3b8;line-height:1.65;margin:0}
-.fila-extra{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;margin-bottom:1.5rem}
-.extra-box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:1rem 1.2rem}
-.extra-box h3{font-size:.75rem;font-weight:700;color:var(--acc);letter-spacing:1.5px;text-transform:uppercase;margin:0 0 .6rem}
-.puerto-chip{display:inline-block;background:rgba(56,189,248,.08);color:#94a3b8;font-size:.75rem;padding:.25rem .5rem;border-radius:5px;margin:.15rem .15rem 0 0}
-.sw-item{margin-bottom:.5rem}
-.sw-item b{color:#e2e8f0;font-size:.82rem}
-.sw-item small{color:var(--mut);font-size:.7rem;margin-left:.3rem}
-.sw-item p{font-size:.78rem;color:#94a3b8;margin:.1rem 0 0;line-height:1.5}
-.conf-item{display:flex;align-items:center;gap:.45rem;font-size:.8rem;color:#94a3b8;margin-bottom:.35rem}
+
+.ficha-section{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1.2rem;margin-bottom:1.2rem}
+.ficha-section h3{
+  font-size:.85rem;font-weight:800;color:#38bdf8;letter-spacing:2px;text-transform:uppercase;margin:0 0 .8rem;
+  padding-bottom:.5rem;border-bottom:1px solid rgba(56,189,248,.2);
+  display:flex;align-items:center;gap:.4rem;
+}
+.ficha-section h3::before{content:'';display:inline-block;width:3px;height:14px;background:#38bdf8;border-radius:2px}
+
+.specs-grid{display:grid;grid-template-columns:1fr 1fr;gap:.5rem}
+.spec-item{display:flex;flex-direction:column;padding:.55rem .7rem;background:rgba(56,189,248,.06);border-radius:8px;text-align:center}
+.spec-item small{font-size:.65rem;color:var(--mut);text-transform:uppercase;letter-spacing:1px;font-weight:600}
+.spec-item b{font-size:.88rem;color:#e2e8f0;font-weight:700;margin-top:.1rem}
+
+.fila-doble{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-bottom:1.2rem}
+.fila-doble .ficha-section{margin-bottom:0}
+.fila-triple{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.2rem;margin-bottom:1.2rem}
+.fila-triple .ficha-section{margin-bottom:0}
+
+.ficha-desc{font-size:.88rem;color:#94a3b8;line-height:1.7;margin:0}
+.puerto-chip{display:inline-block;background:rgba(56,189,248,.08);color:#94a3b8;font-size:.78rem;padding:.3rem .6rem;border-radius:6px;margin:.15rem .15rem 0 0}
+.sw-item{margin-bottom:.6rem}
+.sw-item:last-child{margin-bottom:0}
+.sw-item b{color:#e2e8f0;font-size:.85rem}
+.sw-item small{color:var(--mut);font-size:.72rem;margin-left:.3rem}
+.sw-item p{font-size:.8rem;color:#94a3b8;margin:.15rem 0 0;line-height:1.5}
+.conf-grid{display:grid;grid-template-columns:1fr 1fr;gap:.35rem}
+.conf-item{display:flex;align-items:center;gap:.45rem;font-size:.8rem;color:#94a3b8}
 .conf-item::before{content:'✓';color:#4ade80;font-weight:700;font-size:.85rem}
+
 @media(max-width:800px){
   .ficha-top{grid-template-columns:1fr}
-  .fila-specs{grid-template-columns:repeat(2,1fr)}
-  .fila-texto{grid-template-columns:1fr}
-  .fila-extra{grid-template-columns:1fr}
+  .fila-doble{grid-template-columns:1fr}
+  .fila-triple{grid-template-columns:1fr}
+  .specs-grid{grid-template-columns:1fr 1fr}
   .ficha-wrap{padding-top:80px}
+  .conf-grid{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -119,22 +135,17 @@
 
   document.getElementById('waFloat').href = 'https://wa.me/56961991725?text=' + waMsg;
 
-  const specsTop = [
+  const specs = [
     ['Procesador', e.procesador],
     ['RAM', e.ram],
-    ['Disco', e.almacenamiento],
+    ['Almacenamiento', e.almacenamiento],
     ['Pantalla', e.pantalla],
     ['GPU', e.gpu],
-  ].filter(([,v]) => v);
-
-  const specsExtra = [
-    ['Ciclos batería', e.bateria_ciclos],
+    ['Batería · Ciclos', e.bateria_ciclos],
     ['Salud batería', e.bateria_salud],
     ['SO actual', e.so_actual],
     ['Peso', e.peso],
     ['Año', u.año],
-    ['Marca', u.marca],
-    ['Modelo', u.modelo],
   ].filter(([,v]) => v);
 
   const puertos = e.puertos || [];
@@ -142,6 +153,7 @@
 
   document.getElementById('fichaContent').innerHTML = `
     <a href="/usados.html" class="ficha-back">← Volver al catálogo</a>
+
     <div class="ficha-top">
       <div>
         <div class="galeria-main"><img id="mainImg" src="${mainImg}" alt="${u.titulo}"></div>
@@ -150,7 +162,7 @@
       <div class="fi">
         <span class="fi-etiqueta">${(u.etiqueta||'').toUpperCase()}</span>
         <h1 class="fi-titulo">${u.titulo}</h1>
-        ${u.estado ? `<span class="fi-estado">Estado: <b style="color:#e2e8f0">${u.estado}</b> · Stock disponible</span>` : ''}
+        ${u.estado ? `<span class="fi-estado">Estado: <b>${u.estado}</b> · Stock disponible</span>` : ''}
         <div class="fi-precios">
           ${u.precio_mercado ? `<span class="precio-ref-f">$${u.precio_mercado.toLocaleString()}</span>` : ''}
           <span class="precio-final">$${u.precio_nosotros.toLocaleString()}</span>
@@ -161,31 +173,50 @@
           Consultar por WhatsApp
         </a>
         <a class="btn-back-f" href="/usados.html">← Ver todos los notebooks</a>
+
+        ${specs.length ? `
+        <div class="ficha-section" style="margin-top:.8rem;margin-bottom:0">
+          <h3>Especificaciones técnicas</h3>
+          <div class="specs-grid">
+            ${specs.map(([k,v]) => `<div class="spec-item"><small>${k}</small><b>${v}</b></div>`).join('')}
+          </div>
+        </div>` : ''}
       </div>
     </div>
 
-    ${specsTop.length ? `<div class="fila-specs">${specsTop.map(([k,v]) => `<div class="sp"><small>${k}</small><b>${v}</b></div>`).join('')}</div>` : ''}
-
-    <div class="fila-texto">
-      ${u.resumen ? `<div class="txt-box"><h3>Descripción</h3><p>${u.resumen}</p></div>` : '<div></div>'}
-      ${u.condicion_detalle ? `<div class="txt-box"><h3>Estado y condición</h3><p>${u.condicion_detalle}</p></div>` : '<div></div>'}
+    <div class="fila-doble">
+      <div class="ficha-section">
+        <h3>Estado y condición</h3>
+        <p class="ficha-desc">${u.condicion_detalle || u.estado || '—'}</p>
+      </div>
+      ${puertos.length ? `
+      <div class="ficha-section">
+        <h3>Puertos y conectividad</h3>
+        <div>${puertos.map(p => `<span class="puerto-chip">${p}</span>`).join('')}</div>
+      </div>` : '<div></div>'}
     </div>
 
-    <div class="fila-extra">
-      ${specsExtra.length ? `<div class="extra-box"><h3>Ficha técnica</h3>${specsExtra.map(([k,v]) => `<div style="display:flex;justify-content:space-between;padding:.25rem 0;border-bottom:1px solid var(--line)"><span style="font-size:.8rem;color:var(--mut)">${k}</span><b style="font-size:.82rem;color:#e2e8f0;font-weight:600">${v}</b></div>`).join('')}</div>` : ''}
-      ${puertos.length ? `<div class="extra-box"><h3>Puertos</h3>${puertos.map(p => `<span class="puerto-chip">${p}</span>`).join('')}</div>` : ''}
-      ${soft.length ? `<div class="extra-box"><h3>Software recomendado</h3>${soft.map(s => `<div class="sw-item"><b>${s.nombre}</b><small>(${s.categoria})</small><p>${s.por_que}</p></div>`).join('')}</div>` : ''}
+    <div class="fila-doble">
+      <div class="ficha-section">
+        <h3>Descripción</h3>
+        <p class="ficha-desc">${u.resumen || '—'}</p>
+      </div>
+      ${soft.length ? `
+      <div class="ficha-section">
+        <h3>Software recomendado</h3>
+        ${soft.map(s => `<div class="sw-item"><b>${s.nombre}</b><small>(${s.categoria})</small><p>${s.por_que}</p></div>`).join('')}
+      </div>` : '<div></div>'}
     </div>
 
-    <div class="extra-box" style="margin-bottom:2rem">
+    <div class="ficha-section" style="margin-bottom:2rem">
       <h3>¿Por qué comprar aquí?</h3>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.3rem">
-        <div class="conf-item">Garantía real de 30 días</div>
+      <div class="conf-grid">
+        <div class="conf-item">Garantía real de 30 días en todo el equipo</div>
         <div class="conf-item">Diagnóstico completo antes de vender</div>
-        <div class="conf-item">Atención directa con el técnico</div>
-        <div class="conf-item">20 años de experiencia</div>
+        <div class="conf-item">Atención directa con el técnico — sin intermediarios</div>
+        <div class="conf-item">20 años de experiencia en notebooks</div>
         <div class="conf-item">Despacho a todo Chile</div>
-        <div class="conf-item">Retiro en Ñuñoa</div>
+        <div class="conf-item">Retiro en nuestro local Ñuñoa</div>
       </div>
     </div>
   `;
