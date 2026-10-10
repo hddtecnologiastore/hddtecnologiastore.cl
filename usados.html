@@ -1,37 +1,151 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Notebooks Reacondicionados | HDD Tecnología Store</title>
-  <meta name="description" content="Notebooks reacondicionados con garantía, probados y verificados. Entrega en Ñuñoa, pago en local.">
-  <link rel="stylesheet" href="/css/styles.css">
-  <script src="/src/components/CarruselUsados.js" defer></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notebooks Reacondicionados con Garantía | HDD Tecnología Store</title>
+<meta name="description" content="Notebooks reacondicionados con garantía, probados y verificados. ThinkPad, Dell, HP y más. Entrega en Ñuñoa, pago en local.">
+<meta property="og:title" content="Notebooks Reacondicionados | HDD Tecnología Store">
+<meta property="og:description" content="Notebooks reacondicionados con garantía, probados y verificados. Entrega en Ñuñoa.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://hddtecnologiastore.cl/usados.html">
+<meta property="og:image" content="https://hddtecnologiastore.cl/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#050b18">
+<link rel="canonical" href="https://hddtecnologiastore.cl/usados.html">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css?v=heroFix2v2">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-911W1R6JG0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-911W1R6JG0');
+</script>
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "ys3iggtq4i");
+</script>
+<style>.reveal{opacity:0;transform:translateY(14px);transition:opacity .35s ease-out,transform .35s ease-out}.reveal.in{opacity:1;transform:none}@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}</style>
 </head>
-<body>
-  <header><!-- tu header actual --></header>
+<body data-page="usados">
+<div id="preloader" aria-hidden="true"><div class="pre-inner"><div class="pre-logo">HDD<span>·STORE</span></div><div class="pre-bar"><i id="preFill"></i></div><div class="pre-txt" id="preTxt">Iniciando sistema… 0%</div></div></div>
+<div id="progress" aria-hidden="true"></div>
+<div id="cursor" aria-hidden="true"></div>
+<canvas id="net" aria-hidden="true"></canvas>
 
-  <main>
-    <carrusel-usados></carrusel-usados>
+<header class="hd" id="hd">
+  <div class="wrap hd-in">
+    <a href="/" class="brand" aria-label="HDD Tecnología Store inicio">
+      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M2 20h20"/></svg></span>
+      <span class="brand-tx">HDD <b>TECNOLOGÍA</b><small>STORE · ÑUÑOA</small></span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Principal">
+      <a href="/">Inicio</a>
+      <a href="/#servicios">Servicios</a>
+      <a href="/" class="active">Notebooks</a>
+      <a href="/#contacto">Contacto</a>
+    </nav>
+    <div class="hd-act">
+      <a class="wa-mini" href="https://wa.me/56961991725?text=Hola%20Alejandro%2C%20vengo%20de%20la%20web%20y%20quiero%20ver%20los%20notebooks%20reacondicionados" target="_blank" rel="noopener">WhatsApp</a>
+      <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false"><i></i><i></i><i></i></button>
+    </div>
+  </div>
+</header>
 
-    <section id="catalogo-usados" class="catalogo-grid" aria-label="Catálogo completo">
+<main id="inicio">
+<!-- HERO CATÁLOGO -->
+<section class="hero" style="min-height:auto;padding:120px 0 40px">
+  <div class="wrap">
+    <div class="sec-hd" style="text-align:center">
+      <p class="kick">NOTEBOOKS REACONDICIONADOS</p>
+      <h1 style="font-family:var(--d);font-size:clamp(28px,5vw,48px);margin:10px 0">Notebooks usados <span class="grad">con garantía</span></h1>
+      <p class="sub" style="max-width:600px;margin:0 auto">Equipos reacondicionados, probados y listos para usar. Cada notebook pasa por diagnóstico completo antes de venderse. Compra directa por WhatsApp.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CATÁLOGO GRID -->
+<section class="sec" style="padding-top:0">
+  <div class="wrap">
+    <div id="catalogo-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem">
       <!-- Se llena por JS -->
-    </section>
+    </div>
+    <noscript><p style="text-align:center;color:var(--mut);padding:2rem">Activa JavaScript para ver el catálogo.</p></noscript>
+  </div>
+</section>
 
-    <!-- Ficha individual (se muestra si URL tiene /usados/[slug]) -->
-    <article id="ficha-usado" class="ficha-usado" hidden></article>
-  </main>
+<!-- CONFIANZA -->
+<section class="sec alt">
+  <div class="wrap">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;text-align:center">
+      <div class="glass" style="padding:1.5rem"><div style="font-size:2rem;margin-bottom:.5rem">🛡️</div><b style="display:block;color:#fff">Garantía real</b><small style="color:var(--mut)">30 días en todo el equipo</small></div>
+      <div class="glass" style="padding:1.5rem"><div style="font-size:2rem;margin-bottom:.5rem">✅</div><b style="display:block;color:#fff">Probado y verificado</b><small style="color:var(--mut)">Diagnóstico completo antes de vender</small></div>
+      <div class="glass" style="padding:1.5rem"><div style="font-size:2rem;margin-bottom:.5rem">🚚</div><b style="display:block;color:#fff">Despacho disponible</b><small style="color:var(--mut)">O retiro en nuestro local Ñuñoa</small></div>
+      <div class="glass" style="padding:1.5rem"><div style="font-size:2rem;margin-bottom:.5rem">💰</div><b style="display:block;color:#fff">Pago flexible</b><small style="color:var(--mut)">Efectivo, transferencia o débito</small></div>
+    </div>
+  </div>
+</section>
+</main>
 
-  <footer><!-- tu footer --></footer>
+<footer class="sec foot" id="contacto">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="glass f-card"><h3>HDD Tecnología Store</h3><p>Servicio técnico con garantía real y atención personalizada.</p><p>☎ <a href="tel:+56961991725">+56 9 6199 1725</a></p><p>◉ <a target="_blank" rel="noopener" href="https://maps.google.com/?q=Av.+Rodrigo+de+Araya+3076,+%C3%91u%C3%B1oa,+Santiago">Av. Rodrigo de Araya 3076, Ñuñoa</a></p></div>
+      <div class="glass f-card"><h3>Enlaces</h3><a class="f-link" href="/">Inicio</a><a class="f-link" href="/#servicios">Servicios</a><a class="f-link" href="/usados.html">Notebooks usados</a></div>
+      <div class="glass f-card"><h3>Comprar</h3><a class="btn primary" target="_blank" rel="noopener" href="https://wa.me/56961991725?text=Hola%20Alejandro%2C%20quiero%20consultar%20por%20un%20notebook%20reacondicionado" style="margin-top:12px;display:inline-flex;justify-content:center">Consultar por WhatsApp →</a></div>
+    </div>
+    <p class="copy">© 2026 HDD Tecnología Store — Ing. Alejandro Casanova · <a href="/privacidad.html">Privacidad</a> · <a href="/terminos.html">Términos</a></p>
+  </div>
+</footer>
 
-  <script>
-    // Router simple: si URL contiene /usados/[slug] → muestra ficha, sino grid
-    const path = location.pathname;
-    const match = path.match(/\/usados\/([^/]+)\/?$/);
-    if (match) {
-      import('/src/components/FichaUsado.js').then(m => m.mostrarFicha(match[1]));
-    } else {
-      import('/src/components/CatalogoUsados.js').then(m => m.cargarCatalogo());
-    }
-  </script>
+<a class="wa-float" target="_blank" rel="noopener" href="https://wa.me/56961991725?text=Hola%20Alejandro%2C%20quiero%20consultar%20por%20un%20notebook%20reacondicionado" aria-label="WhatsApp directo"><span class="pulse"></span>✆<span class="tip">Escríbeme ahora</span></a>
+<button id="top" aria-label="Volver arriba">↑</button>
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script src="/app.js?v=heroFix2v2" defer></script>
+<script>
+(async function(){
+  const res = await fetch('/src/data/usados.json');
+  const items = (await res.json()).filter(u => u.disponible);
+  const grid = document.getElementById('catalogo-grid');
+  if (!items.length) {
+    grid.innerHTML = '<p style="grid-column:1/-1;text-align:center;color:var(--mut);padding:3rem">No hay notebooks disponibles por el momento. Escríbeme por WhatsApp y te aviso cuando llegue stock nuevo.</p>';
+    return;
+  }
+  grid.innerHTML = items.map(u => {
+    const e = u.especificaciones || {};
+    const specs = [e.procesador, e.ram, e.almacenamiento].filter(Boolean);
+    const ahorro = u.precio_mercado ? Math.round((1 - u.precio_nosotros/u.precio_mercado)*100) : 0;
+    const img = u.fotos?.[0]?.url || '/img/placeholder-notebook.jpg';
+    return `
+    <article class="usado-card reveal" style="background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column">
+      <img src="${img}" alt="${u.titulo}" loading="lazy" style="width:100%;height:200px;object-fit:cover">
+      <div style="padding:1.2rem;display:flex;flex-direction:column;gap:.5rem;flex:1">
+        <span style="display:inline-block;background:rgba(56,189,248,.12);color:#38bdf8;font-size:.7rem;font-weight:700;padding:.25rem .6rem;border-radius:999px;align-self:flex-start;letter-spacing:1px">${u.etiqueta.toUpperCase()}</span>
+        <h3 style="font-weight:700;font-size:1.1rem;color:#fff;margin:.2rem 0">${u.titulo}</h3>
+        <div style="display:flex;align-items:baseline;gap:.5rem;flex-wrap:wrap">
+          ${u.precio_mercado ? `<span style="text-decoration:line-through;color:#f87171;font-size:.9rem;font-weight:500">$${u.precio_mercado.toLocaleString()}</span>` : ''}
+          <span style="color:#4ade80;font-weight:800;font-size:1.4rem">$${u.precio_nosotros.toLocaleString()}</span>
+          ${ahorro > 0 ? `<span style="background:rgba(74,222,128,.15);color:#4ade80;font-size:.7rem;padding:.15rem .5rem;border-radius:999px;font-weight:700">-${ahorro}%</span>` : ''}
+        </div>
+        ${specs.length ? `<ul style="list-style:none;padding:0;margin:.3rem 0;display:flex;flex-direction:column;gap:.2rem">${specs.map(s => `<li style="font-size:.82rem;color:#94a3b8;padding-left:1rem;position:relative"><span style="position:absolute;left:0;color:#38bdf8">▸</span>${s}</li>`).join('')}</ul>` : ''}
+        ${u.estado ? `<small style="color:var(--mut);font-size:.8rem">Estado: ${u.estado}</small>` : ''}
+        <div style="flex:1"></div>
+        <a href="https://wa.me/56961991725?text=${encodeURIComponent(u.whatsapp_msg)}" target="_blank" style="display:block;text-align:center;background:#25d366;color:#fff;padding:.7rem;border-radius:10px;font-weight:700;text-decoration:none;margin-top:.5rem;transition:background .2s">💬 Consultar por WhatsApp</a>
+      </div>
+    </article>`;
+  }).join('');
+  // reveal animation
+  const obs = new IntersectionObserver(en => en.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); }}), {threshold:.15});
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+})();
+</script>
 </body>
 </html>
