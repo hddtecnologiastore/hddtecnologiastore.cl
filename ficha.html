@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notebook Reacondicionado | HDD Tecnología Store</title>
+<meta name="description" content="Notebook reacondicionado con garantía, probado y verificado. Compra directa por WhatsApp.">
+<meta name="robots" content="noindex">
+<meta property="og:type" content="product">
+<meta property="og:site_name" content="HDD Tecnología Store">
+<meta name="theme-color" content="#050b18">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css?v=heroFix2v2">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-911W1R6JG0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-911W1R6JG0');
+</script>
+<style>
+.ficha-wrap{max-width:1200px;margin:0 auto;padding:100px 1rem 3rem}
+.ficha-back{display:inline-flex;align-items:center;gap:.4rem;color:var(--mut);font-size:.85rem;text-decoration:none;margin-bottom:1.2rem;transition:color .2s}
+.ficha-back:hover{color:var(--acc)}
+.ficha-grid{display:grid;grid-template-columns:1fr 400px;gap:2rem;align-items:start}
+.galeria{position:sticky;top:100px}
+.galeria-main{width:100%;border-radius:14px;overflow:hidden;background:var(--card);border:1px solid var(--line);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;cursor:zoom-in}
+.galeria-main img{width:100%;height:100%;object-fit:contain;transition:transform .3s}
+.galeria-main:hover img{transform:scale(1.05)}
+.galeria-thumbs{display:flex;gap:.5rem;margin-top:.6rem;flex-wrap:wrap}
+.galeria-thumbs img{width:64px;height:48px;object-fit:cover;border-radius:8px;cursor:pointer;opacity:.5;border:2px solid transparent;transition:all .2s}
+.galeria-thumbs img.active,.galeria-thumbs img:hover{opacity:1;border-color:var(--acc)}
+.ficha-info{display:flex;flex-direction:column;gap:.6rem}
+.ficha-etiqueta{display:inline-block;align-self:flex-start;background:rgba(56,189,248,.12);color:#38bdf8;font-size:.7rem;font-weight:700;padding:.3rem .7rem;border-radius:999px;letter-spacing:1.5px}
+.ficha-titulo{font-size:1.6rem;font-weight:800;color:#fff;line-height:1.2;margin:0}
+.ficha-estado{font-size:.85rem;color:var(--mut)}
+.ficha-precios{display:flex;align-items:baseline;gap:.7rem;flex-wrap:wrap;margin:.5rem 0}
+.precio-ref-ficha{font-size:1.1rem;color:#f87171;text-decoration:line-through;font-weight:500}
+.precio-final{font-size:2.2rem;color:#4ade80;font-weight:800}
+.ahorro-badge{background:rgba(74,222,128,.15);color:#4ade80;font-size:.8rem;padding:.25rem .7rem;border-radius:999px;font-weight:700}
+.ficha-btn-wa{display:flex;align-items:center;justify-content:center;gap:.5rem;background:#25d366;color:#fff;padding:.9rem 1.5rem;border-radius:12px;font-weight:700;font-size:1rem;text-decoration:none;transition:background .2s;margin-top:.5rem}
+.ficha-btn-wa:hover{background:#1ebe5d}
+.ficha-btn-lista{display:flex;align-items:center;justify-content:center;gap:.5rem;background:transparent;color:#fff;padding:.8rem 1.5rem;border-radius:12px;font-weight:600;font-size:.9rem;text-decoration:none;border:1px solid var(--line);transition:border-color .2s;margin-top:.4rem}
+.ficha-btn-lista:hover{border-color:var(--acc)}
+.ficha-section{margin-top:1.5rem;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1.2rem}
+.ficha-section h3{font-size:.85rem;font-weight:700;color:var(--acc);letter-spacing:1.5px;text-transform:uppercase;margin:0 0 .8rem}
+.specs-grid{display:grid;grid-template-columns:1fr 1fr;gap:.5rem}
+.spec-item{display:flex;flex-direction:column;padding:.5rem .7rem;background:rgba(56,189,248,.04);border-radius:8px}
+.spec-item small{font-size:.7rem;color:var(--mut);text-transform:uppercase;letter-spacing:.5px}
+.spec-item b{font-size:.9rem;color:#e2e8f0;font-weight:600}
+.ficha-desc{font-size:.9rem;color:#94a3b8;line-height:1.7}
+.ficha-confianza{display:flex;flex-direction:column;gap:.5rem}
+.ficha-confianza span{display:flex;align-items:center;gap:.5rem;font-size:.85rem;color:#94a3b8}
+.ficha-confianza span::before{content:'✓';color:#4ade80;font-weight:700}
+@media(max-width:900px){
+  .ficha-grid{grid-template-columns:1fr}
+  .galeria{position:static}
+  .specs-grid{grid-template-columns:1fr}
+  .ficha-wrap{padding-top:80px}
+}
+</style>
+</head>
+<body data-page="ficha">
+<header class="hd" id="hd">
+  <div class="wrap hd-in">
+    <a href="/" class="brand"><span class="brand-mark"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M2 20h20"/></svg></span><span class="brand-tx">HDD <b>TECNOLOGÍA</b><small>STORE · ÑUÑOA</small></span></a>
+    <nav class="nav"><a href="/">Inicio</a><a href="/#servicios">Servicios</a><a href="/usados.html" class="active">Notebooks</a><a href="/#contacto">Contacto</a></nav>
+    <div class="hd-act"><a class="wa-mini" href="https://wa.me/56961991725" target="_blank" rel="noopener">WhatsApp</a><button class="burger" id="burger" aria-label="Abrir menú"><i></i><i></i><i></i></button></div>
+  </div>
+</header>
+
+<main>
+<div class="ficha-wrap" id="fichaContent">
+  <a href="/usados.html" class="ficha-back">← Volver al catálogo</a>
+  <div style="text-align:center;padding:3rem 0;color:var(--mut)">Cargando notebook...</div>
+</div>
+</main>
+
+<footer class="sec foot">
+  <div class="wrap">
+    <p class="copy">© 2026 HDD Tecnología Store — Ing. Alejandro Casanova · <a href="/privacidad.html">Privacidad</a> · <a href="/terminos.html">Términos</a></p>
+  </div>
+</footer>
+
+<a class="wa-float" id="waFloat" target="_blank" rel="noopener" href="https://wa.me/56961991725" aria-label="WhatsApp"><span class="pulse"></span>✆<span class="tip">Escríbeme ahora</span></a>
+<button id="top" aria-label="Volver arriba">↑</button>
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script src="/app.js?v=heroFix2v2" defer></script>
+<script>
+(async function(){
+  const params = new URLSearchParams(location.search);
+  const id = params.get('id');
+  const slug = params.get('slug');
+  if (!id && !slug) { location.href = '/usados.html'; return; }
+
+  const res = await fetch('/src/data/usados.json');
+  const items = await res.json();
+  const u = items.find(n => n.id === id || n.slug === slug);
+  if (!u) { location.href = '/usados.html'; return; }
+
+  document.title = u.titulo + ' | HDD Tecnología Store';
+  const e = u.especificaciones || {};
+  const ahorro = u.precio_mercado ? Math.round((1 - u.precio_nosotros/u.precio_mercado)*100) : 0;
+  const fotos = (u.fotos || []).map(f => f.url).filter(Boolean);
+  const mainImg = fotos[0] || '/img/placeholder-notebook.jpg';
+  const waMsg = encodeURIComponent(u.whatsapp_msg || `Hola, me interesa el ${u.titulo} publicado en la tienda.`);
+
+  document.getElementById('waFloat').href = 'https://wa.me/56961991725?text=' + waMsg;
+
+  const specs = [
+    ['Procesador', e.procesador],
+    ['RAM', e.ram],
+    ['Almacenamiento', e.almacenamiento],
+    ['Pantalla', e.pantalla],
+    ['GPU', e.gpu],
+    ['Batería - ciclos', e.bateria_ciclos],
+    ['Salud batería', e.bateria_salud],
+    ['SO actual', e.so_actual],
+    ['Peso', e.peso],
+  ].filter(([,v]) => v);
+
+  const puertos = e.puertos || [];
+
+  document.getElementById('fichaContent').innerHTML = `
+    <a href="/usados.html" class="ficha-back">← Volver al catálogo</a>
+    <div class="ficha-grid">
+      <div class="galeria">
+        <div class="galeria-main" id="mainImgWrap">
+          <img id="mainImg" src="${mainImg}" alt="${u.titulo}">
+        </div>
+        ${fotos.length > 1 ? `<div class="galeria-thumbs">${fotos.map((f,i) => `<img src="${f}" alt="Foto ${i+1}" class="${i===0?'active':''}" onclick="document.getElementById('mainImg').src='${f}';document.querySelectorAll('.galeria-thumbs img').forEach(t=>t.classList.remove('active'));this.classList.add('active')">`).join('')}</div>` : ''}
+      </div>
+      <div class="ficha-info">
+        <span class="ficha-etiqueta">${(u.etiqueta||'').toUpperCase()}</span>
+        <h1 class="ficha-titulo">${u.titulo}</h1>
+        ${u.estado ? `<span class="ficha-estado">Estado: <b style="color:#e2e8f0">${u.estado}</b></span>` : ''}
+        <div class="ficha-precios">
+          ${u.precio_mercado ? `<span class="precio-ref-ficha">$${u.precio_mercado.toLocaleString()}</span>` : ''}
+          <span class="precio-final">$${u.precio_nosotros.toLocaleString()}</span>
+          ${ahorro > 0 ? `<span class="ahorro-badge">${ahorro}% OFF</span>` : ''}
+        </div>
+        <a class="ficha-btn-wa" href="https://wa.me/56961991725?text=${waMsg}" target="_blank">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Consultar por WhatsApp
+        </a>
+        <a class="ficha-btn-lista" href="/usados.html">← Ver todos los notebooks</a>
+
+        ${u.resumen ? `<div class="ficha-section"><h3>Descripción</h3><p class="ficha-desc">${u.resumen}</p></div>` : ''}
+        ${u.condicion_detalle ? `<div class="ficha-section"><h3>Estado y condición</h3><p class="ficha-desc">${u.condicion_detalle}</p></div>` : ''}
+
+        ${specs.length ? `<div class="ficha-section"><h3>Especificaciones técnicas</h3><div class="specs-grid">${specs.map(([k,v]) => `<div class="spec-item"><small>${k}</small><b>${v}</b></div>`).join('')}</div></div>` : ''}
+
+        ${puertos.length ? `<div class="ficha-section"><h3>Puertos y conectividad</h3><div style="display:flex;flex-wrap:wrap;gap:.4rem">${puertos.map(p => `<span style="background:rgba(56,189,248,.08);color:#94a3b8;font-size:.8rem;padding:.3rem .6rem;border-radius:6px">${p}</span>`).join('')}</div></div>` : ''}
+
+        ${(u.software_recomendado||[]).length ? `<div class="ficha-section"><h3>Software recomendado</h3>${u.software_recomendado.map(s => `<div style="margin-bottom:.6rem"><b style="color:#e2e8f0;font-size:.9rem">${s.nombre}</b> <small style="color:var(--mut);font-size:.75rem">(${s.categoria})</small><p style="font-size:.82rem;color:#94a3b8;margin:.15rem 0 0">${s.por_que}</p></div>`).join('')}</div>` : ''}
+
+        <div class="ficha-section"><h3>¿Por qué comprar aquí?</h3><div class="ficha-confianza">
+          <span>Garantía real de 30 días en todo el equipo</span>
+          <span>Diagnóstico completo antes de vender</span>
+          <span>Atención directa con el técnico — sin intermediarios</span>
+          <span>20 años de experiencia en reparación de notebooks</span>
+          <span>Despacho a todo Chile o retiro en Ñuñoa</span>
+        </div></div>
+      </div>
+    </div>
+  `;
+})();
+</script>
+</body>
+</html>

@@ -138,7 +138,8 @@
         ${specs.length ? `<ul style="list-style:none;padding:0;margin:.3rem 0;display:flex;flex-direction:column;gap:.2rem">${specs.map(s => `<li style="font-size:.82rem;color:#94a3b8;padding-left:1rem;position:relative"><span style="position:absolute;left:0;color:#38bdf8">▸</span>${s}</li>`).join('')}</ul>` : ''}
         ${u.estado ? `<small style="color:var(--mut);font-size:.8rem">Estado: ${u.estado}</small>` : ''}
         <div style="flex:1"></div>
-        <a href="https://wa.me/56961991725?text=${encodeURIComponent(u.whatsapp_msg)}" target="_blank" style="display:block;text-align:center;background:#25d366;color:#fff;padding:.7rem;border-radius:10px;font-weight:700;text-decoration:none;margin-top:.5rem;transition:background .2s">💬 Consultar por WhatsApp</a>
+        <a href="/ficha.html?id=${u.id}" target="_blank" style="display:block;text-align:center;background:transparent;color:#38bdf8;padding:.6rem;border-radius:10px;font-weight:600;text-decoration:none;border:1px solid var(--line);margin-top:.3rem;font-size:.85rem;transition:border-color .2s">Ver ficha completa →</a>
+        <a href="https://wa.me/56961991725?text=${encodeURIComponent(u.whatsapp_msg)}" target="_blank" style="display:block;text-align:center;background:#25d366;color:#fff;padding:.7rem;border-radius:10px;font-weight:700;text-decoration:none;margin-top:.3rem;transition:background .2s">💬 Consultar por WhatsApp</a>
       </div>
     </article>`;
   }).join('');

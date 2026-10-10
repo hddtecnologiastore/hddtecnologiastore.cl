@@ -34,7 +34,7 @@ class CarruselUsados extends HTMLElement {
           <a class="btn-wa" href="https://wa.me/56961991725?text=${encodeURIComponent(u.whatsapp_msg)}" target="_blank">
             Consultar por WhatsApp
           </a>
-          <a class="btn-ver" href="/usados.html">Ver ficha completa →</a>
+          <a class="btn-ver" href="/ficha.html?id=${u.id}">Ver ficha completa →</a>
         </div>
       </article>
     `;
