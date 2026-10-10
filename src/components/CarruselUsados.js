@@ -13,17 +13,24 @@ class CarruselUsados extends HTMLElement {
   card(u) {
     const ahorro = u.precio_mercado ? Math.round((1 - u.precio_nosotros/u.precio_mercado)*100) : 0;
     const img = u.fotos?.[0]?.url || '/img/placeholder-notebook.jpg';
+    const e = u.especificaciones || {};
+    const specs = [
+      e.procesador,
+      e.ram,
+      e.almacenamiento
+    ].filter(Boolean);
     return `
       <article class="usado-card" role="listitem">
         <img src="${img}" alt="${u.titulo}" loading="lazy" />
         <div class="card-body">
           <span class="etiqueta">${u.etiqueta}</span>
-          <h3>${u.titulo}</h3>
+          <h3 class="titulo-nb">${u.titulo}</h3>
           <p class="precios">
-            <strong>$${u.precio_nosotros.toLocaleString()}</strong>
-            ${u.precio_mercado ? `<span class="tachado">$${u.precio_mercado.toLocaleString()}</span> <span class="ahorro">-${Math.round((1-u.precio_nosotros/u.precio_mercado)*100)}%</span>` : ''}
+            ${u.precio_mercado ? `<span class="precio-ref">$${u.precio_mercado.toLocaleString()}</span>` : ''}
+            <span class="precio-nosotros">$${u.precio_nosotros.toLocaleString()}</span>
+            ${ahorro > 0 ? `<span class="ahorro">-${ahorro}%</span>` : ''}
           </p>
-          <p class="resumen">${u.resumen}</p>
+          ${specs.length ? `<ul class="specs-mini">${specs.map(s => `<li>${s}</li>`).join('')}</ul>` : ''}
           <a class="btn-wa" href="https://wa.me/56961991725?text=${encodeURIComponent(u.whatsapp_msg)}" target="_blank">
             Consultar por WhatsApp
           </a>
