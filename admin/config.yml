@@ -23,7 +23,7 @@ collections:
     extension: json
     format: json
     fields:
-      - {label: "ID único", name: "id", widget: "string", pattern: ['^nb-\\d{4}-\\d{3}$', 'Formato: nb-2024-001']}
+      - {label: "ID único", name: "id", widget: "string", pattern: ['^nb-\d{4}-\d{3}$', 'Formato: nb-2024-001']}
       - {label: "Título publicable", name: "titulo", widget: "string"}
       - {label: "Slug (URL amigable)", name: "slug", widget: "string", hint: "auto: macbook-pro-13-m1-2020"}
       - {label: "Estado físico", name: "estado", widget: "select", options: ["Nuevo", "Como nuevo", "Excelente", "Bueno", "Regular"], default: "Excelente"}
