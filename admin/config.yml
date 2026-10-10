@@ -5,7 +5,7 @@ backend:
 media_library:
   name: cloudinary
   config:
-    cloud_name: casanovadiaz56-lab
+    cloud_name: qhcbzphb
     api_key: hdd_catalogo
 
 site_url: https://hddtecnologiastore.cl
