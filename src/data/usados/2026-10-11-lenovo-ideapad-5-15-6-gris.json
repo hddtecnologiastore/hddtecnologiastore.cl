@@ -1,0 +1,58 @@
+{
+  "resumen": "Lenovo IdeaPad 5 equipado con un potente procesador AMD Ryzen 7 5700U y gráficos integrados Radeon RX Vega 8, ideal para multitarea exigente, estudio o trabajo profesional fluido. Cuenta con una nítida pantalla Full HD de 15.6 pulgadas, chasis robusto con marcas normales de uso y un funcionamiento general impecable, ofreciendo una excelente relación rendimiento-precio con el único detalle de que su cámara web integrada no funciona.",
+  "condicion_detalle": "Equipo usado con marcas de uso visibles en su estética pero estructuralmente íntegro, funcionando sin problemas operativos ni fallas técnicas generales, con la única salvedad de que la cámara web integrada no funciona.",
+  "estado": "Bueno",
+  "modelo": "Lenovo IdeaPad 5 15ALC05",
+  "software_recomendado": [
+    {
+      "nombre": "Office ",
+      "categoria": "Oficina",
+      "por_que": "Excelente para trabajos diarios"
+    },
+    {
+      "nombre": "Autocad / Photoshop / Juegos",
+      "categoria": "Diseño",
+      "por_que": "Buen procesador con excelente grafica integrada de 2 gb que permite trabajar de manera fluida."
+    }
+  ],
+  "precio_mercado": 650000,
+  "slug": "Lenovo-Ryzen-7-5700U",
+  "fotos": [
+    {
+      "url": [
+        "https://res.cloudinary.com/qhcbzphb/image/upload/v1791748760/WhatsApp_Image_2026-10-11_at_4.58.40_PM.jpg",
+        "https://res.cloudinary.com/qhcbzphb/image/upload/v1791748588/WhatsApp_Image_2026-10-11_at_3.48.18_PM.jpg",
+        "https://res.cloudinary.com/qhcbzphb/image/upload/v1791748587/WhatsApp_Image_2026-10-11_at_3.48.17_PM.jpg",
+        "https://res.cloudinary.com/qhcbzphb/image/upload/v1791748587/WhatsApp_Image_2026-10-11_at_3.48.18_PM_3.jpg",
+        "https://res.cloudinary.com/qhcbzphb/image/upload/v1791748587/WhatsApp_Image_2026-10-11_at_3.48.18_PM_2.jpg",
+        "https://res.cloudinary.com/qhcbzphb/image/upload/v1791748586/WhatsApp_Image_2026-10-11_at_3.48.18_PM_1.jpg",
+        "https://res.cloudinary.com/qhcbzphb/image/upload/v1791748586/WhatsApp_Image_2026-10-11_at_3.48.17_PM_3.jpg",
+        "https://res.cloudinary.com/qhcbzphb/image/upload/v1791748586/WhatsApp_Image_2026-10-11_at_3.48.17_PM_1.jpg"
+      ]
+    }
+  ],
+  "fecha_ingreso": "2026-10-11",
+  "disponible": true,
+  "whatsapp_msg": "Hola Alejandro me interesa el Lenovo IdeaPad 5, quisiera mas información. ",
+  "etiqueta": "Seminuevo",
+  "precio_nosotros": 350000,
+  "titulo": "Lenovo IdeaPad 5 15.6\" - Gris",
+  "id": "nb-2024-003",
+  "marca": "Lenovo",
+  "especificaciones": {
+    "puertos": [
+      "1x USB 3.2 Gen 1  1x USB 3.2 Gen 1 (Always On)  1x USB-C 3.2 Gen 1 (soporta transferencia de datos",
+      "Power Delivery 3.0 y DisplayPort 1.2)  1x HDMI 1.4b  1x Lector de tarjetas SD  1x Conector combinado para auriculares y micrófono de 3.5 mm"
+    ],
+    "bateria_salud": "95%",
+    "procesador": "AMD Ryzen 7 5700U",
+    "gpu": "AMD Radeon RX Vega 8 (2gb)",
+    "so_actual": "Windows 11",
+    "peso": "1.77Kg",
+    "almacenamiento": "512Gb NVMe M.2",
+    "pantalla": "15.6\"  FHD",
+    "bateria_ciclos": 600,
+    "ram": "8Gb RAM DDR4 (Soldados)"
+  },
+  "año": 2022
+}
