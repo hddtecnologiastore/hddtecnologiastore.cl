@@ -10,6 +10,12 @@
       "por_que": "Indispensable para tareas de oficina, redacción de documentos, planillas de cálculo y estudio inmediato."
     }
   ],
+  "programas_incluidos": [
+    "Office",
+    "Malwarebytes",
+    "AnyDesk",
+    "Adobe PDF"
+  ],
   "precio_mercado": 350000,
   "slug": "Thinkpad-X280-i5-7ma",
   "fotos": [

@@ -62,6 +62,17 @@ collections:
           - {label: "Nombre", name: "nombre", widget: "string"}
           - {label: "Categoría", name: "categoria", widget: "select", options: ["Desarrollo", "Diseño", "Video", "Oficina", "Sistema", "Seguridad", "Otro"]}
           - {label: "Por qué", name: "por_que", widget: "string"}
+      - label: "Programas incluidos (preinstalados — siempre los mismos)"
+        name: "programas_incluidos"
+        widget: "list"
+        required: false
+        hint: "Viene predeterminado en todos los equipos. No editar salvo que un equipo excepcional no traiga alguno."
+        field: {label: "Programa", name: "nombre", widget: "string"}
+        default:
+          - "Office"
+          - "Malwarebytes"
+          - "AnyDesk"
+          - "Adobe PDF"
       - {label: "Disponible", name: "disponible", widget: "boolean", default: true}
       - {label: "Fecha de ingreso", name: "fecha_ingreso", widget: "datetime", format: "YYYY-MM-DD", default: ""}
       - {label: "Mensaje WhatsApp pre-armado", name: "whatsapp_msg", widget: "text", hint: "Se usa en botón 'Consultar por WhatsApp'"}
