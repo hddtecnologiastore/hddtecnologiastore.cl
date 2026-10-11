@@ -27,10 +27,10 @@
 .ficha-back:hover{color:var(--acc)}
 
 .ficha-top{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:stretch;margin-bottom:1.2rem}
-.galeria-col{display:flex;flex-direction:column}
-.galeria-main{width:100%;aspect-ratio:4/3;border-radius:14px;overflow:hidden;background:var(--card);border:1px solid var(--line);display:flex;align-items:center;justify-content:center}
+.galeria-col{display:flex;flex-direction:column;min-height:0}
+.galeria-main{width:100%;flex:1;min-height:420px;border-radius:14px;overflow:hidden;background:var(--card);border:1px solid var(--line);display:flex;align-items:center;justify-content:center}
 .galeria-main img{width:100%;height:100%;object-fit:contain}
-.galeria-thumbs{display:flex;gap:.4rem;margin-top:.5rem}
+.galeria-thumbs{display:flex;gap:.4rem;margin-top:.5rem;flex-shrink:0}
 .galeria-thumbs img{width:56px;height:42px;object-fit:cover;border-radius:6px;cursor:pointer;opacity:.45;border:2px solid transparent;transition:all .15s}
 .galeria-thumbs img.active,.galeria-thumbs img:hover{opacity:1;border-color:var(--acc)}
 

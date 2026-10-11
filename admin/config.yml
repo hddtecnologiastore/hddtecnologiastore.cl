@@ -27,7 +27,7 @@ collections:
       - {label: "Título publicable", name: "titulo", widget: "string"}
       - {label: "Slug (URL amigable)", name: "slug", widget: "string", hint: "auto: macbook-pro-13-m1-2020"}
       - {label: "Estado físico", name: "estado", widget: "select", options: ["Nuevo", "Como nuevo", "Excelente", "Bueno", "Regular"], default: "Excelente"}
-      - {label: "Etiqueta comercial", name: "etiqueta", widget: "select", options: ["Reconstruido", "Remanufacturado", "Seminuevo"], default: "Reconstruido"}
+      - {label: "Etiqueta comercial", name: "etiqueta", widget: "select", options: ["Nuevo", "Seminuevo"], default: "Seminuevo", hint: "Solo Nuevo o Seminuevo. No agregar más opciones."}
       - {label: "Precio mercado (referencia)", name: "precio_mercado", widget: "number", min: 0, value_type: "int"}
       - {label: "Precio nuestro", name: "precio_nosotros", widget: "number", min: 0, value_type: "int"}
       - {label: "Marca", name: "marca", widget: "string"}
