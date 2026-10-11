@@ -9,17 +9,19 @@
         "nombre": "Microsoft Office / LibreOffice",
         "categoria": "Oficina",
         "por_que": "Indispensable para tareas de oficina, redacción de documentos, planillas de cálculo y estudio inmediato."
+      },
+      {
+        "nombre": "Autocad",
+        "categoria": "Diseño",
+        "por_que": "Cumple con los requisitos para trabajarlo sin problema."
       }
-    ],
-    "programas_incluidos": [
-      "Office",
-      "Malwarebytes",
-      "AnyDesk",
-      "Adobe PDF"
     ],
     "precio_mercado": 350000,
     "slug": "Thinkpad-X280-i5-7ma",
     "fotos": [
+      {
+        "url": "https://res.cloudinary.com/qhcbzphb/image/upload/v1791749920/WhatsApp_Image_2026-10-11_at_5.15.01_PM.jpg"
+      },
       {
         "url": "https://res.cloudinary.com/qhcbzphb/image/upload/v1791744874/Gemini_Generated_Image_m11yzdm11yzdm11y.jpg"
       },
@@ -50,6 +52,12 @@
     "titulo": "Thinkpad X280 12.5\" - Negro",
     "id": "nb-2024-001",
     "marca": "Lenovo",
+    "programas_incluidos": [
+      "Office",
+      "Malwarebytes",
+      "AnyDesk",
+      "Adobe PDF"
+    ],
     "especificaciones": {
       "puertos": [
         "1x USB-C",
@@ -72,6 +80,138 @@
     "año": 2019
   },
   {
+    "resumen": "ASUS Vivobook 15 impulsado por un eficiente procesador Intel Core de 10.ma generación, diseñado para ofrecer un rendimiento equilibrado y confiable en tareas de oficina, estudio y multitarea diaria. Cuenta con una cómoda pantalla de 15.6 pulgadas, un diseño elegante y liviano, y un estado general impecable con mínimo desgaste, convirtiéndose en una excelente opción de gran relación calidad-precio para quienes buscan un equipo funcional, estético y listo para usar.",
+    "condicion_detalle": "Equipo usado en excelente estado general, con un desgaste mínimo apenas perceptible producto de un uso cuidadoso. Estéticamente conserva muy buena presencia sin golpes, abolladuras ni rayones profundos. Todos sus componentes internos, teclado, pantalla, conectores y batería operan de manera óptima y fluida, sin fallas técnicas de funcionamiento.",
+    "estado": "Bueno",
+    "modelo": "X515JA",
+    "precio_mercado": 350000,
+    "slug": "Asus-X515JA",
+    "fotos": [
+      {
+        "url": "https://res.cloudinary.com/qhcbzphb/image/upload/v1791749432/WhatsApp_Image_2026-10-11_at_5.09.24_PM.jpg"
+      },
+      {
+        "url": "https://res.cloudinary.com/qhcbzphb/image/upload/v1791749293/WhatsApp_Image_2026-10-11_at_3.49.50_PM.jpg"
+      },
+      {
+        "url": "https://res.cloudinary.com/qhcbzphb/image/upload/v1791749291/WhatsApp_Image_2026-10-11_at_3.49.49_PM_1.jpg"
+      },
+      {
+        "url": "https://res.cloudinary.com/qhcbzphb/image/upload/v1791749293/WhatsApp_Image_2026-10-11_at_3.49.49_PM.jpg"
+      },
+      {
+        "url": "https://res.cloudinary.com/qhcbzphb/image/upload/v1791749291/WhatsApp_Image_2026-10-11_at_3.49.48_PM.jpg"
+      },
+      {
+        "url": "https://res.cloudinary.com/qhcbzphb/image/upload/v1791749292/WhatsApp_Image_2026-10-11_at_3.49.49_PM_3.jpg"
+      },
+      {
+        "url": "https://res.cloudinary.com/qhcbzphb/image/upload/v1791749292/WhatsApp_Image_2026-10-11_at_3.49.49_PM_2.jpg"
+      },
+      {
+        "url": "https://res.cloudinary.com/qhcbzphb/image/upload/v1791749292/WhatsApp_Image_2026-10-11_at_3.49.49_PM_4.jpg"
+      }
+    ],
+    "fecha_ingreso": "2026-10-11",
+    "disponible": true,
+    "whatsapp_msg": "Hola Alejandro, estoy interesado en el equipo Asus i5-10ma Gen, quisiera mas información.",
+    "etiqueta": "Seminuevo",
+    "precio_nosotros": 250000,
+    "titulo": "Asus X515JA i5-10ma",
+    "id": "nb-2024-004",
+    "marca": "Asus",
+    "especificaciones": {
+      "puertos": [
+        "USB-C 3.2",
+        "USB 3.2 Gen 1",
+        "2x USB 2.0",
+        "HDMI",
+        "Lector MicroSD",
+        "Jack audio 3.5 mm"
+      ],
+      "bateria_salud": "70%",
+      "procesador": "Intel Core i5-1035G1 1.20GHz",
+      "gpu": "Intel UHD Graphics",
+      "so_actual": "Windows 11",
+      "peso": "1.80 Kg",
+      "almacenamiento": "256gb NVMe M.2",
+      "pantalla": "15.6\" Full HD (1920x1080)",
+      "bateria_ciclos": 478,
+      "ram": "8gb RAM DDR4"
+    },
+    "año": 2020
+  },
+  {
+    "resumen": "Lenovo IdeaPad 5 equipado con un potente procesador AMD Ryzen 7 5700U y gráficos integrados Radeon RX Vega 8, ideal para multitarea exigente, estudio o trabajo profesional fluido. Cuenta con una nítida pantalla Full HD de 15.6 pulgadas, chasis robusto con marcas normales de uso y un funcionamiento general impecable, ofreciendo una excelente relación rendimiento-precio con el único detalle de que su cámara web integrada no funciona.",
+    "condicion_detalle": "Equipo usado con marcas de uso visibles en su estética pero estructuralmente íntegro, funcionando sin problemas operativos ni fallas técnicas generales, con la única salvedad de que la cámara web integrada no funciona.",
+    "estado": "Bueno",
+    "modelo": "Lenovo IdeaPad 5 15ALC05",
+    "software_recomendado": [
+      {
+        "nombre": "Office ",
+        "categoria": "Oficina",
+        "por_que": "Excelente para trabajos diarios"
+      },
+      {
+        "nombre": "Autocad / Photoshop / Juegos",
+        "categoria": "Diseño",
+        "por_que": "Buen procesador con excelente grafica integrada de 2 gb que permite trabajar de manera fluida."
+      }
+    ],
+    "precio_mercado": 650000,
+    "slug": "Lenovo-Ryzen-7-5700U",
+    "fotos": [
+      {
+        "url": "https://res.cloudinary.com/qhcbzphb/image/upload/v1791748760/WhatsApp_Image_2026-10-11_at_4.58.40_PM.jpg"
+      },
+      {
+        "url": "https://res.cloudinary.com/qhcbzphb/image/upload/v1791748588/WhatsApp_Image_2026-10-11_at_3.48.18_PM.jpg"
+      },
+      {
+        "url": "https://res.cloudinary.com/qhcbzphb/image/upload/v1791748587/WhatsApp_Image_2026-10-11_at_3.48.17_PM.jpg"
+      },
+      {
+        "url": "https://res.cloudinary.com/qhcbzphb/image/upload/v1791748587/WhatsApp_Image_2026-10-11_at_3.48.18_PM_3.jpg"
+      },
+      {
+        "url": "https://res.cloudinary.com/qhcbzphb/image/upload/v1791748587/WhatsApp_Image_2026-10-11_at_3.48.18_PM_2.jpg"
+      },
+      {
+        "url": "https://res.cloudinary.com/qhcbzphb/image/upload/v1791748586/WhatsApp_Image_2026-10-11_at_3.48.18_PM_1.jpg"
+      },
+      {
+        "url": "https://res.cloudinary.com/qhcbzphb/image/upload/v1791748586/WhatsApp_Image_2026-10-11_at_3.48.17_PM_3.jpg"
+      },
+      {
+        "url": "https://res.cloudinary.com/qhcbzphb/image/upload/v1791748586/WhatsApp_Image_2026-10-11_at_3.48.17_PM_1.jpg"
+      }
+    ],
+    "fecha_ingreso": "2026-10-11",
+    "disponible": true,
+    "whatsapp_msg": "Hola Alejandro me interesa el Lenovo IdeaPad 5, quisiera mas información. ",
+    "etiqueta": "Seminuevo",
+    "precio_nosotros": 350000,
+    "titulo": "Lenovo IdeaPad 5 15.6\" - Gris",
+    "id": "nb-2024-003",
+    "marca": "Lenovo",
+    "especificaciones": {
+      "puertos": [
+        "1x USB 3.2 Gen 1  1x USB 3.2 Gen 1 (Always On)  1x USB-C 3.2 Gen 1 (soporta transferencia de datos",
+        "Power Delivery 3.0 y DisplayPort 1.2)  1x HDMI 1.4b  1x Lector de tarjetas SD  1x Conector combinado para auriculares y micrófono de 3.5 mm"
+      ],
+      "bateria_salud": "95%",
+      "procesador": "AMD Ryzen 7 5700U",
+      "gpu": "AMD Radeon RX Vega 8 (2gb)",
+      "so_actual": "Windows 11",
+      "peso": "1.77Kg",
+      "almacenamiento": "512Gb NVMe M.2",
+      "pantalla": "15.6\"  FHD",
+      "bateria_ciclos": 600,
+      "ram": "8Gb RAM DDR4 (Soldados)"
+    },
+    "año": 2022
+  },
+  {
     "resumen": "Equipo corporativo de alta gama en excelente condición estética y funcional (Calidad 8.5/10). Diseñado en aluminio premium, ofrece un balance perfecto entre potencia y portabilidad extrema (1.4 kg).",
     "condicion_detalle": "Estructura de aluminio bien cuidada, con rayas mínimas y superficiales por el uso diario. Cuenta con una pequeña abolladura estética en un costado que es puramente visual y no afecta en nada sus componentes internos ni su correcto funcionamiento.",
     "estado": "Bueno",
@@ -86,6 +226,9 @@
     "precio_mercado": 1100000,
     "slug": "ThinkBook-14-G4",
     "fotos": [
+      {
+        "url": "https://res.cloudinary.com/qhcbzphb/image/upload/v1791749810/WhatsApp_Image_2026-10-11_at_5.13.04_PM.jpg"
+      },
       {
         "url": "https://res.cloudinary.com/qhcbzphb/image/upload/v1791746665/WhatsApp_Image_2026-10-11_at_3.48.35_PM_2.jpg"
       },

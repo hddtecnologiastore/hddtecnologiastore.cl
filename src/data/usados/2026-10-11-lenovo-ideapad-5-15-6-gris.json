@@ -19,16 +19,28 @@
   "slug": "Lenovo-Ryzen-7-5700U",
   "fotos": [
     {
-      "url": [
-        "https://res.cloudinary.com/qhcbzphb/image/upload/v1791748760/WhatsApp_Image_2026-10-11_at_4.58.40_PM.jpg",
-        "https://res.cloudinary.com/qhcbzphb/image/upload/v1791748588/WhatsApp_Image_2026-10-11_at_3.48.18_PM.jpg",
-        "https://res.cloudinary.com/qhcbzphb/image/upload/v1791748587/WhatsApp_Image_2026-10-11_at_3.48.17_PM.jpg",
-        "https://res.cloudinary.com/qhcbzphb/image/upload/v1791748587/WhatsApp_Image_2026-10-11_at_3.48.18_PM_3.jpg",
-        "https://res.cloudinary.com/qhcbzphb/image/upload/v1791748587/WhatsApp_Image_2026-10-11_at_3.48.18_PM_2.jpg",
-        "https://res.cloudinary.com/qhcbzphb/image/upload/v1791748586/WhatsApp_Image_2026-10-11_at_3.48.18_PM_1.jpg",
-        "https://res.cloudinary.com/qhcbzphb/image/upload/v1791748586/WhatsApp_Image_2026-10-11_at_3.48.17_PM_3.jpg",
-        "https://res.cloudinary.com/qhcbzphb/image/upload/v1791748586/WhatsApp_Image_2026-10-11_at_3.48.17_PM_1.jpg"
-      ]
+      "url": "https://res.cloudinary.com/qhcbzphb/image/upload/v1791748760/WhatsApp_Image_2026-10-11_at_4.58.40_PM.jpg"
+    },
+    {
+      "url": "https://res.cloudinary.com/qhcbzphb/image/upload/v1791748588/WhatsApp_Image_2026-10-11_at_3.48.18_PM.jpg"
+    },
+    {
+      "url": "https://res.cloudinary.com/qhcbzphb/image/upload/v1791748587/WhatsApp_Image_2026-10-11_at_3.48.17_PM.jpg"
+    },
+    {
+      "url": "https://res.cloudinary.com/qhcbzphb/image/upload/v1791748587/WhatsApp_Image_2026-10-11_at_3.48.18_PM_3.jpg"
+    },
+    {
+      "url": "https://res.cloudinary.com/qhcbzphb/image/upload/v1791748587/WhatsApp_Image_2026-10-11_at_3.48.18_PM_2.jpg"
+    },
+    {
+      "url": "https://res.cloudinary.com/qhcbzphb/image/upload/v1791748586/WhatsApp_Image_2026-10-11_at_3.48.18_PM_1.jpg"
+    },
+    {
+      "url": "https://res.cloudinary.com/qhcbzphb/image/upload/v1791748586/WhatsApp_Image_2026-10-11_at_3.48.17_PM_3.jpg"
+    },
+    {
+      "url": "https://res.cloudinary.com/qhcbzphb/image/upload/v1791748586/WhatsApp_Image_2026-10-11_at_3.48.17_PM_1.jpg"
     }
   ],
   "fecha_ingreso": "2026-10-11",
