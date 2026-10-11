@@ -14,28 +14,19 @@
   "slug": "ThinkBook-14-G4",
   "fotos": [
     {
-      "url": "https://res.cloudinary.com/qhcbzphb/image/upload/v1791746665/WhatsApp_Image_2026-10-11_at_3.48.35_PM_2.jpg"
+      "url": "https://res.cloudinary.com/qhcbzphb/image/upload/v1791749810/WhatsApp_Image_2026-10-11_at_5.13.04_PM.jpg"
     },
     {
-      "url": "https://res.cloudinary.com/qhcbzphb/image/upload/v1791746665/WhatsApp_Image_2026-10-11_at_3.48.35_PM_4.jpg"
-    },
-    {
-      "url": "https://res.cloudinary.com/qhcbzphb/image/upload/v1791746665/WhatsApp_Image_2026-10-11_at_3.48.39_PM_1.jpg"
-    },
-    {
-      "url": "https://res.cloudinary.com/qhcbzphb/image/upload/v1791746665/WhatsApp_Image_2026-10-11_at_3.48.35_PM.jpg"
-    },
-    {
-      "url": "https://res.cloudinary.com/qhcbzphb/image/upload/v1791746664/WhatsApp_Image_2026-10-11_at_3.48.35_PM_1.jpg"
-    },
-    {
-      "url": "https://res.cloudinary.com/qhcbzphb/image/upload/v1791746665/WhatsApp_Image_2026-10-11_at_3.48.35_PM_3.jpg"
-    },
-    {
-      "url": "https://res.cloudinary.com/qhcbzphb/image/upload/v1791746664/WhatsApp_Image_2026-10-11_at_3.48.34_PM.jpg"
-    },
-    {
-      "url": "https://res.cloudinary.com/qhcbzphb/image/upload/v1791746665/WhatsApp_Image_2026-10-11_at_3.48.39_PM.jpg"
+      "url": [
+        "https://res.cloudinary.com/qhcbzphb/image/upload/v1791746665/WhatsApp_Image_2026-10-11_at_3.48.35_PM_2.jpg",
+        "https://res.cloudinary.com/qhcbzphb/image/upload/v1791746665/WhatsApp_Image_2026-10-11_at_3.48.35_PM_4.jpg",
+        "https://res.cloudinary.com/qhcbzphb/image/upload/v1791746665/WhatsApp_Image_2026-10-11_at_3.48.39_PM_1.jpg",
+        "https://res.cloudinary.com/qhcbzphb/image/upload/v1791746665/WhatsApp_Image_2026-10-11_at_3.48.35_PM.jpg",
+        "https://res.cloudinary.com/qhcbzphb/image/upload/v1791746664/WhatsApp_Image_2026-10-11_at_3.48.35_PM_1.jpg",
+        "https://res.cloudinary.com/qhcbzphb/image/upload/v1791746665/WhatsApp_Image_2026-10-11_at_3.48.35_PM_3.jpg",
+        "https://res.cloudinary.com/qhcbzphb/image/upload/v1791746664/WhatsApp_Image_2026-10-11_at_3.48.34_PM.jpg",
+        "https://res.cloudinary.com/qhcbzphb/image/upload/v1791746665/WhatsApp_Image_2026-10-11_at_3.48.39_PM.jpg"
+      ]
     }
   ],
   "fecha_ingreso": "2026-10-11",
