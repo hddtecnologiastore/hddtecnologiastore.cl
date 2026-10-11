@@ -1,0 +1,50 @@
+{
+  "resumen": "ASUS Vivobook 15 impulsado por un eficiente procesador Intel Core de 10.ma generación, diseñado para ofrecer un rendimiento equilibrado y confiable en tareas de oficina, estudio y multitarea diaria. Cuenta con una cómoda pantalla de 15.6 pulgadas, un diseño elegante y liviano, y un estado general impecable con mínimo desgaste, convirtiéndose en una excelente opción de gran relación calidad-precio para quienes buscan un equipo funcional, estético y listo para usar.",
+  "condicion_detalle": "Equipo usado en excelente estado general, con un desgaste mínimo apenas perceptible producto de un uso cuidadoso. Estéticamente conserva muy buena presencia sin golpes, abolladuras ni rayones profundos. Todos sus componentes internos, teclado, pantalla, conectores y batería operan de manera óptima y fluida, sin fallas técnicas de funcionamiento.",
+  "estado": "Bueno",
+  "modelo": "X515JA",
+  "precio_mercado": 350000,
+  "slug": "Asus-X515JA",
+  "fotos": [
+    {
+      "url": [
+        "https://res.cloudinary.com/qhcbzphb/image/upload/v1791749432/WhatsApp_Image_2026-10-11_at_5.09.24_PM.jpg",
+        "https://res.cloudinary.com/qhcbzphb/image/upload/v1791749293/WhatsApp_Image_2026-10-11_at_3.49.50_PM.jpg",
+        "https://res.cloudinary.com/qhcbzphb/image/upload/v1791749291/WhatsApp_Image_2026-10-11_at_3.49.49_PM_1.jpg",
+        "https://res.cloudinary.com/qhcbzphb/image/upload/v1791749293/WhatsApp_Image_2026-10-11_at_3.49.49_PM.jpg",
+        "https://res.cloudinary.com/qhcbzphb/image/upload/v1791749291/WhatsApp_Image_2026-10-11_at_3.49.48_PM.jpg",
+        "https://res.cloudinary.com/qhcbzphb/image/upload/v1791749292/WhatsApp_Image_2026-10-11_at_3.49.49_PM_3.jpg",
+        "https://res.cloudinary.com/qhcbzphb/image/upload/v1791749292/WhatsApp_Image_2026-10-11_at_3.49.49_PM_2.jpg",
+        "https://res.cloudinary.com/qhcbzphb/image/upload/v1791749292/WhatsApp_Image_2026-10-11_at_3.49.49_PM_4.jpg"
+      ]
+    }
+  ],
+  "fecha_ingreso": "2026-10-11",
+  "disponible": true,
+  "whatsapp_msg": "Hola Alejandro, estoy interesado en el equipo Asus i5-10ma Gen, quisiera mas información.",
+  "etiqueta": "Seminuevo",
+  "precio_nosotros": 250000,
+  "titulo": "Asus X515JA i5-10ma",
+  "id": "nb-2024-004",
+  "marca": "Asus",
+  "especificaciones": {
+    "puertos": [
+      "USB-C 3.2",
+      "USB 3.2 Gen 1",
+      "2x USB 2.0",
+      "HDMI",
+      "Lector MicroSD",
+      "Jack audio 3.5 mm"
+    ],
+    "bateria_salud": "70%",
+    "procesador": "Intel Core i5-1035G1 1.20GHz",
+    "gpu": "Intel UHD Graphics",
+    "so_actual": "Windows 11",
+    "peso": "1.80 Kg",
+    "almacenamiento": "256gb NVMe M.2",
+    "pantalla": "15.6\" Full HD (1920x1080)",
+    "bateria_ciclos": 478,
+    "ram": "8gb RAM DDR4"
+  },
+  "año": 2020
+}
