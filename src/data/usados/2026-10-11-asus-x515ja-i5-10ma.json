@@ -3,40 +3,28 @@
   "condicion_detalle": "Equipo usado en excelente estado general, con un desgaste mínimo apenas perceptible producto de un uso cuidadoso. Estéticamente conserva muy buena presencia sin golpes, abolladuras ni rayones profundos. Todos sus componentes internos, teclado, pantalla, conectores y batería operan de manera óptima y fluida, sin fallas técnicas de funcionamiento.",
   "estado": "Bueno",
   "modelo": "X515JA",
-  "precio_mercado": 350000,
+  "precio_mercado": 400000,
   "slug": "Asus-X515JA",
   "fotos": [
     {
-      "url": "https://res.cloudinary.com/qhcbzphb/image/upload/v1791749432/WhatsApp_Image_2026-10-11_at_5.09.24_PM.jpg"
-    },
-    {
-      "url": "https://res.cloudinary.com/qhcbzphb/image/upload/v1791749293/WhatsApp_Image_2026-10-11_at_3.49.50_PM.jpg"
-    },
-    {
-      "url": "https://res.cloudinary.com/qhcbzphb/image/upload/v1791749291/WhatsApp_Image_2026-10-11_at_3.49.49_PM_1.jpg"
-    },
-    {
-      "url": "https://res.cloudinary.com/qhcbzphb/image/upload/v1791749293/WhatsApp_Image_2026-10-11_at_3.49.49_PM.jpg"
-    },
-    {
-      "url": "https://res.cloudinary.com/qhcbzphb/image/upload/v1791749291/WhatsApp_Image_2026-10-11_at_3.49.48_PM.jpg"
-    },
-    {
-      "url": "https://res.cloudinary.com/qhcbzphb/image/upload/v1791749292/WhatsApp_Image_2026-10-11_at_3.49.49_PM_3.jpg"
-    },
-    {
-      "url": "https://res.cloudinary.com/qhcbzphb/image/upload/v1791749292/WhatsApp_Image_2026-10-11_at_3.49.49_PM_2.jpg"
-    },
-    {
-      "url": "https://res.cloudinary.com/qhcbzphb/image/upload/v1791749292/WhatsApp_Image_2026-10-11_at_3.49.49_PM_4.jpg"
+      "url": [
+        "https://res.cloudinary.com/qhcbzphb/image/upload/v1791749432/WhatsApp_Image_2026-10-11_at_5.09.24_PM.jpg",
+        "https://res.cloudinary.com/qhcbzphb/image/upload/v1791749293/WhatsApp_Image_2026-10-11_at_3.49.50_PM.jpg",
+        "https://res.cloudinary.com/qhcbzphb/image/upload/v1791749291/WhatsApp_Image_2026-10-11_at_3.49.49_PM_1.jpg",
+        "https://res.cloudinary.com/qhcbzphb/image/upload/v1791749293/WhatsApp_Image_2026-10-11_at_3.49.49_PM.jpg",
+        "https://res.cloudinary.com/qhcbzphb/image/upload/v1791749291/WhatsApp_Image_2026-10-11_at_3.49.48_PM.jpg",
+        "https://res.cloudinary.com/qhcbzphb/image/upload/v1791749292/WhatsApp_Image_2026-10-11_at_3.49.49_PM_3.jpg",
+        "https://res.cloudinary.com/qhcbzphb/image/upload/v1791749292/WhatsApp_Image_2026-10-11_at_3.49.49_PM_2.jpg",
+        "https://res.cloudinary.com/qhcbzphb/image/upload/v1791749292/WhatsApp_Image_2026-10-11_at_3.49.49_PM_4.jpg"
+      ]
     }
   ],
   "fecha_ingreso": "2026-10-11",
   "disponible": true,
   "whatsapp_msg": "Hola Alejandro, estoy interesado en el equipo Asus i5-10ma Gen, quisiera mas información.",
   "etiqueta": "Seminuevo",
-  "precio_nosotros": 250000,
-  "titulo": "Asus X515JA i5-10ma",
+  "precio_nosotros": 280000,
+  "titulo": "Asus X515JA - Plateado",
   "id": "nb-2024-004",
   "marca": "Asus",
   "especificaciones": {
