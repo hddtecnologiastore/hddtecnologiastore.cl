@@ -1,0 +1,52 @@
+{
+  "resumen": "Equipo corporativo de alta gama en excelente condición estética y funcional (Calidad 8.5/10). Diseñado en aluminio premium, ofrece un balance perfecto entre potencia y portabilidad extrema (1.4 kg).",
+  "condicion_detalle": "Estructura de aluminio bien cuidada, con rayas mínimas y superficiales por el uso diario. Cuenta con una pequeña abolladura estética en un costado que es puramente visual y no afecta en nada sus componentes internos ni su correcto funcionamiento.",
+  "estado": "Bueno",
+  "modelo": "Thinkbook",
+  "software_recomendado": [
+    {
+      "nombre": "Software especializados de diseño y desarrollo de ingenieria",
+      "categoria": "Desarrollo",
+      "por_que": "Cuenta con procesador y memoria ram de alto poder, lo que permite el desarrollo de cualquier actividad."
+    }
+  ],
+  "precio_mercado": 1100000,
+  "slug": "ThinkBook-14-G4",
+  "fotos": [
+    {
+      "url": [
+        "https://res.cloudinary.com/qhcbzphb/image/upload/v1791746665/WhatsApp_Image_2026-10-11_at_3.48.35_PM_2.jpg",
+        "https://res.cloudinary.com/qhcbzphb/image/upload/v1791746665/WhatsApp_Image_2026-10-11_at_3.48.35_PM_4.jpg",
+        "https://res.cloudinary.com/qhcbzphb/image/upload/v1791746665/WhatsApp_Image_2026-10-11_at_3.48.39_PM_1.jpg",
+        "https://res.cloudinary.com/qhcbzphb/image/upload/v1791746665/WhatsApp_Image_2026-10-11_at_3.48.35_PM.jpg",
+        "https://res.cloudinary.com/qhcbzphb/image/upload/v1791746664/WhatsApp_Image_2026-10-11_at_3.48.35_PM_1.jpg",
+        "https://res.cloudinary.com/qhcbzphb/image/upload/v1791746665/WhatsApp_Image_2026-10-11_at_3.48.35_PM_3.jpg",
+        "https://res.cloudinary.com/qhcbzphb/image/upload/v1791746664/WhatsApp_Image_2026-10-11_at_3.48.34_PM.jpg",
+        "https://res.cloudinary.com/qhcbzphb/image/upload/v1791746665/WhatsApp_Image_2026-10-11_at_3.48.39_PM.jpg"
+      ]
+    }
+  ],
+  "fecha_ingreso": "2026-10-11",
+  "disponible": true,
+  "whatsapp_msg": "Hola alejandro, vengo de la web y me interesa este equipo Lenovo Thinkbook. Quiero solventar unas dudas.",
+  "etiqueta": "Seminuevo",
+  "precio_nosotros": 750000,
+  "titulo": "ThinkBook 14 G4",
+  "id": "nb-2024-002",
+  "marca": "Lenovo",
+  "especificaciones": {
+    "puertos": [
+      "• Thunderbolt 4 / USB4 40Gbps • USB-C 3.2 Gen 2 • HDMI 2.1 • USB 3.2 Gen 1 (2 puertos en total) • Jack combinado de 3.5 mm • Ethernet RJ-45 • Lector de tarjetas SD 4 en 1 • Ranura de seguridad Kensington"
+    ],
+    "bateria_salud": "95",
+    "procesador": "i7-1255U 1.70GHz",
+    "gpu": "Intel Iris Xe Graphics",
+    "so_actual": "Windows 11",
+    "peso": "1.4 kg",
+    "almacenamiento": "512 Gb",
+    "pantalla": "14\" HD",
+    "bateria_ciclos": 337,
+    "ram": "40 Gb DDR4"
+  },
+  "año": 2023
+}
