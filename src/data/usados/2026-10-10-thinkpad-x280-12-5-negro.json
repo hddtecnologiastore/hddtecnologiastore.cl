@@ -14,17 +14,25 @@
   "slug": "Thinkpad-X280-i5-7ma",
   "fotos": [
     {
-      "url": "https://res.cloudinary.com/qhcbzphb/image/upload/v1791663686/thinkpad_i5.jpg"
+      "url": [
+        "https://res.cloudinary.com/qhcbzphb/image/upload/v1791744874/Gemini_Generated_Image_m11yzdm11yzdm11y.jpg",
+        "https://res.cloudinary.com/qhcbzphb/image/upload/v1791744670/WhatsApp_Image_2026-10-11_at_3.46.43_PM.jpg",
+        "https://res.cloudinary.com/qhcbzphb/image/upload/v1791744670/WhatsApp_Image_2026-10-11_at_3.46.42_PM_2.jpg",
+        "https://res.cloudinary.com/qhcbzphb/image/upload/v1791744670/WhatsApp_Image_2026-10-11_at_3.46.42_PM_1.jpg",
+        "https://res.cloudinary.com/qhcbzphb/image/upload/v1791744670/WhatsApp_Image_2026-10-11_at_3.46.42_PM.jpg",
+        "https://res.cloudinary.com/qhcbzphb/image/upload/v1791744670/WhatsApp_Image_2026-10-11_at_3.46.43_PM_1.jpg",
+        "https://res.cloudinary.com/qhcbzphb/image/upload/v1791744670/WhatsApp_Image_2026-10-11_at_3.46.43_PM_2.jpg"
+      ]
     }
   ],
   "fecha_ingreso": "2026-10-10",
   "disponible": true,
   "whatsapp_msg": "Hola, me interesa el Lenovo ThinkPad X280 (i5 / 8GB RAM / 256GB SSD) publicado en la tienda. ¿Está disponible para retiro o despacho?",
   "etiqueta": "Seminuevo",
-  "precio_nosotros": 250000,
+  "precio_nosotros": 215000,
   "titulo": "Thinkpad X280 12.5\" - Negro",
   "id": "nb-2024-001",
-  "marca": "Lemovo",
+  "marca": "Lenovo",
   "especificaciones": {
     "puertos": [
       "1x USB-C",
