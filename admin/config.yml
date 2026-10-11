@@ -52,7 +52,7 @@ collections:
         name: fotos
         widget: list
         fields:
-          - {label: "Imagen", name: "url", widget: "image", media_library: {config: {multiple: true}}}
+          - {label: "Imagen", name: "url", widget: "image"}
       - {label: "Resumen comercial (1-2 líneas)", name: "resumen", widget: "text"}
       - label: "Software recomendado (opcional)"
         name: software_recomendado

@@ -123,7 +123,8 @@
     const e = u.especificaciones || {};
     const specs = [e.procesador, e.ram, e.almacenamiento].filter(Boolean);
     const ahorro = u.precio_mercado ? Math.round((1 - u.precio_nosotros/u.precio_mercado)*100) : 0;
-    const img = u.fotos?.[0]?.url || '/img/placeholder-notebook.jpg';
+    const foto0 = u.fotos?.[0]?.url;
+    const img = (Array.isArray(foto0) ? foto0[0] : foto0) || '/img/placeholder-notebook.jpg';
     return `
     <article class="usado-card reveal" style="background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column">
       <img src="${img}" alt="${u.titulo}" loading="lazy" style="width:100%;height:200px;object-fit:cover">

@@ -12,7 +12,8 @@ class CarruselUsados extends HTMLElement {
   }
   card(u) {
     const ahorro = u.precio_mercado ? Math.round((1 - u.precio_nosotros/u.precio_mercado)*100) : 0;
-    const img = u.fotos?.[0]?.url || '/img/placeholder-notebook.jpg';
+    const foto0 = u.fotos?.[0]?.url;
+    const img = (Array.isArray(foto0) ? foto0[0] : foto0) || '/img/placeholder-notebook.jpg';
     const e = u.especificaciones || {};
     const specs = [
       e.procesador,
