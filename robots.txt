@@ -1,5 +1,8 @@
 User-agent: *
 Allow: /
+Allow: /src/data/usados.json
 Disallow: /src/
+Disallow: /admin/
+Disallow: /.netlify/
 
 Sitemap: https://hddtecnologiastore.cl/sitemap.xml
