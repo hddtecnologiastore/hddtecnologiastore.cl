@@ -10,6 +10,7 @@ media_library:
   config:
     cloud_name: qhcbzphb
     api_key: "898237561158163"
+    username: "hddtecnologiastore@gmail.com"
     unsigned_upload_preset: "hdd_catalogo"
 
 site_url: https://hddtecnologiastore.cl
