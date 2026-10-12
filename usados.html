@@ -119,8 +119,15 @@
     grid.innerHTML = '<p style="grid-column:1/-1;text-align:center;color:var(--mut);padding:3rem">No hay notebooks disponibles por el momento. Escríbeme por WhatsApp y te aviso cuando llegue stock nuevo.</p>';
     return;
   }
-  // XSS prevention: escape HTML special chars
-  function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&','<':'<','>':'>','"':'"',"'":'''}[c])); }
+  // XSS prevention: escape HTML special chars (forma encadenada: sin objetos con comillas anidadas)
+  function esc(s) {
+    return String(s == null ? '' : s)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
   grid.innerHTML = items.map(u => {
     const e = u.especificaciones || {};
     const specs = [e.procesador, e.ram, e.almacenamiento].filter(Boolean);
