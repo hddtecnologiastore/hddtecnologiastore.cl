@@ -222,7 +222,7 @@ h1{font-family:var(--d);font-size:clamp(30px,4.6vw,54px);line-height:1.08;margin
 .err{background:rgba(248,113,113,.1);border:1px dashed rgba(248,113,113,.5);color:#fca5a5;font-size:12px;border-radius:9px;padding:9px 12px;margin-bottom:12px}
 .x{position:absolute;top:12px;right:12px;width:34px;height:34px;border-radius:10px;border:1px solid var(--line);background:rgba(255,255,255,.05);color:#fff;cursor:pointer;font-size:17px}
 .modal{position:relative}
-@media(max-width:960px){.hero-grid,.split{grid-template-columns:1fr;gap:20px}.grid6{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr}.cat-grid{grid-template-columns:1fr}.foot-grid{grid-template-columns:1fr}.nav{display:none;position:absolute;top:100%;left:0;right:0;background:#071022;border-bottom:1px solid var(--line);flex-direction:column;padding:10px 18px 16px}.nav.open{display:flex}.burger{display:flex}.social-grid{grid-template-columns:1fr}.kpis{grid-template-columns:1fr 1fr}.rev{padding:22px}.split{gap:20px}.hd-in{padding:10px 14px}.lang-label{display:none}.lang-switch{padding:3px 4px}}
+@media(max-width:960px){.hero-grid,.split{grid-template-columns:1fr;gap:20px}.grid6{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr}.cat-grid{grid-template-columns:1fr}.foot-grid{grid-template-columns:1fr}.social-grid{grid-template-columns:1fr}.kpis{grid-template-columns:1fr 1fr}.rev{padding:22px}.split{gap:20px}.hd-in{padding:10px 14px}.lang-label{display:none}.lang-switch{padding:3px 4px}}
 @media(max-width:560px){.grid6{grid-template-columns:1fr}.steps{grid-template-columns:1fr}.card-foot{grid-template-columns:1fr 1fr}.hero{padding:50px 0 20px;min-height:auto}.hero h1{font-size:clamp(24px,6vw,32px)!important}.lead{font-size:14px!important}.cta-row{flex-direction:column;align-items:stretch}.cta-row .btn{text-align:center}.split .glass:first-child{min-height:auto!important;padding:20px!important}.split .profile{min-height:auto!important}.kpis{grid-template-columns:1fr 1fr 1fr;gap:6px}.kpi{padding:8px}.kpi b{font-size:16px}.sec{padding:50px 0}.wrap{padding:0 16px}.hero-vis{min-height:auto}.lang-switch{font-size:10px;gap:3px}.lang-btn{padding:4px 6px;font-size:10px}.wa-mini{padding:8px 12px;font-size:11px}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
 
@@ -236,7 +236,7 @@ h1{font-family:var(--d);font-size:clamp(30px,4.6vw,54px);line-height:1.08;margin
 .precios { display: flex; gap: .5rem; align-items: baseline; margin: .5rem 0; }
 .precio-mercado { text-decoration: line-through; color: #999; font-size: .9rem; }
 .ahorro { background: #e8f5e9; color: #2e7d32; font-size: .75rem; padding: .1rem .4rem; border-radius: 999px; }
-.btn-wa, .btn-ver { display: inline-block; margin-top: .5rem; padding: .5rem 1rem; border-radius: 8px; font-weight: 600; text-decoration: none; }
+.btn-wa, .btn-ver { display: flex; align-items: center; justify-content: center; min-height: 44px; margin-top: .5rem; padding: .5rem 1rem; border-radius: 8px; font-weight: 600; text-decoration: none; }
 .btn-wa { background: #25d366; color: #fff; }
 .btn-ver { background: #f5f5f5; color: #333; }
 .titulo-nb { font-weight: 700; font-size: 1.05rem; color: #fff; margin: .3rem 0; }
@@ -278,4 +278,117 @@ h1{font-family:var(--d);font-size:clamp(30px,4.6vw,54px);line-height:1.08;margin
   .ficha-top, .ficha-bottom { grid-template-columns: 1fr; }
   .carrusel-track { flex-direction: column; }
   .usado-card { flex: 0 0 100%; }
+}
+
+/* ===== RESPONSIVE HARDENING — mobile-first (audit 11-10-2026) ===== */
+
+/* 1. Sin desborde horizontal: refuerzo de medios */
+img, video { max-width: 100%; }
+table { max-width: 100%; }
+
+/* 2. Header: 7 enlaces + idioma + WA no caben en <1280px → menú hamburguesa limpio
+   (solo páginas con #nav + burger; legales/404 no tienen burger → no se ocultan) */
+@media (max-width: 1280px) {
+  #nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #071022;
+    border-bottom: 1px solid var(--line);
+    flex-direction: column;
+    padding: 8px 16px 14px;
+    z-index: 110;
+    max-height: calc(100vh - 70px);
+    overflow-y: auto;
+  }
+  #nav.open { display: flex; }
+  #nav a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 10px 14px;
+    font-size: 15px;
+  }
+  .burger { display: flex; width: 46px; height: 46px; }
+}
+/* Páginas sin burger (privacidad/términos/404): nav fluye debajo en móvil */
+@media (max-width: 767px) {
+  .hd-in { flex-wrap: wrap; row-gap: 6px; }
+  .nav:not(#nav) {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0;
+  }
+  .nav:not(#nav) a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 8px 12px;
+  }
+}
+
+/* 3. Catálogo de notebooks — breakpoints claros
+   Desktop (>1024px): 3 columnas | Tablet (768–1023px): 2 | Móvil (<767px): 1 fluida */
+.catalogo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+@media (max-width: 1024px) {
+  .catalogo-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 767px) {
+  .catalogo-grid { grid-template-columns: 1fr; gap: 1rem; }
+}
+
+/* 4. Móvil: márgenes laterales cómodos (16px) */
+@media (max-width: 767px) {
+  .wrap { padding: 0 16px; }
+  .hd-in { padding: 10px 14px; }
+  .sec { padding: 52px 0; }
+}
+
+/* 5. Objetivos táctiles ≥44×44px (Google accessibility) en pantallas táctiles */
+@media (pointer: coarse) {
+  .btn,
+  .wa-mini,
+  .lang-btn,
+  .f-link,
+  .svc-link,
+  .promo-btn,
+  .promo-close,
+  .btn-wa,
+  .btn-ver,
+  .p-wa,
+  .btn-wa-grande,
+  .btn-reseñas,
+  .x {
+    min-height: 44px;
+  }
+  .promo-close, .x { min-width: 44px; display: inline-flex; align-items: center; justify-content: center; }
+  .nav a { min-height: 44px; }
+  .car-nav button { width: 44px; height: 44px; }
+  .dots button::after {
+    content: '';
+    position: absolute;
+    inset: -14px -6px;
+  }
+}
+
+/* 6. Títulos seguros en 360–390px (clamp donde faltaba) */
+@media (max-width: 400px) {
+  h1 { font-size: clamp(26px, 7vw, 30px); }
+  .sec-hd h2 { font-size: clamp(19px, 5.5vw, 22px); }
+}
+
+/* 7. Formularios y promo en móvil angosto */
+@media (max-width: 480px) {
+  .row2 { grid-template-columns: 1fr; }
+  .promo-actions { flex-direction: column; }
+  .promo-float { width: 94vw; padding: 30px 18px 22px; }
+  .promo-title { font-size: 19px; }
 }

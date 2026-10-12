@@ -15,5 +15,222 @@
       });
     }
   </script>
+  <script>
+  /* HDD — Automatización Decap/Netlify CMS (panel /admin)
+     1) preSave: auto-genera ID (nb-YYYY-XXX), whatsapp_msg, resumen,
+        condicion_detalle y fecha_ingreso SOLO si están vacíos → todo 100% editable.
+     2) Botón flotante "🔎 Autocompletar Specs": lee Marca+Modelo del editor,
+        llama a /.netlify/functions/get-specs y rellena los campos técnicos.
+     Manual siempre: precio_mercado, precio_nosotros, estado, bateria_salud,
+     bateria_ciclos y fotos. */
+  (function () {
+    'use strict';
+    var WA_RESUMEN = 'Notebook revisado y garantizado por HDD Tecnología Store. Rendimiento óptimo, listo para usar con garantía de 90 días.';
+    var WA_CONDICION = 'Equipo seminuevo/reacondicionado en excelentes condiciones estéticas y 100% funcional. Sometido a rigurosas pruebas de diagnóstico en taller (procesador, RAM, SSD y temperaturas). Incluye mantenimiento preventivo completo con cambio de pasta térmica de alto rendimiento y sistema operativo limpio con programas esenciales preinstalados. Listo para trabajar o estudiar con 90 días de garantía.';
+    function waText(eq) {
+    return 'Hola Alejandro, vengo de la web, tengo interés sobre el equipo ' + eq + ', quisiera mas información.';
+  }
+    function todayISO() {
+      var d = new Date();
+      var m = String(d.getMonth() + 1).padStart(2, '0');
+      var day = String(d.getDate()).padStart(2, '0');
+      return d.getFullYear() + '-' + m + '-' + day;
+    }
+
+    function onCMSReady(fn) {
+      if (window.CMS && typeof window.CMS.registerEventListener === 'function') return fn();
+      var n = 0;
+      var iv = setInterval(function () {
+        n++;
+        if (window.CMS && typeof window.CMS.registerEventListener === 'function') { clearInterval(iv); fn(); }
+        else if (n > 100) clearInterval(iv);
+      }, 200);
+    }
+
+    onCMSReady(function () {
+      /* ---------- 1) preSave: auto-fill solo de vacíos ---------- */
+      try {
+        window.CMS.registerEventListener({
+          name: 'preSave',
+          handler: async function (payload) {
+            try {
+              var entry = payload.entry;
+              if (!entry || entry.get('collection') !== 'usados') return entry;
+              var data = entry.get('data');
+              var get = function (k) { var v = data.get(k); return (v === undefined || v === null) ? '' : String(v); };
+              var set = function (k, v) { data = data.set(k, v); };
+
+              // ID único nb-YYYY-XXX (calculado desde el JSON público ya publicado)
+              if (!get('id').trim()) {
+                var year = String(new Date().getFullYear());
+                var next = 1;
+                try {
+                  var r = await fetch('/src/data/usados.json', { cache: 'no-store' });
+                  if (r.ok) {
+                    var arr = await r.json();
+                    var max = 0;
+                    (arr || []).forEach(function (it) {
+                      var m = String((it && it.id) || '').match(/^nb-(\d{4})-(\d{3})$/);
+                      if (m && m[1] === year) max = Math.max(max, parseInt(m[2], 10));
+                    });
+                    next = max + 1;
+                  }
+                } catch (e) { /* sin red: arranca en 001 */ }
+                set('id', 'nb-' + year + '-' + String(next).padStart(3, '0'));
+              }
+              var titulo = get('titulo').trim();
+              var marca = get('marca').trim();
+              var modelo = get('modelo').trim();
+              var equipo = titulo || ((marca + ' ' + modelo).trim());
+              if (!get('whatsapp_msg').trim() && equipo) set('whatsapp_msg', waText(equipo));
+              if (!get('resumen').trim()) set('resumen', WA_RESUMEN);
+              if (!get('condicion_detalle').trim()) set('condicion_detalle', WA_CONDICION);
+              if (!get('fecha_ingreso').trim()) set('fecha_ingreso', todayISO());
+
+              return entry.set('data', data);
+            } catch (e) { return payload.entry; }
+          }
+        });
+      } catch (e) { /* CMS sin soporte preSave: el botón sigue funcionando */ }
+
+      /* ---------- 2) Botón flotante Autocompletar ---------- */
+      var PANEL_ID = 'hdd-autofill-panel';
+      function isUsadosEditor() {
+        var h = String(window.location.hash || '');
+        return h.indexOf('#/collections/usados/') === 0;
+      }
+      function normLabel(s) {
+        return String(s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim();
+      }
+      function findControl(labelText) {
+        var target = normLabel(labelText);
+        var labels = Array.prototype.slice.call(document.querySelectorAll('label'));
+        for (var i = 0; i < labels.length; i++) {
+          var lb = labels[i];
+          if (normLabel(lb.textContent).indexOf(target) !== 0) continue;
+          var box = lb.parentElement;
+          for (var d = 0; d < 3 && box; d++) {
+            var c = box.querySelector('input:not([type="checkbox"]):not([type="radio"]), textarea, select');
+            if (c) return c;
+            box = box.parentElement;
+          }
+        }
+        return null;
+      }
+      function readVal(labelText) {
+        var c = findControl(labelText);
+        return c ? String(c.value || '').trim() : '';
+      }
+      function writeVal(labelText, val) {
+        var c = findControl(labelText);
+        if (!c) return false;
+        try {
+          var proto = c.tagName === 'TEXTAREA' ? window.HTMLTextAreaElement.prototype
+            : c.tagName === 'SELECT' ? window.HTMLSelectElement.prototype
+            : window.HTMLInputElement.prototype;
+          var setter = Object.getOwnPropertyDescriptor(proto, 'value').set;
+          setter.call(c, String(val == null ? '' : val));
+          c.dispatchEvent(new Event('input', { bubbles: true }));
+          c.dispatchEvent(new Event('change', { bubbles: true }));
+          return true;
+        } catch (e) { return false; }
+      }
+      function tick(ms) { return new Promise(function (res) { setTimeout(res, ms); }); }
+
+      async function fillPuertos(values) {
+        // Lista "Puertos": solo si está vacía (respeta edición manual)
+        var label = null;
+        var labels = Array.prototype.slice.call(document.querySelectorAll('label'));
+        for (var i = 0; i < labels.length; i++) {
+          if (normLabel(labels[i].textContent).indexOf('puertos') === 0) { label = labels[i]; break; }
+        }
+        if (!label) return 'sin-campo';
+        var section = label.parentElement;
+        for (var d = 0; d < 4 && section; d++) {
+          var addBtn = Array.prototype.slice.call(section.querySelectorAll('button'))
+            .find(function (b) { return /^add/i.test(b.textContent.trim()); });
+          if (addBtn) break;
+          section = section.parentElement;
+        }
+        if (!section || !addBtn) return 'sin-boton';
+        if (section.querySelectorAll('input').length > 0) return 'omitido';
+        for (var k = 0; k < values.length; k++) { addBtn.click(); await tick(250); }
+        var inputs = section.querySelectorAll('input');
+        var n = 0;
+        inputs.forEach(function (inp, idx) {
+          if (idx < values.length) {
+            try {
+              var setter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value').set;
+              setter.call(inp, values[idx]);
+              inp.dispatchEvent(new Event('input', { bubbles: true }));
+              inp.dispatchEvent(new Event('change', { bubbles: true }));
+              n++;
+            } catch (e) {}
+          }
+        });
+        return n + '/' + values.length;
+      }
+
+      async function autocomplete(status) {
+        try {
+          status('Leyendo Marca y Modelo…');
+          var marca = readVal('Marca');
+          var modelo = readVal('Modelo');
+          var titulo = readVal('Título publicable');
+          var q = [marca, modelo].filter(Boolean).join(' ') || titulo;
+          if (!q) { status('❌ Completa Marca y Modelo (o el Título) primero.'); return; }
+          status('Buscando ficha de "' + q + '"…');
+          var r = await fetch('/.netlify/functions/get-specs?model=' + encodeURIComponent(q));
+          var data = await r.json().catch(function () { return null; });
+          if (!r.ok || !data || !data.found) {
+            status('❌ Sin ficha para ese modelo. Completa manual (precios, estado, batería, fotos).');
+            return;
+          }
+          var s = data.specs;
+          var ok = [], fail = [];
+          [['Marca', s.marca], ['Modelo', s.modelo], ['Año', s.año], ['Procesador', s.procesador],
+           ['RAM', s.ram], ['Almacenamiento', s.almacenamiento], ['Pantalla', s.pantalla],
+           ['GPU', s.gpu], ['SO actual', s.so_actual], ['Peso', s.peso]
+          ].forEach(function (pair) {
+            if (pair[1] === undefined || pair[1] === null || pair[1] === '') { fail.push(pair[0]); return; }
+            (writeVal(pair[0], pair[1]) ? ok : fail).push(pair[0]);
+          });
+          if (Array.isArray(s.puertos) && s.puertos.length) {
+            var pr = await fillPuertos(s.puertos);
+            (String(pr).indexOf('/') === -1 && pr !== 'omitido' ? fail : ok).push('Puertos(' + pr + ')');
+          }
+          // Textos plantilla solo si están vacíos (no pisa tu redacción)
+          var equipo = readVal('Título publicable') || ((s.marca + ' ' + s.modelo).trim());
+          if (!readVal('Mensaje WhatsApp pre-armado') && equipo) { writeVal('Mensaje WhatsApp pre-armado', waText(equipo)); ok.push('WhatsApp'); }
+          if (!readVal('Resumen comercial')) { writeVal('Resumen comercial', WA_RESUMEN); ok.push('Resumen'); }
+          if (!readVal('Condición detallada')) { writeVal('Condición detallada', WA_CONDICION); ok.push('Condición'); }
+          status('✅ ' + s.marca + ' ' + s.modelo + ' (' + s.año + ') → ' + ok.length + ' campos.' + (fail.length ? ' Revisar: ' + fail.join(', ') + '.' : '') + ' Te quedan: precios, estado, batería y fotos.');
+        } catch (e) {
+          status('❌ Error: ' + (e && e.message ? e.message : e));
+        }
+      }
+
+      function ensurePanel() {
+        var show = isUsadosEditor();
+        var panel = document.getElementById(PANEL_ID);
+        if (!show) { if (panel) panel.remove(); return; }
+        if (panel) return;
+        panel = document.createElement('div');
+        panel.id = PANEL_ID;
+        panel.style.cssText = 'position:fixed;right:14px;bottom:14px;z-index:9999;max-width:320px;background:#0b1526;border:1px solid rgba(56,189,248,.4);border-radius:12px;padding:12px;box-shadow:0 10px 30px rgba(0,0,0,.5);font-family:system-ui,sans-serif;';
+        panel.innerHTML = '<button id="hdd-autofill-btn" style="width:100%;background:#25d366;color:#04120a;font-weight:800;border:0;border-radius:9px;padding:11px;cursor:pointer;font-size:13px;">🔎 Autocompletar Specs</button>'
+          + '<div id="hdd-autofill-status" style="margin-top:8px;font-size:11.5px;line-height:1.45;color:#9fb3d9;">Completa Marca y Modelo, luego pulsa el botón.</div>';
+        document.body.appendChild(panel);
+        var st = panel.querySelector('#hdd-autofill-status');
+        panel.querySelector('#hdd-autofill-btn').addEventListener('click', function () {
+          autocomplete(function (m) { st.textContent = m; });
+        });
+      }
+      window.addEventListener('hashchange', ensurePanel);
+      setInterval(ensurePanel, 1500);
+      ensurePanel();
+    });
+  })();
+  </script>
 </body>
 </html>

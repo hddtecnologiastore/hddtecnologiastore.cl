@@ -36,14 +36,16 @@
 
 .fi{display:flex;flex-direction:column;gap:.4rem}
 .fi-etiqueta{display:inline-block;align-self:flex-start;background:rgba(56,189,248,.15);color:#38bdf8;font-size:.65rem;font-weight:700;padding:.25rem .7rem;border-radius:999px;letter-spacing:1.5px}
-.fi-titulo{font-size:1.8rem;font-weight:800;color:#fff;line-height:1.15;margin:0}
+.fi-titulo{font-size:clamp(1.4rem,5.5vw,1.8rem);font-weight:800;color:#fff;line-height:1.15;margin:0;overflow-wrap:anywhere}
 .fi-estado{font-size:.8rem;color:var(--mut)}
 .fi-estado b{color:#e2e8f0}
 .fi-precios{display:flex;align-items:baseline;gap:.6rem;flex-wrap:wrap;margin:.3rem 0}
 .precio-ref-f{font-size:1rem;color:#f87171;text-decoration:line-through;font-weight:500}
-.precio-final{font-size:2rem;color:#38bdf8;font-weight:800}
+.precio-final{font-size:clamp(1.6rem,6vw,2rem);color:#38bdf8;font-weight:800}
+.fi-garantia{display:inline-flex;align-self:flex-start;align-items:center;gap:.45rem;background:rgba(37,211,102,.13);border:1px solid rgba(37,211,102,.45);color:#4ade80;font-size:.8rem;font-weight:800;padding:.5rem .9rem;border-radius:999px;letter-spacing:.4px;box-shadow:0 2px 12px rgba(37,211,102,.18)}
+.fi-garantia::before{content:'🛡️'}
 .ahorro-b{background:rgba(56,189,248,.15);color:#38bdf8;font-size:.75rem;padding:.2rem .6rem;border-radius:999px;font-weight:700}
-.btn-wa-f{display:flex;align-items:center;justify-content:center;gap:.5rem;background:#25d366;color:#fff;padding:.85rem 1.2rem;border-radius:12px;font-weight:700;font-size:.95rem;text-decoration:none;transition:background .2s}
+.btn-wa-f{display:flex;align-items:center;justify-content:center;gap:.5rem;background:#25d366;color:#fff;min-height:48px;padding:.85rem 1.2rem;border-radius:12px;font-weight:700;font-size:.95rem;text-decoration:none;transition:background .2s}
 .btn-wa-f:hover{background:#1ebe5d}
 .btn-back-f{display:flex;align-items:center;justify-content:center;gap:.4rem;background:transparent;color:#fff;padding:.7rem 1.2rem;border-radius:12px;font-weight:600;font-size:.85rem;text-decoration:none;border:1px solid var(--line);transition:border-color .2s}
 .btn-back-f:hover{border-color:var(--acc)}
@@ -59,7 +61,7 @@
 .specs-grid{display:grid;grid-template-columns:1fr 1fr;gap:.5rem}
 .spec-item{display:flex;flex-direction:column;padding:.55rem .7rem;background:rgba(56,189,248,.06);border-radius:8px;text-align:center}
 .spec-item small{font-size:.65rem;color:#38bdf8;text-transform:uppercase;letter-spacing:1.2px;font-weight:800}
-.spec-item b{font-size:.88rem;color:#e2e8f0;font-weight:700;margin-top:.15rem}
+.spec-item b{font-size:.88rem;color:#e2e8f0;font-weight:700;margin-top:.15rem;overflow-wrap:anywhere}
 
 .fila-doble{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-bottom:1.2rem}
 .fila-doble .ficha-section{margin-bottom:0}
@@ -83,15 +85,20 @@
 .prog-icon{width:46px;height:46px;display:flex;align-items:center;justify-content:center;border-radius:12px}
 .prog-icon svg{width:28px;height:28px;display:block}
 .prog-item small{font-size:.72rem;color:#e2e8f0;font-weight:600;text-align:center;line-height:1.25}
-@media(max-width:800px){.prog-grid{grid-template-columns:repeat(2,1fr)}}
-
-@media(max-width:800px){
+@media(max-width:767px){
+  .prog-grid{grid-template-columns:repeat(2,1fr)}
   .ficha-top{grid-template-columns:1fr}
   .fila-doble{grid-template-columns:1fr}
   .fila-triple{grid-template-columns:1fr}
   .specs-grid{grid-template-columns:1fr 1fr}
-  .ficha-wrap{padding-top:80px}
+  .ficha-wrap{padding:76px 1rem 2.5rem}
   .conf-grid{grid-template-columns:1fr}
+  /* Orden móvil de la ficha: imagen+badge → título+precio → garantía → specs → CTA */
+  .fi .ficha-section{order:1}
+  .fi .btn-wa-f{order:2;min-height:52px;font-size:1rem}
+  .fi .btn-back-f{order:3}
+  .galeria-main{min-height:280px}
+  .galeria-thumbs img{width:64px;height:48px}
 }
 </style>
 </head>
@@ -100,7 +107,7 @@
 <header class="hd" id="hd">
   <div class="wrap hd-in">
     <a href="/" class="brand"><span class="brand-mark"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M2 20h20"/></svg></span><span class="brand-tx">HDD <b>TECNOLOGÍA</b><small>STORE · ÑUÑOA</small></span></a>
-    <nav class="nav"><a href="/">Inicio</a><a href="/#servicios">Servicios</a><a href="/usados.html" class="active">Notebooks</a><a href="/#contacto">Contacto</a></nav>
+    <nav class="nav" id="nav"><a href="/">Inicio</a><a href="/#servicios">Servicios</a><a href="/usados.html" class="active">Notebooks</a><a href="/#contacto">Contacto</a></nav>
     <div class="hd-act"><a class="wa-mini" href="https://wa.me/56961991725" target="_blank" rel="noopener">WhatsApp</a><button class="burger" id="burger" aria-label="Abrir menú"><i></i><i></i><i></i></button></div>
   </div>
 </header>
@@ -135,7 +142,10 @@
   const u = items.find(n => n.id === id || n.slug === slug);
   if (!u) { location.href = '/usados.html'; return; }
 
-  document.title = u.titulo + ' | HDD Tecnología Store';
+  // XSS prevention: escape HTML special chars
+  function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&','<':'<','>':'>','"':'"',"'":'''}[c])); }
+
+  document.title = esc(u.titulo) + ' | HDD Tecnología Store';
   const e = u.especificaciones || {};
   const ahorro = u.precio_mercado ? Math.round((1 - u.precio_nosotros/u.precio_mercado)*100) : 0;
   const fotos = (u.fotos || []).flatMap(f => Array.isArray(f.url) ? f.url : (f.url ? [f.url] : []));
@@ -186,18 +196,19 @@
 
     <div class="ficha-top">
       <div class="galeria-col">
-        <div class="galeria-main"><img id="mainImg" src="${mainImg}" alt="${u.titulo}"></div>
+        <div class="galeria-main"><img id="mainImg" src="${mainImg}" alt="${esc(u.titulo)}"></div>
         ${fotos.length > 1 ? `<div class="galeria-thumbs">${fotos.map((f,i) => `<img src="${f}" alt="Foto ${i+1}" class="${i===0?'active':''}" onclick="document.getElementById('mainImg').src='${f}';document.querySelectorAll('.galeria-thumbs img').forEach(t=>t.classList.remove('active'));this.classList.add('active')">`).join('')}</div>` : ''}
       </div>
       <div class="fi">
-        <span class="fi-etiqueta">${(u.etiqueta||'').toUpperCase()}</span>
-        <h1 class="fi-titulo">${u.titulo}</h1>
-        ${u.estado ? `<span class="fi-estado">Estado: <b>${u.estado}</b> · Stock disponible</span>` : ''}
+        <span class="fi-etiqueta">${esc((u.etiqueta||'').toUpperCase())}</span>
+        <h1 class="fi-titulo">${esc(u.titulo)}</h1>
+        ${u.estado ? `<span class="fi-estado">Estado: <b>${esc(u.estado)}</b> · Stock disponible</span>` : ''}
         <div class="fi-precios">
           ${u.precio_mercado ? `<span class="precio-ref-f">$${u.precio_mercado.toLocaleString()}</span>` : ''}
           <span class="precio-final">$${u.precio_nosotros.toLocaleString()}</span>
           ${ahorro > 0 ? `<span class="ahorro-b">${ahorro}% OFF</span>` : ''}
         </div>
+        <span class="fi-garantia">Garantía de 90 días</span>
         <a class="btn-wa-f" href="https://wa.me/56961991725?text=${waMsg}" target="_blank">
           <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
           Consultar por WhatsApp
@@ -208,7 +219,7 @@
         <div class="ficha-section" style="margin-top:.8rem;margin-bottom:0">
           <h3>Especificaciones técnicas</h3>
           <div class="specs-grid">
-            ${specs.map(([k,v]) => `<div class="spec-item"><small>${k}</small><b>${v}</b></div>`).join('')}
+            ${specs.map(([k,v]) => `<div class="spec-item"><small>${esc(k)}</small><b>${esc(v)}</b></div>`).join('')}
           </div>
         </div>` : ''}
       </div>
@@ -217,12 +228,12 @@
     <div class="fila-doble">
       <div class="ficha-section">
         <h3>Estado y condición</h3>
-        <p class="ficha-desc">${u.condicion_detalle || u.estado || '—'}</p>
+        <p class="ficha-desc">${esc(u.condicion_detalle || u.estado || '—')}</p>
       </div>
       ${puertos.length ? `
       <div class="ficha-section">
         <h3>Puertos y conectividad</h3>
-        <div>${puertos.map(p => `<span class="puerto-chip">${p}</span>`).join('')}</div>
+        <div>${puertos.map(p => `<span class="puerto-chip">${esc(p)}</span>`).join('')}</div>
       </div>` : '<div></div>'}
     </div>
 
@@ -234,14 +245,14 @@
       ${soft.length ? `
       <div class="ficha-section">
         <h3>Software recomendado</h3>
-        ${soft.map(s => `<div class="sw-item"><b>${s.nombre}</b><small>(${s.categoria})</small><p>${s.por_que}</p></div>`).join('')}
+        ${soft.map(s => `<div class="sw-item"><b>${esc(s.nombre)}</b><small>(${esc(s.categoria)})</small><p>${esc(s.por_que)}</p></div>`).join('')}
       </div>` : '<div></div>'}
     </div>
 
     <div class="ficha-section" style="margin-bottom:2rem">
       <h3>¿Por qué comprar aquí?</h3>
       <div class="conf-grid">
-        <div class="conf-item">Garantía real de 30 días en todo el equipo</div>
+        <div class="conf-item">Garantía real de 90 días en todo el equipo</div>
         <div class="conf-item">Diagnóstico completo antes de vender</div>
         <div class="conf-item">Atención directa con el técnico — sin intermediarios</div>
         <div class="conf-item">20 años de experiencia en notebooks</div>

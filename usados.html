@@ -74,7 +74,7 @@
 <!-- CATÁLOGO GRID -->
 <section class="sec" style="padding-top:0">
   <div class="wrap">
-    <div id="catalogo-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem">
+    <div id="catalogo-grid" class="catalogo-grid">
       <!-- Se llena por JS -->
     </div>
     <noscript><p style="text-align:center;color:var(--mut);padding:2rem">Activa JavaScript para ver el catálogo.</p></noscript>
@@ -85,7 +85,7 @@
 <section class="sec alt">
   <div class="wrap">
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;text-align:center">
-      <div class="glass" style="padding:1.5rem"><div style="font-size:2rem;margin-bottom:.5rem">🛡️</div><b style="display:block;color:#fff">Garantía real</b><small style="color:var(--mut)">30 días en todo el equipo</small></div>
+      <div class="glass" style="padding:1.5rem"><div style="font-size:2rem;margin-bottom:.5rem">🛡️</div><b style="display:block;color:#fff">Garantía real</b><small style="color:var(--mut)">90 días en todo el equipo</small></div>
       <div class="glass" style="padding:1.5rem"><div style="font-size:2rem;margin-bottom:.5rem">✅</div><b style="display:block;color:#fff">Probado y verificado</b><small style="color:var(--mut)">Diagnóstico completo antes de vender</small></div>
       <div class="glass" style="padding:1.5rem"><div style="font-size:2rem;margin-bottom:.5rem">🚚</div><b style="display:block;color:#fff">Despacho disponible</b><small style="color:var(--mut)">O retiro en nuestro local Ñuñoa</small></div>
       <div class="glass" style="padding:1.5rem"><div style="font-size:2rem;margin-bottom:.5rem">💰</div><b style="display:block;color:#fff">Pago flexible</b><small style="color:var(--mut)">Efectivo, transferencia o débito</small></div>
@@ -119,6 +119,8 @@
     grid.innerHTML = '<p style="grid-column:1/-1;text-align:center;color:var(--mut);padding:3rem">No hay notebooks disponibles por el momento. Escríbeme por WhatsApp y te aviso cuando llegue stock nuevo.</p>';
     return;
   }
+  // XSS prevention: escape HTML special chars
+  function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&','<':'<','>':'>','"':'"',"'":'''}[c])); }
   grid.innerHTML = items.map(u => {
     const e = u.especificaciones || {};
     const specs = [e.procesador, e.ram, e.almacenamiento].filter(Boolean);
@@ -127,20 +129,20 @@
     const img = (Array.isArray(foto0) ? foto0[0] : foto0) || '/img/placeholder-notebook.jpg';
     return `
     <article class="usado-card reveal" style="background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column">
-      <img src="${img}" alt="${u.titulo}" loading="lazy" style="width:100%;height:200px;object-fit:cover">
+      <img src="${img}" alt="${esc(u.titulo)}" loading="lazy" style="width:100%;height:200px;object-fit:cover">
       <div style="padding:1.2rem;display:flex;flex-direction:column;gap:.5rem;flex:1">
-        <span style="display:inline-block;background:rgba(56,189,248,.12);color:#38bdf8;font-size:.7rem;font-weight:700;padding:.25rem .6rem;border-radius:999px;align-self:flex-start;letter-spacing:1px">${u.etiqueta.toUpperCase()}</span>
-        <h3 style="font-weight:700;font-size:1.1rem;color:#fff;margin:.2rem 0">${u.titulo}</h3>
+        <span style="display:inline-block;background:rgba(56,189,248,.12);color:#38bdf8;font-size:.7rem;font-weight:700;padding:.25rem .6rem;border-radius:999px;align-self:flex-start;letter-spacing:1px">${esc((u.etiqueta||'').toUpperCase())}</span>
+        <h3 style="font-weight:700;font-size:1.1rem;color:#fff;margin:.2rem 0">${esc(u.titulo)}</h3>
         <div style="display:flex;align-items:baseline;gap:.5rem;flex-wrap:wrap">
           ${u.precio_mercado ? `<span style="text-decoration:line-through;color:#f87171;font-size:.9rem;font-weight:500">$${u.precio_mercado.toLocaleString()}</span>` : ''}
           <span style="color:#4ade80;font-weight:800;font-size:1.4rem">$${u.precio_nosotros.toLocaleString()}</span>
           ${ahorro > 0 ? `<span style="background:rgba(74,222,128,.15);color:#4ade80;font-size:.7rem;padding:.15rem .5rem;border-radius:999px;font-weight:700">-${ahorro}%</span>` : ''}
         </div>
-        ${specs.length ? `<ul style="list-style:none;padding:0;margin:.3rem 0;display:flex;flex-direction:column;gap:.2rem">${specs.map(s => `<li style="font-size:.82rem;color:#94a3b8;padding-left:1rem;position:relative"><span style="position:absolute;left:0;color:#38bdf8">▸</span>${s}</li>`).join('')}</ul>` : ''}
-        ${u.estado ? `<small style="color:var(--mut);font-size:.8rem">Estado: ${u.estado}</small>` : ''}
+        ${specs.length ? `<ul style="list-style:none;padding:0;margin:.3rem 0;display:flex;flex-direction:column;gap:.2rem">${specs.map(s => `<li style="font-size:.82rem;color:#94a3b8;padding-left:1rem;position:relative"><span style="position:absolute;left:0;color:#38bdf8">▸</span>${esc(s)}</li>`).join('')}</ul>` : ''}
+        ${u.estado ? `<small style="color:var(--mut);font-size:.8rem">Estado: ${esc(u.estado)}</small>` : ''}
         <div style="flex:1"></div>
-        <a href="/ficha.html?id=${u.id}" target="_blank" style="display:block;text-align:center;background:transparent;color:#38bdf8;padding:.6rem;border-radius:10px;font-weight:600;text-decoration:none;border:1px solid var(--line);margin-top:.3rem;font-size:.85rem;transition:border-color .2s">Ver ficha completa →</a>
-        <a href="https://wa.me/56961991725?text=${encodeURIComponent(u.whatsapp_msg)}" target="_blank" style="display:block;text-align:center;background:#25d366;color:#fff;padding:.7rem;border-radius:10px;font-weight:700;text-decoration:none;margin-top:.3rem;transition:background .2s">💬 Consultar por WhatsApp</a>
+        <a href="/ficha.html?id=${u.id}" target="_blank" style="display:flex;align-items:center;justify-content:center;min-height:44px;text-align:center;background:transparent;color:#38bdf8;padding:.6rem;border-radius:10px;font-weight:600;text-decoration:none;border:1px solid var(--line);margin-top:.3rem;font-size:.85rem;transition:border-color .2s">Ver ficha completa →</a>
+        <a href="https://wa.me/56961991725?text=${encodeURIComponent(u.whatsapp_msg)}" target="_blank" style="display:flex;align-items:center;justify-content:center;min-height:48px;text-align:center;background:#25d366;color:#fff;padding:.7rem;border-radius:10px;font-weight:700;text-decoration:none;margin-top:.3rem;transition:background .2s">💬 Consultar por WhatsApp</a>
       </div>
     </article>`;
   }).join('');

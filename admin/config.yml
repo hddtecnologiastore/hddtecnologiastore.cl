@@ -1,17 +1,21 @@
 backend:
   name: git-gateway
   branch: main
+  # IMPORTANTE: En Netlify Dashboard > Identity > Settings > Registration preferences,
+  # configurar "Invite only" para evitar registros públicos no autorizados.
+  # Git Gateway solo permite commits si el usuario está invitado/autorizado.
 
 media_library:
   name: cloudinary
   config:
     cloud_name: qhcbzphb
     api_key: "898237561158163"
+    unsigned_upload_preset: "hdd_catalogo"
 
 site_url: https://hddtecnologiastore.cl
 display_url: https://hddtecnologiastore.cl
 
-publish_mode: editorial_workflow
+# publish_mode: editorial_workflow
 
 collections:
   - name: "usados"
@@ -47,13 +51,13 @@ collections:
           - {label: "SO actual", name: "so_actual", widget: "string", required: false}
           - {label: "Puertos", name: "puertos", widget: "list", required: false}
           - {label: "Peso", name: "peso", widget: "string", required: false}
-      - {label: "Condición detallada (texto libre)", name: "condicion_detalle", widget: "text"}
+      - {label: "Condición detallada (texto libre)", name: "condicion_detalle", widget: "text", default: "Equipo seminuevo/reacondicionado en excelentes condiciones estéticas y 100% funcional. Sometido a rigurosas pruebas de diagnóstico en taller (procesador, RAM, SSD y temperaturas). Incluye mantenimiento preventivo completo con cambio de pasta térmica de alto rendimiento y sistema operativo limpio con programas esenciales preinstalados. Listo para trabajar o estudiar con 90 días de garantía."}
       - label: "Galería (3-5 fotos, orden = prioridad)"
         name: fotos
         widget: list
         fields:
           - {label: "Imagen", name: "url", widget: "image"}
-      - {label: "Resumen comercial (1-2 líneas)", name: "resumen", widget: "text"}
+      - {label: "Resumen comercial (1-2 líneas)", name: "resumen", widget: "text", default: "Notebook revisado y garantizado por HDD Tecnología Store. Rendimiento óptimo, listo para usar con garantía de 90 días."}
       - label: "Software recomendado (opcional)"
         name: software_recomendado
         widget: list

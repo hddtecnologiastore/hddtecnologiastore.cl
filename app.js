@@ -285,7 +285,7 @@ if(bkf){
     if(day===0){err.textContent="No se atiende domingos. Elige otro día.";err.hidden=false;return}
     if(!tm||tm==="—"){err.textContent="Selecciona una hora.";err.hidden=false;return}
     var h=new Date().getHours(),sa=h>=6&&h<13?"Buenos días":h>=13&&h<20?"Buenas tardes":"Buenas noches";
-    var msg="*NUEVO AGENDAMIENTO*%0A%0A*Nombre:* "+n+" "+l+"%0A*Teléfono:* +56 9 "+ph+"%0A*Fecha:* "+dt+"%0A*Hora:* "+tm+"%0A*Servicio:* "+sv+"%0A%0A_Enviado desde la web_";
+    var msg="*NUEVO AGENDAMIENTO*%0A%0A*Nombre:* "+encodeURIComponent(n+" "+l)+"%0A*Teléfono:* +56 9 "+encodeURIComponent(ph)+"%0A*Fecha:* "+encodeURIComponent(dt)+"%0A*Hora:* "+encodeURIComponent(tm)+"%0A*Servicio:* "+encodeURIComponent(sv)+"%0A%0A_Enviado desde la web_";
     var url="https://wa.me/"+window.HDD_WA+"?text="+msg;
     window.open(url,"_blank");
     toast("Abriendo WhatsApp con tu agendamiento…");
