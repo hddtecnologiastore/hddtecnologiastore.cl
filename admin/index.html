@@ -182,10 +182,14 @@
           var r = await fetch('/.netlify/functions/get-specs?model=' + encodeURIComponent(q));
           var data = await r.json().catch(function () { return null; });
           if (!r.ok || !data || !data.found) {
-            status('❌ Sin ficha para ese modelo. Completa manual (precios, estado, batería, fotos).');
+            var sug = (data && data.suggestions && data.suggestions.length)
+              ? ' ¿Es alguno?: ' + data.suggestions.join(' · ') + '. Escríbelo y pulsa de nuevo.'
+              : '';
+            status('❌ Sin ficha exacta para ese modelo.' + sug + ' Si no, completa manual (precios, estado, batería, fotos).');
             return;
           }
           var s = data.specs;
+          var prefix = data.approximate ? '⚠️ Ficha APROXIMADA (verifica año y procesador). ' : '';
           var ok = [], fail = [];
           [['Marca', s.marca], ['Modelo', s.modelo], ['Año', s.año], ['Procesador', s.procesador],
            ['RAM', s.ram], ['Almacenamiento', s.almacenamiento], ['Pantalla', s.pantalla],
@@ -203,7 +207,7 @@
           if (!readVal('Mensaje WhatsApp pre-armado') && equipo) { writeVal('Mensaje WhatsApp pre-armado', waText(equipo)); ok.push('WhatsApp'); }
           if (!readVal('Resumen comercial')) { writeVal('Resumen comercial', WA_RESUMEN); ok.push('Resumen'); }
           if (!readVal('Condición detallada')) { writeVal('Condición detallada', WA_CONDICION); ok.push('Condición'); }
-          status('✅ ' + s.marca + ' ' + s.modelo + ' (' + s.año + ') → ' + ok.length + ' campos.' + (fail.length ? ' Revisar: ' + fail.join(', ') + '.' : '') + ' Te quedan: precios, estado, batería y fotos.');
+          status(prefix + '✅ ' + s.marca + ' ' + s.modelo + ' (' + s.año + ') → ' + ok.length + ' campos.' + (fail.length ? ' Revisar: ' + fail.join(', ') + '.' : '') + ' Te quedan: precios, estado, batería y fotos.');
         } catch (e) {
           status('❌ Error: ' + (e && e.message ? e.message : e));
         }
