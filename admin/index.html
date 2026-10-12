@@ -171,14 +171,13 @@
         return n + '/' + values.length;
       }
 
-      async function autocomplete(status) {
+      async function autocomplete(status, queryOverride) {
         try {
-          status('Leyendo Marca y Modelo…');
           var marca = readVal('Marca');
           var modelo = readVal('Modelo');
           var titulo = readVal('Título publicable');
-          var q = [marca, modelo].filter(Boolean).join(' ') || titulo;
-          if (!q) { status('❌ Completa Marca y Modelo (o el Título) primero.'); return; }
+          var q = (queryOverride || '').trim() || [marca, modelo].filter(Boolean).join(' ') || titulo;
+          if (!q) { status('❌ Escribe el modelo en el buscador o completa Marca y Modelo.'); return; }
           status('Buscando ficha de "' + q + '"…');
           var r = await fetch('/.netlify/functions/get-specs?model=' + encodeURIComponent(q));
           var data = await r.json().catch(function () { return null; });
@@ -218,13 +217,15 @@
         panel = document.createElement('div');
         panel.id = PANEL_ID;
         panel.style.cssText = 'position:fixed;right:14px;bottom:14px;z-index:9999;max-width:320px;background:#0b1526;border:1px solid rgba(56,189,248,.4);border-radius:12px;padding:12px;box-shadow:0 10px 30px rgba(0,0,0,.5);font-family:system-ui,sans-serif;';
-        panel.innerHTML = '<button id="hdd-autofill-btn" style="width:100%;background:#25d366;color:#04120a;font-weight:800;border:0;border-radius:9px;padding:11px;cursor:pointer;font-size:13px;">🔎 Autocompletar Specs</button>'
-          + '<div id="hdd-autofill-status" style="margin-top:8px;font-size:11.5px;line-height:1.45;color:#9fb3d9;">Completa Marca y Modelo, luego pulsa el botón.</div>';
+        panel.innerHTML = '<input id="hdd-autofill-q" placeholder="Buscar modelo: ThinkPad X280, HP 840 G6…" style="width:100%;box-sizing:border-box;background:#060d1d;border:1px solid rgba(56,189,248,.35);color:#e8eefc;border-radius:9px;padding:10px;font-size:12.5px;outline:none;margin-bottom:8px;">'
+          + '<button id="hdd-autofill-btn" style="width:100%;background:#25d366;color:#04120a;font-weight:800;border:0;border-radius:9px;padding:11px;cursor:pointer;font-size:13px;">🔎 Autocompletar Specs</button>'
+          + '<div id="hdd-autofill-status" style="margin-top:8px;font-size:11.5px;line-height:1.45;color:#9fb3d9;">Escribe el modelo y pulsa el botón (o deja vacío para usar Marca+Modelo del formulario).</div>';
         document.body.appendChild(panel);
         var st = panel.querySelector('#hdd-autofill-status');
-        panel.querySelector('#hdd-autofill-btn').addEventListener('click', function () {
-          autocomplete(function (m) { st.textContent = m; });
-        });
+        var qi = panel.querySelector('#hdd-autofill-q');
+        function run() { autocomplete(function (m) { st.textContent = m; }, qi ? qi.value : ''); }
+        panel.querySelector('#hdd-autofill-btn').addEventListener('click', run);
+        if (qi) qi.addEventListener('keydown', function (ev) { if (ev.key === 'Enter') { ev.preventDefault(); run(); } });
       }
       window.addEventListener('hashchange', ensurePanel);
       setInterval(ensurePanel, 1500);
