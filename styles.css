@@ -85,19 +85,19 @@ h1{font-family:var(--d);font-size:clamp(30px,4.6vw,54px);line-height:1.08;margin
 .sec-hd{text-align:center;max-width:720px;margin:0 auto 34px}
 .kick{font-family:var(--d);font-size:11px;letter-spacing:3px;color:var(--acc);margin-bottom:8px}
 .sec-hd h2{font-family:var(--d);font-size:clamp(22px,3vw,32px)}
-.sub{color:var(--mut);font-size:14px;margin-top:10px}
+.sub{color:var(--mut);font-size:16px;margin-top:10px}
 .grid6{display:flex;flex-wrap:wrap;justify-content:center;gap:16px}
 .grid6 .svc{flex:1 1 310px;max-width:380px}
 .svc{padding:28px 24px;transition:transform .2s,box-shadow .2s,border-color .2s;text-align:center}
 .svc .ic{font-size:26px;margin:0 auto 14px;display:flex;align-items:center;justify-content:center}
-.svc h3{font-size:17px;margin-bottom:8px;text-align:center}.svc p{font-size:14px;color:var(--mut);margin-bottom:14px;text-align:center;line-height:1.55}
-.svc-link{font-size:14px;font-weight:700;color:var(--acc);cursor:pointer;display:inline-block;text-align:center}
+.svc h3{font-size:19px;margin-bottom:8px;text-align:center}.svc p{font-size:16px;color:var(--mut);margin-bottom:14px;text-align:center;line-height:1.6}
+.svc-link{font-size:15px;font-weight:700;color:var(--acc);cursor:pointer;display:inline-block;text-align:center}
 .svc.biz{background:linear-gradient(135deg,rgba(37,99,235,.16),rgba(56,189,248,.06))}
 .hover-glow{transition:box-shadow .2s,transform .2s}
 .hover-glow:hover{box-shadow:0 14px 40px rgba(56,189,248,.18);transform:translateY(-3px) scale(1.01)}
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;list-style:none}
 .steps li{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;text-align:center}
-.steps b{font-family:var(--d);color:var(--acc);font-size:13px;display:block;text-align:center}.steps h3{font-size:14px;margin:6px 0;text-align:center}.steps p{font-size:13px;color:var(--mut);text-align:center}
+.steps b{font-family:var(--d);color:var(--acc);font-size:13px;display:block;text-align:center}.steps h3{font-size:16px;margin:6px 0;text-align:center}.steps p{font-size:14.5px;color:var(--mut);text-align:center}
 .split{display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:center}
 .mini-list{display:flex;flex-direction:column;gap:10px;margin:16px 0 20px}
 .mini{display:flex;justify-content:space-between;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:13px}
@@ -350,6 +350,12 @@ table { max-width: 100%; }
   .wrap { padding: 0 16px; }
   .hd-in { padding: 10px 14px; }
   .sec { padding: 52px 0; }
+  /* Tipografía móvil: legible sin romper layout (mínimo 14px en lectura) */
+  .svc h3 { font-size: 18px; }
+  .svc p { font-size: 15px; }
+  .steps h3 { font-size: 15px; }
+  .steps p { font-size: 14px; }
+  .sub { font-size: 15px; }
 }
 
 /* 5. Objetivos táctiles ≥44×44px (Google accessibility) en pantallas táctiles */
