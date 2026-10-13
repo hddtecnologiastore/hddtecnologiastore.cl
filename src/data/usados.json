@@ -75,7 +75,7 @@
       "almacenamiento": "256 Gb M.2 NVMe",
       "pantalla": "12.5\" HD",
       "bateria_ciclos": 829,
-      "ram": "8Gb RAM DDR4"
+      "ram": "8Gb RAM DDR4 (soldados)"
     },
     "año": 2019
   },
@@ -130,11 +130,11 @@
         "Jack audio 3.5 mm"
       ],
       "bateria_salud": "70%",
-      "procesador": "Intel Core i5-1035G1 1.20GHz",
+      "procesador": "Intel Core i5-1035G1",
       "gpu": "Intel UHD Graphics",
       "so_actual": "Windows 11",
       "peso": "1.80 Kg",
-      "almacenamiento": "256gb NVMe M.2",
+      "almacenamiento": "512gb NVMe M.2",
       "pantalla": "15.6\" Full HD (1920x1080)",
       "bateria_ciclos": 478,
       "ram": "8gb RAM DDR4"
@@ -200,7 +200,7 @@
         "Power Delivery 3.0 y DisplayPort 1.2)  1x HDMI 1.4b  1x Lector de tarjetas SD  1x Conector combinado para auriculares y micrófono de 3.5 mm"
       ],
       "bateria_salud": "95%",
-      "procesador": "AMD Ryzen 7 5700U",
+      "procesador": "AMD Ryzen 7 5700U 8 Núcleos ",
       "gpu": "AMD Radeon RX Vega 8 (2gb)",
       "so_actual": "Windows 11",
       "peso": "1.77Kg",
@@ -267,14 +267,14 @@
         "• Thunderbolt 4 / USB4 40Gbps • USB-C 3.2 Gen 2 • HDMI 2.1 • USB 3.2 Gen 1 (2 puertos en total) • Jack combinado de 3.5 mm • Ethernet RJ-45 • Lector de tarjetas SD 4 en 1 • Ranura de seguridad Kensington"
       ],
       "bateria_salud": "95",
-      "procesador": "i7-1255U 1.70GHz",
+      "procesador": "i7-1255U 10 Núcleos ",
       "gpu": "Intel Iris Xe Graphics",
       "so_actual": "Windows 11",
       "peso": "1.4 kg",
-      "almacenamiento": "512 Gb",
+      "almacenamiento": "512 Gb NVMe M.2",
       "pantalla": "14\" HD",
       "bateria_ciclos": 337,
-      "ram": "40 Gb DDR4"
+      "ram": "40 Gb DDR4 (8 Soldados + 32Gb en Slot)"
     },
     "año": 2023
   }

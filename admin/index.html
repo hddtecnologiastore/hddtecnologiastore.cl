@@ -16,11 +16,10 @@
     }
   </script>
   <script>
-  /* HDD — Automatización Decap/Netlify CMS (panel /admin)
-     1) preSave: auto-genera ID (nb-YYYY-XXX), whatsapp_msg, resumen,
-        condicion_detalle y fecha_ingreso SOLO si están vacíos → todo 100% editable.
-     2) Botón flotante "🔎 Autocompletar Specs": lee Marca+Modelo del editor,
-        llama a /.netlify/functions/get-specs y rellena los campos técnicos.
+  /* HDD — Ayudas del panel /admin (100% del lado del editor, SIN tocar el guardado)
+     Botón flotante con: buscador "🔎 Autocompletar Specs" (rellena campos
+     técnicos vía get-specs) y botón "🆔 Generar ID" (calcula nb-YYYY-XXX).
+     Todo lo que rellenan queda 100% editable. No usan preSave.
      Manual siempre: precio_mercado, precio_nosotros, estado, bateria_salud,
      bateria_ciclos y fotos. */
   (function () {
@@ -30,70 +29,8 @@
     function waText(eq) {
     return 'Hola Alejandro, vengo de la web, tengo interés sobre el equipo ' + eq + ', quisiera mas información.';
   }
-    function todayISO() {
-      var d = new Date();
-      var m = String(d.getMonth() + 1).padStart(2, '0');
-      var day = String(d.getDate()).padStart(2, '0');
-      return d.getFullYear() + '-' + m + '-' + day;
-    }
 
-    function onCMSReady(fn) {
-      if (window.CMS && typeof window.CMS.registerEventListener === 'function') return fn();
-      var n = 0;
-      var iv = setInterval(function () {
-        n++;
-        if (window.CMS && typeof window.CMS.registerEventListener === 'function') { clearInterval(iv); fn(); }
-        else if (n > 100) clearInterval(iv);
-      }, 200);
-    }
-
-    onCMSReady(function () {
-      /* ---------- 1) preSave: auto-fill solo de vacíos ---------- */
-      try {
-        window.CMS.registerEventListener({
-          name: 'preSave',
-          handler: async function (payload) {
-            try {
-              var entry = payload.entry;
-              if (!entry || entry.get('collection') !== 'usados') return entry;
-              var data = entry.get('data');
-              var get = function (k) { var v = data.get(k); return (v === undefined || v === null) ? '' : String(v); };
-              var set = function (k, v) { data = data.set(k, v); };
-
-              // ID único nb-YYYY-XXX (calculado desde el JSON público ya publicado)
-              if (!get('id').trim()) {
-                var year = String(new Date().getFullYear());
-                var next = 1;
-                try {
-                  var r = await fetch('/src/data/usados.json', { cache: 'no-store' });
-                  if (r.ok) {
-                    var arr = await r.json();
-                    var max = 0;
-                    (arr || []).forEach(function (it) {
-                      var m = String((it && it.id) || '').match(/^nb-(\d{4})-(\d{3})$/);
-                      if (m && m[1] === year) max = Math.max(max, parseInt(m[2], 10));
-                    });
-                    next = max + 1;
-                  }
-                } catch (e) { /* sin red: arranca en 001 */ }
-                set('id', 'nb-' + year + '-' + String(next).padStart(3, '0'));
-              }
-              var titulo = get('titulo').trim();
-              var marca = get('marca').trim();
-              var modelo = get('modelo').trim();
-              var equipo = titulo || ((marca + ' ' + modelo).trim());
-              if (!get('whatsapp_msg').trim() && equipo) set('whatsapp_msg', waText(equipo));
-              if (!get('resumen').trim()) set('resumen', WA_RESUMEN);
-              if (!get('condicion_detalle').trim()) set('condicion_detalle', WA_CONDICION);
-              if (!get('fecha_ingreso').trim()) set('fecha_ingreso', todayISO());
-
-              return entry.set('data', data);
-            } catch (e) { return payload.entry; }
-          }
-        });
-      } catch (e) { /* CMS sin soporte preSave: el botón sigue funcionando */ }
-
-      /* ---------- 2) Botón flotante Autocompletar ---------- */
+    /* ---------- Botón flotante Autocompletar ---------- */
       var PANEL_ID = 'hdd-autofill-panel';
       function isUsadosEditor() {
         var h = String(window.location.hash || '');
@@ -223,6 +160,7 @@
         panel.style.cssText = 'position:fixed;right:14px;bottom:14px;z-index:9999;max-width:320px;background:#0b1526;border:1px solid rgba(56,189,248,.4);border-radius:12px;padding:12px;box-shadow:0 10px 30px rgba(0,0,0,.5);font-family:system-ui,sans-serif;';
         panel.innerHTML = '<input id="hdd-autofill-q" placeholder="Buscar modelo: ThinkPad X280, HP 840 G6…" style="width:100%;box-sizing:border-box;background:#060d1d;border:1px solid rgba(56,189,248,.35);color:#e8eefc;border-radius:9px;padding:10px;font-size:12.5px;outline:none;margin-bottom:8px;">'
           + '<button id="hdd-autofill-btn" style="width:100%;background:#25d366;color:#04120a;font-weight:800;border:0;border-radius:9px;padding:11px;cursor:pointer;font-size:13px;">🔎 Autocompletar Specs</button>'
+          + '<button id="hdd-autofill-genid" style="width:100%;margin-top:8px;background:transparent;color:#38bdf8;font-weight:700;border:1px solid rgba(56,189,248,.4);border-radius:9px;padding:9px;cursor:pointer;font-size:12.5px;">🆔 Generar ID único</button>'
           + '<div id="hdd-autofill-status" style="margin-top:8px;font-size:11.5px;line-height:1.45;color:#9fb3d9;">Escribe el modelo y pulsa el botón (o deja vacío para usar Marca+Modelo del formulario).</div>';
         document.body.appendChild(panel);
         var st = panel.querySelector('#hdd-autofill-status');
@@ -230,11 +168,36 @@
         function run() { autocomplete(function (m) { st.textContent = m; }, qi ? qi.value : ''); }
         panel.querySelector('#hdd-autofill-btn').addEventListener('click', run);
         if (qi) qi.addEventListener('keydown', function (ev) { if (ev.key === 'Enter') { ev.preventDefault(); run(); } });
+        var gb = panel.querySelector('#hdd-autofill-genid');
+        if (gb) gb.addEventListener('click', function () { genId(function (m) { st.textContent = m; }); });
       }
       window.addEventListener('hashchange', ensurePanel);
       setInterval(ensurePanel, 1500);
       ensurePanel();
-    });
+
+      /* ---------- Generar ID nb-YYYY-XXX (solo DOM, no toca el guardado) ---------- */
+      async function genId(status) {
+        try {
+          if (readVal('ID único')) { status('ID ya existe, no se toca.'); return; }
+          var year = String(new Date().getFullYear());
+          var next = 1;
+          try {
+            var r = await fetch('/src/data/usados.json', { cache: 'no-store' });
+            if (r.ok) {
+              var arr = await r.json();
+              var max = 0;
+              (arr || []).forEach(function (it) {
+                var m = String((it && it.id) || '').match(/^nb-(\d{4})-(\d{3})$/);
+                if (m && m[1] === year) max = Math.max(max, parseInt(m[2], 10));
+              });
+              next = max + 1;
+            }
+          } catch (e) {}
+          var id = 'nb-' + year + '-' + String(next).padStart(3, '0');
+          if (writeVal('ID único', id)) status('✅ ID generado: ' + id);
+          else status('❌ No se encontró el campo ID único.');
+        } catch (e) { status('❌ Error generando ID.'); }
+      }
   })();
   </script>
 </body>
