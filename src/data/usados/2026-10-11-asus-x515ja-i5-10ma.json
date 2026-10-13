@@ -23,7 +23,7 @@
   "disponible": true,
   "whatsapp_msg": "Hola Alejandro, estoy interesado en el equipo Asus i5-10ma Gen, quisiera mas información.",
   "etiqueta": "Seminuevo",
-  "precio_nosotros": 280000,
+  "precio_nosotros": 300000,
   "titulo": "Asus X515JA - Plateado",
   "id": "nb-2024-004",
   "marca": "Asus",
@@ -37,7 +37,7 @@
       "Jack audio 3.5 mm"
     ],
     "bateria_salud": "70%",
-    "procesador": "Intel Core i5-1035G1",
+    "procesador": "Intel Core i5-10ma 4 Núcleos ",
     "gpu": "Intel UHD Graphics",
     "so_actual": "Windows 11",
     "peso": "1.80 Kg",
