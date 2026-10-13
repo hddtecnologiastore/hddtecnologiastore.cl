@@ -42,7 +42,7 @@ a{color:inherit}
 /* hero */
 .hero{position:relative;z-index:1;padding:70px 0 30px;overflow:hidden}
 .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
-.badge{display:inline-flex;align-items:center;gap:8px;font-family:var(--d);font-size:11px;letter-spacing:1.5px;color:var(--acc);border:1px solid var(--line);background:rgba(56,189,248,.07);padding:8px 14px;border-radius:99px;margin-bottom:18px}
+.badge{display:inline-flex;align-items:center;gap:8px;font-family:var(--d);font-size:11px;letter-spacing:1.5px;color:var(--acc);border:1px solid var(--line);background:rgba(56,189,248,.07);padding:8px 14px;border-radius:99px;margin-bottom:18px;max-width:100%;flex-wrap:wrap;justify-content:center;line-height:1.7;overflow-wrap:anywhere}
 .dot{width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 10px var(--ok);animation:blink 1.6s infinite}
 @keyframes blink{50%{opacity:.35}}
 h1{font-family:var(--d);font-size:clamp(30px,4.6vw,54px);line-height:1.08;margin-bottom:16px}
