@@ -1,80 +1,98 @@
 {
-  "resumen": "Notebook corporativo Lenovo ThinkPad X280 ultraliviano y resistente. Excelente rendimiento diario para trabajo o estudio con procesador Intel Core i5 y disco sólido rápido.",
-  "condicion_detalle": "Equipo ultraliviano de gama empresarial en excelentes condiciones físicas. Carcasa robusta y teclado impecable. Ideal para oficina, estudiantes, punto de venta o movilidad profesional. Funcionamiento rápido gracias a su almacenamiento SSD NVMe.",
-  "estado": "Excelente",
-  "modelo": "X280",
-  "software_recomendado": [
-    {
-      "nombre": "Microsoft Office / LibreOffice",
-      "categoria": "Oficina",
-      "por_que": "Indispensable para tareas de oficina, redacción de documentos, planillas de cálculo y estudio inmediato."
-    },
-    {
-      "nombre": "Autocad",
-      "categoria": "Diseño",
-      "por_que": "Cumple con los requisitos para trabajarlo sin problema."
-    }
-  ],
-  "precio_mercado": 350000,
-  "slug": "Thinkpad-X280-i5-7ma",
-  "fotos": [
-    {
-      "url": "https://res.cloudinary.com/qhcbzphb/image/upload/v1791749920/WhatsApp_Image_2026-10-11_at_5.15.01_PM.jpg"
-    },
-    {
-      "url": "https://res.cloudinary.com/qhcbzphb/image/upload/v1791744874/Gemini_Generated_Image_m11yzdm11yzdm11y.jpg"
-    },
-    {
-      "url": "https://res.cloudinary.com/qhcbzphb/image/upload/v1791744670/WhatsApp_Image_2026-10-11_at_3.46.43_PM.jpg"
-    },
-    {
-      "url": "https://res.cloudinary.com/qhcbzphb/image/upload/v1791744670/WhatsApp_Image_2026-10-11_at_3.46.42_PM_2.jpg"
-    },
-    {
-      "url": "https://res.cloudinary.com/qhcbzphb/image/upload/v1791744670/WhatsApp_Image_2026-10-11_at_3.46.42_PM_1.jpg"
-    },
-    {
-      "url": "https://res.cloudinary.com/qhcbzphb/image/upload/v1791744670/WhatsApp_Image_2026-10-11_at_3.46.42_PM.jpg"
-    },
-    {
-      "url": "https://res.cloudinary.com/qhcbzphb/image/upload/v1791744670/WhatsApp_Image_2026-10-11_at_3.46.43_PM_1.jpg"
-    },
-    {
-      "url": "https://res.cloudinary.com/qhcbzphb/image/upload/v1791744670/WhatsApp_Image_2026-10-11_at_3.46.43_PM_2.jpg"
-    }
-  ],
-  "fecha_ingreso": "2026-10-10",
-  "disponible": true,
-  "whatsapp_msg": "Hola, me interesa el Lenovo ThinkPad X280 (i5 / 8GB RAM / 256GB SSD) publicado en la tienda. ¿Está disponible para retiro o despacho?",
-  "etiqueta": "Seminuevo",
-  "precio_nosotros": 215000,
-  "titulo": "Thinkpad X280 12.5\" - Negro",
-  "id": "nb-2024-001",
-  "marca": "Lenovo",
-  "programas_incluidos": [
-    "Office",
-    "Malwarebytes",
-    "AnyDesk",
-    "Adobe PDF"
-  ],
-  "especificaciones": {
-    "puertos": [
-      "1x USB-C",
-      "1x USB-C Thunderbolt 3",
-      "2x USB 3.1 Gen 1",
-      "1x HDMI",
-      "Combo audio 3.5mm",
-      "Lector MicroSD"
-    ],
-    "bateria_salud": "80%",
-    "procesador": "i5-7200U 2.50Ghz",
-    "gpu": "Intel HD Graphics 620 Integrada",
-    "so_actual": "Windows 10",
-    "peso": "1.13 kg",
-    "almacenamiento": "256 Gb M.2 NVMe",
-    "pantalla": "12.5\" HD",
-    "bateria_ciclos": 829,
-    "ram": "8Gb RAM DDR4"
+  "partial": false,
+  "path": "src/data/usados/2026-10-10-thinkpad-x280-12-5-negro.json",
+  "meta": {
+    "path": "src/data/usados/2026-10-10-thinkpad-x280-12-5-negro.json"
   },
-  "año": 2019
+  "isModification": null,
+  "raw": "{\n  \"resumen\": \"Notebook corporativo Lenovo ThinkPad X280 ultraliviano y resistente. Excelente rendimiento diario para trabajo o estudio con procesador Intel Core i5 y disco sólido rápido.\",\n  \"condicion_detalle\": \"Equipo ultraliviano de gama empresarial en excelentes condiciones físicas. Carcasa robusta y teclado impecable. Ideal para oficina, estudiantes, punto de venta o movilidad profesional. Funcionamiento rápido gracias a su almacenamiento SSD NVMe.\",\n  \"estado\": \"Excelente\",\n  \"modelo\": \"X280\",\n  \"software_recomendado\": [\n    {\n      \"nombre\": \"Microsoft Office / LibreOffice\",\n      \"categoria\": \"Oficina\",\n      \"por_que\": \"Indispensable para tareas de oficina, redacción de documentos, planillas de cálculo y estudio inmediato.\"\n    },\n    {\n      \"nombre\": \"Autocad\",\n      \"categoria\": \"Diseño\",\n      \"por_que\": \"Cumple con los requisitos para trabajarlo sin problema.\"\n    }\n  ],\n  \"precio_mercado\": 350000,\n  \"slug\": \"Thinkpad-X280-i5-7ma\",\n  \"fotos\": [\n    {\n      \"url\": \"https://res.cloudinary.com/qhcbzphb/image/upload/v1791749920/WhatsApp_Image_2026-10-11_at_5.15.01_PM.jpg\"\n    },\n    {\n      \"url\": \"https://res.cloudinary.com/qhcbzphb/image/upload/v1791744874/Gemini_Generated_Image_m11yzdm11yzdm11y.jpg\"\n    },\n    {\n      \"url\": \"https://res.cloudinary.com/qhcbzphb/image/upload/v1791744670/WhatsApp_Image_2026-10-11_at_3.46.43_PM.jpg\"\n    },\n    {\n      \"url\": \"https://res.cloudinary.com/qhcbzphb/image/upload/v1791744670/WhatsApp_Image_2026-10-11_at_3.46.42_PM_2.jpg\"\n    },\n    {\n      \"url\": \"https://res.cloudinary.com/qhcbzphb/image/upload/v1791744670/WhatsApp_Image_2026-10-11_at_3.46.42_PM_1.jpg\"\n    },\n    {\n      \"url\": \"https://res.cloudinary.com/qhcbzphb/image/upload/v1791744670/WhatsApp_Image_2026-10-11_at_3.46.42_PM.jpg\"\n    },\n    {\n      \"url\": \"https://res.cloudinary.com/qhcbzphb/image/upload/v1791744670/WhatsApp_Image_2026-10-11_at_3.46.43_PM_1.jpg\"\n    },\n    {\n      \"url\": \"https://res.cloudinary.com/qhcbzphb/image/upload/v1791744670/WhatsApp_Image_2026-10-11_at_3.46.43_PM_2.jpg\"\n    }\n  ],\n  \"fecha_ingreso\": \"2026-10-10\",\n  \"disponible\": true,\n  \"whatsapp_msg\": \"Hola, me interesa el Lenovo ThinkPad X280 (i5 / 8GB RAM / 256GB SSD) publicado en la tienda. ¿Está disponible para retiro o despacho?\",\n  \"etiqueta\": \"Seminuevo\",\n  \"precio_nosotros\": 215000,\n  \"titulo\": \"Thinkpad X280 12.5\\\" - Negro\",\n  \"id\": \"nb-2024-001\",\n  \"marca\": \"Lenovo\",\n  \"programas_incluidos\": [\n    \"Office\",\n    \"Malwarebytes\",\n    \"AnyDesk\",\n    \"Adobe PDF\"\n  ],\n  \"especificaciones\": {\n    \"puertos\": [\n      \"1x USB-C\",\n      \"1x USB-C Thunderbolt 3\",\n      \"2x USB 3.1 Gen 1\",\n      \"1x HDMI\",\n      \"Combo audio 3.5mm\",\n      \"Lector MicroSD\"\n    ],\n    \"bateria_salud\": \"80%\",\n    \"procesador\": \"i5-7200U 2.50Ghz\",\n    \"gpu\": \"Intel HD Graphics 620 Integrada\",\n    \"so_actual\": \"Windows 10\",\n    \"peso\": \"1.13 kg\",\n    \"almacenamiento\": \"256 Gb M.2 NVMe\",\n    \"pantalla\": \"12.5\\\" HD\",\n    \"bateria_ciclos\": 829,\n    \"ram\": \"8Gb RAM DDR4\"\n  },\n  \"año\": 2019\n}\n",
+  "data": {
+    "resumen": "Notebook corporativo Lenovo ThinkPad X280 ultraliviano y resistente. Excelente rendimiento diario para trabajo o estudio con procesador Intel Core i5 y disco sólido rápido.",
+    "condicion_detalle": "Equipo ultraliviano de gama empresarial en excelentes condiciones físicas. Carcasa robusta y teclado impecable. Ideal para oficina, estudiantes, punto de venta o movilidad profesional. Funcionamiento rápido gracias a su almacenamiento SSD NVMe.",
+    "estado": "Excelente",
+    "modelo": "X280",
+    "software_recomendado": [
+      {
+        "nombre": "Microsoft Office / LibreOffice",
+        "categoria": "Oficina",
+        "por_que": "Indispensable para tareas de oficina, redacción de documentos, planillas de cálculo y estudio inmediato."
+      },
+      {
+        "nombre": "Autocad",
+        "categoria": "Diseño",
+        "por_que": "Cumple con los requisitos para trabajarlo sin problema."
+      }
+    ],
+    "precio_mercado": 350000,
+    "slug": "Thinkpad-X280-i5-7ma",
+    "fotos": [
+      {
+        "url": "https://res.cloudinary.com/qhcbzphb/image/upload/v1791749920/WhatsApp_Image_2026-10-11_at_5.15.01_PM.jpg"
+      },
+      {
+        "url": "https://res.cloudinary.com/qhcbzphb/image/upload/v1791744874/Gemini_Generated_Image_m11yzdm11yzdm11y.jpg"
+      },
+      {
+        "url": "https://res.cloudinary.com/qhcbzphb/image/upload/v1791744670/WhatsApp_Image_2026-10-11_at_3.46.43_PM.jpg"
+      },
+      {
+        "url": "https://res.cloudinary.com/qhcbzphb/image/upload/v1791744670/WhatsApp_Image_2026-10-11_at_3.46.42_PM_2.jpg"
+      },
+      {
+        "url": "https://res.cloudinary.com/qhcbzphb/image/upload/v1791744670/WhatsApp_Image_2026-10-11_at_3.46.42_PM_1.jpg"
+      },
+      {
+        "url": "https://res.cloudinary.com/qhcbzphb/image/upload/v1791744670/WhatsApp_Image_2026-10-11_at_3.46.42_PM.jpg"
+      },
+      {
+        "url": "https://res.cloudinary.com/qhcbzphb/image/upload/v1791744670/WhatsApp_Image_2026-10-11_at_3.46.43_PM_1.jpg"
+      },
+      {
+        "url": "https://res.cloudinary.com/qhcbzphb/image/upload/v1791744670/WhatsApp_Image_2026-10-11_at_3.46.43_PM_2.jpg"
+      }
+    ],
+    "fecha_ingreso": "2026-10-10",
+    "disponible": true,
+    "whatsapp_msg": "Hola, me interesa el Lenovo ThinkPad X280 (i5 / 8GB RAM / 256GB SSD) publicado en la tienda. ¿Está disponible para retiro o despacho?",
+    "etiqueta": "Seminuevo",
+    "precio_nosotros": 215000,
+    "titulo": "Thinkpad X280 12.5\" - Negro",
+    "id": "nb-2024-001",
+    "marca": "Lenovo",
+    "programas_incluidos": [
+      "Office",
+      "Malwarebytes",
+      "AnyDesk",
+      "Adobe PDF"
+    ],
+    "especificaciones": {
+      "puertos": [
+        "1x USB-C",
+        "1x USB-C Thunderbolt 3",
+        "2x USB 3.1 Gen 1",
+        "1x HDMI",
+        "Combo audio 3.5mm",
+        "Lector MicroSD"
+      ],
+      "bateria_salud": "80%",
+      "procesador": "i5-7200U 2.50Ghz",
+      "gpu": "Intel HD Graphics 620 Integrada",
+      "so_actual": "Windows 10",
+      "peso": "1.13 kg",
+      "almacenamiento": "256 Gb M.2 NVMe",
+      "pantalla": "12.5\" HD",
+      "bateria_ciclos": 829,
+      "ram": "8Gb RAM DDR4 (soldados)"
+    },
+    "año": 2019
+  },
+  "author": "",
+  "slug": "2026-10-10-thinkpad-x280-12-5-negro",
+  "newRecord": false,
+  "status": "",
+  "mediaFiles": [],
+  "label": null,
+  "updatedOn": "",
+  "i18n": {},
+  "collection": "usados"
 }
