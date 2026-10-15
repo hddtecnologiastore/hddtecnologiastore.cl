@@ -22,7 +22,7 @@ class CarruselUsados extends HTMLElement {
     ].filter(Boolean);
     return `
       <article class="usado-card" role="listitem">
-        <img src="${img}" alt="${u.titulo}" loading="lazy" style="height:220px" />
+        <img src="${img}" alt="${u.titulo}" loading="lazy" style="height:220px;object-fit:contain;background:var(--card)" />
         <div class="card-body">
           <span class="etiqueta">${u.etiqueta}</span>
           <h3 class="titulo-nb">${u.titulo}</h3>
