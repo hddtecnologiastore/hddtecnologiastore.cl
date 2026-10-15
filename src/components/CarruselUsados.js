@@ -31,6 +31,7 @@ class CarruselUsados extends HTMLElement {
             <span class="precio-nosotros">$${u.precio_nosotros.toLocaleString()}</span>
             ${ahorro > 0 ? `<span class="ahorro">-${ahorro}%</span>` : ''}
           </p>
+          <p class="medio-pago" style="font-size:.66rem;color:#94a3b8;margin:.05rem 0 .5rem">Precio por transferencia · Tarjeta +5%</p>
           ${specs.length ? `<ul class="specs-mini">${specs.map(s => `<li>${s}</li>`).join('')}</ul>` : ''}
           <a class="btn-wa" href="https://wa.me/56961991725?text=${encodeURIComponent(u.whatsapp_msg)}" target="_blank">
             Consultar por WhatsApp

@@ -88,7 +88,7 @@
       <div class="glass" style="padding:1.5rem"><div style="font-size:2rem;margin-bottom:.5rem">🛡️</div><b style="display:block;color:#fff">Garantía real</b><small style="color:var(--mut)">90 días en todo el equipo</small></div>
       <div class="glass" style="padding:1.5rem"><div style="font-size:2rem;margin-bottom:.5rem">✅</div><b style="display:block;color:#fff">Probado y verificado</b><small style="color:var(--mut)">Diagnóstico completo antes de vender</small></div>
       <div class="glass" style="padding:1.5rem"><div style="font-size:2rem;margin-bottom:.5rem">🚚</div><b style="display:block;color:#fff">Despacho disponible</b><small style="color:var(--mut)">O retiro en nuestro local Ñuñoa</small></div>
-      <div class="glass" style="padding:1.5rem"><div style="font-size:2rem;margin-bottom:.5rem">💰</div><b style="display:block;color:#fff">Pago flexible</b><small style="color:var(--mut)">Efectivo, transferencia o débito</small></div>
+      <div class="glass" style="padding:1.5rem"><div style="font-size:2rem;margin-bottom:.5rem">💰</div><b style="display:block;color:#fff">Pago flexible</b><small style="color:var(--mut)">Transferencia, efectivo o débito · Tarjeta crédito +5%</small></div>
     </div>
   </div>
 </section>
@@ -145,6 +145,7 @@
           <span style="color:#4ade80;font-weight:800;font-size:1.4rem">$${u.precio_nosotros.toLocaleString()}</span>
           ${ahorro > 0 ? `<span style="background:rgba(74,222,128,.15);color:#4ade80;font-size:.7rem;padding:.15rem .5rem;border-radius:999px;font-weight:700">-${ahorro}%</span>` : ''}
         </div>
+        <div style="font-size:.68rem;color:#94a3b8;letter-spacing:.2px;margin-top:-.15rem">Precio por transferencia · Tarjeta +5%</div>
         ${specs.length ? `<ul style="list-style:none;padding:0;margin:.3rem 0;display:flex;flex-direction:column;gap:.2rem">${specs.map(s => `<li style="font-size:.82rem;color:#94a3b8;padding-left:1rem;position:relative"><span style="position:absolute;left:0;color:#38bdf8">▸</span>${esc(s)}</li>`).join('')}</ul>` : ''}
         ${u.estado ? `<small style="color:var(--mut);font-size:.8rem">Estado: ${esc(u.estado)}</small>` : ''}
         <div style="flex:1"></div>
