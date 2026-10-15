@@ -88,7 +88,7 @@
       <div class="glass" style="padding:1.5rem"><div style="font-size:2rem;margin-bottom:.5rem">🛡️</div><b style="display:block;color:#fff">Garantía real</b><small style="color:var(--mut)">90 días en todo el equipo</small></div>
       <div class="glass" style="padding:1.5rem"><div style="font-size:2rem;margin-bottom:.5rem">✅</div><b style="display:block;color:#fff">Probado y verificado</b><small style="color:var(--mut)">Diagnóstico completo antes de vender</small></div>
       <div class="glass" style="padding:1.5rem"><div style="font-size:2rem;margin-bottom:.5rem">🚚</div><b style="display:block;color:#fff">Despacho disponible</b><small style="color:var(--mut)">O retiro en nuestro local Ñuñoa</small></div>
-      <div class="glass" style="padding:1.5rem"><div style="font-size:2rem;margin-bottom:.5rem">💰</div><b style="display:block;color:#fff">Pago flexible</b><small style="color:var(--mut)">Transferencia, efectivo o débito · Tarjeta crédito +5%</small></div>
+      <div class="glass" style="padding:1.5rem"><div style="font-size:2rem;margin-bottom:.5rem">💰</div><b style="display:block;color:#fff">Pago flexible</b><small style="color:var(--mut)">Transferencia o efectivo · Debito/Credito Costo adicional del 5%</small></div>
     </div>
   </div>
 </section>
@@ -136,7 +136,7 @@
     const img = (Array.isArray(foto0) ? foto0[0] : foto0) || '/img/placeholder-notebook.jpg';
     return `
     <article class="usado-card reveal" style="background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column">
-      <img src="${img}" alt="${esc(u.titulo)}" loading="lazy" style="width:100%;height:200px;object-fit:cover">
+      <img src="${img}" alt="${esc(u.titulo)}" loading="lazy" style="width:100%;height:260px;object-fit:cover">
       <div style="padding:1.2rem;display:flex;flex-direction:column;gap:.5rem;flex:1">
         <span style="display:inline-block;background:rgba(56,189,248,.12);color:#38bdf8;font-size:.7rem;font-weight:700;padding:.25rem .6rem;border-radius:999px;align-self:flex-start;letter-spacing:1px">${esc((u.etiqueta||'').toUpperCase())}</span>
         <h3 style="font-weight:700;font-size:1.1rem;color:#fff;margin:.2rem 0">${esc(u.titulo)}</h3>
@@ -145,7 +145,8 @@
           <span style="color:#4ade80;font-weight:800;font-size:1.4rem">$${u.precio_nosotros.toLocaleString()}</span>
           ${ahorro > 0 ? `<span style="background:rgba(74,222,128,.15);color:#4ade80;font-size:.7rem;padding:.15rem .5rem;border-radius:999px;font-weight:700">-${ahorro}%</span>` : ''}
         </div>
-        <div style="font-size:.68rem;color:#94a3b8;letter-spacing:.2px;margin-top:-.15rem">Precio por transferencia · Tarjeta +5%</div>
+        <div style="font-size:.68rem;color:#94a3b8;letter-spacing:.2px;margin-top:-.15rem">Precio por transferencia</div>
+        <div style="font-size:.68rem;color:#fbbf24;letter-spacing:.2px;font-weight:600">Debito/Credito Costo adicional del 5%</div>
         ${specs.length ? `<ul style="list-style:none;padding:0;margin:.3rem 0;display:flex;flex-direction:column;gap:.2rem">${specs.map(s => `<li style="font-size:.82rem;color:#94a3b8;padding-left:1rem;position:relative"><span style="position:absolute;left:0;color:#38bdf8">▸</span>${esc(s)}</li>`).join('')}</ul>` : ''}
         ${u.estado ? `<small style="color:var(--mut);font-size:.8rem">Estado: ${esc(u.estado)}</small>` : ''}
         <div style="flex:1"></div>

@@ -22,7 +22,7 @@ class CarruselUsados extends HTMLElement {
     ].filter(Boolean);
     return `
       <article class="usado-card" role="listitem">
-        <img src="${img}" alt="${u.titulo}" loading="lazy" />
+        <img src="${img}" alt="${u.titulo}" loading="lazy" style="height:220px" />
         <div class="card-body">
           <span class="etiqueta">${u.etiqueta}</span>
           <h3 class="titulo-nb">${u.titulo}</h3>
@@ -31,7 +31,8 @@ class CarruselUsados extends HTMLElement {
             <span class="precio-nosotros">$${u.precio_nosotros.toLocaleString()}</span>
             ${ahorro > 0 ? `<span class="ahorro">-${ahorro}%</span>` : ''}
           </p>
-          <p class="medio-pago" style="font-size:.66rem;color:#94a3b8;margin:.05rem 0 .5rem">Precio por transferencia · Tarjeta +5%</p>
+          <p class="medio-pago" style="font-size:.66rem;color:#94a3b8;margin:.05rem 0 0">Precio por transferencia</p>
+          <p class="medio-pago" style="font-size:.66rem;color:#fbbf24;font-weight:600;margin:0 0 .5rem">Debito/Credito Costo adicional del 5%</p>
           ${specs.length ? `<ul class="specs-mini">${specs.map(s => `<li>${s}</li>`).join('')}</ul>` : ''}
           <a class="btn-wa" href="https://wa.me/56961991725?text=${encodeURIComponent(u.whatsapp_msg)}" target="_blank">
             Consultar por WhatsApp
