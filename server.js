@@ -13,6 +13,9 @@ const server = http.createServer((req, res) => {
   try {
     const url = new URL(req.url, "http://" + req.headers.host);
     const pathname = decodeURIComponent(url.pathname);
+    // /admin necesita COOP "same-origin-allow-popups": con "same-origin" Chrome corta
+    // el window.opener del popup de login de Cloudinary y el Media Library se traba.
+    const coop = pathname.startsWith("/admin/") ? "same-origin-allow-popups" : "same-origin";
     const file = pathname === "/" ? "index.html" : pathname.slice(1).split("?")[0];
     const fp = path.normalize(path.join(ROOT, file));
     if (!fp.startsWith(ROOT)) { res.writeHead(403); res.end("Forbidden"); return; }
@@ -24,7 +27,7 @@ const server = http.createServer((req, res) => {
         "x-content-type-options": "nosniff",
         "x-frame-options": "DENY",
         "referrer-policy": "strict-origin-when-cross-origin",
-        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-opener-policy": coop,
         "cross-origin-resource-policy": "same-origin",
         "permissions-policy": "camera=(), microphone=(), geolocation=()",
         "cache-control": ext === ".html" ? "no-cache" : "public, max-age=3600"

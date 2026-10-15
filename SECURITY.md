@@ -13,7 +13,11 @@ Postura segura por defecto. Sitio estático en Netlify + Netlify Identity.
 - HSTS `max-age=31536000`, `X-Frame-Options: DENY`, `X-Content-Type-Options: nosniff`
 - `Content-Security-Policy` (default-src self; frame-ancestors none; form-action restringido)
 - `Referrer-Policy`, `Permissions-Policy`, COOP/CORP same-origin
-- `/admin/*` extra: `Cache-Control: no-store`, `Referrer-Policy: no-referrer`
+- `/admin/*` extra: `Cache-Control: no-store`, `Referrer-Policy: no-referrer`,
+  **`Cross-Origin-Opener-Policy: same-origin-allow-popups`** (excepción obligatoria:
+  con `same-origin`, Chrome corta `window.opener` de la ventana de login del Media
+  Library de Cloudinary y el flujo se colgaba en "Redirecting to Media Library...".
+  Validado 15-10-2026 con prueba controlada. El resto del sitio mantiene `same-origin`.)
 
 ### Archivos bloqueados (404 forzado con `force = true`)
 `server.js`, `package.json`, `build-usados.cjs`, `vite.config.js`, `postcss.config.js`,
