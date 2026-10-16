@@ -193,17 +193,6 @@ box.addEventListener("touchend",function(e){var dx=e.changedTouches[0].clientX-s
 document.addEventListener("keydown",function(e){if(e.key!=="ArrowRight"&&e.key!=="ArrowLeft")return;var r=box?box.getBoundingClientRect():null;if(r&&r.top<innerHeight&&r.bottom>0){go(idx+(e.key==="ArrowRight"?1:-1));restart()}});})();
 /* Hero mini carousel: 6 reseñas en la ventana en vivo */
 (function(){var tr=$("#heroRevTrack");if(!tr||!window.HDD_REVIEWS)return;var dots=$("#heroRevDots");var idx=0,timer=null,DUR=2800;tr.innerHTML=window.HDD_REVIEWS.map(function(r){return '<div style="min-width:100%;min-height:80px;padding:14px;display:flex;gap:10px;align-items:center;box-sizing:border-box;background:rgba(56,189,248,.04);border-bottom:1px solid rgba(96,165,250,.18)"><span class="rev-av" style="width:36px;height:36px;font-size:14px;flex-shrink:0">'+esc(r.n.charAt(0))+'</span><span style="flex:1"><b style="font-size:12px;display:block;color:#e8eefc">'+esc(r.n)+'</b><small style="font-size:11px;color:var(--mut);line-height:1.3;display:block">“'+esc(r.t)+'”</small><small style="font-size:10px;color:var(--gold)">★★★★★ · '+esc(r.d)+'</small></span></div>'}).join("");var total=window.HDD_REVIEWS.length;function paint(){tr.style.transform="translateX(-"+(idx*100)+"%)";if(dots){var ds=dots.children;for(var i=0;i<ds.length;i++)ds[i].style.background=i===idx?"var(--acc)":"rgba(255,255,255,.25)"}}function buildDots(){if(!dots)return;dots.innerHTML="";for(var i=0;i<total;i++){var d=document.createElement("button");d.style.cssText="width:6px;height:6px;border-radius:50%;border:0;padding:0;cursor:pointer;background:rgba(255,255,255,.25)";(function(k){d.addEventListener("click",function(){idx=k;paint();restart()})})(i);dots.appendChild(d)}}function go(n){idx=((n%total)+total)%total;paint()}function restart(){stop();if(!reduced)timer=setInterval(function(){go(idx+1)},DUR)}function stop(){if(timer){clearInterval(timer);timer=null}}buildDots();paint();restart();var card=$("#tiltCard");if(card){card.addEventListener("mouseenter",stop);card.addEventListener("mouseleave",restart)}})();
-/* Promo float */
-(function(){
-  var pf=document.getElementById("promoFloat");
-  if(!pf)return;
-  setTimeout(function(){pf.classList.add("show")},1500);
-  function hide(){pf.classList.remove("show");pf.classList.add("hide")}
-  var closeBtn=document.getElementById("promoClose");
-  var noBtn=document.getElementById("promoNo");
-  if(closeBtn)closeBtn.addEventListener("click",hide);
-  if(noBtn)noBtn.addEventListener("click",hide);
-})();
 /* Google Ads conversion: track WhatsApp clicks as GA4 events */
 window.ADS_CONV_ID=""; /* se rellena con el ID real de Ads: AW-XXXXXXXXX/etiqueta */
 document.addEventListener("click",function(e){
