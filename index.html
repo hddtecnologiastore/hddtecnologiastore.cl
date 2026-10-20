@@ -24,7 +24,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=typo2">
+<link rel="stylesheet" href="styles.css?v=svc1">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-911W1R6JG0"></script>
 <script>
@@ -43,12 +43,6 @@
 #servicios{padding:48px 0 40px}
 #servicios .sec-hd{margin-bottom:1.2rem}
 #servicios .sec-hd h2{font-size:clamp(1.4rem,2.6vw,1.75rem)}
-#servicios .grid6{gap:10px}
-#servicios .svc{padding:18px 14px;max-width:340px}
-#servicios .svc .ic{width:38px!important;height:38px!important;margin-bottom:10px}
-#servicios .svc h3{font-size:14px;margin-bottom:6px}
-#servicios .svc p{font-size:12px;margin-bottom:10px;line-height:1.45}
-#servicios .svc-link{font-size:12px}
 </style>
 <script type="application/ld+json">
 {
@@ -168,13 +162,84 @@
 <!-- SERVICIOS -->
 <section class="sec" id="servicios">
   <div class="wrap">
-    <div class="sec-hd" data-reveal><p class="kick" data-i18n="services.kick">SERVICIOS</p><h2 data-i18n="services.title">Tu socio tecnológico <span class="grad">de confianza</span></h2><p class="sub" data-i18n="services.sub">Soluciones completas con diagnóstico honesto y garantía real.</p></div>
-    <div class="grid6">
-      <article class="svc glass hover-glow" data-reveal><div class="ic" style="width:44px;height:44px;border-radius:12px;background:rgba(56,189,248,.12);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--acc)"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8"/><path d="M12 16v4"/></svg></div><h3 data-i18n="services.s1h">Reparación de PCs</h3><p data-i18n="services.s1p">Diagnóstico y reparación de escritorio y laptops de todas las marcas con garantía real.</p><span class="svc-link" data-open="serviceModal" data-svc="Reparación de PCs" data-i18n="services.s1a">Solicitar →</span></article>
-      <article class="svc glass hover-glow" data-reveal><div class="ic" style="width:44px;height:44px;border-radius:12px;background:rgba(56,189,248,.12);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--acc)"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20h8"/><path d="M4 4l8 8"/><path d="M14 4l6 6-8 8-6-6z"/></svg></div><h3 data-i18n="services.s2h">Mantenimiento</h3><p data-i18n="services.s2p">Limpieza profunda, cambio de pasta térmica al procesador y gráfica, y limpieza general del equipo.</p><span class="svc-link" data-open="serviceModal" data-svc="Mantenimiento" data-i18n="services.s2a">Solicitar →</span></article>
-      <article class="svc glass hover-glow biz" data-reveal><div class="ic" style="width:44px;height:44px;border-radius:12px;background:rgba(37,99,235,.18);border:1px solid rgba(37,99,235,.3);display:flex;align-items:center;justify-content:center;color:#93c5fd"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a4 4 0 0 1 8 0v2"/><path d="M12 11v4"/></svg></div><h3 data-i18n="services.s3h">Contrato Mensual para Empresas</h3><p data-i18n="services.s3p">Plan de soporte continuo en software y hardware con cobertura mensual. Atención prioritaria y asistencia remota.</p><span class="svc-link" data-open="bizModal" data-i18n="services.s3a">Cotizar plan →</span></article>
-      <article class="svc glass hover-glow" data-reveal><div class="ic" style="width:44px;height:44px;border-radius:12px;background:rgba(56,189,248,.12);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--acc)"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3 data-i18n="services.s4h">Soporte Técnico</h3><p data-i18n="services.s4p">Atención remota y presencial con instalación de software, respuesta rápida y solución efectiva garantizada.</p><span class="svc-link" data-open="serviceModal" data-svc="Soporte Técnico" data-i18n="services.s4a">Solicitar →</span></article>
-      <article class="svc glass hover-glow" data-reveal><div class="ic" style="width:44px;height:44px;border-radius:12px;background:rgba(56,189,248,.12);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--acc)"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.3-3.3a1 1 0 0 0 0-1.4l-1.6-1.6a1 1 0 0 0-1.4 0z"/><path d="M12 13a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/><path d="M2 12l2 2 3-3"/></svg></div><h3 data-i18n="services.s5h">Reparaciones Físicas</h3><p data-i18n="services.s5p">Reparación de bisagra, pantalla, cambio de teclado, tapas y demás componentes físicos de notebook.</p><span class="svc-link" data-open="serviceModal" data-svc="Reparación física" data-i18n="services.s5a">Solicitar →</span></article>
+    <div class="sec-hd" data-reveal><p class="kick" data-i18n="services.kick">SERVICIOS</p><h2 data-i18n="services.title">Mantenimiento Y Reparación <span class="grad">De Notebooks</span></h2><p class="sub" data-i18n="services.sub">Precios claros desde el inicio, diagnóstico honesto y garantía real en cada trabajo.</p></div>
+
+    <div class="sv2-destacados">
+      <article class="sv2-dest glass hover-glow" data-reveal>
+        <div class="sv2-top">
+          <div class="sv2-ic"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></div>
+          <div class="sv2-price" data-i18n="services.f1price"><small>desde</small>$35.000</div>
+        </div>
+        <h3 data-i18n="services.f1h">Mantención Notebook De Oficina</h3>
+        <p class="pdesc" data-i18n="services.f1p">Para equipos de trabajo y estudio. Recupera el rendimiento y evita el sobrecalentamiento.</p>
+        <ul class="sv2-checks">
+          <li data-i18n="services.f1c1">Limpieza profunda + cambio de pasta térmica</li>
+          <li data-i18n="services.f1c2">Diagnóstico completo del equipo</li>
+          <li data-i18n="services.f1c3">Garantía sobre el trabajo realizado</li>
+        </ul>
+        <span class="sv2-btn primary" data-open="serviceModal" data-svc="Mantención Notebook De Oficina" data-i18n="services.f1btn">Solicitar Mantención →</span>
+      </article>
+
+      <article class="sv2-dest glass sv2-gamer hover-glow" data-reveal>
+        <div class="sv2-top">
+          <div class="sv2-ic"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="11" rx="5"/><path d="M7 11v3M5.5 12.5h3M15.5 12h.01M18 13.5h.01"/></svg></div>
+          <div class="sv2-price" data-i18n="services.f2price"><small>desde</small>$45.000</div>
+        </div>
+        <h3 data-i18n="services.f2h">Mantención Notebook Gamer</h3>
+        <p class="pdesc" data-i18n="services.f2p">Para alto rendimiento: control de temperaturas y estabilidad máxima en gaming y diseño.</p>
+        <ul class="sv2-checks">
+          <li data-i18n="services.f2c1">Pasta térmica premium y control térmico</li>
+          <li data-i18n="services.f2c2">Limpieza de ventiladores y disipadores</li>
+          <li data-i18n="services.f2c3">Optimización de rendimiento</li>
+        </ul>
+        <span class="sv2-btn gold" data-open="serviceModal" data-svc="Mantención Notebook Gamer" data-i18n="services.f2btn">Solicitar Mantención →</span>
+      </article>
+    </div>
+
+    <div class="sv2-rep-hd" data-reveal><h3 data-i18n="services.rtitle">Reparaciones Y Upgrades</h3><span class="sv2-tag" data-i18n="services.rtag">Precio a consultar según modelo</span><i class="sv2-hline"></i></div>
+
+    <div class="sv2-reps">
+      <div class="sv2-rep glass hover-glow" data-reveal data-open="serviceModal" data-svc="Reparación física">
+        <span class="sv2-ic"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M9 20h6M12 17v3M14 8l-4 6"/></svg></span>
+        <h4 data-i18n="services.r1h">Cambio De Pantalla</h4><small data-i18n="services.r1s">Notebooks</small><span class="sv2-link" data-i18n="services.r1a">Consultar →</span>
+      </div>
+      <div class="sv2-rep glass hover-glow" data-reveal data-open="serviceModal" data-svc="Reparación física">
+        <span class="sv2-ic"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5h7v14H4zM13 5h7v14h-7z"/><circle cx="12" cy="12" r="1.6"/></svg></span>
+        <h4 data-i18n="services.r2h">Reparación De Bisagras</h4><small data-i18n="services.r2s">Notebooks</small><span class="sv2-link" data-i18n="services.r2a">Consultar →</span>
+      </div>
+      <div class="sv2-rep glass hover-glow" data-reveal data-open="serviceModal" data-svc="Reparación física">
+        <span class="sv2-ic"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 16l9-9 3 3-9 9H3zM14 5l2-2 3 3-2 2z"/></svg></span>
+        <h4 data-i18n="services.r3h">Cambio De Tapas / Carcasa</h4><small data-i18n="services.r3s">Notebooks</small><span class="sv2-link" data-i18n="services.r3a">Consultar →</span>
+      </div>
+      <div class="sv2-rep glass hover-glow" data-reveal data-open="serviceModal" data-svc="Reparación física">
+        <span class="sv2-ic"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M8 14h8"/></svg></span>
+        <h4 data-i18n="services.r4h">Cambio De Teclados</h4><small data-i18n="services.r4s">Notebooks</small><span class="sv2-link" data-i18n="services.r4a">Consultar →</span>
+      </div>
+      <div class="sv2-rep glass hover-glow" data-reveal data-open="serviceModal" data-svc="Diagnóstico general">
+        <span class="sv2-ic"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3s6 7 6 11a6 6 0 11-12 0c0-4 6-11 6-11z"/></svg></span>
+        <h4 data-i18n="services.r5h">Baño Químico</h4><small data-i18n="services.r5s">Limpieza a fondo</small><span class="sv2-link" data-i18n="services.r5a">Consultar →</span>
+      </div>
+      <div class="sv2-rep glass hover-glow" data-reveal data-open="serviceModal" data-svc="Diagnóstico general">
+        <span class="sv2-ic"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="8" width="17" height="9" rx="2"/><path d="M22 11v3M6 11l2-2M6 11v2"/></svg></span>
+        <h4 data-i18n="services.r6h">Baterías</h4><small data-i18n="services.r6s">Cambio y venta</small><span class="sv2-link" data-i18n="services.r6a">Consultar →</span>
+      </div>
+      <div class="sv2-rep glass hover-glow" data-reveal data-open="serviceModal" data-svc="Diagnóstico general">
+        <span class="sv2-ic"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="5" width="14" height="14" rx="2"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></svg></span>
+        <h4 data-i18n="services.r7h">Upgrade RAM O SSD</h4><small data-i18n="services.r7s">Más velocidad y espacio</small><span class="sv2-link" data-i18n="services.r7a">Consultar →</span>
+      </div>
+      <a class="sv2-rep glass hover-glow sv2-extra" data-reveal href="https://wa.me/56961991725?text=Hola%20Alejandro%2C%20vengo%20de%20la%20web%20y%20no%20veo%20mi%20problema%20en%20los%20servicios" target="_blank" rel="noopener">
+        <span class="sv2-ic"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12a8 8 0 11-3.2-6.4L21 4l-.8 3.4A7.9 7.9 0 0121 12z"/><path d="M8 11h.01M12 11h.01M16 11h.01"/></svg></span>
+        <h4 data-i18n="services.r8h">¿No Ves Tu Problema?</h4><small data-i18n="services.r8s">Cuéntamelo por WhatsApp</small><span class="sv2-link" data-i18n="services.r8a">Escribir →</span>
+      </a>
+    </div>
+
+    <div class="sv2-empresas" data-reveal>
+      <div class="sv2-emp-ic"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a4 4 0 0 1 8 0v2M12 11v4"/></svg></div>
+      <div class="sv2-emp-tx">
+        <h3 data-i18n="services.etitle">Atención A Empresas</h3>
+        <p data-i18n="services.ep">Contrato mensual de soporte en software y hardware, con atención prioritaria. <span class="desde">Planes a consultar según equipos.</span></p>
+      </div>
+      <span class="sv2-btn ghost" data-open="bizModal" data-i18n="services.ebtn">Cotizar Plan →</span>
     </div>
   </div>
 </section>
@@ -262,7 +327,7 @@
   <form id="svcForm" novalidate>
     <label><span data-i18n="modal.svcName">Nombre</span><input id="svcName" maxlength="60" placeholder="Ej: Juan Pérez" autocomplete="name"></label>
     <label><span data-i18n="modal.svcPhone">Teléfono</span><input id="svcPhone" inputmode="numeric" maxlength="9" placeholder="9 dígitos (ej: 912345678)" autocomplete="tel"></label>
-    <label><span data-i18n="modal.svcService">Servicio</span><select id="svcType"><option data-i18n="modal.svcOpt1">Diagnóstico general</option><option data-i18n="modal.svcOpt2">Reparación de PCs</option><option data-i18n="modal.svcOpt3">Mantenimiento</option><option data-i18n="modal.svcOpt4">Soporte Técnico</option><option data-i18n="modal.svcOpt5">Reparación física</option><option data-i18n="modal.svcOpt6">Notebook reacondicionado</option></select></label>
+    <label><span data-i18n="modal.svcService">Servicio</span><select id="svcType"><option value="Diagnóstico general" data-i18n="modal.svcOpt1">Diagnóstico general</option><option value="Reparación de PCs" data-i18n="modal.svcOpt2">Reparación de PCs</option><option value="Mantenimiento" data-i18n="modal.svcOpt3">Mantenimiento</option><option value="Soporte Técnico" data-i18n="modal.svcOpt4">Soporte Técnico</option><option value="Reparación física" data-i18n="modal.svcOpt5">Reparación física</option><option value="Notebook reacondicionado" data-i18n="modal.svcOpt6">Notebook reacondicionado</option><option value="Mantención Notebook De Oficina" data-i18n="modal.svcOpt7">Mantención Notebook De Oficina</option><option value="Mantención Notebook Gamer" data-i18n="modal.svcOpt8">Mantención Notebook Gamer</option></select></label>
     <label><span data-i18n="modal.svcMsg">Describe el problema</span><textarea id="svcMsg" maxlength="300" placeholder="Ej: mi notebook no enciende, solo parpadea el led…"></textarea></label>
     <p style="font-size:11px;color:var(--mut);margin:8px 0 10px" data-i18n="modal.svcLegal">Al enviar aceptas <a href="privacidad.html">privacidad</a> y <a href="terminos.html">términos</a>.</p>
     <p class="err" id="svcErr" hidden></p>
@@ -309,6 +374,6 @@
 
 <script src="/src/components/CarruselUsados.js?v=pago7" defer></script>
 <script src="data.js?v=typo2" defer></script>
-<script src="app.js?v=typo2" defer></script>
+<script src="app.js?v=svc1" defer></script>
 </body>
 </html>
