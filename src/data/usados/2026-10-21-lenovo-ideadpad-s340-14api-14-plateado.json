@@ -1,0 +1,63 @@
+{
+  "resumen": "Notebook revisado y garantizado por HDD Tecnología Store. Rendimiento óptimo, listo para usar con garantía de 90 días.",
+  "condicion_detalle": "Equipo seminuevo/reacondicionado en buenas condiciones estéticas y 100% funcional. Sometido a rigurosas pruebas de diagnóstico en taller (procesador, RAM, SSD y temperaturas). Incluye mantenimiento preventivo completo con cambio de pasta térmica de alto rendimiento y sistema operativo limpio con programas esenciales preinstalados. Listo para trabajar o estudiar con 90 días de garantía.",
+  "estado": "Excelente",
+  "modelo": "81NB",
+  "software_recomendado": [
+    {
+      "nombre": "Office",
+      "categoria": "Oficina",
+      "por_que": "Cuenta con los requisitos básicos para trabajar muchos software del mercado sin problema"
+    },
+    {
+      "nombre": "Diseño y Arquitectura Basica",
+      "categoria": "Diseño",
+      "por_que": "Cuenta con 8gb RAM y buena capacidad de almacenamiento"
+    }
+  ],
+  "precio_mercado": 350000,
+  "slug": "Lenovo Ideadpad ",
+  "fotos": [
+    {
+      "url": [
+        "https://res.cloudinary.com/qhcbzphb/image/upload/v1792614084/WhatsApp_Image_2026-10-21_at_5.19.58_PM.jpg",
+        "https://res.cloudinary.com/qhcbzphb/image/upload/v1792614084/WhatsApp_Image_2026-10-21_at_5.19.58_PM_1.jpg",
+        "https://res.cloudinary.com/qhcbzphb/image/upload/v1792614084/WhatsApp_Image_2026-10-21_at_5.19.58_PM_2.jpg",
+        "https://res.cloudinary.com/qhcbzphb/image/upload/v1792614084/WhatsApp_Image_2026-10-21_at_5.19.59_PM_1.jpg",
+        "https://res.cloudinary.com/qhcbzphb/image/upload/v1792614084/WhatsApp_Image_2026-10-21_at_5.19.59_PM_2.jpg",
+        "https://res.cloudinary.com/qhcbzphb/image/upload/v1792614084/WhatsApp_Image_2026-10-21_at_5.19.59_PM.jpg",
+        "https://res.cloudinary.com/qhcbzphb/image/upload/v1792614230/WhatsApp_Image_2026-10-21_at_5.22.49_PM_1.jpg",
+        "https://res.cloudinary.com/qhcbzphb/image/upload/v1792614230/WhatsApp_Image_2026-10-21_at_5.22.49_PM.jpg"
+      ]
+    }
+  ],
+  "fecha_ingreso": "2026-10-21",
+  "disponible": true,
+  "whatsapp_msg": "Hola Alejandro, estoy interesado en Lenovo Ideadpad 3 Ryzen 3200U, quisiera mas información!",
+  "etiqueta": "Seminuevo",
+  "precio_nosotros": 250000,
+  "titulo": "Lenovo Ideadpad S340-14API 14\" - Plateado",
+  "id": "nb-2026-001",
+  "marca": "Lenovo",
+  "programas_incluidos": [
+    "Office",
+    "Malwarebytes",
+    "AnyDesk",
+    "Adobe PDF"
+  ],
+  "especificaciones": {
+    "puertos": [
+      "• 1 x HDMI • 2 x USB 3.1 Tipo A • 1 x USB 3.1 Tipo C (5Gbps) • 1 x Lector de tarjetas SD • 1 x Conector de audio combo de 3.5 mm"
+    ],
+    "bateria_salud": "80%",
+    "procesador": "AMD Ryzen 3 3200U 2.6GHz",
+    "gpu": " AMD Radeon Vega  3",
+    "so_actual": "Windows 11",
+    "peso": "1.55Kg Aprox",
+    "almacenamiento": "256Gb NVMe M.2 + 500gb (HDD)",
+    "pantalla": "14.0 pulgadas con resolución HD (1366 x 768)",
+    "bateria_ciclos": 179,
+    "ram": "8Gb RAM DDR4"
+  },
+  "año": 2019
+}
