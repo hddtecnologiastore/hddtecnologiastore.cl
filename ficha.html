@@ -15,12 +15,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta name="robots" content="noindex">
 <meta property="og:type" content="product">
 <meta property="og:site_name" content="HDD Tecnología Store">
+<meta property="og:title" content="Notebook reacondicionado | HDD Tecnología Store">
+<meta property="og:description" content="Notebook reacondicionado con garantía, probado y verificado. Compra directa por WhatsApp.">
+<meta property="og:image" content="https://hddtecnologiastore.cl/og-image.png">
+<link rel="canonical" href="https://hddtecnologiastore.cl/usados.html">
 <meta name="theme-color" content="#050b18">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/styles.css?v=typo2">
+<link rel="stylesheet" href="/styles.css?v=svc4">
 <style>
 .ficha-wrap{max-width:1100px;margin:0 auto;padding:90px 1.2rem 3rem}
 .ficha-back{display:inline-flex;align-items:center;gap:.35rem;color:var(--mut);font-size:.8rem;text-decoration:none;margin-bottom:1rem;transition:color .2s}
@@ -156,7 +160,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       .replace(/'/g, '&#39;');
   }
 
-  document.title = esc(u.titulo) + ' | HDD Tecnología Store';
+  document.title = u.titulo + ' | HDD Tecnología Store';
   const e = u.especificaciones || {};
   const ahorro = u.precio_mercado ? Math.round((1 - u.precio_nosotros/u.precio_mercado)*100) : 0;
   const fotos = (u.fotos || []).flatMap(f => Array.isArray(f.url) ? f.url : (f.url ? [f.url] : []));
@@ -164,6 +168,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   const waMsg = encodeURIComponent(u.whatsapp_msg || `Hola, me interesa el ${u.titulo} publicado en la tienda.`);
 
   document.getElementById('waFloat').href = 'https://wa.me/56961991725?text=' + waMsg;
+
+  // SEO / redes: metadatos dinámicos por producto
+  (function(){
+    var precio = Number(u.precio_nosotros || 0).toLocaleString('es-CL');
+    var t = u.titulo + ' — $' + precio + ' | HDD Tecnología Store';
+    var md = document.querySelector('meta[name="description"]'); if (md && u.resumen) md.setAttribute('content', u.resumen);
+    var ogt = document.querySelector('meta[property="og:title"]'); if (ogt) ogt.setAttribute('content', t);
+    var ogd = document.querySelector('meta[property="og:description"]'); if (ogd && u.resumen) ogd.setAttribute('content', u.resumen);
+    var ogi = document.querySelector('meta[property="og:image"]'); if (ogi && mainImg) ogi.setAttribute('content', mainImg.indexOf('http') === 0 ? mainImg : location.origin + mainImg);
+    var can = document.querySelector('link[rel="canonical"]'); if (can) can.setAttribute('href', 'https://hddtecnologiastore.cl/ficha.html?id=' + encodeURIComponent(u.id));
+  })();
 
   const specs = [
     ['Procesador', e.procesador],

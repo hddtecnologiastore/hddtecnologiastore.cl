@@ -238,7 +238,7 @@ h1{font-family:var(--d);font-size:clamp(30px,4.6vw,54px);line-height:1.08;margin
 .precio-mercado { text-decoration: line-through; color: #999; font-size: .9rem; }
 .ahorro { background: #e8f5e9; color: #2e7d32; font-size: .75rem; padding: .1rem .4rem; border-radius: 999px; }
 .btn-wa, .btn-ver { display: flex; align-items: center; justify-content: center; min-height: 44px; margin-top: .5rem; padding: .5rem 1rem; border-radius: 8px; font-weight: 600; text-decoration: none; }
-.btn-wa { background: #25d366; color: #fff; }
+.btn-wa { background: #25d366; color: #043a17; }
 .btn-ver { background: #f5f5f5; color: #333; }
 .titulo-nb { font-weight: 700; font-size: 1.05rem; color: #fff; margin: .3rem 0; }
 .precio-ref { text-decoration: line-through; color: #f87171; font-size: .9rem; font-weight: 500; }
@@ -261,10 +261,10 @@ h1{font-family:var(--d);font-size:clamp(30px,4.6vw,54px);line-height:1.08;margin
 .precios { display: flex; gap: .5rem; align-items: baseline; flex-wrap: wrap; margin: 1rem 0; }
 .precio-nuestro { font-size: 2rem; color: #1a1a1a; }
 .precio-mercado { text-decoration: line-through; color: #999; font-size: 1.2rem; }
-.ahorro { background: #fff3e0; color: #e65100; padding: .2rem .6rem; border-radius: 999px; font-weight: 700; }
+.ahorro { background: #fff3e0; color: #a83c00; padding: .2rem .6rem; border-radius: 999px; font-weight: 700; }
 .confianza { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1rem 0; font-size: .9rem; color: #444; }
 .confianza span { background: #f5f5f5; padding: .3rem .6rem; border-radius: 8px; }
-.btn-wa-grande { display: inline-block; background: #25d366; color: #fff; padding: 1rem 2rem; border-radius: 12px; font-size: 1.1rem; font-weight: 700; text-decoration: none; margin: 1rem 0; }
+.btn-wa-grande { display: inline-block; background: #25d366; color: #043a17; padding: 1rem 2rem; border-radius: 12px; font-size: 1.1rem; font-weight: 700; text-decoration: none; margin: 1rem 0; }
 .btn-wa-grande:hover { background: #1ebe5d; }
 .disclaimer { font-size: .85rem; color: #666; }
 .ficha-bottom { display: grid; grid-template-columns: 1fr 320px; gap: 2rem; }
@@ -658,4 +658,28 @@ table { max-width: 100%; }
 }
 @media (max-width: 340px) {
   .sv2-reps { grid-template-columns: 1fr; }
+}
+
+/* Puntos del carrusel de reseñas (accesibles: área táctil 24px) */
+.rev-dot {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.rev-dot::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .25);
+  transition: background .2s;
+}
+.rev-dot.on::before {
+  background: var(--acc);
 }
