@@ -176,7 +176,7 @@ h1{font-family:var(--d);font-size:clamp(30px,4.6vw,54px);line-height:1.08;margin
 .copy{text-align:center;font-size:12px;color:var(--dim);margin:26px 0 10px}.copy a{color:var(--mut);text-decoration:none}.copy a:hover{color:var(--acc)}
 #cookieBar{position:fixed;bottom:0;left:0;right:0;background:rgba(5,11,24,.96);border-top:1px solid var(--line);padding:12px 16px;display:flex;gap:12px;align-items:center;justify-content:center;flex-wrap:wrap;z-index:260;font-size:12px;color:var(--mut);transform:translateY(100%);transition:.3s}#cookieBar.show{transform:none}#cookieBar a{color:var(--acc)}
 /* floats */
-.wa-float{position:fixed;right:20px;bottom:20px;width:58px;height:58px;border-radius:17px;background:var(--ok);color:#04120a;font-size:24px;font-weight:800;display:flex;align-items:center;justify-content:center;text-decoration:none;z-index:150;box-shadow:0 10px 30px rgba(37,211,102,.45)}
+.wa-float{position:fixed;right:20px;bottom:95px;width:58px;height:58px;border-radius:17px;background:var(--ok);color:#04120a;font-size:24px;font-weight:800;display:flex;align-items:center;justify-content:center;text-decoration:none;z-index:150;box-shadow:0 10px 30px rgba(37,211,102,.45)}
 .wa-float .pulse{position:absolute;inset:0;border-radius:17px;border:2px solid var(--ok);animation:pl 2s infinite}
 @keyframes pl{to{transform:scale(1.35);opacity:0}}
 .wa-float .tip{position:absolute;right:68px;background:#0b1526;border:1px solid var(--line);color:#fff;font-size:12px;padding:8px 12px;border-radius:9px;white-space:nowrap;opacity:0;pointer-events:none;transition:.2s}
