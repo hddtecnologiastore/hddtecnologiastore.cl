@@ -2,7 +2,7 @@
 class CarruselUsados extends HTMLElement {
   async connectedCallback() {
     const res = await fetch('/src/data/usados.json');
-    const items = (await res.json()).filter(u => u.disponible).slice(0, 4);
+    const items = (await res.json()).filter(u => u.disponible);
     this.innerHTML = `
       <div class="carrusel-track" role="list">
         ${items.map(u => this.card(u)).join('')}
