@@ -5,17 +5,6 @@ backend:
   # configurar "Invite only" para evitar registros públicos no autorizados.
   # Git Gateway solo permite commits si el usuario está invitado/autorizado.
 
-media_library:
-  name: cloudinary
-  config:
-    cloud_name: qhcbzphb
-    api_key: "898237561158163"
-    # IMPORTANTE: Decap envía multiple:false por defecto. La consola antigua de
-    # Cloudinary lo ignoraba (dejaba marcar varias); la NUEVA lo respeta y solo
-    # permitía insertar 1 imagen por vez. Con multiple:true vuelve a permitir
-    # varias en la Galería (la web ya normaliza arrays).
-    multiple: true
-
 site_url: https://hddtecnologiastore.cl
 display_url: https://hddtecnologiastore.cl
 
