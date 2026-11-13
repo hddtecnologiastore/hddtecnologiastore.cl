@@ -31,7 +31,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=svc5">
+<link rel="stylesheet" href="styles.css?v=svc6">
 <!-- Microsoft Clarity -->
 <script type="text/javascript">
   (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -48,7 +48,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   "@context": "https://schema.org",
   "@type": "ComputerStore",
   "name": "HDD Tecnología Store",
-  "description": "Servicio técnico de reparación de notebooks y PCs con 20 años de experiencia y más de 1.435 órdenes de trabajo emitidas. Diagnóstico, mantenimiento, soporte empresarial y reacondicionados con garantía en Ñuñoa, Santiago.",
+  "description": "Servicio técnico de reparación de notebooks y PCs con 20 años de experiencia y más de 1.435 órdenes de trabajo emitidas. Diagnóstico, mantenimiento y soporte empresarial en Ñuñoa, Santiago.",
   "url": "https://hddtecnologiastore.cl/",
   "image": "https://hddtecnologiastore.cl/favicon.svg",
   "telephone": "+56961991725",
@@ -93,7 +93,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <nav class="nav" id="nav" aria-label="Principal">
       <a href="#inicio" class="active" data-i18n="nav.home">Inicio</a>
       <a href="#servicios" data-i18n="nav.services">Servicios</a>
-      <a href="#usados">Notebooks</a>
       <a href="#nosotros">Nosotros</a>
       <a href="#resenas" data-i18n="nav.reviews">Reseñas</a>
       <a href="#contacto" data-i18n="nav.contact">Contacto</a>
@@ -247,15 +246,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- NOTEBOOKS USADOS -->
-<section class="sec" id="usados">
-  <div class="wrap">
-    <div class="sec-hd" data-reveal><p class="kick">NOTEBOOKS REACONDICIONADOS</p><h2>Notebooks usados <span class="grad">con garantía</span></h2><p class="sub">Equipos reacondicionados, probados y listos para usar. Compra directa por WhatsApp.</p></div>
-    <carrusel-usados></carrusel-usados>
-    <div style="text-align:center;margin-top:24px"><a class="btn ghost" href="usados.html">Ver catálogo completo →</a></div>
-  </div>
-</section>
-
 <!-- NOSOTROS -->
 <section class="sec alt" id="nosotros">
   <div class="wrap split" style="align-items:stretch">
@@ -330,7 +320,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <form id="svcForm" novalidate>
     <label><span data-i18n="modal.svcName">Nombre</span><input id="svcName" maxlength="60" placeholder="Ej: Juan Pérez" autocomplete="name"></label>
     <label><span data-i18n="modal.svcPhone">Teléfono</span><input id="svcPhone" inputmode="numeric" maxlength="9" placeholder="9 dígitos (ej: 912345678)" autocomplete="tel"></label>
-    <label><span data-i18n="modal.svcService">Servicio</span><select id="svcType"><option value="Diagnóstico general" data-i18n="modal.svcOpt1">Diagnóstico general</option><option value="Reparación de PCs" data-i18n="modal.svcOpt2">Reparación de PCs</option><option value="Mantenimiento" data-i18n="modal.svcOpt3">Mantenimiento</option><option value="Soporte Técnico" data-i18n="modal.svcOpt4">Soporte Técnico</option><option value="Reparación física" data-i18n="modal.svcOpt5">Reparación física</option><option value="Notebook reacondicionado" data-i18n="modal.svcOpt6">Notebook reacondicionado</option><option value="Mantención Notebook De Oficina" data-i18n="modal.svcOpt7">Mantención Notebook De Oficina</option><option value="Mantención Notebook Gamer" data-i18n="modal.svcOpt8">Mantención Notebook Gamer</option></select></label>
+    <label><span data-i18n="modal.svcService">Servicio</span><select id="svcType"><option value="Diagnóstico general" data-i18n="modal.svcOpt1">Diagnóstico general</option><option value="Reparación de PCs" data-i18n="modal.svcOpt2">Reparación de PCs</option><option value="Mantenimiento" data-i18n="modal.svcOpt3">Mantenimiento</option><option value="Soporte Técnico" data-i18n="modal.svcOpt4">Soporte Técnico</option><option value="Reparación física" data-i18n="modal.svcOpt5">Reparación física</option><option value="Mantención Notebook De Oficina" data-i18n="modal.svcOpt7">Mantención Notebook De Oficina</option><option value="Mantención Notebook Gamer" data-i18n="modal.svcOpt8">Mantención Notebook Gamer</option></select></label>
     <label><span data-i18n="modal.svcMsg">Describe el problema</span><textarea id="svcMsg" maxlength="300" placeholder="Ej: mi notebook no enciende, solo parpadea el led…"></textarea></label>
     <p style="font-size:11px;color:var(--mut);margin:8px 0 10px" data-i18n="modal.svcLegal">Al enviar aceptas <a href="privacidad.html">privacidad</a> y <a href="terminos.html">términos</a>.</p>
     <p class="err" id="svcErr" hidden></p>
@@ -375,8 +365,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </form>
 </div></div>
 
-<script src="/src/components/CarruselUsados.js?v=pago8" defer></script>
-<script src="data.js?v=typo2" defer></script>
-<script src="app.js?v=gtm1" defer></script>
+<script src="data.js?v=typo3" defer></script>
+<script src="app.js?v=gtm2" defer></script>
 </body>
 </html>

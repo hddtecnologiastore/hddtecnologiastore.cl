@@ -1,5 +1,5 @@
 [build]
-  command = "node build-usados.cjs"
+  command = "echo done"
   publish = "."
 
 # Headers globales de seguridad
@@ -39,6 +39,31 @@
     Cache-Control = "no-store"
     Cross-Origin-Opener-Policy = "same-origin-allow-popups"
 
+# El catálogo de notebooks se retiró: redirigir las URLs antiguas al home
+[[redirects]]
+  from = "/usados.html"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/usados"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/ficha.html"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/ficha"
+  to = "/"
+  status = 301
+  force = true
+
 # Bloquear archivos sensibles del código fuente
 [[redirects]]
   from = "/server.js"
@@ -48,12 +73,6 @@
 
 [[redirects]]
   from = "/package.json"
-  to = "/404.html"
-  status = 404
-  force = true
-
-[[redirects]]
-  from = "/build-usados.cjs"
   to = "/404.html"
   status = 404
   force = true
