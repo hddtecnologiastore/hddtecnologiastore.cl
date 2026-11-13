@@ -9,7 +9,7 @@ var reduced=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduc
 /* i18n ES/EN - default es */
 var I18N={
 es:{
-"nav.home":"Inicio","nav.services":"Servicios","nav.process":"Proceso","nav.reviews":"Reseñas","nav.contact":"Contacto",
+"nav.home":"Inicio","nav.services":"Servicios","nav.about":"Nosotros","nav.process":"Proceso","nav.reviews":"Reseñas","nav.contact":"Contacto",
 "hero.badge":"SERVICIO PREMIUM \u00b7 GARANT\u00cdA REAL \u00b7 20 A\u00d1OS DE EXPERIENCIA",
 "hero.title":"Servicio t\u00e9cnico<br><span class=\"grad\">en computaci\u00f3n,</span><br>con <span id=\"typing\" class=\"typing\">garant\u00eda real</span>",
 "hero.lead":"Servicio T\u00e9cnico Especializado en Laptops y Equipos de C\u00f3mputo<br>Diagn\u00f3stico preciso, mantenimiento preventivo y reparaci\u00f3n con garant\u00eda por escrito. Respaldado por m\u00e1s de 1.435 trabajos realizados en Santiago y un \u00edndice de efectividad superior al 99%.",
@@ -71,7 +71,7 @@ es:{
 "cookie.ok":"Entendido"
 },
 en:{
-"nav.home":"Home","nav.services":"Services","nav.process":"Process","nav.reviews":"Reviews","nav.contact":"Contact",
+"nav.home":"Home","nav.services":"Services","nav.about":"About","nav.process":"Process","nav.reviews":"Reviews","nav.contact":"Contact",
 "hero.badge":"PREMIUM SERVICE \u00b7 REAL WARRANTY \u00b7 20 YEARS EXPERIENCE",
 "hero.title":"Technical service<br><span class=\"grad\">for computers,</span><br>with <span id=\"typing\" class=\"typing\">real warranty</span>",
 "hero.lead":"Specialized Technical Service for Laptops and Computers<br>Accurate diagnostics, preventive maintenance and repair with written warranty. Backed by over 1,435 completed jobs in Santiago with over 99% success rate.",
@@ -222,11 +222,12 @@ document.addEventListener("click",function(e){
   if(window.ADS_CONV_ID){window.dataLayer.push({event:"ads_conversion",send_to:window.ADS_CONV_ID,value:1,currency:"CLP"})}
 });
 /* Modales */
-function openM(id){var m=document.getElementById(id);if(m){m.classList.add("open");m.setAttribute("aria-hidden","false");document.body.style.overflow="hidden"}}
-function closeM(m){m.classList.remove("open");m.setAttribute("aria-hidden","true");document.body.style.overflow=""}
+function focusables(m){return $$('a[href],button:not([disabled]),input:not([disabled]),select:not([disabled]),textarea:not([disabled]),[tabindex]:not([tabindex="-1"])',m).filter(function(el){return el.offsetParent!==null})}
+function openM(id){var m=document.getElementById(id);if(!m)return;m._prev=document.activeElement;m.classList.add("open");m.setAttribute("aria-hidden","false");document.body.style.overflow="hidden";var f=focusables(m);var first=f.filter(function(el){return /^(INPUT|SELECT|TEXTAREA)$/.test(el.tagName)})[0]||f[0];if(first)setTimeout(function(){first.focus()},30)}
+function closeM(m){if(!m)return;m.classList.remove("open");m.setAttribute("aria-hidden","true");document.body.style.overflow="";var p=m._prev;if(p&&document.contains(p)){try{p.focus()}catch(e){}}}
 $$("[data-open]").forEach(function(b){b.addEventListener("click",function(){var id=b.getAttribute("data-open");if(b.getAttribute("data-svc")){var s=$("#svcType");if(s)s.value=b.getAttribute("data-svc")}openM(id)})});
 $$(".ov").forEach(function(m){m.addEventListener("click",function(e){if(e.target===m)closeM(m)})});$$("[data-close]").forEach(function(b){b.addEventListener("click",function(){closeM(b.closest(".ov"))})});
-document.addEventListener("keydown",function(e){if(e.key==="Escape")$$(".ov.open").forEach(closeM)});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")$$(".ov.open").forEach(closeM);if(e.key!=="Tab")return;var m=$(".ov.open");if(!m)return;var f=focusables(m);if(!f.length)return;var first=f[0],last=f[f.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}});
 /* Cookies: solo técnicas, banner mínimo */
 (function(){var bar=$("#cookieBar"),ok=$("#cookieOk");if(!bar||!ok)return;try{if(localStorage.getItem("hdd_cookie")==="1"){return}bar.classList.add("show");ok.addEventListener("click",function(){localStorage.setItem("hdd_cookie","1");bar.classList.remove("show")})}catch(e){}})();
 /* Form servicio → WhatsApp */
@@ -301,7 +302,7 @@ var br=$("#bizRut");if(br)br.addEventListener("input",function(){br.value=fRut(b
 var bf=$("#bizForm");
 if(bf)bf.addEventListener("submit",function(e){e.preventDefault();var err=$("#bizErr");err.hidden=true;var n=$("#bizName").value.trim(),r=$("#bizRut").value.trim(),co=$("#bizCom").value.trim(),pe=$("#bizPer").value,ms=$("#bizMsg").value.trim();
 if(n.length<2||/[<>]/.test(n)){err.textContent="Empresa inválida.";err.hidden=false;return}
-if(!vRut(r)){err.textContent="RUT inválido (ej: 12.345.678-9).";err.hidden=false;return}
+if(!vRut(r)){err.textContent="RUT inválido (ej: 12.345.678-5).";err.hidden=false;return}
 if(co.length<2||/[<>]/.test(co)){err.textContent="Comuna inválida.";err.hidden=false;return}
 if(ms.length<4||/[<>]/.test(ms)){err.textContent="Describe el servicio (4+, sin < >).";err.hidden=false;return}
 var msg="Hola, quiero cotizar plan empresas.%0A%0AEmpresa: "+encodeURIComponent(n)+"%0ARUT: "+encodeURIComponent(r)+"%0AComuna: "+encodeURIComponent(co)+"%0APeríodo: "+encodeURIComponent(pe)+"%0ADetalle: "+encodeURIComponent(ms);
