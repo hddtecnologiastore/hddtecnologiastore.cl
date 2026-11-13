@@ -615,3 +615,10 @@ table { max-width: 100%; }
 .rev-dot.on::before {
   background: var(--acc);
 }
+
+/* Documentos legales: h2 con el tamaño que antes tenía h3 */
+.legal-doc h2 {
+  font-size: 1.17em;
+  margin: 1em 0 .5em;
+  line-height: 1.3;
+}
